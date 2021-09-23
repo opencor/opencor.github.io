@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Known limitations
+        </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+        <link href="_static/pygments.css" rel="stylesheet" type="text/css" />
+        <link href="_static/theme.css" rel="stylesheet" type="text/css" />
+
+        <script src="_static/jquery.js" type="text/javascript"></script>
+        <script src="_static/theme.js" type="text/javascript"></script>
+
+        <link href="_static/katex/katex.min.css" rel="stylesheet" type="text/css"/>
+
+        <script defer src="_static/katex/katex.min.js" type="text/javascript"></script>
+        <script defer src="_static/katex/contrib/auto-render.min.js" type="text/javascript" onload="renderMathInElement(document.body);"></script>
+    </head>
+    <body ondragstart="return false;" ondrop="return false;">
+        
+  <div class="section" id="known-limitations">
+<span id="knownlimitations"></span><h1>Known limitations<a class="headerlink" href="#known-limitations" title="Permalink to this headline">¶</a></h1>
+<p>The following limitations have been noticed when using OpenCOR on our <a class="reference external" href="https://opencor.ws/supportedPlatforms.html">supported platforms</a>.</p>
+<div class="section" id="windows-linux-and-macos">
+<h2>Windows, Linux and macOS<a class="headerlink" href="#windows-linux-and-macos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>By default, OpenCOR uses the system’s language for menus, message boxes, etc., as long as it is either English or French (please <a class="reference external" href="https://opencor.ws/contactUs.html">contact us</a> if you would like OpenCOR to support other languages).
+If the system uses another language, OpenCOR will default to English.
+Otherwise, if you specify English or French, then please be aware that system messages, diaogs, etc. will still be displayed using the system’s language (assuming it is not one of the languages supported by OpenCOR).</li>
+<li>OpenCOR uses the <a class="reference external" href="https://github.com/cellmlapi/cellml-api/">CellML API</a>, which is known to have the following limitations:<ul>
+<li>It will crash OpenCOR if you try to export a <a class="reference external" href="https://cellml.org/">CellML</a> file to a user-defined format that is described in a file that contains valid, but unknown, <a class="reference external" href="https://w3.org/XML">XML</a>.</li>
+<li>It may incorrectly (in)validate certain <a class="reference external" href="https://cellml.org/">CellML</a> files.</li>
+</ul>
+</li>
+<li>OpenCOR comes with <a class="reference internal" href="pythonSupport.html#pythonsupport"><span class="std std-ref">Python support</span></a>, which requires OpenCOR to be installed in a directory that does not contain spaces.</li>
+</ul>
+</div>
+<div class="section" id="windows-and-linux">
+<h2>Windows and Linux<a class="headerlink" href="#windows-and-linux" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">A scaled display will, on <a class="reference external" href="https://en.wikipedia.org/wiki/Linux">Linux</a>, result in some aspects of OpenCOR being rendered at the wrong size (e.g. icons will be smaller and scroll bars bigger).
+On <a class="reference external" href="https://en.wikipedia.org/wiki/Windows">Windows</a>, OpenCOR should scale itself automatically, although it will look more or less blurry depending on your display scaling and screen resolution.
+In case OpenCOR does not scale itself, turn off <em>Fix scaling for apps</em>:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/windowsSettings01.png"><img alt="_images/windowsSettings01.png" class="align-center" src="_images/windowsSettings01.png" style="width: 320.0px; height: 180.0px;" /></a>
+<a class="reference internal image-reference" href="_images/windowsSettings02.png"><img alt="_images/windowsSettings02.png" class="align-center" src="_images/windowsSettings02.png" style="width: 320.0px; height: 180.0px;" /></a>
+<a class="reference internal image-reference" href="_images/windowsSettings03.png"><img alt="_images/windowsSettings03.png" class="align-center" src="_images/windowsSettings03.png" style="width: 320.0px; height: 180.0px;" /></a>
+</div></blockquote>
+<p>or better, locate your copy of OpenCOR, right click on <code class="docutils literal notranslate"><span class="pre">[OpenCOR]\bin\OpenCOR.exe</span></code>, click on the <code class="docutils literal notranslate"><span class="pre">Properties</span></code> menu item, and have the high DPI scaling performed by the system:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/opencorProperties01.png"><img alt="_images/opencorProperties01.png" class="align-center" src="_images/opencorProperties01.png" style="width: 135.75px; height: 194.5px;" /></a>
+<a class="reference internal image-reference" href="_images/opencorProperties02.png"><img alt="_images/opencorProperties02.png" class="align-center" src="_images/opencorProperties02.png" style="width: 126.5px; height: 146.25px;" /></a>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The <a class="reference internal" href="plugins/organisation/fileBrowserWindow.html#plugins-organisation-filebrowserwindow"><span class="std std-ref">File Browser window</span></a> plugin may, on some systems, result in OpenCOR being slow to respond at startup.
+This has nothing to do with OpenCOR, but most likely with a <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Windows">Windows</a> shell add-on.
+<a class="reference external" href="https://brighthub.com/computing/windows-platform/articles/86552.aspx">This page</a> may help address the issue, but if not then you might have to disable the <a class="reference internal" href="plugins/organisation/fileBrowserWindow.html#plugins-organisation-filebrowserwindow"><span class="std std-ref">File Browser window</span></a> plugin.</li>
+<li>If OpenCOR was installed in a system folder using the <a class="reference external" href="https://en.wikipedia.org/wiki/ZIP_(file_format)">ZIP</a> file then the first time OpenCOR is run it will have to be run as administrator.
+This is so that OpenCOR can update the <a class="reference external" href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> of its <a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> scripts to point to its copy of Python.</li>
+</ul>
+</div>
+<div class="section" id="macos">
+<h2>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Starting with <a class="reference external" href="https://en.wikipedia.org/wiki/MacOS_Mojave">macOS Mojave</a>, macOS has a <a class="reference external" href="https://support.apple.com/HT208976">Dark Mode</a>, which is not currently supported by OpenCOR.</li>
+</ul>
+</div>
+</div>
+
+
+
+        <script type="text/javascript">
+            copyright("_static");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Plugins
+        </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+        <link href="../_static/pygments.css" rel="stylesheet" type="text/css" />
+        <link href="../_static/theme.css" rel="stylesheet" type="text/css" />
+
+        <script src="../_static/jquery.js" type="text/javascript"></script>
+        <script src="../_static/theme.js" type="text/javascript"></script>
+
+        <link href="../_static/katex/katex.min.css" rel="stylesheet" type="text/css"/>
+
+        <script defer src="../_static/katex/katex.min.js" type="text/javascript"></script>
+        <script defer src="../_static/katex/contrib/auto-render.min.js" type="text/javascript" onload="renderMathInElement(document.body);"></script>
+    </head>
+    <body ondragstart="return false;" ondrop="return false;">
+        
+  <div class="section" id="plugins">
+<span id="plugins-index"></span><h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
+<p>OpenCOR is a plugin-based application.
+As can be seen by opening the Plugins dialog (either by selecting the <code class="docutils literal notranslate"><span class="pre">Tools</span></code> | <code class="docutils literal notranslate"><span class="pre">Plugins...</span></code> menu or by clicking <a class="reference external" href="opencor://openPluginsDialog">here</a>) and by unselecting <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">only</span> <span class="pre">selectable</span> <span class="pre">plugins</span></code> (if necessary), OpenCOR comes with different types of plugins:</p>
+<a class="reference internal image-reference" href="../_images/plugins01.png"><img alt="../_images/plugins01.png" class="align-center" src="../_images/plugins01.png" style="width: 171.0px; height: 83.0px;" /></a>
+<p>You can select which plugins you want to use.
+However, plugins that are needed by other plugins (e.g. the <a class="reference internal" href="miscellaneous/core.html#plugins-miscellaneous-core"><span class="std std-ref">Core</span></a> plugin is needed by the <a class="reference internal" href="organisation/pmrWindow.html#plugins-organisation-pmrwindow"><span class="std std-ref">PMR window</span></a> plugin) cannot be directly selected.
+Instead, they will be automatically selected if and only if they are needed by at least one other plugin.</p>
+<p>Most of the selectable plugins come with some kind of a <a class="reference internal" href="../userInterfaces/graphicalUserInterface.html#userinterfaces-graphicaluserinterface"><span class="std std-ref">GUI</span></a>, which is of one of two types:</p>
+<ul class="simple">
+<li><strong>View:</strong> such a plugin (e.g. the <a class="reference internal" href="editing/cellmlAnnotationView.html#plugins-editing-cellmlannotationview"><span class="std std-ref">CellML Annotation view</span></a> and <a class="reference internal" href="simulation/simulationExperimentView.html#plugins-simulation-simulationexperimentview"><span class="std std-ref">Simulation Experiment view</span></a> plugins) is used to interact with a file, be it to edit it, simulate it or analyse it.</li>
+<li><strong>Window:</strong> such a plugin (e.g. the <a class="reference internal" href="organisation/pmrWindow.html#plugins-organisation-pmrwindow"><span class="std std-ref">PMR window</span></a> and <a class="reference internal" href="miscellaneous/helpWindow.html#plugins-miscellaneous-helpwindow"><span class="std std-ref">Help window</span></a> plugins) can be docked around the central area, undocked or hidden, as illustrated <a class="reference internal" href="../userInterfaces/graphicalUserInterface.html#userinterfaces-graphicaluserinterface"><span class="std std-ref">here</span></a>.</li>
+</ul>
+<p>If no plugins are selected, then OpenCOR is an <a class="reference internal" href="../userInterfaces/graphicalUserInterface.html#userinterfaces-graphicaluserinterface-opencorwithnoloadedplugins"><span class="std std-ref">empty shell</span></a>.</p>
+<div class="section" id="data-store">
+<h2>Data store<a class="headerlink" href="#data-store" title="Permalink to this headline">¶</a></h2>
+<p>Data store plugins are used to store and manipulate data:</p>
+<ul class="internal reference simple">
+<li><a class="reference internal" href="dataStore/biosignalmlDataStore.html#plugins-datastore-biosignalmldatastore"><span class="std std-ref">BioSignalMLDataStore</span></a>: a BioSignalML specific data store plugin.</li>
+<li><a class="reference internal" href="dataStore/csvDataStore.html#plugins-datastore-csvdatastore"><span class="std std-ref">CSVDataStore</span></a>: a <a class="reference external" href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> specific data store plugin.</li>
+</ul>
+<p>There is also one non-selectable data store plugin:</p>
+<ul class="simple">
+<li><strong>DataStore:</strong> a plugin that provides core data store facilities.</li>
+</ul>
+</div>
+<div class="section" id="editing">
+<h2>Editing<a class="headerlink" href="#editing" title="Permalink to this headline">¶</a></h2>
+<p>Editing plugins are used to edit files:</p>
+<ul class="internal reference simple">
+<li><a class="reference internal" href="editing/cellmlAnnotationView.html#plugins-editing-cellmlannotationview"><span class="std std-ref">CellMLAnnotationView</span></a>: a plugin to annotate <a class="reference external" href="https://cellml.org/">CellML</a> files.</li>
+<li><a class="reference internal" href="editing/cellmlTextView.html#plugins-editing-cellmltextview"><span class="std std-ref">CellMLTextView</span></a>: a plugin to edit <a class="reference external" href="https://cellml.org/">CellML</a> files using the <a class="reference internal" href="editing/cellmlTextView.html#plugins-editing-cellmltextview-cellmltextformat"><span class="std std-ref">CellML Text format</span></a>.</li>
+<li><a class="reference internal" href="editing/rawCellmlView.html#plugins-editing-rawcellmlview"><span class="std std-ref">RawCellMLView</span></a>: a plugin to edit <a class="reference external" href="https://cellml.org/">CellML</a> files using an <a class="reference external" href="https://w3.org/XML">XML</a> editor.</li>
+<li><a class="reference internal" href="editing/rawSedmlView.html#plugins-editing-rawsedmlview"><span class="std std-ref">RawSEDMLView</span></a>: a plugin to edit <a class="reference external" href="https://sed-ml.github.io/">SED-ML</a> files using an <a class="reference external" href="https://w3.org/XML">XML</a> editor.</li>
+<li><a class="reference internal" href="editing/rawTextView.html#plugins-editing-rawtextview"><span class="std std-ref">RawTextView</span></a>: a plugin to edit text-based files using a text editor.</li>
+</ul>
+<p>There are also some non-selectable editing plugins:</p>
+<ul class="simple">
+<li><strong>CellMLEditingView:</strong> a plugin that provides core <a class="reference external" href="https://cellml.org/">CellML</a> editing view facilities.</li>
+<li><a class="reference internal" href="editing/editingView.html#plugins-editing-editingview"><span class="std std-ref">EditingView</span></a>: a plugin that provides core editing view facilities.</li>
+<li><strong>SEDMLEditingView:</strong> a plugin that provides core <a class="reference external" href="https://sed-ml.github.io/">SED-ML</a> editing view facilities.</li>
+</ul>
+</div>
+<div class="section" id="miscellaneous">
+<h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
+<p>Miscellaneous plugins are plugins that do not fit in any other category:</p>
+<ul class="internal reference simple">
+<li><a class="reference internal" href="miscellaneous/helpWindow.html#plugins-miscellaneous-helpwindow"><span class="std std-ref">HelpWindow</span></a>: a plugin to provide help.</li>
+<li><a class="reference internal" href="miscellaneous/pythonConsoleWindow.html#plugins-miscellaneous-pythonconsolewindow"><span class="std std-ref">PythonConsoleWindow</span></a>: a plugin to interact with <a class="reference external" href="https://python.org/">Python</a>.</li>
+<li><a class="reference internal" href="miscellaneous/webBrowserWindow.html#plugins-miscellaneous-webbrowserwindow"><span class="std std-ref">WebBrowserWindow</span></a>: a plugin to browse the Web.</li>
+</ul>
+<p>There are also some non-selectable Miscellaneous plugins:</p>
+<ul class="internal reference simple">
+<li><strong>Compiler:</strong> a plugin to support code compilation.</li>
+<li><a class="reference internal" href="miscellaneous/core.html#plugins-miscellaneous-core"><span class="std std-ref">Core</span></a>: the core plugin.</li>
+<li><a class="reference internal" href="miscellaneous/jupyterKernel.html#plugins-miscellaneous-jupyterkernel"><span class="std std-ref">JupyterKernel</span></a>: the <a class="reference external" href="https://jupyter.org/">Jupyter</a> kernel plugin.</li>
+<li><a class="reference internal" href="miscellaneous/pythonShell.html#plugins-miscellaneous-pythonshell"><span class="std std-ref">PythonShell</span></a>: the <a class="reference external" href="https://python.org/">Python</a> shell plugin.</li>
+</ul>
+</div>
+<div class="section" id="organisation">
+<h2>Organisation<a class="headerlink" href="#organisation" title="Permalink to this headline">¶</a></h2>
+<p>Organisation plugins are used to organise files:</p>
+<ul class="internal reference simple">
+<li><a class="reference internal" href="organisation/fileBrowserWindow.html#plugins-organisation-filebrowserwindow"><span class="std std-ref">FileBrowserWindow</span></a>: a plugin to access local files.</li>
+<li><a class="reference internal" href="organisation/fileOrganiserWindow.html#plugins-organisation-fileorganiserwindow"><span class="std std-ref">FileOrganiserWindow</span></a>: a plugin to virtually organise files.</li>
+<li><a class="reference internal" href="organisation/pmrWindow.html#plugins-organisation-pmrwindow"><span class="std std-ref">PMRWindow</span></a>: a plugin to access <a class="reference external" href="https://models.physiomeproject.org/">PMR</a>.</li>
+<li><a class="reference internal" href="organisation/pmrWorkspacesWindow.html#plugins-organisation-pmrworkspaceswindow"><span class="std std-ref">PMRWorkspacesWindow</span></a>: a plugin to manage a user’s <a class="reference external" href="https://models.physiomeproject.org/">PMR</a> workspaces.</li>
+</ul>
+</div>
+<div class="section" id="simulation">
+<h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h2>
+<p>Simulation plugins are used to simulate files:</p>
+<ul class="internal reference simple">
+<li><a class="reference internal" href="simulation/simulationExperimentView.html#plugins-simulation-simulationexperimentview"><span class="std std-ref">SimulationExperimentView</span></a>: a plugin to edit and run a simulation experiment.</li>
+</ul>
+</div>
+<div class="section" id="solver">
+<span id="plugins-solver"></span><h2>Solver<a class="headerlink" href="#solver" title="Permalink to this headline">¶</a></h2>
+<p>Solver plugins are used to access various solvers:</p>
+<ul class="internal reference simple">
+<li><a class="reference internal" href="solver/cvodeSolver.html#plugins-solver-cvodesolver"><span class="std std-ref">CVODESolver</span></a>: a plugin that uses <a class="reference external" href="https://computation.llnl.gov/projects/sundials/cvode">CVODE</a> to solve <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">ODEs</a>.</li>
+<li><a class="reference internal" href="solver/forwardEulerSolver.html#plugins-solver-forwardeulersolver"><span class="std std-ref">ForwardEulerSolver</span></a>: a plugin that implements the <a class="reference external" href="https://en.wikipedia.org/wiki/Euler_method">Forward Euler method</a> to solve <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">ODEs</a>.</li>
+<li><a class="reference internal" href="solver/fourthOrderRungeKuttaSolver.html#plugins-solver-fourthorderrungekuttasolver"><span class="std std-ref">FourthOrderRungeKuttaSolver</span></a>: a plugin that implements the fourth-order <a class="reference external" href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">Runge-Kutta method</a> to solve <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">ODEs</a>.</li>
+<li><a class="reference internal" href="solver/heunSolver.html#plugins-solver-heunsolver"><span class="std std-ref">HeunSolver</span></a>: a plugin that implements the <a class="reference external" href="https://en.wikipedia.org/wiki/Heun's_method">Heun’s method</a> to solve <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">ODEs</a>.</li>
+<li><a class="reference internal" href="solver/kinsolSolver.html#plugins-solver-kinsolsolver"><span class="std std-ref">KINSOLSolver</span></a>: a plugin that uses <a class="reference external" href="https://computation.llnl.gov/projects/sundials/kinsol">KINSOL</a> to solve <a class="reference external" href="https://en.wikipedia.org/wiki/Nonlinear_system#Nonlinear_algebraic_equations">non-linear algebraic systems</a>.</li>
+<li><a class="reference internal" href="solver/secondOrderRungeKuttaSolver.html#plugins-solver-secondorderrungekuttasolver"><span class="std std-ref">SecondOrderRungeKuttaSolver</span></a>: a plugin that implements the second-order <a class="reference external" href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">Runge-Kutta method</a> to solve <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">ODEs</a>.</li>
+</ul>
+</div>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<p>Non-selectable support plugins are used to support various third-party libraries:</p>
+<ul class="simple">
+<li><strong>CellMLSupport:</strong> a plugin to support CellML.</li>
+<li><strong>COMBINESupport:</strong> a plugin to support COMBINE.</li>
+<li><strong>PMRSupport:</strong> a plugin to support PMR.</li>
+<li><strong>QScintillaSupport:</strong> a plugin to support QScintilla.</li>
+<li><strong>SEDMLSupport:</strong> a plugin to support SED-ML.</li>
+<li><strong>SimulationSupport:</strong> a plugin to support simulations.</li>
+<li><strong>StandardSupport:</strong> a plugin to support various standards.</li>
+<li><strong>ZIPSupport:</strong> a plugin to support the ZIP format.</li>
+</ul>
+</div>
+<div class="section" id="third-party">
+<h2>Third-party<a class="headerlink" href="#third-party" title="Permalink to this headline">¶</a></h2>
+<p>Non-selectable third-party plugins are used to access to various third-party libraries:</p>
+<ul class="simple">
+<li><strong>CellMLAPI:</strong> a plugin to access the <a class="reference external" href="https://github.com/cellmlapi/cellml-api/">CellML API</a>.</li>
+<li><strong>libBioSignalML:</strong> a plugin to access BioSignalML.</li>
+<li><strong>libgit2:</strong> a plugin to access <a class="reference external" href="https://libgit2.github.com/">libgit2</a>.</li>
+<li><strong>libNuML:</strong> a plugin to access <a class="reference external" href="https://github.com/NuML/NuML/">libNuML</a>.</li>
+<li><strong>libSBML:</strong> a plugin to access <a class="reference external" href="http://sbml.org/Software/libSBML/">libSBML</a>.</li>
+<li><strong>libSEDML:</strong> a plugin to access <a class="reference external" href="https://github.com/fbergmann/libSEDML/">libSEDML</a>.</li>
+<li><strong>LibXDiff:</strong> a plugin to access <a class="reference external" href="http://xmailserver.org/xdiff-lib.html">LibXDiff</a>.</li>
+<li><strong>LLVMClang:</strong> a plugin to access <a class="reference external" href="https://llvm.org/">LLVM</a> and <a class="reference external" href="https://clang.llvm.org/">Clang</a>.</li>
+<li><strong>OAuth:</strong> a plugin to access <a class="reference external" href="https://github.com/pipacs/o2">OAuth for Qt</a>.</li>
+<li><strong>OpenSSL:</strong> a plugin to access <a class="reference external" href="https://openssl.org/">OpenSSL</a>.</li>
+<li><strong>QScintilla:</strong> a plugin to access <a class="reference external" href="https://riverbankcomputing.com/software/qscintilla/intro">QScintilla</a>.</li>
+<li><strong>Qwt:</strong> a plugin to access <a class="reference external" href="http://qwt.sourceforge.net/">Qwt</a>.</li>
+<li><strong>SUNDIALS:</strong> a plugin to access the <a class="reference external" href="https://computation.llnl.gov/projects/sundials/arkode">ARKode</a>, <a class="reference external" href="https://computation.llnl.gov/projects/sundials/cvodes">CVODES</a>, <a class="reference external" href="https://computation.llnl.gov/projects/sundials/idas">IDAS</a> and <a class="reference external" href="https://computation.llnl.gov/projects/sundials/kinsol">KINSOL</a> solvers from the <a class="reference external" href="https://computation.llnl.gov/projects/sundials">SUNDIALS</a> library.</li>
+<li><strong>zlib:</strong> a plugin to access <a class="reference external" href="https://zlib.net/">zlib</a>.</li>
+</ul>
+</div>
+<div class="section" id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<p>Tools plugins are used to access to various tools:</p>
+<ul class="internal reference simple">
+<li><a class="reference internal" href="tools/cellmlTools.html#plugins-tools-cellmltools"><span class="std std-ref">CellMLTools</span></a>: a plugin to access various <a class="reference external" href="https://cellml.org/">CellML</a>-related tools.</li>
+</ul>
+</div>
+<div class="section" id="widget">
+<h2>Widget<a class="headerlink" href="#widget" title="Permalink to this headline">¶</a></h2>
+<p>Non-selectable widget plugins are used to access various <em>ad hoc</em> widgets:</p>
+<ul class="internal reference simple">
+<li><strong>EditorWidget:</strong> a plugin to edit and display text.</li>
+<li><strong>GraphPanelWidget:</strong> a plugin to plot graphs.</li>
+<li><strong>MathMLViewerWidget:</strong> a plugin to visualise <a class="reference external" href="https://w3.org/Math">MathML</a> documents.</li>
+<li><strong>WebViewerWidget:</strong> a plugin to visualise Web documents.</li>
+</ul>
+</div>
+</div>
+
+
+
+        <script type="text/javascript">
+            copyright("../_static");
+        </script>
+    </body>
+</html>
