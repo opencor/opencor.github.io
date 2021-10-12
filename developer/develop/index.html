@@ -20,26 +20,26 @@
     </head>
     <body ondragstart="return false;" ondrop="return false;">
         
-  <div class="section" id="develop">
+  <section id="develop">
 <span id="develop-index"></span><h1>Develop<a class="headerlink" href="#develop" title="Permalink to this headline">¶</a></h1>
 <p>The best way to familiarise yourself with the internals of OpenCOR is by having a look at its <a class="reference external" href="https://github.com/opencor/opencor">source code</a>.</p>
-<div class="section" id="namespace">
+<section id="namespace">
 <h2>Namespace<a class="headerlink" href="#namespace" title="Permalink to this headline">¶</a></h2>
 <p>All of the source code is and must be made available under the <code class="docutils literal notranslate"><span class="pre">OpenCOR</span></code> namespace (e.g. <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/mainwindow.cpp"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/mainwindow.cpp</span></code></a> and <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/mainwindow.h"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/mainwindow.h</span></code></a>).
 There are only two exceptions to this rule: <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/main.cpp"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/main.cpp</span></code></a> and <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/windows/main.cpp"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/windows/main.cpp</span></code></a> (i.e. OpenCOR’s two main <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> files).</p>
-</div>
-<div class="section" id="issues">
+</section>
+<section id="issues">
 <h2>Issues<a class="headerlink" href="#issues" title="Permalink to this headline">¶</a></h2>
 <p>All changes to the source code must be referenced in the list of <a class="reference external" href="https://github.com/opencor/opencor/issues">issues</a> using <a class="reference external" href="https://github.com/opencor/opencor/labels">labels</a> to:</p>
 <ul class="simple">
-<li>Request a <img alt="feature" class="label" src="../_images/feature.svg" /> for or an <img alt="improvement" class="label" src="../_images/improvement.svg" /> to a future version of OpenCOR.</li>
-<li>Report a <img alt="bug" class="label" src="../_images/bug.svg" /> or a <img alt="regression" class="label" src="../_images/regression.svg" /> issue with the current official version of OpenCOR.</li>
-<li>Specify a <img alt="task" class="label" src="../_images/task.svg" /> that needs to be carried out for the next official version of OpenCOR.</li>
-<li>Specify the binding (<img alt="python" class="label" src="../_images/python.svg" />) associated with a <img alt="bug" class="label" src="../_images/bug.svg" />, <img alt="task" class="label" src="../_images/task.svg" /> or <img alt="regression" class="label" src="../_images/regression.svg" /> issue.</li>
-<li>Specify the platform(s) (<img alt="windows" class="label" src="../_images/windows.svg" />, <img alt="linux" class="label" src="../_images/linux.svg" /> and/or <img alt="macos" class="label" src="../_images/macos.svg" />) associated with a <img alt="bug" class="label" src="../_images/bug.svg" />, <img alt="task" class="label" src="../_images/task.svg" /> or <img alt="regression" class="label" src="../_images/regression.svg" /> issue.</li>
+<li><p>Request a <img alt="feature" class="label" src="../_images/feature.svg" /> for or an <img alt="improvement" class="label" src="../_images/improvement.svg" /> to a future version of OpenCOR.</p></li>
+<li><p>Report a <img alt="bug" class="label" src="../_images/bug.svg" /> or a <img alt="regression" class="label" src="../_images/regression.svg" /> issue with the current official version of OpenCOR.</p></li>
+<li><p>Specify a <img alt="task" class="label" src="../_images/task.svg" /> that needs to be carried out for the next official version of OpenCOR.</p></li>
+<li><p>Specify the binding (<img alt="python" class="label" src="../_images/python.svg" />) associated with a <img alt="bug" class="label" src="../_images/bug.svg" />, <img alt="task" class="label" src="../_images/task.svg" /> or <img alt="regression" class="label" src="../_images/regression.svg" /> issue.</p></li>
+<li><p>Specify the platform(s) (<img alt="windows" class="label" src="../_images/windows.svg" />, <img alt="linux" class="label" src="../_images/linux.svg" /> and/or <img alt="macos" class="label" src="../_images/macos.svg" />) associated with a <img alt="bug" class="label" src="../_images/bug.svg" />, <img alt="task" class="label" src="../_images/task.svg" /> or <img alt="regression" class="label" src="../_images/regression.svg" /> issue.</p></li>
 </ul>
-</div>
-<div class="section" id="continuous-integration">
+</section>
+<section id="continuous-integration">
 <h2>Continuous integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h2>
 <p>Whenever something is pushed to the <a class="reference external" href="https://github.com/opencor/opencor">Git repository</a>, OpenCOR gets automatically built and tested on <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Windows">Windows</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Linux">Linux</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/MacOS">macOS</a>, through <a class="reference external" href="https://autotest.bioeng.auckland.ac.nz/jenkins/view/OpenCOR">Jenkins</a> at the <a class="reference external" href="https://auckland.ac.nz/en/abi.html">Auckland Bioengineering Institute</a>.</p>
 <p>Although it can technically be done, no work should be carried out on the <a class="reference external" href="https://github.com/opencor/opencor/tree/master">master branch</a>.
@@ -48,24 +48,25 @@ Work for issue <code class="docutils literal notranslate"><span class="pre">#XXX
 The work done, a pull request should be created.
 This will trigger OpenCOR to be built and tested on <a class="reference external" href="https://autotest.bioeng.auckland.ac.nz/jenkins/view/OpenCOR">Jenkins</a>.
 Assuming everything goes well, the <a class="reference external" href="https://opencor.ws/team.html">project manager</a> will decide whether to merge the pull request.</p>
-</div>
-<div class="section" id="additional-information">
+</section>
+<section id="additional-information">
 <h2>Additional information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h2>
 <p>More specific information can be found in the following pages:</p>
 <ul class="simple">
-<li><a class="reference internal" href="codingStyle.html#develop-codingstyle"><span class="std std-ref">Coding style</span></a></li>
-<li><a class="reference internal" href="plugins/index.html#develop-plugins-index"><span class="std std-ref">Plugins</span></a><ul>
-<li><a class="reference internal" href="plugins/sample.html#develop-plugins-sample"><span class="std std-ref">Sample</span></a></li>
-<li><a class="reference internal" href="plugins/sampleTools.html#develop-plugins-sampletools"><span class="std std-ref">Sample tools</span></a></li>
-<li><a class="reference internal" href="plugins/sampleView.html#develop-plugins-sampleview"><span class="std std-ref">Sample view</span></a></li>
-<li><a class="reference internal" href="plugins/sampleWindow.html#develop-plugins-samplewindow"><span class="std std-ref">Sample window</span></a></li>
+<li><p><a class="reference internal" href="codingStyle.html#develop-codingstyle"><span class="std std-ref">Coding style</span></a></p></li>
+<li><p><a class="reference internal" href="plugins/index.html#develop-plugins-index"><span class="std std-ref">Plugins</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="plugins/sample.html#develop-plugins-sample"><span class="std std-ref">Sample</span></a></p></li>
+<li><p><a class="reference internal" href="plugins/sampleTools.html#develop-plugins-sampletools"><span class="std std-ref">Sample tools</span></a></p></li>
+<li><p><a class="reference internal" href="plugins/sampleView.html#develop-plugins-sampleview"><span class="std std-ref">Sample view</span></a></p></li>
+<li><p><a class="reference internal" href="plugins/sampleWindow.html#develop-plugins-samplewindow"><span class="std std-ref">Sample window</span></a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="internationalisation.html#develop-internationalisation"><span class="std std-ref">Internationalisation</span></a></li>
-<li><a class="reference internal" href="tests.html#develop-tests"><span class="std std-ref">Tests</span></a></li>
+<li><p><a class="reference internal" href="internationalisation.html#develop-internationalisation"><span class="std std-ref">Internationalisation</span></a></p></li>
+<li><p><a class="reference internal" href="tests.html#develop-tests"><span class="std std-ref">Tests</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
 

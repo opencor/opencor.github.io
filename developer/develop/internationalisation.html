@@ -20,16 +20,16 @@
     </head>
     <body ondragstart="return false;" ondrop="return false;">
         
-  <div class="section" id="internationalisation">
+  <section id="internationalisation">
 <span id="develop-internationalisation"></span><h1>Internationalisation<a class="headerlink" href="#internationalisation" title="Permalink to this headline">¶</a></h1>
 <p>OpenCOR is a multilingual application, currently supporting both English and French.
 By default, it will try to use the system language, but if it is not supported, then English will be used instead.
 Alternatively, any of the languages supported by OpenCOR can be used.</p>
-<div class="section" id="opencor">
+<section id="opencor">
 <h2>OpenCOR<a class="headerlink" href="#opencor" title="Permalink to this headline">¶</a></h2>
 <p>There are two sets of language files to consider:</p>
 <ol class="arabic">
-<li><p class="first"><strong>Qt-specific translation files:</strong> these files are originally located under <code class="docutils literal notranslate"><span class="pre">[Qt]/[QtVersion]/[CompilerVersion]/translations/qtXXX_xx.qm</span></code> with <code class="docutils literal notranslate"><span class="pre">XXX</span></code> the type of translations (e.g. <code class="docutils literal notranslate"><span class="pre">base</span></code>) and <code class="docutils literal notranslate"><span class="pre">xx</span></code> the language code (e.g. <code class="docutils literal notranslate"><span class="pre">fr</span></code> for French).
+<li><p><strong>Qt-specific translation files:</strong> these files are originally located under <code class="docutils literal notranslate"><span class="pre">[Qt]/[QtVersion]/[CompilerVersion]/translations/qtXXX_xx.qm</span></code> with <code class="docutils literal notranslate"><span class="pre">XXX</span></code> the type of translations (e.g. <code class="docutils literal notranslate"><span class="pre">base</span></code>) and <code class="docutils literal notranslate"><span class="pre">xx</span></code> the language code (e.g. <code class="docutils literal notranslate"><span class="pre">fr</span></code> for French).
 For every language supported by OpenCOR (except for English, which is natively supported by <a class="reference external" href="https://qt.io/">Qt</a>), we need to add the corresponding <a class="reference external" href="https://qt.io/">Qt</a>-specific translation files to <a class="reference external" href="https://github.com/opencor/opencor/tree/master/res/translations"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/res/translations</span></code></a>.
 Then, an entry for those files must be added to <a class="reference external" href="https://github.com/opencor/opencor/blob/master/res/translations.qrc"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/res/translations.qrc</span></code></a>:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;file&gt;</span>translations/qt_help_xx.qm<span class="nt">&lt;/file&gt;</span>
@@ -38,7 +38,7 @@ Then, an entry for those files must be added to <a class="reference external" hr
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>OpenCOR-specific translation files:</strong> for each supported language (again, except for English), a file called <code class="docutils literal notranslate"><span class="pre">[OpenCOR]/i18n/OpenCOR_xx.ts</span></code> must be created.
+<li><p><strong>OpenCOR-specific translation files:</strong> for each supported language (again, except for English), a file called <code class="docutils literal notranslate"><span class="pre">[OpenCOR]/i18n/OpenCOR_xx.ts</span></code> must be created.
 The best way to go about it is by starting from an existing language file (e.g. <a class="reference external" href="https://github.com/opencor/opencor/tree/master/i18n/OpenCOR_fr.ts"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/i18n/OpenCOR_fr.ts</span></code></a>).
 From there, locate the following line:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TS</span> <span class="na">version=</span><span class="s">&quot;2.1&quot;</span> <span class="na">language=</span><span class="s">&quot;xx_XX&quot;</span> <span class="na">sourcelanguage=</span><span class="s">&quot;en_GB&quot;</span><span class="nt">&gt;</span>
@@ -60,8 +60,8 @@ The best way to add <a class="reference external" href="https://en.wikipedia.org
 Then, a similar mimicking work should be done in <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/mainwindow.cpp"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/mainwindow.cpp</span></code></a> and <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/mainwindow.h"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/mainwindow.h</span></code></a> (look for <code class="docutils literal notranslate"><span class="pre">actionEnglish</span></code> and <code class="docutils literal notranslate"><span class="pre">EnglishLocale</span></code>).</p>
 <blockquote>
 <div></div></blockquote>
-</div>
-<div class="section" id="plugins">
+</section>
+<section id="plugins">
 <h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
 <p>A file called <code class="docutils literal notranslate"><span class="pre">[PluginName]_xx.ts</span></code> must be created for each plugin that requires internationalisation and it must be located in <code class="docutils literal notranslate"><span class="pre">[PluginName]/i18n</span></code> (e.g. <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/i18n/Core_fr.ts"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/miscellaneous/Core/i18n/Core_fr.ts</span></code></a> for the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/">Core</a> plugin):</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
@@ -81,32 +81,32 @@ Then, a similar mimicking work should be done in <a class="reference external" h
 </pre></div>
 </div>
 <p>A plugin requires a <a class="reference internal" href="plugins/index.html#develop-plugins-index-pluginclass"><span class="std std-ref">plugin class</span></a> and for internationalisation to be supported, it needs to inherit from <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/i18ninterface.h"><code class="docutils literal notranslate"><span class="pre">I18nInterface</span></code></a>, as well as reference <code class="docutils literal notranslate"><span class="pre">OpenCOR::I18nInterface</span></code> and include the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/i18ninterface.inl"><code class="docutils literal notranslate"><span class="pre">i18ninterface.inl</span></code></a> file (e.g. <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/miscellaneous/Core/src/coreplugin.h"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/miscellaneous/Core/src/coreplugin.h</span></code></a> for the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/">Core</a> plugin):</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
-<span class="k">class</span> <span class="nc">PluginNamePlugin</span> <span class="o">:</span> <span class="p">...,</span> <span class="k">public</span> <span class="n">I18nInterface</span><span class="p">,</span> <span class="p">...</span>
-<span class="p">{</span>
-    <span class="p">...</span>
-    <span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">I18nInterface</span><span class="p">)</span>
-    <span class="p">...</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">...</span><span class="w"></span>
+<span class="k">class</span> <span class="nc">PluginNamePlugin</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">I18nInterface</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">I18nInterface</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
 
-<span class="k">public</span><span class="o">:</span>
-<span class="p">...</span>
-<span class="cp">#include</span> <span class="cpf">&quot;i18ninterface.inl&quot;</span><span class="cp"></span>
-<span class="p">...</span>
-<span class="p">};</span>
-<span class="p">...</span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;i18ninterface.inl&quot;</span><span class="cp"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The internationalisation interface has only one method that needs to be implemented (e.g. <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/miscellaneous/Core/src/coreplugin.cpp"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/miscellaneous/Core/src/coreplugin.cpp</span></code></a> for the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/">Core</a> plugin):</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">...</span><span class="w"></span>
 <span class="c1">//==============================================================================</span>
 <span class="c1">// I18n interface</span>
 <span class="c1">//==============================================================================</span>
 
-<span class="kt">void</span> <span class="n">PluginNamePlugin</span><span class="o">::</span><span class="n">retranslateUi</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">}</span>
-<span class="p">...</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">PluginNamePlugin</span><span class="o">::</span><span class="n">retranslateUi</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
 </pre></div>
 </div>
 <p><a class="reference external" href="https://qt.io/">Qt</a> objects (e.g. menus, actions) need to be retranslated either by the plugin class itself or by an object owned directly or indirectly by the plugin class (e.g. <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/miscellaneous/Core/src/coreplugin.cpp"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/miscellaneous/Core/src/coreplugin.cpp</span></code></a> for the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/">Core</a> plugin).
@@ -114,8 +114,8 @@ To help with this process, <a class="reference external" href="https://github.co
 <p>It may happen that a plugin does not own any <a class="reference external" href="https://qt.io/">Qt</a> objects, but still needs to support internationalisation.
 This is the case with our <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/widget/EditorWidget">Editor</a> widget, which implements a <a class="reference external" href="https://qt.io/">Qt</a> widget that can be both instantiated and retranslated by others.
 This means that its <code class="docutils literal notranslate"><span class="pre">retranslateUi()</span></code> method is empty (see <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/widget/EditorWidget/src/editorwidgetplugin.cpp"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/widget/EditorWidget/src/editorwidgetplugin.cpp</span></code></a>).</p>
-</div>
-</div>
+</section>
+</section>
 
 
 

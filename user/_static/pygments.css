@@ -1,5 +1,10 @@
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #eeffcc; }
+.highlight { background: #eeffcc; }
 .highlight .c { color: #408090; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #007020; font-weight: bold } /* Keyword */
@@ -66,22 +71,30 @@
 .highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
 .highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
 .highlight .vm { color: #bb60d5 } /* Name.Variable.Magic */
-.highlight .il { color: #208050 } /* Literal.Number.Integer.Long */.highlight .ctc {
-    color: #7f7f7f;
+.highlight .il { color: #208050 } /* Literal.Number.Integer.Long */html {
+    --blue-color: #00007f;
+    --cyan-color: #007f7f;
+    --green-color: #007f00;
+    --grey-color: #7f7f7f;
+    --magenta-color: #7f007f;
+}
+
+.highlight .ctc {
+    color: var(--grey-color);
     font-style: normal;
 }
 
 .highlight .ctk {
-    color: #00007f;
+    color: var(--blue-color);
     font-weight: normal;
 }
 
 .highlight .ctck {
-    color: #7f007f;
+    color: var(--magenta-color);
 }
 
 .highlight .ctn {
-    color: #007f7f;
+    color: var(--cyan-color);
 }
 
 .highlight .ctpb {
@@ -89,29 +102,29 @@
 }
 
 .highlight .ctpck {
-    color: #7f007f;
+    color: var(--magenta-color);
     font-style: italic;
 }
 
 .highlight .ctpk {
-    color: #00007f;
+    color: var(--blue-color);
     font-style: italic;
 }
 
 .highlight .ctpn {
-    color: #007f7f;
+    color: var(--cyan-color);
     font-style: italic;
 }
 
 .highlight .ctpsuk {
-    color: #7f007f;
+    color: var(--magenta-color);
     font-style: italic;
 }
 
 .highlight .cts {
-    color: #007f00;
+    color: var(--green-color);
 }
 
 .highlight .ctsuk {
-    color: #7f007f;
+    color: var(--magenta-color);
 }

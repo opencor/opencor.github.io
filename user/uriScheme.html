@@ -20,7 +20,7 @@
     </head>
     <body ondragstart="return false;" ondrop="return false;">
         
-  <div class="section" id="uri-scheme">
+  <section id="uri-scheme">
 <span id="urischeme"></span><h1>URI scheme<a class="headerlink" href="#uri-scheme" title="Permalink to this headline">¶</a></h1>
 <p>OpenCOR has its own <a class="reference external" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI scheme</a>, which gets registered the first time OpenCOR is run.
 The scheme takes the form:</p>
@@ -32,58 +32,65 @@ Both <code class="docutils literal notranslate"><span class="pre">pluginName</sp
 For a command to be executable, no modal dialog must be active in OpenCOR.</p>
 <p>The following commands are supported by OpenCOR itself:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">openPluginsDialog</span></code>: open the <a class="reference internal" href="plugins/index.html#plugins-index"><span class="std std-ref">Plugins dialog</span></a>.<ul>
-<li>Example: <a class="reference external" href="opencor://openPluginsDialog"><code class="docutils literal notranslate"><span class="pre">opencor://openPluginsDialog</span></code></a>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openPluginsDialog</span></code>: open the <a class="reference internal" href="plugins/index.html#plugins-index"><span class="std std-ref">Plugins dialog</span></a>.</p>
+<ul>
+<li><p>Example: <a class="reference external" href="opencor://openPluginsDialog"><code class="docutils literal notranslate"><span class="pre">opencor://openPluginsDialog</span></code></a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">openPreferencesDialog</span></code>: open the <a class="reference internal" href="preferences.html#preferences"><span class="std std-ref">Preferences dialog</span></a>.<ul>
-<li>Example: <a class="reference external" href="opencor://openPreferencesDialog"><code class="docutils literal notranslate"><span class="pre">opencor://openPreferencesDialog</span></code></a>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openPreferencesDialog</span></code>: open the <a class="reference internal" href="preferences.html#preferences"><span class="std std-ref">Preferences dialog</span></a>.</p>
+<ul>
+<li><p>Example: <a class="reference external" href="opencor://openPreferencesDialog"><code class="docutils literal notranslate"><span class="pre">opencor://openPreferencesDialog</span></code></a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">openAboutDialog</span></code>: open the About dialog.<ul>
-<li>Example: <a class="reference external" href="opencor://openAboutDialog"><code class="docutils literal notranslate"><span class="pre">opencor://openAboutDialog</span></code></a>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openAboutDialog</span></code>: open the About dialog.</p>
+<ul>
+<li><p>Example: <a class="reference external" href="opencor://openAboutDialog"><code class="docutils literal notranslate"><span class="pre">opencor://openAboutDialog</span></code></a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">importFile</span></code>: import a file (or open it if it cannot be imported), which <a class="reference external" href="https://en.wikipedia.org/wiki/Path_(computing)">path</a>/<a class="reference external" href="https://en.wikipedia.org/wiki/URL">URL</a> is given as an argument.<ul>
-<li>Example #1: <a class="reference external" href="opencor://importFile//home/user/file"><code class="docutils literal notranslate"><span class="pre">opencor://importFile//home/user/file</span></code></a> to import <code class="docutils literal notranslate"><span class="pre">/home/user/file</span></code>.</li>
-<li>Example #2: <a class="reference external" href="opencor://importFile/https://my.domain.com/file"><code class="docutils literal notranslate"><span class="pre">opencor://importFile/https://my.domain.com/file</span></code></a> to import <code class="docutils literal notranslate"><span class="pre">https://my.domain.com/file</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">importFile</span></code>: import a file (or open it if it cannot be imported), which <a class="reference external" href="https://en.wikipedia.org/wiki/Path_(computing)">path</a>/<a class="reference external" href="https://en.wikipedia.org/wiki/URL">URL</a> is given as an argument.</p>
+<ul>
+<li><p>Example #1: <a class="reference external" href="opencor://importFile//home/user/file"><code class="docutils literal notranslate"><span class="pre">opencor://importFile//home/user/file</span></code></a> to import <code class="docutils literal notranslate"><span class="pre">/home/user/file</span></code>.</p></li>
+<li><p>Example #2: <a class="reference external" href="opencor://importFile/https://my.domain.com/file"><code class="docutils literal notranslate"><span class="pre">opencor://importFile/https://my.domain.com/file</span></code></a> to import <code class="docutils literal notranslate"><span class="pre">https://my.domain.com/file</span></code>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">importFiles</span></code>: import several files (or open one/several of them if it/they cannot be imported), which <a class="reference external" href="https://en.wikipedia.org/wiki/Path_(computing)">path</a>/<a class="reference external" href="https://en.wikipedia.org/wiki/URL">URL</a> is given as arguments, separated by <code class="docutils literal notranslate"><span class="pre">|</span></code>.<ul>
-<li>Example #1: <a class="reference external" href="opencor://importFiles//home/user/file1|/home/user/file2"><code class="docutils literal notranslate"><span class="pre">opencor://importFiles//home/user/file1|/home/user/file2</span></code></a> to import <code class="docutils literal notranslate"><span class="pre">/home/user/file1</span></code> and <code class="docutils literal notranslate"><span class="pre">/home/user/file2</span></code>.</li>
-<li>Example #2: <a class="reference external" href="opencor://importFiles/https://my.domain.com/file1|https://my.domain.com/file2"><code class="docutils literal notranslate"><span class="pre">opencor://importFiles/https://my.domain.com/file1|https://my.domain.com/file2</span></code></a> to import <code class="docutils literal notranslate"><span class="pre">https://my.domain.com/file1</span></code> and <code class="docutils literal notranslate"><span class="pre">https://my.domain.com/file2</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">importFiles</span></code>: import several files (or open one/several of them if it/they cannot be imported), which <a class="reference external" href="https://en.wikipedia.org/wiki/Path_(computing)">path</a>/<a class="reference external" href="https://en.wikipedia.org/wiki/URL">URL</a> is given as arguments, separated by <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p>
+<ul>
+<li><p>Example #1: <a class="reference external" href="opencor://importFiles//home/user/file1|/home/user/file2"><code class="docutils literal notranslate"><span class="pre">opencor://importFiles//home/user/file1|/home/user/file2</span></code></a> to import <code class="docutils literal notranslate"><span class="pre">/home/user/file1</span></code> and <code class="docutils literal notranslate"><span class="pre">/home/user/file2</span></code>.</p></li>
+<li><p>Example #2: <a class="reference external" href="opencor://importFiles/https://my.domain.com/file1|https://my.domain.com/file2"><code class="docutils literal notranslate"><span class="pre">opencor://importFiles/https://my.domain.com/file1|https://my.domain.com/file2</span></code></a> to import <code class="docutils literal notranslate"><span class="pre">https://my.domain.com/file1</span></code> and <code class="docutils literal notranslate"><span class="pre">https://my.domain.com/file2</span></code>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">openFile</span></code>: open a file, which <a class="reference external" href="https://en.wikipedia.org/wiki/Path_(computing)">path</a>/<a class="reference external" href="https://en.wikipedia.org/wiki/URL">URL</a> is given as an argument.<ul>
-<li>Example #1: <a class="reference external" href="opencor://openFile//home/user/file"><code class="docutils literal notranslate"><span class="pre">opencor://openFile//home/user/file</span></code></a> to open <code class="docutils literal notranslate"><span class="pre">/home/user/file</span></code>.</li>
-<li>Example #2: <a class="reference external" href="opencor://openFile/https://models.physiomeproject.org/workspace/49e/rawfile/0a252e033bdf5e65d5a6490c9d3ade9035fef04e/experiments/cell-model.sedml"><code class="docutils literal notranslate"><span class="pre">opencor://openFile/https://models.physiomeproject.org/.../cell-model.sedml</span></code></a> to open <a class="reference external" href="https://models.physiomeproject.org/workspace/49e/rawfile/0a252e033bdf5e65d5a6490c9d3ade9035fef04e/experiments/cell-model.sedml"><code class="docutils literal notranslate"><span class="pre">https://models.physiomeproject.org/.../cell-model.sedml</span></code></a>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openFile</span></code>: open a file, which <a class="reference external" href="https://en.wikipedia.org/wiki/Path_(computing)">path</a>/<a class="reference external" href="https://en.wikipedia.org/wiki/URL">URL</a> is given as an argument.</p>
+<ul>
+<li><p>Example #1: <a class="reference external" href="opencor://openFile//home/user/file"><code class="docutils literal notranslate"><span class="pre">opencor://openFile//home/user/file</span></code></a> to open <code class="docutils literal notranslate"><span class="pre">/home/user/file</span></code>.</p></li>
+<li><p>Example #2: <a class="reference external" href="opencor://openFile/https://models.physiomeproject.org/workspace/49e/rawfile/0a252e033bdf5e65d5a6490c9d3ade9035fef04e/experiments/cell-model.sedml"><code class="docutils literal notranslate"><span class="pre">opencor://openFile/https://models.physiomeproject.org/.../cell-model.sedml</span></code></a> to open <a class="reference external" href="https://models.physiomeproject.org/workspace/49e/rawfile/0a252e033bdf5e65d5a6490c9d3ade9035fef04e/experiments/cell-model.sedml"><code class="docutils literal notranslate"><span class="pre">https://models.physiomeproject.org/.../cell-model.sedml</span></code></a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">openFiles</span></code>: open several files, which <a class="reference external" href="https://en.wikipedia.org/wiki/Path_(computing)">path</a>/<a class="reference external" href="https://en.wikipedia.org/wiki/URL">URL</a> is given as arguments, separated by <code class="docutils literal notranslate"><span class="pre">|</span></code>.<ul>
-<li>Example #1: <a class="reference external" href="opencor://openFiles//home/user/file1|/home/user/file2"><code class="docutils literal notranslate"><span class="pre">opencor://openFiles//home/user/file1|/home/user/file2</span></code></a> to open <code class="docutils literal notranslate"><span class="pre">/home/user/file1</span></code> and <code class="docutils literal notranslate"><span class="pre">/home/user/file2</span></code>.</li>
-<li>Example #2: <a class="reference external" href="opencor://openFiles/https://models.physiomeproject.org/workspace/49e/rawfile/0a252e033bdf5e65d5a6490c9d3ade9035fef04e/experiments/cell-model.xml|https://models.physiomeproject.org/workspace/49e/rawfile/0a252e033bdf5e65d5a6490c9d3ade9035fef04e/experiments/cell-model.sedml"><code class="docutils literal notranslate"><span class="pre">opencor://openFiles/https://models.physiomeproject.org/.../cell-model.xml|https://models.physiomeproject.org/.../cell-model.sedml</span></code></a> to open <a class="reference external" href="https://models.physiomeproject.org/workspace/49e/rawfile/0a252e033bdf5e65d5a6490c9d3ade9035fef04e/experiments/cell-model.xml"><code class="docutils literal notranslate"><span class="pre">https://models.physiomeproject.org/.../cell-model.xml</span></code></a> and <a class="reference external" href="https://models.physiomeproject.org/workspace/49e/rawfile/0a252e033bdf5e65d5a6490c9d3ade9035fef04e/experiments/cell-model.sedml"><code class="docutils literal notranslate"><span class="pre">https://models.physiomeproject.org/.../cell-model.sedml</span></code></a>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openFiles</span></code>: open several files, which <a class="reference external" href="https://en.wikipedia.org/wiki/Path_(computing)">path</a>/<a class="reference external" href="https://en.wikipedia.org/wiki/URL">URL</a> is given as arguments, separated by <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p>
+<ul>
+<li><p>Example #1: <a class="reference external" href="opencor://openFiles//home/user/file1|/home/user/file2"><code class="docutils literal notranslate"><span class="pre">opencor://openFiles//home/user/file1|/home/user/file2</span></code></a> to open <code class="docutils literal notranslate"><span class="pre">/home/user/file1</span></code> and <code class="docutils literal notranslate"><span class="pre">/home/user/file2</span></code>.</p></li>
+<li><p>Example #2: <a class="reference external" href="opencor://openFiles/https://models.physiomeproject.org/workspace/49e/rawfile/0a252e033bdf5e65d5a6490c9d3ade9035fef04e/experiments/cell-model.xml|https://models.physiomeproject.org/workspace/49e/rawfile/0a252e033bdf5e65d5a6490c9d3ade9035fef04e/experiments/cell-model.sedml"><code class="docutils literal notranslate"><span class="pre">opencor://openFiles/https://models.physiomeproject.org/.../cell-model.xml|https://models.physiomeproject.org/.../cell-model.sedml</span></code></a> to open <a class="reference external" href="https://models.physiomeproject.org/workspace/49e/rawfile/0a252e033bdf5e65d5a6490c9d3ade9035fef04e/experiments/cell-model.xml"><code class="docutils literal notranslate"><span class="pre">https://models.physiomeproject.org/.../cell-model.xml</span></code></a> and <a class="reference external" href="https://models.physiomeproject.org/workspace/49e/rawfile/0a252e033bdf5e65d5a6490c9d3ade9035fef04e/experiments/cell-model.sedml"><code class="docutils literal notranslate"><span class="pre">https://models.physiomeproject.org/.../cell-model.sedml</span></code></a>.</p></li>
 </ul>
 </li>
 </ul>
 <p>As hinted above, a command can be sent to a given plugin.
 For example, we can ask the <a class="reference internal" href="plugins/miscellaneous/core.html#plugins-miscellaneous-core-urischeme"><span class="std std-ref">Core</span></a> plugin to select a particular mode or view.</p>
 <ul class="simple">
-<li>Example #1: <a class="reference external" href="opencor://Core.selectMode/SimulationMode"><code class="docutils literal notranslate"><span class="pre">opencor://Core.selectMode/SimulationMode</span></code></a> to select the Simulation mode.</li>
-<li>Example #2: <a class="reference external" href="opencor://Core.selectView/RawTextView"><code class="docutils literal notranslate"><span class="pre">opencor://Core.selectView/RawTextView</span></code></a> to select the <a class="reference internal" href="plugins/editing/rawTextView.html#plugins-editing-rawtextview"><span class="std std-ref">Raw Text view</span></a>.</li>
+<li><p>Example #1: <a class="reference external" href="opencor://Core.selectMode/SimulationMode"><code class="docutils literal notranslate"><span class="pre">opencor://Core.selectMode/SimulationMode</span></code></a> to select the Simulation mode.</p></li>
+<li><p>Example #2: <a class="reference external" href="opencor://Core.selectView/RawTextView"><code class="docutils literal notranslate"><span class="pre">opencor://Core.selectView/RawTextView</span></code></a> to select the <a class="reference internal" href="plugins/editing/rawTextView.html#plugins-editing-rawtextview"><span class="std std-ref">Raw Text view</span></a>.</p></li>
 </ul>
-</div>
+</section>
 
 
 

@@ -20,37 +20,39 @@
     </head>
     <body ondragstart="return false;" ondrop="return false;">
         
-  <div class="section" id="prerequisites">
+  <section id="prerequisites">
 <span id="id1"></span><h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h1>
 <p>The following tools are required to develop, build , test, run and package OpenCOR:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/">Git</a>: a distributed version control system;</li>
-<li><a class="reference external" href="https://cmake.org/">CMake</a> 3.14 or later: a cross-platform build system;</li>
-<li>C++ toolchain: a set of C++ tools.
-The toolchain is different depending on the platform you are using:<ul>
-<li><strong>Windows:</strong> <a class="reference external" href="https://visualstudio.com/downloads/download-visual-studio-vs">Visual Studio Community 2017</a> ( <code class="docutils literal notranslate"><span class="pre">Desktop</span> <span class="pre">development</span> <span class="pre">with</span> <span class="pre">C++</span></code>);</li>
-<li><strong>Linux:</strong> G++ and OpenGL (<code class="docutils literal notranslate"><span class="pre">g++</span></code>, <code class="docutils literal notranslate"><span class="pre">libgl1-mesa-dev</span></code> and <code class="docutils literal notranslate"><span class="pre">libtinfo5</span></code> packages, respectively) on Ubuntu 20.04 LTS; and</li>
-<li><strong>macOS:</strong> <a class="reference external" href="https://developer.apple.com/xcode/">Xcode</a> 13 (including its <a class="reference external" href="https://developer.apple.com/downloads/?q=Command%20Line%20Tools">Command Line Tools</a>).</li>
+<li><p><a class="reference external" href="https://git-scm.com/">Git</a>: a distributed version control system;</p></li>
+<li><p><a class="reference external" href="https://cmake.org/">CMake</a> 3.14 or later: a cross-platform build system;</p></li>
+<li><p>C++ toolchain: a set of C++ tools.
+The toolchain is different depending on the platform you are using:</p>
+<ul>
+<li><p><strong>Windows:</strong> <a class="reference external" href="https://visualstudio.com/downloads/download-visual-studio-vs">Visual Studio Community 2017</a> ( <code class="docutils literal notranslate"><span class="pre">Desktop</span> <span class="pre">development</span> <span class="pre">with</span> <span class="pre">C++</span></code>);</p></li>
+<li><p><strong>Linux:</strong> G++ and OpenGL (<code class="docutils literal notranslate"><span class="pre">g++</span></code>, <code class="docutils literal notranslate"><span class="pre">libgl1-mesa-dev</span></code> and <code class="docutils literal notranslate"><span class="pre">libtinfo5</span></code> packages, respectively) on Ubuntu 20.04 LTS; and</p></li>
+<li><p><strong>macOS:</strong> <a class="reference external" href="https://developer.apple.com/xcode/">Xcode</a> 13 (including its <a class="reference external" href="https://developer.apple.com/downloads/?q=Command%20Line%20Tools">Command Line Tools</a>).</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://qt.io/">Qt</a> 5.12 LTS: a cross-platform application and UI framework (<a class="reference external" href="https://qt.io/qt-features-libraries-apis-tools-and-ide/#ide">Qt Creator</a> is its supporting IDE):<ul>
-<li><a class="reference external" href="https://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe"><strong>Windows</strong></a>;</li>
-<li><a class="reference external" href="https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run"><strong>Linux</strong></a>; and</li>
-<li><a class="reference external" href="https://download.qt.io/official_releases/online_installers/qt-unified-mac-x64-online.dmg"><strong>macOS</strong></a>.</li>
+<li><p><a class="reference external" href="https://qt.io/">Qt</a> 5.12 LTS: a cross-platform application and UI framework (<a class="reference external" href="https://qt.io/qt-features-libraries-apis-tools-and-ide/#ide">Qt Creator</a> is its supporting IDE):</p>
+<ul>
+<li><p><a class="reference external" href="https://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe"><strong>Windows</strong></a>;</p></li>
+<li><p><a class="reference external" href="https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run"><strong>Linux</strong></a>; and</p></li>
+<li><p><a class="reference external" href="https://download.qt.io/official_releases/online_installers/qt-unified-mac-x64-online.dmg"><strong>macOS</strong></a>.</p></li>
 </ul>
 </li>
 </ul>
 <p>Additionally, you may also want to rely on the following optional tools:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://ninja-build.org/">Ninja</a> 1.8.2 or later: a small build system with a focus on speed;</li>
-<li><a class="reference external" href="https://github.com/mbitsnbites/buildcache">buildcache</a>: a compiler cache;</li>
-<li><a class="reference external" href="https://github.com/frerich/clcache">clcache</a> (Windows only): a compiler cache;</li>
-<li><a class="reference external" href="https://ccache.dev/">ccache</a> (Linux/macOS only): a compiler cache;</li>
-<li><a class="reference external" href="https://clang.llvm.org/extra/clang-tidy/">Clang-Tidy</a>: a <a class="reference external" href="https://clang.llvm.org/">Clang</a>-based C++ linter tool;</li>
-<li><a class="reference external" href="https://clang.llvm.org/docs/ClangFormat.html">ClangFormat</a>: a tool to format C/C++ code; and</li>
-<li><a class="reference external" href="https://nsis.sourceforge.io/">NSIS</a> 3.0 or later (Windows only): a program to create Windows installers.</li>
+<li><p><a class="reference external" href="https://ninja-build.org/">Ninja</a> 1.8.2 or later: a small build system with a focus on speed;</p></li>
+<li><p><a class="reference external" href="https://github.com/mbitsnbites/buildcache">buildcache</a>: a compiler cache;</p></li>
+<li><p><a class="reference external" href="https://github.com/frerich/clcache">clcache</a> (Windows only): a compiler cache;</p></li>
+<li><p><a class="reference external" href="https://ccache.dev/">ccache</a> (Linux/macOS only): a compiler cache;</p></li>
+<li><p><a class="reference external" href="https://clang.llvm.org/extra/clang-tidy/">Clang-Tidy</a>: a <a class="reference external" href="https://clang.llvm.org/">Clang</a>-based C++ linter tool;</p></li>
+<li><p><a class="reference external" href="https://clang.llvm.org/docs/ClangFormat.html">ClangFormat</a>: a tool to format C/C++ code; and</p></li>
+<li><p><a class="reference external" href="https://nsis.sourceforge.io/">NSIS</a> 3.0 or later (Windows only): a program to create Windows installers.</p></li>
 </ul>
-</div>
+</section>
 
 
 

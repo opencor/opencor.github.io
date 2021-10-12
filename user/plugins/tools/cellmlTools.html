@@ -20,22 +20,24 @@
     </head>
     <body ondragstart="return false;" ondrop="return false;">
         
-  <div class="section" id="cellmltools-plugin">
+  <section id="cellmltools-plugin">
 <span id="plugins-tools-cellmltools"></span><h1>CellMLTools plugin<a class="headerlink" href="#cellmltools-plugin" title="Permalink to this headline">¶</a></h1>
 <p>The CellMLTools plugin consists of various <a class="reference external" href="https://cellml.org/">CellML</a>-related tools, which can be accessed both through the <a class="reference internal" href="../../userInterfaces/commandLineInterface.html#userinterfaces-commandlineinterface"><span class="std std-ref">CLI</span></a> and the <a class="reference internal" href="../../userInterfaces/graphicalUserInterface.html#userinterfaces-graphicaluserinterface"><span class="std std-ref">GUI</span></a>.</p>
-<div class="section" id="cellml-file-export">
+<section id="cellml-file-export">
 <h2>CellML file export<a class="headerlink" href="#cellml-file-export" title="Permalink to this headline">¶</a></h2>
 <p>A CellML file can be exported to different:</p>
 <ul class="simple">
-<li>formats:<ul>
-<li><a class="reference external" href="https://www.cellml.org/specifications/cellml_1.0">CellML 1.0</a></li>
+<li><p>formats:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.cellml.org/specifications/cellml_1.0">CellML 1.0</a></p></li>
 </ul>
 </li>
-<li>languages:<ul>
-<li><a class="reference external" href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a></li>
-<li><a class="reference external" href="https://en.wikipedia.org/wiki/Fortran#FORTRAN_77">FORTRAN 77</a></li>
-<li><a class="reference external" href="https://en.wikipedia.org/wiki/MATLAB">MATLAB</a></li>
-<li><a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a></li>
+<li><p>languages:</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Fortran#FORTRAN_77">FORTRAN 77</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/MATLAB">MATLAB</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a></p></li>
 </ul>
 </li>
 </ul>
@@ -45,15 +47,17 @@
 </div>
 <p>with <code class="docutils literal notranslate"><span class="pre">&lt;file&gt;</span></code> either a local or a remote file and <code class="docutils literal notranslate"><span class="pre">&lt;format&gt;</span></code>/<code class="docutils literal notranslate"><span class="pre">&lt;language&gt;</span></code> taking one of the following values:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;format&gt;</span></code>:<ul>
-<li><code class="docutils literal notranslate"><span class="pre">cellml_1_0</span></code>: to export a <a class="reference external" href="https://www.cellml.org/specifications/cellml_1.1">CellML 1.1</a> file to CellML 1.0</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;format&gt;</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">cellml_1_0</span></code>: to export a <a class="reference external" href="https://www.cellml.org/specifications/cellml_1.1">CellML 1.1</a> file to CellML 1.0</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;language&gt;</span></code>:<ul>
-<li><code class="docutils literal notranslate"><span class="pre">c</span></code>: to export a CellML file to C</li>
-<li><code class="docutils literal notranslate"><span class="pre">fortran_77</span></code>: to export a CellML file to FORTRAN 77</li>
-<li><code class="docutils literal notranslate"><span class="pre">matlab</span></code>: to export a CellML file to MATLAB</li>
-<li><code class="docutils literal notranslate"><span class="pre">python</span></code>: to export a CellML file to Python</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;language&gt;</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code>: to export a CellML file to C</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fortran_77</span></code>: to export a CellML file to FORTRAN 77</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matlab</span></code>: to export a CellML file to MATLAB</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span></code>: to export a CellML file to Python</p></li>
 </ul>
 </li>
 </ul>
@@ -74,16 +78,16 @@ For instance, in a MATLAB export, if a model defines an <a class="reference exte
 Then, due to 0- <em>vs.</em> 1-based indexing, that constant gets computed twice if there are other constants in the model.
 The end result is that <code class="docutils literal notranslate"><span class="pre">dX/dt</span></code> is not equal to <code class="docutils literal notranslate"><span class="pre">0</span></code> but to the value of the other constant.</div>
 </div>
-</div>
-<div class="section" id="validate-cellml-file">
+</section>
+<section id="validate-cellml-file">
 <h2>Validate CellML file<a class="headerlink" href="#validate-cellml-file" title="Permalink to this headline">¶</a></h2>
 <p>The validation of a <a class="reference external" href="https://cellml.org/">CellML</a> file can be done by entering the following command:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -c CellMLTools::validate myfile.cellml
 </pre></div>
 </div>
 <p>Both errors and warnings, if any, get listed and an exit code value of <code class="docutils literal notranslate"><span class="pre">0</span></code> means that the <a class="reference external" href="https://cellml.org/">CellML</a> file is valid (i.e. no errors were found).</p>
-</div>
-</div>
+</section>
+</section>
 
 
 

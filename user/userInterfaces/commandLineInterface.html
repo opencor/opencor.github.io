@@ -20,11 +20,11 @@
     </head>
     <body ondragstart="return false;" ondrop="return false;">
         
-  <div class="section" id="command-line-interface-cli">
+  <section id="command-line-interface-cli">
 <span id="userinterfaces-commandlineinterface"></span><h1>Command Line Interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permalink to this headline">¶</a></h1>
 <p>OpenCOR can be used from the <a class="reference external" href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a> using the <code class="docutils literal notranslate"><span class="pre">OpenCOR</span></code> script, as illustrated below.
 <a class="reference external" href="https://python.org/">Python</a>-related <a class="reference internal" href="commandLineInterfacePythonRelatedScripts.html#userinterfaces-commandlineinterfacepythonrelatedscripts"><span class="std std-ref">scripts</span></a> are also provided.</p>
-<div class="section" id="help">
+<section id="help">
 <h2>Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -h
 Usage: OpenCOR [-a|--about] [-c|--command [&lt;plugin&gt;]::&lt;command&gt; [&lt;argument&gt; ...]] [-e|--exclude &lt;plugins&gt;] [-h|--help] [-i|--include &lt;plugins&gt;] [-p|--plugins] [-r|--reset] [-s|--status] [-v|--version] [&lt;files&gt;]
@@ -39,8 +39,8 @@ Usage: OpenCOR [-a|--about] [-c|--command [&lt;plugin&gt;]::&lt;command&gt; [&lt
  -v, --version   Display the version of OpenCOR
 </pre></div>
 </div>
-</div>
-<div class="section" id="about">
+</section>
+<section id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -a
 OpenCOR Version 0.7
@@ -50,8 +50,8 @@ Copyright 2011-2019
 OpenCOR is a cross-platform modelling environment, which can be used to organise, edit, simulate and analyse CellML files.
 </pre></div>
 </div>
-</div>
-<div class="section" id="command">
+</section>
+<section id="command">
 <h2>Command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -c ::help
 Commands supported by the CellMLTextView plugin:
@@ -102,8 +102,8 @@ Commands supported by the CellMLTools plugin:
       validate &lt;file&gt;
 </pre></div>
 </div>
-</div>
-<div class="section" id="exclude">
+</section>
+<section id="exclude">
 <h2>Exclude<a class="headerlink" href="#exclude" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -e Core HelpWindow Unknown
  - Core: cannot be directly excluded.
@@ -111,8 +111,8 @@ Commands supported by the CellMLTools plugin:
  - Unknown: unknown plugin.
 </pre></div>
 </div>
-</div>
-<div class="section" id="include">
+</section>
+<section id="include">
 <h2>Include<a class="headerlink" href="#include" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -i Core HelpWindow Unknown
  - Core: cannot be directly included.
@@ -120,8 +120,8 @@ Commands supported by the CellMLTools plugin:
  - Unknown: unknown plugin.
 </pre></div>
 </div>
-</div>
-<div class="section" id="plugins">
+</section>
+<section id="plugins">
 <h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -p
 The following CLI plugins are available:
@@ -131,15 +131,15 @@ The following CLI plugins are available:
  - PythonShell: the Python shell plugin.
 </pre></div>
 </div>
-</div>
-<div class="section" id="reset">
+</section>
+<section id="reset">
 <h2>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -r
 All your settings have been reset.
 </pre></div>
 </div>
-</div>
-<div class="section" id="status">
+</section>
+<section id="status">
 <h2>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -s
 The following plugins are available:
@@ -183,15 +183,15 @@ The following plugins are available:
  - zlib: the plugin is loaded and fully functional.
 </pre></div>
 </div>
-</div>
-<div class="section" id="version">
+</section>
+<section id="version">
 <h2>Version<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -v
 OpenCOR Version 0.7
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 

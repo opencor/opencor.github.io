@@ -20,10 +20,10 @@
     </head>
     <body ondragstart="return false;" ondrop="return false;">
         
-  <div class="section" id="functional-tests">
+  <section id="functional-tests">
 <span id="functionaltests"></span><h1>Functional tests<a class="headerlink" href="#functional-tests" title="Permalink to this headline">¶</a></h1>
 <p>The following functional tests should pass before a new official version of OpenCOR can be released, and this on all supported platforms.</p>
-<div class="section" id="command-line">
+<section id="command-line">
 <h2>Command line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./OpenCOR -c CellMLTextView::import models/noble_model_1962.cellml
 ./OpenCOR -c CellMLTools::export https://models.physiomeproject.org/w/andre/HH/rawfile/957c2190e1eed47d7634613250bc274dc836b826/experiments/periodic-stimulus.xml cellml_1_0
@@ -33,111 +33,121 @@
 ./OpenCOR -c CellMLTools::export models/van_der_pol_model_1928.cellml formats/Python.xml
 </pre></div>
 </div>
-</div>
-<div class="section" id="save-reload-a-file">
+</section>
+<section id="save-reload-a-file">
 <h2>Save/reload a file<a class="headerlink" href="#save-reload-a-file" title="Permalink to this headline">¶</a></h2>
 <p>Check that a given view looks right for a given file when:</p>
 <ul class="simple">
-<li>The view <strong>is</strong> the active one in OpenCOR and:<ul>
-<li>The file is edited and saved <strong>outside</strong> of OpenCOR.</li>
-<li>The file is edited and saved <strong>in</strong> OpenCOR (if applicable).</li>
+<li><p>The view <strong>is</strong> the active one in OpenCOR and:</p>
+<ul>
+<li><p>The file is edited and saved <strong>outside</strong> of OpenCOR.</p></li>
+<li><p>The file is edited and saved <strong>in</strong> OpenCOR (if applicable).</p></li>
 </ul>
 </li>
-<li>The view <strong>is not</strong> the active one in OpenCOR and:<ul>
-<li>The file is edited and saved <strong>outside</strong> of OpenCOR.</li>
-<li>The file is edited and saved <strong>in</strong> OpenCOR (if applicable).</li>
+<li><p>The view <strong>is not</strong> the active one in OpenCOR and:</p>
+<ul>
+<li><p>The file is edited and saved <strong>outside</strong> of OpenCOR.</p></li>
+<li><p>The file is edited and saved <strong>in</strong> OpenCOR (if applicable).</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="edit-save-a-sed-ml-file-combine-archive">
+</section>
+<section id="edit-save-a-sed-ml-file-combine-archive">
 <h2>Edit/save a SED-ML file / COMBINE archive<a class="headerlink" href="#edit-save-a-sed-ml-file-combine-archive" title="Permalink to this headline">¶</a></h2>
 <p>Using the <a class="reference external" href="https://opencor.ws/user/plugins/simulation/simulationExperimentView.html">Simulation Experiment</a> view, check that we can:</p>
 <ul class="simple">
-<li>SED-ML file:<ul>
-<li>“Save” / “Save as…” a (local) SED-ML file that references a <strong>local</strong> CellML file.</li>
-<li>“Save” / “Save as…” a (local) SED-ML file that references a <strong>remote</strong> CellML file.</li>
-<li>Export a <strong>local</strong> SED-ML file to a COMBINE archive.</li>
-<li>Export a <strong>remote</strong> SED-ML file to a COMBINE archive.</li>
+<li><p>SED-ML file:</p>
+<ul>
+<li><p>“Save” / “Save as…” a (local) SED-ML file that references a <strong>local</strong> CellML file.</p></li>
+<li><p>“Save” / “Save as…” a (local) SED-ML file that references a <strong>remote</strong> CellML file.</p></li>
+<li><p>Export a <strong>local</strong> SED-ML file to a COMBINE archive.</p></li>
+<li><p>Export a <strong>remote</strong> SED-ML file to a COMBINE archive.</p></li>
 </ul>
 </li>
-<li>COMBINE archive:<ul>
-<li>“Save” / “Save as…” a (local) COMBINE archive.</li>
+<li><p>COMBINE archive:</p>
+<ul>
+<li><p>“Save” / “Save as…” a (local) COMBINE archive.</p></li>
 </ul>
 </li>
 </ul>
 <p>All of this for both a CellML 1.0 file and a set of CellML 1.1 files.</p>
-</div>
-<div class="section" id="cellml-files">
+</section>
+<section id="cellml-files">
 <h2>CellML files<a class="headerlink" href="#cellml-files" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Problematic CellML models:<ul>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/definite_integral_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/definite_integral_model.cellml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/no_voi_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/no_voi_model.cellml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/overconstrained_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/overconstrained_model.cellml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/underconstrained_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/underconstrained_model.cellml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/unsuitably_constrained_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/unsuitably_constrained_model.cellml</span></code></a></li>
+<li><p>Problematic CellML models:</p>
+<ul>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/definite_integral_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/definite_integral_model.cellml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/no_voi_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/no_voi_model.cellml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/overconstrained_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/overconstrained_model.cellml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/underconstrained_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/underconstrained_model.cellml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/unsuitably_constrained_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/unsuitably_constrained_model.cellml</span></code></a></p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li>CellML 1.0 models:<ul>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/parabola_dae_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/parabola_dae_model.cellml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/parabola_ode_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/parabola_ode_model.cellml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/parabola_variant_dae_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/parabola_variant_dae_model.cellml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/simple_dae_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/simple_dae_model.cellml</span></code></a></li>
+<li><p>CellML 1.0 models:</p>
+<ul>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/parabola_dae_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/parabola_dae_model.cellml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/parabola_ode_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/parabola_ode_model.cellml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/parabola_variant_dae_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/parabola_variant_dae_model.cellml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/simple_dae_model.cellml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/simple_dae_model.cellml</span></code></a></p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li>CellML 1.1 models:<ul>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/cellml_1_1/experiments/periodic-stimulus.xml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/cellml_1_1/experiments/periodic-stimulus.xml</span></code></a></li>
+<li><p>CellML 1.1 models:</p>
+<ul>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/cellml_1_1/experiments/periodic-stimulus.xml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/cellml/cellml_1_1/experiments/periodic-stimulus.xml</span></code></a></p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="sed-ml-files">
+</section>
+<section id="sed-ml-files">
 <h2>SED-ML files<a class="headerlink" href="#sed-ml-files" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_local.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_local.sedml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_remote.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_remote.sedml</span></code></a></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_local.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_local.sedml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_remote.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_remote.sedml</span></code></a></p></li>
 </ul>
 <ul class="simple">
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_gL_time.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_gL_time.sedml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_iK_time.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_iK_time.sedml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_iK_V.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_iK_V.sedml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_time_gL.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_time_gL.sedml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_time_iK.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_time_iK.sedml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_time_time.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_time_time.sedml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_time_V.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_time_V.sedml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_V_iK.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_V_iK.sedml</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_V_time.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_V_time.sedml</span></code></a></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_gL_time.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_gL_time.sedml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_iK_time.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_iK_time.sedml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_iK_V.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_iK_V.sedml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_time_gL.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_time_gL.sedml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_time_iK.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_time_iK.sedml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_time_time.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_time_time.sedml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_time_V.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_time_V.sedml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_V_iK.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_V_iK.sedml</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_V_time.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_V_time.sedml</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="combine-archives">
+</section>
+<section id="combine-archives">
 <h2>COMBINE archives<a class="headerlink" href="#combine-archives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Problematic COMBINE archives:<ul>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/combine/no_master_sedml_file.omex"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/combine/no_master_sedml_file.omex</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/combine/two_master_sedml_files.omex"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/combine/two_master_sedml_files.omex</span></code></a></li>
+<li><p>Problematic COMBINE archives:</p>
+<ul>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/combine/no_master_sedml_file.omex"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/combine/no_master_sedml_file.omex</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/combine/two_master_sedml_files.omex"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/combine/two_master_sedml_files.omex</span></code></a></p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li>COMBINE archives:<ul>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/combine/noble_1962.omex"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/combine/noble_1962.omex</span></code></a></li>
+<li><p>COMBINE archives:</p>
+<ul>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/combine/noble_1962.omex"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/combine/noble_1962.omex</span></code></a></p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li>COMBINE archives with DAE models:<ul>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/combine/fink_slepchenko_moraru_watras_schaff_loew_2000v2.omex"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/combine/fink_slepchenko_moraru_watras_schaff_loew_2000v2.omex</span></code></a></li>
-<li><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/combine/smith_chase_nokes_shaw_wake_2004.omex"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/combine/smith_chase_nokes_shaw_wake_2004.omex</span></code></a></li>
+<li><p>COMBINE archives with DAE models:</p>
+<ul>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/combine/fink_slepchenko_moraru_watras_schaff_loew_2000v2.omex"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/combine/fink_slepchenko_moraru_watras_schaff_loew_2000v2.omex</span></code></a></p></li>
+<li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/combine/smith_chase_nokes_shaw_wake_2004.omex"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/combine/smith_chase_nokes_shaw_wake_2004.omex</span></code></a></p></li>
 </ul>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
 

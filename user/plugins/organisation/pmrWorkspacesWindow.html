@@ -20,41 +20,41 @@
     </head>
     <body ondragstart="return false;" ondrop="return false;">
         
-  <div class="section" id="pmrworkspaceswindow-plugin">
+  <section id="pmrworkspaceswindow-plugin">
 <span id="plugins-organisation-pmrworkspaceswindow"></span><h1>PMRWorkspacesWindow plugin<a class="headerlink" href="#pmrworkspaceswindow-plugin" title="Permalink to this headline">¶</a></h1>
 <p>The PMRWorkspacesWindow plugin gives you access to your <a class="reference external" href="https://models.physiomeproject.org/">PMR</a> workspaces.
 By default, it looks as follows:</p>
 <a class="reference internal image-reference" href="../../_images/PMRWorkspacesWindowScreenshot01.png"><img alt="../../_images/PMRWorkspacesWindowScreenshot01.png" class="align-center" src="../../_images/PMRWorkspacesWindowScreenshot01.png" style="width: 407.0px; height: 230.5px;" /></a>
 <p>The following topics are covered:</p>
 <ul class="simple">
-<li><a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-instancesofpmr"><span class="std std-ref">Instances of PMR</span></a></li>
-<li><a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-specifyinstanceofpmr"><span class="std std-ref">Specify an instance of PMR</span></a></li>
-<li><a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-logontopmr"><span class="std std-ref">Log on to PMR</span></a></li>
-<li><a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-makelocalcopypublicworkspace"><span class="std std-ref">Make a local copy of a public workspace</span></a></li>
-<li><a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-createnewworkspace"><span class="std std-ref">Create a new workspace</span></a></li>
-<li><a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-synchronisewithpmr"><span class="std std-ref">Synchronise with PMR</span></a></li>
+<li><p><a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-instancesofpmr"><span class="std std-ref">Instances of PMR</span></a></p></li>
+<li><p><a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-specifyinstanceofpmr"><span class="std std-ref">Specify an instance of PMR</span></a></p></li>
+<li><p><a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-logontopmr"><span class="std std-ref">Log on to PMR</span></a></p></li>
+<li><p><a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-makelocalcopypublicworkspace"><span class="std std-ref">Make a local copy of a public workspace</span></a></p></li>
+<li><p><a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-createnewworkspace"><span class="std std-ref">Create a new workspace</span></a></p></li>
+<li><p><a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-synchronisewithpmr"><span class="std std-ref">Synchronise with PMR</span></a></p></li>
 </ul>
-<div class="section" id="instances-of-pmr">
+<section id="instances-of-pmr">
 <span id="plugins-organisation-pmrworkspaceswindow-instancesofpmr"></span><h2>Instances of PMR<a class="headerlink" href="#instances-of-pmr" title="Permalink to this headline">¶</a></h2>
 <p>There are three instances of <a class="reference external" href="https://models.physiomeproject.org/">PMR</a>:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://models.physiomeproject.org">Primary instance</a>: everything on this instance is permanent and persistent.
-It is always up and always stable.</li>
-<li><a class="reference external" href="https://staging.physiomeproject.org">Staging instance</a>: it is used for public testing/preview of PMR developments.
-Data on this instance is wiped periodically whenever a new public testing/preview of the PMR software suite is released for the required testing exercise.</li>
-<li><a class="reference external" href="https://teaching.physiomeproject.org">Teaching instance</a>: the functionality of this instance should match the primary instance, but without the data persistency guarantees.
-While data on this instance is also not permanent, any wipes to data stored will be announced on the <a class="reference external" href="https://lists.cellml.org/sympa/info/cellml-discussion">cellml-discussion mailing list</a>.</li>
+<li><p><a class="reference external" href="https://models.physiomeproject.org">Primary instance</a>: everything on this instance is permanent and persistent.
+It is always up and always stable.</p></li>
+<li><p><a class="reference external" href="https://staging.physiomeproject.org">Staging instance</a>: it is used for public testing/preview of PMR developments.
+Data on this instance is wiped periodically whenever a new public testing/preview of the PMR software suite is released for the required testing exercise.</p></li>
+<li><p><a class="reference external" href="https://teaching.physiomeproject.org">Teaching instance</a>: the functionality of this instance should match the primary instance, but without the data persistency guarantees.
+While data on this instance is also not permanent, any wipes to data stored will be announced on the <a class="reference external" href="https://lists.cellml.org/sympa/info/cellml-discussion">cellml-discussion mailing list</a>.</p></li>
 </ul>
 <p>Both the <a class="reference external" href="https://models.physiomeproject.org">primary instance</a> and the <a class="reference external" href="https://teaching.physiomeproject.org">teaching instance</a> require you to create an account before you can start interacting with them.
 On the <a class="reference external" href="https://staging.physiomeproject.org">staging instance</a>, your <a class="reference external" href="https://models.physiomeproject.org">primary instance</a> account may work, but if not then you need to create an account (on the <a class="reference external" href="https://staging.physiomeproject.org">staging instance</a>).</p>
-</div>
-<div class="section" id="specify-an-instance-of-pmr">
+</section>
+<section id="specify-an-instance-of-pmr">
 <span id="plugins-organisation-pmrworkspaceswindow-specifyinstanceofpmr"></span><h2>Specify an instance of PMR<a class="headerlink" href="#specify-an-instance-of-pmr" title="Permalink to this headline">¶</a></h2>
 <p>You can specify which instance of <a class="reference external" href="https://models.physiomeproject.org/">PMR</a> to use by clicking on the <a class="inlineicon reference internal" href="../../_images/preferences-system.png"><img alt="oxygenCategoriesPreferencesSystem" class="inlineicon" src="../../_images/preferences-system.png" style="width: 16px;" /></a> button in the tool bar, or by selecting the <code class="docutils literal notranslate"><span class="pre">Tools</span></code> | <code class="docutils literal notranslate"><span class="pre">Preferences...</span></code> menu item and then the <strong>PMRSupport</strong> section:</p>
 <a class="reference internal image-reference" href="../../_images/PMRWorkspacesWindowScreenshot02.png"><img alt="../../_images/PMRWorkspacesWindowScreenshot02.png" class="align-center" src="../../_images/PMRWorkspacesWindowScreenshot02.png" style="width: 175.5px; height: 83.0px;" /></a>
 <p>This is also where you must specify your name and email address, if you want to be able to <a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-synchronisewithpmr"><span class="std std-ref">synchronise</span></a> your workspaces with <a class="reference external" href="https://models.physiomeproject.org/">PMR</a>.</p>
-</div>
-<div class="section" id="log-on-to-pmr">
+</section>
+<section id="log-on-to-pmr">
 <span id="plugins-organisation-pmrworkspaceswindow-logontopmr"></span><h2>Log on to PMR<a class="headerlink" href="#log-on-to-pmr" title="Permalink to this headline">¶</a></h2>
 <p>To log on to <a class="reference external" href="https://models.physiomeproject.org/">PMR</a>, you need to click on the <a class="inlineicon reference internal" href="../../_images/logOn.png"><img alt="logOn" class="inlineicon" src="../../_images/logOn.png" style="width: 16px;" /></a> button in the tool bar.
 This brings up a window inviting you to log in to <a class="reference external" href="https://models.physiomeproject.org/">PMR</a>:</p>
@@ -63,8 +63,8 @@ This brings up a window inviting you to log in to <a class="reference external" 
 <a class="reference internal image-reference" href="../../_images/PMRWorkspacesWindowScreenshot04.png"><img alt="../../_images/PMRWorkspacesWindowScreenshot04.png" class="align-center" src="../../_images/PMRWorkspacesWindowScreenshot04.png" style="width: 285.0px; height: 163.75px;" /></a>
 <p>This closes the window and replaces the <a class="inlineicon reference internal" href="../../_images/logOn.png"><img alt="logOn" class="inlineicon" src="../../_images/logOn.png" style="width: 16px;" /></a> button with the <a class="inlineicon reference internal" href="../../_images/logOff.png"><img alt="logOff" class="inlineicon" src="../../_images/logOff.png" style="width: 16px;" /></a> button, and displays a message indicating that no workspaces were found:</p>
 <a class="reference internal image-reference" href="../../_images/PMRWorkspacesWindowScreenshot05.png"><img alt="../../_images/PMRWorkspacesWindowScreenshot05.png" class="align-center" src="../../_images/PMRWorkspacesWindowScreenshot05.png" style="width: 407.0px; height: 230.5px;" /></a>
-</div>
-<div class="section" id="make-a-local-copy-of-a-public-workspace">
+</section>
+<section id="make-a-local-copy-of-a-public-workspace">
 <span id="plugins-organisation-pmrworkspaceswindow-makelocalcopypublicworkspace"></span><h2>Make a local copy of a public workspace<a class="headerlink" href="#make-a-local-copy-of-a-public-workspace" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="pmrWindow.html#plugins-organisation-pmrwindow"><span class="std std-ref">PMR Window</span></a> lists published exposures, which reference a specific state of a public workspace.
 Say that you want to experiment with the <a class="reference external" href="https://ncbi.nlm.nih.gov/pmc/articles/PMC1392413/pdf/jphysiol01442-0106.pdf">Hodgkin–Huxley model</a>.
@@ -73,8 +73,8 @@ You can do so by switching to the teaching instance (see <a class="reference int
 <p>You need to provide the path to an <em>empty</em> folder.
 The local copy completed, you can double click on it to reveal its contents:</p>
 <a class="reference internal image-reference" href="../../_images/PMRWorkspacesWindowScreenshot07.png"><img alt="../../_images/PMRWorkspacesWindowScreenshot07.png" class="align-center" src="../../_images/PMRWorkspacesWindowScreenshot07.png" style="width: 407.0px; height: 230.5px;" /></a>
-</div>
-<div class="section" id="create-a-new-workspace">
+</section>
+<section id="create-a-new-workspace">
 <span id="plugins-organisation-pmrworkspaceswindow-createnewworkspace"></span><h2>Create a new workspace<a class="headerlink" href="#create-a-new-workspace" title="Permalink to this headline">¶</a></h2>
 <p>You can create a workspace by clicking on the <a class="inlineicon reference internal" href="../../_images/newFolder.png"><img alt="newFolder" class="inlineicon" src="../../_images/newFolder.png" style="width: 16px;" /></a> button in the tool bar.
 You need to provide both a name and the path to a folder (it <em>does not</em> have to be empty).
@@ -84,8 +84,8 @@ You may also provide a description:</p>
 For example, if you provide a folder containing the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/models">models</a> shipped with OpenCOR, you will get something like the following upon creation of the workspace:</p>
 <a class="reference internal image-reference" href="../../_images/PMRWorkspacesWindowScreenshot09.png"><img alt="../../_images/PMRWorkspacesWindowScreenshot09.png" class="align-center" src="../../_images/PMRWorkspacesWindowScreenshot09.png" style="width: 407.0px; height: 230.5px;" /></a>
 <p>The model files are preceded by the <a class="inlineicon reference internal" href="../../_images/waFile.png"><img alt="waFile" class="inlineicon" src="../../_images/waFile.png" style="width: 16px;" /></a> icon, meaning that they are indeed new, while the workspace folder is preceded by the <a class="inlineicon reference internal" href="../../_images/unstagedOwnedWorkspace.png"><img alt="unstagedOwnedWorkspace" class="inlineicon" src="../../_images/unstagedOwnedWorkspace.png" style="width: 16px;" /></a> icon, meaning that it is owned by you and that it contains changes that have yet to be synchronised with <a class="reference external" href="https://models.physiomeproject.org/">PMR</a> (see <a class="reference internal" href="#plugins-organisation-pmrworkspaceswindow-icons"><span class="std std-ref">below</span></a> for a full list of possible icons).</p>
-</div>
-<div class="section" id="synchronise-with-pmr">
+</section>
+<section id="synchronise-with-pmr">
 <span id="plugins-organisation-pmrworkspaceswindow-synchronisewithpmr"></span><h2>Synchronise with PMR<a class="headerlink" href="#synchronise-with-pmr" title="Permalink to this headline">¶</a></h2>
 <p>Your workspace created, you may want to syncrhonise it with <a class="reference external" href="https://models.physiomeproject.org/">PMR</a>.
 This is done by right clicking on any of the files/folders in your workspace and by selecting the <code class="docutils literal notranslate"><span class="pre">Synchronise</span> <span class="pre">Workspace</span> <span class="pre">With</span> <span class="pre">PMR...</span></code> menu item.
@@ -103,8 +103,8 @@ This allows you to see all their changes at once, be they additions (in green) o
 <a class="reference internal image-reference" href="../../_images/PMRWorkspacesWindowScreenshot13.png"><img alt="../../_images/PMRWorkspacesWindowScreenshot13.png" class="align-center" src="../../_images/PMRWorkspacesWindowScreenshot13.png" style="width: 356.0px; height: 194.0px;" /></a>
 <p>Your workspace resynchronised, you can see the history of your changes in <a class="reference external" href="https://models.physiomeproject.org/">PMR</a>:</p>
 <a class="reference internal image-reference" href="../../_images/PMRWorkspacesWindowScreenshot14.png"><img alt="../../_images/PMRWorkspacesWindowScreenshot14.png" class="align-center" src="../../_images/PMRWorkspacesWindowScreenshot14.png" style="width: 288.75px; height: 168.75px;" /></a>
-</div>
-<div class="section" id="tool-bar">
+</section>
+<section id="tool-bar">
 <h2>Tool bar<a class="headerlink" href="#tool-bar" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line"><a class="toolbar reference internal" href="../../_images/newFolder.png"><img alt="toolBarNewFolder" class="toolbar" src="../../_images/newFolder.png" style="width: 24px;" /></a>                         Create a new workspace</div>
@@ -113,101 +113,101 @@ This allows you to see all their changes at once, be they additions (in green) o
 <div class="line"><a class="toolbar reference internal" href="../../_images/logOn.png"><img alt="toolBarLogOn" class="toolbar" src="../../_images/logOn.png" style="width: 24px;" /></a>                             Log on to PMR</div>
 <div class="line"><a class="toolbar reference internal" href="../../_images/logOff.png"><img alt="toolBarLogOff" class="toolbar" src="../../_images/logOff.png" style="width: 24px;" /></a>                            Log off from PMR</div>
 </div>
-</div>
-<div class="section" id="icons">
+</section>
+<section id="icons">
 <span id="plugins-organisation-pmrworkspaceswindow-icons"></span><h2>Icons<a class="headerlink" href="#icons" title="Permalink to this headline">¶</a></h2>
 <p>Different icons are used to distinguish between the different states of a workspace:</p>
-<table border="1" class="icons docutils">
+<table class="icons docutils align-default">
 <colgroup>
-<col width="23%" />
-<col width="3%" />
-<col width="28%" />
-<col width="47%" />
+<col style="width: 23%" />
+<col style="width: 3%" />
+<col style="width: 28%" />
+<col style="width: 47%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="icon reference internal" href="../../_images/workspace.png"><img alt="iconWorkspace" class="icon" src="../../_images/workspace.png" style="width: 24px;" /></a></td>
-<td>/</td>
-<td><a class="icon reference internal" href="../../_images/ownedWorkspace.png"><img alt="iconOwnedWorkspace" class="icon" src="../../_images/ownedWorkspace.png" style="width: 24px;" /></a></td>
-<td>Public/owned workspace</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="icon reference internal" href="../../_images/workspace.png"><img alt="iconWorkspace" class="icon" src="../../_images/workspace.png" style="width: 24px;" /></a></p></td>
+<td><p>/</p></td>
+<td><p><a class="icon reference internal" href="../../_images/ownedWorkspace.png"><img alt="iconOwnedWorkspace" class="icon" src="../../_images/ownedWorkspace.png" style="width: 24px;" /></a></p></td>
+<td><p>Public/owned workspace</p></td>
 </tr>
-<tr class="row-even"><td><a class="icon reference internal" href="../../_images/stagedWorkspace.png"><img alt="iconStagedWorkspace" class="icon" src="../../_images/stagedWorkspace.png" style="width: 24px;" /></a></td>
-<td>/</td>
-<td><a class="icon reference internal" href="../../_images/stagedOwnedWorkspace.png"><img alt="iconStagedOwnedWorkspace" class="icon" src="../../_images/stagedOwnedWorkspace.png" style="width: 24px;" /></a></td>
-<td>Public/owned workspace with <em>staged</em> changes.</td>
+<tr class="row-even"><td><p><a class="icon reference internal" href="../../_images/stagedWorkspace.png"><img alt="iconStagedWorkspace" class="icon" src="../../_images/stagedWorkspace.png" style="width: 24px;" /></a></p></td>
+<td><p>/</p></td>
+<td><p><a class="icon reference internal" href="../../_images/stagedOwnedWorkspace.png"><img alt="iconStagedOwnedWorkspace" class="icon" src="../../_images/stagedOwnedWorkspace.png" style="width: 24px;" /></a></p></td>
+<td><p>Public/owned workspace with <em>staged</em> changes.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="icon reference internal" href="../../_images/unstagedWorkspace.png"><img alt="iconUnstagedWorkspace" class="icon" src="../../_images/unstagedWorkspace.png" style="width: 24px;" /></a></td>
-<td>/</td>
-<td><a class="icon reference internal" href="../../_images/unstagedOwnedWorkspace.png"><img alt="iconUnstagedOwnedWorkspace" class="icon" src="../../_images/unstagedOwnedWorkspace.png" style="width: 24px;" /></a></td>
-<td>Public/owned workspace with <em>unstaged</em> changes</td>
+<tr class="row-odd"><td><p><a class="icon reference internal" href="../../_images/unstagedWorkspace.png"><img alt="iconUnstagedWorkspace" class="icon" src="../../_images/unstagedWorkspace.png" style="width: 24px;" /></a></p></td>
+<td><p>/</p></td>
+<td><p><a class="icon reference internal" href="../../_images/unstagedOwnedWorkspace.png"><img alt="iconUnstagedOwnedWorkspace" class="icon" src="../../_images/unstagedOwnedWorkspace.png" style="width: 24px;" /></a></p></td>
+<td><p>Public/owned workspace with <em>unstaged</em> changes</p></td>
 </tr>
-<tr class="row-even"><td><a class="icon reference internal" href="../../_images/conflictWorkspace.png"><img alt="iconConflictWorkspace" class="icon" src="../../_images/conflictWorkspace.png" style="width: 24px;" /></a></td>
-<td>/</td>
-<td><a class="icon reference internal" href="../../_images/conflictOwnedWorkspace.png"><img alt="iconConflictOwnedWorkspace" class="icon" src="../../_images/conflictOwnedWorkspace.png" style="width: 24px;" /></a></td>
-<td>Public/owned workspace with <em>conflicting</em> changes</td>
+<tr class="row-even"><td><p><a class="icon reference internal" href="../../_images/conflictWorkspace.png"><img alt="iconConflictWorkspace" class="icon" src="../../_images/conflictWorkspace.png" style="width: 24px;" /></a></p></td>
+<td><p>/</p></td>
+<td><p><a class="icon reference internal" href="../../_images/conflictOwnedWorkspace.png"><img alt="iconConflictOwnedWorkspace" class="icon" src="../../_images/conflictOwnedWorkspace.png" style="width: 24px;" /></a></p></td>
+<td><p>Public/owned workspace with <em>conflicting</em> changes</p></td>
 </tr>
 </tbody>
 </table>
 <p>Similarly, different icons are used to distinguish the different states of a file:</p>
-<table border="1" class="icons docutils">
+<table class="icons docutils align-default">
 <colgroup>
-<col width="18%" />
-<col width="4%" />
-<col width="18%" />
-<col width="60%" />
+<col style="width: 18%" />
+<col style="width: 4%" />
+<col style="width: 18%" />
+<col style="width: 60%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>&#160;</td>
-<td>&#160;</td>
-<td><a class="icon reference internal" href="../../_images/file.png"><img alt="iconFile" class="icon" src="../../_images/file.png" style="width: 24px;" /></a></td>
-<td>File that is <em>clean</em></td>
+<tbody>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="icon reference internal" href="../../_images/file.png"><img alt="iconFile" class="icon" src="../../_images/file.png" style="width: 24px;" /></a></p></td>
+<td><p>File that is <em>clean</em></p></td>
 </tr>
-<tr class="row-even"><td><a class="icon reference internal" href="../../_images/iaFile.png"><img alt="iconIaFile" class="icon" src="../../_images/iaFile.png" style="width: 24px;" /></a></td>
-<td>/</td>
-<td><a class="icon reference internal" href="../../_images/waFile.png"><img alt="iconWaFile" class="icon" src="../../_images/waFile.png" style="width: 24px;" /></a></td>
-<td>Staged/unstaged file that has been <em>added</em></td>
+<tr class="row-even"><td><p><a class="icon reference internal" href="../../_images/iaFile.png"><img alt="iconIaFile" class="icon" src="../../_images/iaFile.png" style="width: 24px;" /></a></p></td>
+<td><p>/</p></td>
+<td><p><a class="icon reference internal" href="../../_images/waFile.png"><img alt="iconWaFile" class="icon" src="../../_images/waFile.png" style="width: 24px;" /></a></p></td>
+<td><p>Staged/unstaged file that has been <em>added</em></p></td>
 </tr>
-<tr class="row-odd"><td><a class="icon reference internal" href="../../_images/idFile.png"><img alt="iconIdFile" class="icon" src="../../_images/idFile.png" style="width: 24px;" /></a></td>
-<td>/</td>
-<td><a class="icon reference internal" href="../../_images/wdFile.png"><img alt="iconWdFile" class="icon" src="../../_images/wdFile.png" style="width: 24px;" /></a></td>
-<td>Staged/unstaged file that has been <em>deleted</em></td>
+<tr class="row-odd"><td><p><a class="icon reference internal" href="../../_images/idFile.png"><img alt="iconIdFile" class="icon" src="../../_images/idFile.png" style="width: 24px;" /></a></p></td>
+<td><p>/</p></td>
+<td><p><a class="icon reference internal" href="../../_images/wdFile.png"><img alt="iconWdFile" class="icon" src="../../_images/wdFile.png" style="width: 24px;" /></a></p></td>
+<td><p>Staged/unstaged file that has been <em>deleted</em></p></td>
 </tr>
-<tr class="row-even"><td><a class="icon reference internal" href="../../_images/imFile.png"><img alt="iconImFile" class="icon" src="../../_images/imFile.png" style="width: 24px;" /></a></td>
-<td>/</td>
-<td><a class="icon reference internal" href="../../_images/wmFile.png"><img alt="iconWmFile" class="icon" src="../../_images/wmFile.png" style="width: 24px;" /></a></td>
-<td>Staged/unstaged file that has been <em>modified</em></td>
+<tr class="row-even"><td><p><a class="icon reference internal" href="../../_images/imFile.png"><img alt="iconImFile" class="icon" src="../../_images/imFile.png" style="width: 24px;" /></a></p></td>
+<td><p>/</p></td>
+<td><p><a class="icon reference internal" href="../../_images/wmFile.png"><img alt="iconWmFile" class="icon" src="../../_images/wmFile.png" style="width: 24px;" /></a></p></td>
+<td><p>Staged/unstaged file that has been <em>modified</em></p></td>
 </tr>
-<tr class="row-odd"><td><a class="icon reference internal" href="../../_images/irFile.png"><img alt="iconIrFile" class="icon" src="../../_images/irFile.png" style="width: 24px;" /></a></td>
-<td>/</td>
-<td><a class="icon reference internal" href="../../_images/wrFile.png"><img alt="iconWrFile" class="icon" src="../../_images/wrFile.png" style="width: 24px;" /></a></td>
-<td>Staged/unstaged file that has been <em>renamed</em></td>
+<tr class="row-odd"><td><p><a class="icon reference internal" href="../../_images/irFile.png"><img alt="iconIrFile" class="icon" src="../../_images/irFile.png" style="width: 24px;" /></a></p></td>
+<td><p>/</p></td>
+<td><p><a class="icon reference internal" href="../../_images/wrFile.png"><img alt="iconWrFile" class="icon" src="../../_images/wrFile.png" style="width: 24px;" /></a></p></td>
+<td><p>Staged/unstaged file that has been <em>renamed</em></p></td>
 </tr>
-<tr class="row-even"><td><a class="icon reference internal" href="../../_images/itFile.png"><img alt="iconItFile" class="icon" src="../../_images/itFile.png" style="width: 24px;" /></a></td>
-<td>/</td>
-<td><a class="icon reference internal" href="../../_images/wtFile.png"><img alt="iconWtFile" class="icon" src="../../_images/wtFile.png" style="width: 24px;" /></a></td>
-<td>Staged/unstaged file which type has <em>changed</em></td>
+<tr class="row-even"><td><p><a class="icon reference internal" href="../../_images/itFile.png"><img alt="iconItFile" class="icon" src="../../_images/itFile.png" style="width: 24px;" /></a></p></td>
+<td><p>/</p></td>
+<td><p><a class="icon reference internal" href="../../_images/wtFile.png"><img alt="iconWtFile" class="icon" src="../../_images/wtFile.png" style="width: 24px;" /></a></p></td>
+<td><p>Staged/unstaged file which type has <em>changed</em></p></td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>&#160;</td>
-<td><a class="icon reference internal" href="../../_images/wuFile.png"><img alt="iconWuFile" class="icon" src="../../_images/wuFile.png" style="width: 24px;" /></a></td>
-<td>File that is <em>unreadable</em></td>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="icon reference internal" href="../../_images/wuFile.png"><img alt="iconWuFile" class="icon" src="../../_images/wuFile.png" style="width: 24px;" /></a></p></td>
+<td><p>File that is <em>unreadable</em></p></td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td>&#160;</td>
-<td><a class="icon reference internal" href="../../_images/gcFile.png"><img alt="iconGcFile" class="icon" src="../../_images/gcFile.png" style="width: 24px;" /></a></td>
-<td>File that has <em>conflicts</em></td>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p><a class="icon reference internal" href="../../_images/gcFile.png"><img alt="iconGcFile" class="icon" src="../../_images/gcFile.png" style="width: 24px;" /></a></p></td>
+<td><p>File that has <em>conflicts</em></p></td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>&#160;</td>
-<td><a class="icon reference internal" href="../../_images/giFile.png"><img alt="iconGiFile" class="icon" src="../../_images/giFile.png" style="width: 24px;" /></a></td>
-<td>File that is <em>ignored</em></td>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="icon reference internal" href="../../_images/giFile.png"><img alt="iconGiFile" class="icon" src="../../_images/giFile.png" style="width: 24px;" /></a></p></td>
+<td><p>File that is <em>ignored</em></p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Note:</strong> you should always see the <em>unstaged</em> version of an icon.
 The only case where you will see the <em>staged</em> version is if something went wrong during synchronisation.
 Indeed, synchronisation is done using <a class="reference external" href="https://git-scm.com/">Git</a> and it may be that something caused it to fail (e.g. loss of Internet connection), in which case you will likely have to fix the problem yourself, using <a class="reference external" href="https://git-scm.com/">Git</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
 

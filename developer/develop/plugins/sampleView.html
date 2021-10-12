@@ -20,10 +20,10 @@
     </head>
     <body ondragstart="return false;" ondrop="return false;">
         
-  <div class="section" id="sample-view">
+  <section id="sample-view">
 <span id="develop-plugins-sampleview"></span><h1>Sample view<a class="headerlink" href="#sample-view" title="Permalink to this headline">¶</a></h1>
 <p>The purpose of this plugin is to provide a view that gives some information about the current file.</p>
-<div class="section" id="file-structure">
+<section id="file-structure">
 <h2>File structure<a class="headerlink" href="#file-structure" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>i18n
  └─ SampleView_fr.ts
@@ -39,424 +39,240 @@ src
 CMakeLists.txt
 </pre></div>
 </div>
-</div>
-<div class="section" id="category">
+</section>
+<section id="category">
 <h2>Category<a class="headerlink" href="#category" title="Permalink to this headline">¶</a></h2>
 <p>Our plugin is part of the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/sample/">Sample</a> category, which means that its code can be found under <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleView/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/sample/SampleView/</span></code></a>.</p>
-</div>
-<div class="section" id="interfaces">
+</section>
+<section id="interfaces">
 <h2>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">¶</a></h2>
 <p>We want our plugin to interact with OpenCOR.
 This means that it needs to implement some <a class="reference internal" href="index.html#develop-plugins-index-interfaces"><span class="std std-ref">interfaces</span></a>.</p>
 <p>More specifically, we want our plugin to be a view, so we need to implement both the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/plugininterface.inl">Plugin</a> and <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/viewinterface.inl">View</a> interfaces.
 Considering the purpose of our plugin, we also need to implement the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/filehandlinginterface.inl">File handling</a> interface.
 While we are at it, we might also internationalise our plugin, which means also implementing the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/i18ninterface.inl">Internationalisation</a> interface.</p>
-</div>
-<div class="section" id="cmake-project">
+</section>
+<section id="cmake-project">
 <h2>CMake project<a class="headerlink" href="#cmake-project" title="Permalink to this headline">¶</a></h2>
 <p>As for the <a class="reference internal" href="sample.html#develop-plugins-sample"><span class="std std-ref">Sample</span></a> plugin, our plugin has a <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleView/CMakeLists.txt"><code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code></a> file, which contents is:</p>
-<div class="highlight-cmake notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">project</span><span class="p">(</span><span class="s">SampleViewPlugin</span><span class="p">)</span>
-
-<span class="c"># Add the plugin</span>
-
-<span class="nb">add_plugin</span><span class="p">(</span><span class="s">SampleView</span>
-    <span class="s">SOURCES</span>
-        <span class="s">../../filehandlinginterface.cpp</span>
-        <span class="s">../../i18ninterface.cpp</span>
-        <span class="s">../../plugininfo.cpp</span>
-        <span class="s">../../plugininterface.cpp</span>
-        <span class="s">../../viewinterface.cpp</span>
-
-        <span class="s">src/sampleviewplugin.cpp</span>
-        <span class="s">src/sampleviewwidget.cpp</span>
-    <span class="s">UIS</span>
-        <span class="s">src/sampleviewwidget.ui</span>
-    <span class="s">PLUGINS</span>
-        <span class="s">Core</span>
-<span class="p">)</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nb">project</span><span class="p">(</span><span class="s">SampleViewPlugin</span><span class="p">)</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c"># Add the plugin</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="nb">add_plugin</span><span class="p">(</span><span class="s">SampleView</span>
+<span class="linenos"> 6</span>    <span class="s">SOURCES</span>
+<span class="linenos"> 7</span>        <span class="s">../../filehandlinginterface.cpp</span>
+<span class="linenos"> 8</span>        <span class="s">../../i18ninterface.cpp</span>
+<span class="linenos"> 9</span>        <span class="s">../../plugininfo.cpp</span>
+<span class="linenos">10</span>        <span class="s">../../plugininterface.cpp</span>
+<span class="linenos">11</span>        <span class="s">../../viewinterface.cpp</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>        <span class="s">src/sampleviewplugin.cpp</span>
+<span class="linenos">14</span>        <span class="s">src/sampleviewwidget.cpp</span>
+<span class="linenos">15</span>    <span class="s">UIS</span>
+<span class="linenos">16</span>        <span class="s">src/sampleviewwidget.ui</span>
+<span class="linenos">17</span>    <span class="s">PLUGINS</span>
+<span class="linenos">18</span>        <span class="s">Core</span>
+<span class="linenos">19</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>The interfaces our plugin implements come with a <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file, so we reference them (lines 7, 8, 10 and 11).
 Then, our plugin needs the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/">Core</a> plugin, so it is referenced (line 18) using the <code class="docutils literal notranslate"><span class="pre">PLUGINS</span></code> keyword (line 17).
 Our plugin provides OpenCOR with a test view, which is implemented using various files (lines 14 and 16).
 One of those files is a <code class="docutils literal notranslate"><span class="pre">.ui</span></code> file, which is referenced using the <code class="docutils literal notranslate"><span class="pre">UIS</span></code> keyword (line 15).</p>
-</div>
-<div class="section" id="plugin-information">
+</section>
+<section id="plugin-information">
 <h2>Plugin information<a class="headerlink" href="#plugin-information" title="Permalink to this headline">¶</a></h2>
 <p>Our <a class="reference internal" href="index.html#develop-plugins-index-plugininformation"><span class="std std-ref">plugin information</span></a> can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleView/src/sampleviewplugin.cpp"><code class="docutils literal notranslate"><span class="pre">sampleviewplugin.cpp</span></code></a>, <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleView/src/sampleviewplugin.h"><code class="docutils literal notranslate"><span class="pre">sampleviewplugin.h</span></code></a> and <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleView/src/sampleviewplugin.json"><code class="docutils literal notranslate"><span class="pre">sampleviewplugin.json</span></code></a>.
 Starting with <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleView/src/sampleviewplugin.h"><code class="docutils literal notranslate"><span class="pre">sampleviewplugin.h</span></code></a>, its contents is:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;filehandlinginterface.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;i18ninterface.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;plugininfo.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;plugininterface.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;viewinterface.h&quot;</span><span class="cp"></span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="k">namespace</span> <span class="n">OpenCOR</span> <span class="p">{</span>
-<span class="k">namespace</span> <span class="n">SampleView</span> <span class="p">{</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="n">PLUGININFO_FUNC</span> <span class="n">SampleViewPluginInfo</span><span class="p">();</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="k">class</span> <span class="nc">SampleViewWidget</span><span class="p">;</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="k">class</span> <span class="nc">SampleViewPlugin</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QObject</span><span class="p">,</span> <span class="k">public</span> <span class="n">FileHandlingInterface</span><span class="p">,</span>
-                         <span class="k">public</span> <span class="n">I18nInterface</span><span class="p">,</span> <span class="k">public</span> <span class="n">PluginInterface</span><span class="p">,</span>
-                         <span class="k">public</span> <span class="n">ViewInterface</span>
-<span class="p">{</span>
-    <span class="n">Q_OBJECT</span>
-
-    <span class="n">Q_PLUGIN_METADATA</span><span class="p">(</span><span class="n">IID</span> <span class="s">&quot;OpenCOR.SampleViewPlugin&quot;</span> <span class="kt">FILE</span> <span class="s">&quot;sampleviewplugin.json&quot;</span><span class="p">)</span>
-
-    <span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">FileHandlingInterface</span><span class="p">)</span>
-    <span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">I18nInterface</span><span class="p">)</span>
-    <span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">PluginInterface</span><span class="p">)</span>
-    <span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">ViewInterface</span><span class="p">)</span>
-
-<span class="k">public</span><span class="o">:</span>
-    <span class="k">explicit</span> <span class="n">SampleViewPlugin</span><span class="p">();</span>
-
-<span class="cp">#include</span> <span class="cpf">&quot;filehandlinginterface.inl&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;i18ninterface.inl&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;plugininterface.inl&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;viewinterface.inl&quot;</span><span class="cp"></span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">SampleViewWidget</span> <span class="o">*</span><span class="n">mViewWidget</span><span class="p">;</span>
-
-    <span class="n">QString</span> <span class="n">mFileName</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="p">}</span> <span class="c1">// namespace SampleView</span>
-<span class="p">}</span> <span class="c1">// namespace OpenCOR</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">28</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;filehandlinginterface.h&quot;</span><span class="cp"></span>
+<span class="linenos">29</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;i18ninterface.h&quot;</span><span class="cp"></span>
+<span class="linenos">30</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininfo.h&quot;</span><span class="cp"></span>
+<span class="linenos">31</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininterface.h&quot;</span><span class="cp"></span>
+<span class="linenos">32</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;viewinterface.h&quot;</span><span class="cp"></span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="c1">//==============================================================================</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">37</span><span class="k">namespace</span><span class="w"> </span><span class="nn">SampleView</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">38</span>
+<span class="linenos">39</span><span class="c1">//==============================================================================</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span><span class="n">PLUGININFO_FUNC</span><span class="w"> </span><span class="nf">SampleViewPluginInfo</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="c1">//==============================================================================</span>
+<span class="linenos">44</span>
+<span class="linenos">45</span><span class="k">class</span> <span class="nc">SampleViewWidget</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">46</span>
+<span class="linenos">47</span><span class="c1">//==============================================================================</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span><span class="k">class</span> <span class="nc">SampleViewPlugin</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QObject</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">FileHandlingInterface</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">50</span><span class="w">                         </span><span class="k">public</span><span class="w"> </span><span class="n">I18nInterface</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">PluginInterface</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">51</span><span class="w">                         </span><span class="k">public</span><span class="w"> </span><span class="n">ViewInterface</span><span class="w"></span>
+<span class="linenos">52</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">53</span><span class="w">    </span><span class="n">Q_OBJECT</span><span class="w"></span>
+<span class="linenos">54</span>
+<span class="linenos">55</span><span class="w">    </span><span class="nf">Q_PLUGIN_METADATA</span><span class="p">(</span><span class="n">IID</span><span class="w"> </span><span class="s">&quot;OpenCOR.SampleViewPlugin&quot;</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="s">&quot;sampleviewplugin.json&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">56</span>
+<span class="linenos">57</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">FileHandlingInterface</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">58</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">I18nInterface</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">59</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">PluginInterface</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">60</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">ViewInterface</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">61</span>
+<span class="linenos">62</span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">63</span><span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">SampleViewPlugin</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">64</span>
+<span class="linenos">65</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;filehandlinginterface.inl&quot;</span><span class="cp"></span>
+<span class="linenos">66</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;i18ninterface.inl&quot;</span><span class="cp"></span>
+<span class="linenos">67</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininterface.inl&quot;</span><span class="cp"></span>
+<span class="linenos">68</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;viewinterface.inl&quot;</span><span class="cp"></span>
+<span class="linenos">69</span>
+<span class="linenos">70</span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">71</span><span class="w">    </span><span class="n">SampleViewWidget</span><span class="w"> </span><span class="o">*</span><span class="n">mViewWidget</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">72</span>
+<span class="linenos">73</span><span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">mFileName</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">74</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">75</span>
+<span class="linenos">76</span><span class="c1">//==============================================================================</span>
+<span class="linenos">77</span>
+<span class="linenos">78</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace SampleView</span>
+<span class="linenos">79</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace OpenCOR</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>As mentioned above, our plugin implements some interfaces, which means that their header file is included (lines 28, 29, 31 and 32).
 It also means that our plugin class inherits from those interfaces (lines 49-51), as well as makes calls to the <code class="docutils literal notranslate"><span class="pre">Q_INTERFACES()</span></code> macro to let <a class="reference external" href="https://qt.io/">Qt</a> know which interfaces it implements (lines 57-60).
 Finally, we include the inline files (lines 65-68) that declare various methods that must be implemented by our plugin (see <a class="reference internal" href="#develop-plugins-sampleview-interfacesimplementation"><span class="std std-ref">below</span></a>).
 (The rest of the class definition is specific to our plugin and is discussed <a class="reference internal" href="#develop-plugins-sampleview-pluginspecific"><span class="std std-ref">below</span></a>.)</p>
 <p>The C function that is used by OpenCOR to retrieve some <a class="reference internal" href="index.html#develop-plugins-index-basicinformation"><span class="std std-ref">basic information</span></a> about our plugin can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleView/src/sampleviewplugin.cpp"><code class="docutils literal notranslate"><span class="pre">sampleviewplugin.cpp</span></code></a>:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">PLUGININFO_FUNC</span> <span class="nf">SampleViewPluginInfo</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Descriptions</span> <span class="n">descriptions</span><span class="p">;</span>
-
-    <span class="n">descriptions</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">,</span> <span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;a plugin that provides a test view.&quot;</span><span class="p">));</span>
-    <span class="n">descriptions</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;fr&quot;</span><span class="p">,</span> <span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;une extension qui fournit une vue de test.&quot;</span><span class="p">));</span>
-
-    <span class="k">return</span> <span class="k">new</span> <span class="n">PluginInfo</span><span class="p">(</span><span class="n">PluginInfo</span><span class="o">::</span><span class="n">Category</span><span class="o">::</span><span class="n">Sample</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span>
-                          <span class="p">{</span> <span class="s">&quot;Core&quot;</span> <span class="p">},</span>
-                          <span class="n">descriptions</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">40</span><span class="n">PLUGININFO_FUNC</span><span class="w"> </span><span class="nf">SampleViewPluginInfo</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">41</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">42</span><span class="w">    </span><span class="n">Descriptions</span><span class="w"> </span><span class="n">descriptions</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="w">    </span><span class="n">descriptions</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;a plugin that provides a test view.&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="linenos">45</span><span class="w">    </span><span class="n">descriptions</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;fr&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;une extension qui fournit une vue de test.&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="linenos">46</span>
+<span class="linenos">47</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PluginInfo</span><span class="p">(</span><span class="n">PluginInfo</span><span class="o">::</span><span class="n">Category</span><span class="o">::</span><span class="n">Sample</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">48</span><span class="w">                          </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Core&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="linenos">49</span><span class="w">                          </span><span class="n">descriptions</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">50</span><span class="p">}</span><span class="w"></span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>As can be seen, our plugin is selectable by the user, but it does not offer <a class="reference external" href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a> support (line 47).
 It also has a direct dependency on the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/">Core</a> plugin (line 48).</p>
-</div>
-<div class="section" id="interfaces-implementation">
+</section>
+<section id="interfaces-implementation">
 <span id="develop-plugins-sampleview-interfacesimplementation"></span><h2>Interfaces implementation<a class="headerlink" href="#interfaces-implementation" title="Permalink to this headline">¶</a></h2>
 <p>The implementation of the interfaces’ various methods can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleView/src/sampleviewplugin.cpp"><code class="docutils literal notranslate"><span class="pre">sampleviewplugin.cpp</span></code></a>.
 The methods are grouped by interface and are ordered alphabetically.</p>
 <p>We start with the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/filehandlinginterface.inl">File handling</a> interface:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 60
- 61
- 62
- 63
- 64
- 65
- 66
- 67
- 68
- 69
- 70
- 71
- 72
- 73
- 74
- 75
- 76
- 77
- 78
- 79
- 80
- 81
- 82
- 83
- 84
- 85
- 86
- 87
- 88
- 89
- 90
- 91
- 92
- 93
- 94
- 95
- 96
- 97
- 98
- 99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">//==============================================================================</span>
-<span class="c1">// File handling interface</span>
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">bool</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">importFile</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span>
-
-    <span class="c1">// We don&#39;t handle this interface...</span>
-
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">bool</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">saveFile</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pOldFileName</span><span class="p">,</span>
-                                <span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pNewFileName</span><span class="p">,</span>
-                                <span class="kt">bool</span> <span class="o">&amp;</span><span class="n">pNeedFeedback</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pOldFileName</span><span class="p">)</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pNewFileName</span><span class="p">)</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pNeedFeedback</span><span class="p">)</span>
-
-    <span class="c1">// We don&#39;t handle this interface...</span>
-
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">fileOpened</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span>
-
-    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">filePermissionsChanged</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// The given file has had its permissions changed, so update our view</span>
-    <span class="c1">// widget, if needed</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">pFileName</span> <span class="o">==</span> <span class="n">mFileName</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">mViewWidget</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">pFileName</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">fileModified</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span>
-
-    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">fileSaved</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span>
-
-    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">fileReloaded</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// The given file has been reloaded, so update our view widget, if needed</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">pFileName</span> <span class="o">==</span> <span class="n">mFileName</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">mViewWidget</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">pFileName</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">fileRenamed</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pOldFileName</span><span class="p">,</span>
-                                   <span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pNewFileName</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pOldFileName</span><span class="p">)</span>
-
-    <span class="c1">// The given file has been renamed, so update our view widget, if needed</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">pOldFileName</span> <span class="o">==</span> <span class="n">mFileName</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">mFileName</span> <span class="o">=</span> <span class="n">pNewFileName</span><span class="p">;</span>
-
-        <span class="n">mViewWidget</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">pNewFileName</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">fileClosed</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// The given file has been closed, so update our internals, if needed</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">pFileName</span> <span class="o">==</span> <span class="n">mFileName</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">mFileName</span> <span class="o">=</span> <span class="n">QString</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 60</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 61</span><span class="c1">// File handling interface</span>
+<span class="linenos"> 62</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 63</span>
+<span class="linenos"> 64</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleViewPlugin::importFile</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 65</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 66</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 67</span>
+<span class="linenos"> 68</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos"> 69</span>
+<span class="linenos"> 70</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 71</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 72</span>
+<span class="linenos"> 73</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 74</span>
+<span class="linenos"> 75</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleViewPlugin::saveFile</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pOldFileName</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 76</span><span class="w">                                </span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pNewFileName</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 77</span><span class="w">                                </span><span class="kt">bool</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pNeedFeedback</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 78</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 79</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pOldFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 80</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pNewFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 81</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pNeedFeedback</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos"> 84</span>
+<span class="linenos"> 85</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 86</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 87</span>
+<span class="linenos"> 88</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 89</span>
+<span class="linenos"> 90</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::fileOpened</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 91</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 92</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 93</span>
+<span class="linenos"> 94</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos"> 95</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::filePermissionsChanged</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">100</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">101</span><span class="w">    </span><span class="c1">// The given file has had its permissions changed, so update our view</span>
+<span class="linenos">102</span><span class="w">    </span><span class="c1">// widget, if needed</span>
+<span class="linenos">103</span>
+<span class="linenos">104</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pFileName</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">mFileName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">105</span><span class="w">        </span><span class="n">mViewWidget</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">pFileName</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">106</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">107</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">108</span>
+<span class="linenos">109</span><span class="c1">//==============================================================================</span>
+<span class="linenos">110</span>
+<span class="linenos">111</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::fileModified</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">112</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">113</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">114</span>
+<span class="linenos">115</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">116</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">117</span>
+<span class="linenos">118</span><span class="c1">//==============================================================================</span>
+<span class="linenos">119</span>
+<span class="linenos">120</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::fileSaved</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">121</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">122</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">123</span>
+<span class="linenos">124</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">125</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">126</span>
+<span class="linenos">127</span><span class="c1">//==============================================================================</span>
+<span class="linenos">128</span>
+<span class="linenos">129</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::fileReloaded</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">130</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">131</span><span class="w">    </span><span class="c1">// The given file has been reloaded, so update our view widget, if needed</span>
+<span class="linenos">132</span>
+<span class="linenos">133</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pFileName</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">mFileName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">134</span><span class="w">        </span><span class="n">mViewWidget</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">pFileName</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">135</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">136</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">137</span>
+<span class="linenos">138</span><span class="c1">//==============================================================================</span>
+<span class="linenos">139</span>
+<span class="linenos">140</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::fileRenamed</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pOldFileName</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">141</span><span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pNewFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">142</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">143</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pOldFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">144</span>
+<span class="linenos">145</span><span class="w">    </span><span class="c1">// The given file has been renamed, so update our view widget, if needed</span>
+<span class="linenos">146</span>
+<span class="linenos">147</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pOldFileName</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">mFileName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">148</span><span class="w">        </span><span class="n">mFileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pNewFileName</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">149</span>
+<span class="linenos">150</span><span class="w">        </span><span class="n">mViewWidget</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">pNewFileName</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">151</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">152</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">153</span>
+<span class="linenos">154</span><span class="c1">//==============================================================================</span>
+<span class="linenos">155</span>
+<span class="linenos">156</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::fileClosed</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">157</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">158</span><span class="w">    </span><span class="c1">// The given file has been closed, so update our internals, if needed</span>
+<span class="linenos">159</span>
+<span class="linenos">160</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pFileName</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">mFileName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">161</span><span class="w">        </span><span class="n">mFileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">QString</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">162</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">163</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">164</span>
+<span class="linenos">165</span><span class="c1">//==============================================================================</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>Our plugin provides a view and, as such, should at least handle some of the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/filehandlinginterface.inl">File handling</a> interface’s methods.
 Here, we want our plugin to provide some information about the current file, so we do not need to implement <code class="docutils literal notranslate"><span class="pre">importFile()</span></code> (lines 64-71) <code class="docutils literal notranslate"><span class="pre">saveFile()</span></code> (lines 75-86), <code class="docutils literal notranslate"><span class="pre">fileOpened()</span></code> (lines 90-95), <code class="docutils literal notranslate"><span class="pre">fileModified()</span></code> (lines 111-116) and <code class="docutils literal notranslate"><span class="pre">fileSaved()</span></code> (lines 120-125).
 On the other hand, should the current file have its permissions changed or be renamed, then we want to update the information presented in our view.
@@ -464,659 +280,351 @@ We do this by implementing the <code class="docutils literal notranslate"><span 
 The same holds true if the current file gets renamed, in which case we also want to update <code class="docutils literal notranslate"><span class="pre">mFileName</span></code> (see <code class="docutils literal notranslate"><span class="pre">fileRenamed()</span></code>; lines 140-152).
 Finally, we want to reset <code class="docutils literal notranslate"><span class="pre">mFileName</span></code> if the current file gets closed (see <code class="docutils literal notranslate"><span class="pre">fileClosed()</span></code>; lines 156-163).</p>
 <p>Next, we have the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/i18ninterface.inl">Internationalisation</a> interface:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">//==============================================================================</span>
-<span class="c1">// I18n interface</span>
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">retranslateUi</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// Retranslate our view widget, if needed</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">mFileName</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span> <span class="p">{</span>
-        <span class="n">mViewWidget</span><span class="o">-&gt;</span><span class="n">retranslateUi</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">165</span><span class="c1">//==============================================================================</span>
+<span class="linenos">166</span><span class="c1">// I18n interface</span>
+<span class="linenos">167</span><span class="c1">//==============================================================================</span>
+<span class="linenos">168</span>
+<span class="linenos">169</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::retranslateUi</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">170</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">171</span><span class="w">    </span><span class="c1">// Retranslate our view widget, if needed</span>
+<span class="linenos">172</span>
+<span class="linenos">173</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">mFileName</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">174</span><span class="w">        </span><span class="n">mViewWidget</span><span class="o">-&gt;</span><span class="n">retranslateUi</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">175</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">176</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">177</span>
+<span class="linenos">178</span><span class="c1">//==============================================================================</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>If some information is being shown for a file, then we ask our view to retranslate itself.</p>
 <p>After the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/i18ninterface.inl">Internationalisation</a> interface, we have the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/plugininterface.inl">Plugin</a> interface:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
-237
-238
-239
-240
-241
-242
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">//==============================================================================</span>
-<span class="c1">// Plugin interface</span>
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">bool</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">definesPluginInterfaces</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// We don&#39;t handle this interface...</span>
-
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">bool</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">pluginInterfacesOk</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">,</span>
-                                          <span class="n">QObject</span> <span class="o">*</span><span class="n">pInstance</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pInstance</span><span class="p">)</span>
-
-    <span class="c1">// We don&#39;t handle this interface...</span>
-
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">initializePlugin</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// Create our Sample view widget</span>
-
-    <span class="n">mViewWidget</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SampleViewWidget</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">());</span>
-
-    <span class="c1">// Hide our Sample view widget since it may not initially be shown in our</span>
-    <span class="c1">// central widget</span>
-
-    <span class="n">mViewWidget</span><span class="o">-&gt;</span><span class="n">setVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">finalizePlugin</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">pluginsInitialized</span><span class="p">(</span><span class="k">const</span> <span class="n">Plugins</span> <span class="o">&amp;</span><span class="n">pLoadedPlugins</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pLoadedPlugins</span><span class="p">)</span>
-
-    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">loadSettings</span><span class="p">(</span><span class="n">QSettings</span> <span class="o">&amp;</span><span class="n">pSettings</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pSettings</span><span class="p">)</span>
-
-    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">saveSettings</span><span class="p">(</span><span class="n">QSettings</span> <span class="o">&amp;</span><span class="n">pSettings</span><span class="p">)</span> <span class="k">const</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pSettings</span><span class="p">)</span>
-
-    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">handleUrl</span><span class="p">(</span><span class="k">const</span> <span class="n">QUrl</span> <span class="o">&amp;</span><span class="n">pUrl</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pUrl</span><span class="p">)</span>
-
-    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">178</span><span class="c1">//==============================================================================</span>
+<span class="linenos">179</span><span class="c1">// Plugin interface</span>
+<span class="linenos">180</span><span class="c1">//==============================================================================</span>
+<span class="linenos">181</span>
+<span class="linenos">182</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleViewPlugin::definesPluginInterfaces</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">183</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">184</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">185</span>
+<span class="linenos">186</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">187</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">188</span>
+<span class="linenos">189</span><span class="c1">//==============================================================================</span>
+<span class="linenos">190</span>
+<span class="linenos">191</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleViewPlugin::pluginInterfacesOk</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">192</span><span class="w">                                          </span><span class="n">QObject</span><span class="w"> </span><span class="o">*</span><span class="n">pInstance</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">193</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">194</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">195</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pInstance</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">196</span>
+<span class="linenos">197</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">198</span>
+<span class="linenos">199</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">200</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">201</span>
+<span class="linenos">202</span><span class="c1">//==============================================================================</span>
+<span class="linenos">203</span>
+<span class="linenos">204</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::initializePlugin</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">205</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">206</span><span class="w">    </span><span class="c1">// Create our Sample view widget</span>
+<span class="linenos">207</span>
+<span class="linenos">208</span><span class="w">    </span><span class="n">mViewWidget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SampleViewWidget</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">209</span>
+<span class="linenos">210</span><span class="w">    </span><span class="c1">// Hide our Sample view widget since it may not initially be shown in our</span>
+<span class="linenos">211</span><span class="w">    </span><span class="c1">// central widget</span>
+<span class="linenos">212</span>
+<span class="linenos">213</span><span class="w">    </span><span class="n">mViewWidget</span><span class="o">-&gt;</span><span class="n">setVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">214</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">215</span>
+<span class="linenos">216</span><span class="c1">//==============================================================================</span>
+<span class="linenos">217</span>
+<span class="linenos">218</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::finalizePlugin</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">219</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">220</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">221</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">222</span>
+<span class="linenos">223</span><span class="c1">//==============================================================================</span>
+<span class="linenos">224</span>
+<span class="linenos">225</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::pluginsInitialized</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Plugins</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pLoadedPlugins</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">226</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">227</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pLoadedPlugins</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">228</span>
+<span class="linenos">229</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">230</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">231</span>
+<span class="linenos">232</span><span class="c1">//==============================================================================</span>
+<span class="linenos">233</span>
+<span class="linenos">234</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::loadSettings</span><span class="p">(</span><span class="n">QSettings</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pSettings</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">235</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">236</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pSettings</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">237</span>
+<span class="linenos">238</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">239</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">240</span>
+<span class="linenos">241</span><span class="c1">//==============================================================================</span>
+<span class="linenos">242</span>
+<span class="linenos">243</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::saveSettings</span><span class="p">(</span><span class="n">QSettings</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pSettings</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="linenos">244</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">245</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pSettings</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">246</span>
+<span class="linenos">247</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">248</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">249</span>
+<span class="linenos">250</span><span class="c1">//==============================================================================</span>
+<span class="linenos">251</span>
+<span class="linenos">252</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::handleUrl</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QUrl</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pUrl</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">253</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">254</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pUrl</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">255</span>
+<span class="linenos">256</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">257</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">258</span>
+<span class="linenos">259</span><span class="c1">//==============================================================================</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>The only method of interest to our plugin is <code class="docutils literal notranslate"><span class="pre">initializePlugin()</span></code> (lines 204-214), which is where we initialise <code class="docutils literal notranslate"><span class="pre">mViewWidget</span></code>, our view.
 All the other methods (<code class="docutils literal notranslate"><span class="pre">definesPluginInterfaces()</span></code>, <code class="docutils literal notranslate"><span class="pre">pluginInterfacesOk()</span></code>, <code class="docutils literal notranslate"><span class="pre">finalizePlugin()</span></code>, <code class="docutils literal notranslate"><span class="pre">pluginsInitialized()</span></code>, <code class="docutils literal notranslate"><span class="pre">loadSettings()</span></code>, <code class="docutils literal notranslate"><span class="pre">saveSettings()</span></code> and <code class="docutils literal notranslate"><span class="pre">handleUrl()</span></code>) are left empty.</p>
 <p>Finally, we have the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/viewinterface.inl">View</a> interface:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>259
-260
-261
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271
-272
-273
-274
-275
-276
-277
-278
-279
-280
-281
-282
-283
-284
-285
-286
-287
-288
-289
-290
-291
-292
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
-313
-314
-315
-316
-317
-318
-319
-320
-321
-322
-323
-324
-325
-326
-327
-328
-329
-330
-331
-332
-333
-334
-335
-336
-337
-338
-339
-340
-341
-342
-343</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">//==============================================================================</span>
-<span class="c1">// View interface</span>
-<span class="c1">//==============================================================================</span>
-
-<span class="n">ViewInterface</span><span class="o">::</span><span class="n">Mode</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">viewMode</span><span class="p">()</span> <span class="k">const</span>
-<span class="p">{</span>
-    <span class="c1">// Return our mode</span>
-
-    <span class="k">return</span> <span class="n">ViewInterface</span><span class="o">::</span><span class="n">Mode</span><span class="o">::</span><span class="n">Sample</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="n">QStringList</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">viewMimeTypes</span><span class="p">()</span> <span class="k">const</span>
-<span class="p">{</span>
-    <span class="c1">// Return the MIME types we support, i.e. any in our case</span>
-
-    <span class="k">return</span> <span class="p">{};</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="n">QString</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">viewMimeType</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span> <span class="k">const</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span>
-
-    <span class="c1">// Return the MIME type for the given file</span>
-
-    <span class="k">return</span> <span class="p">{};</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="n">QString</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">viewDefaultFileExtension</span><span class="p">()</span> <span class="k">const</span>
-<span class="p">{</span>
-    <span class="c1">// Return the default file extension we support</span>
-
-    <span class="k">return</span> <span class="p">{};</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="n">QWidget</span> <span class="o">*</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">viewWidget</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Update and return our Sample view widget using the given file</span>
-
-    <span class="n">mFileName</span> <span class="o">=</span> <span class="n">pFileName</span><span class="p">;</span>
-
-    <span class="n">mViewWidget</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">pFileName</span><span class="p">);</span>
-
-    <span class="k">return</span> <span class="n">mViewWidget</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">removeViewWidget</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span>
-
-    <span class="c1">// Reset our internals</span>
-
-    <span class="n">mFileName</span> <span class="o">=</span> <span class="n">QString</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="n">QString</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">viewName</span><span class="p">()</span> <span class="k">const</span>
-<span class="p">{</span>
-    <span class="c1">// Return our Sample view&#39;s name</span>
-
-    <span class="k">return</span> <span class="n">tr</span><span class="p">(</span><span class="s">&quot;Sample&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="n">QIcon</span> <span class="n">SampleViewPlugin</span><span class="o">::</span><span class="n">fileTabIcon</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span> <span class="k">const</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span>
-
-    <span class="c1">// We don&#39;t handle this interface...</span>
-
-    <span class="k">return</span> <span class="p">{};</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">259</span><span class="c1">//==============================================================================</span>
+<span class="linenos">260</span><span class="c1">// View interface</span>
+<span class="linenos">261</span><span class="c1">//==============================================================================</span>
+<span class="linenos">262</span>
+<span class="linenos">263</span><span class="n">ViewInterface</span><span class="o">::</span><span class="n">Mode</span><span class="w"> </span><span class="nf">SampleViewPlugin::viewMode</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="linenos">264</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">265</span><span class="w">    </span><span class="c1">// Return our mode</span>
+<span class="linenos">266</span>
+<span class="linenos">267</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ViewInterface</span><span class="o">::</span><span class="n">Mode</span><span class="o">::</span><span class="n">Sample</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">268</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">269</span>
+<span class="linenos">270</span><span class="c1">//==============================================================================</span>
+<span class="linenos">271</span>
+<span class="linenos">272</span><span class="n">QStringList</span><span class="w"> </span><span class="nf">SampleViewPlugin::viewMimeTypes</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="linenos">273</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">274</span><span class="w">    </span><span class="c1">// Return the MIME types we support, i.e. any in our case</span>
+<span class="linenos">275</span>
+<span class="linenos">276</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="linenos">277</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">278</span>
+<span class="linenos">279</span><span class="c1">//==============================================================================</span>
+<span class="linenos">280</span>
+<span class="linenos">281</span><span class="n">QString</span><span class="w"> </span><span class="nf">SampleViewPlugin::viewMimeType</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="linenos">282</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">283</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">284</span>
+<span class="linenos">285</span><span class="w">    </span><span class="c1">// Return the MIME type for the given file</span>
+<span class="linenos">286</span>
+<span class="linenos">287</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="linenos">288</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">289</span>
+<span class="linenos">290</span><span class="c1">//==============================================================================</span>
+<span class="linenos">291</span>
+<span class="linenos">292</span><span class="n">QString</span><span class="w"> </span><span class="nf">SampleViewPlugin::viewDefaultFileExtension</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="linenos">293</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">294</span><span class="w">    </span><span class="c1">// Return the default file extension we support</span>
+<span class="linenos">295</span>
+<span class="linenos">296</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="linenos">297</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">298</span>
+<span class="linenos">299</span><span class="c1">//==============================================================================</span>
+<span class="linenos">300</span>
+<span class="linenos">301</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">SampleViewPlugin::viewWidget</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">302</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">303</span><span class="w">    </span><span class="c1">// Update and return our Sample view widget using the given file</span>
+<span class="linenos">304</span>
+<span class="linenos">305</span><span class="w">    </span><span class="n">mFileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pFileName</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">306</span>
+<span class="linenos">307</span><span class="w">    </span><span class="n">mViewWidget</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">pFileName</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">308</span>
+<span class="linenos">309</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mViewWidget</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">310</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">311</span>
+<span class="linenos">312</span><span class="c1">//==============================================================================</span>
+<span class="linenos">313</span>
+<span class="linenos">314</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleViewPlugin::removeViewWidget</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">315</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">316</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">317</span>
+<span class="linenos">318</span><span class="w">    </span><span class="c1">// Reset our internals</span>
+<span class="linenos">319</span>
+<span class="linenos">320</span><span class="w">    </span><span class="n">mFileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">QString</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">321</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">322</span>
+<span class="linenos">323</span><span class="c1">//==============================================================================</span>
+<span class="linenos">324</span>
+<span class="linenos">325</span><span class="n">QString</span><span class="w"> </span><span class="nf">SampleViewPlugin::viewName</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="linenos">326</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">327</span><span class="w">    </span><span class="c1">// Return our Sample view&#39;s name</span>
+<span class="linenos">328</span>
+<span class="linenos">329</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Sample&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">330</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">331</span>
+<span class="linenos">332</span><span class="c1">//==============================================================================</span>
+<span class="linenos">333</span>
+<span class="linenos">334</span><span class="n">QIcon</span><span class="w"> </span><span class="nf">SampleViewPlugin::fileTabIcon</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="linenos">335</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">336</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">337</span>
+<span class="linenos">338</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">339</span>
+<span class="linenos">340</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="linenos">341</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">342</span>
+<span class="linenos">343</span><span class="c1">//==============================================================================</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>Our plugin provides a view, so OpenCOR needs to know about its name (see <code class="docutils literal notranslate"><span class="pre">viewName()</span></code>; lines 325-330), its type (see <code class="docutils literal notranslate"><span class="pre">viewMode()</span></code>; lines 263-268), the MIME types it supports (see <code class="docutils literal notranslate"><span class="pre">viewMimeTypes()</span></code>; lines 272-277), the MIME type supported by a given file (see <code class="docutils literal notranslate"><span class="pre">viewMimeType()</span></code>; lines 281-288), the default file extension it supports (see <code class="docutils literal notranslate"><span class="pre">viewDefaultFileExtension()</span></code>; lines 292-297) and whether it needs a special tab icon (see <code class="docutils literal notranslate"><span class="pre">fileTabIcon()</span></code>; lines 334-341).
 OpenCOR also needs to know the widget that is used for the view and this for a given file (see <code class="docutils literal notranslate"><span class="pre">viewWidget()</span></code>; lines 301-310).
 Note that our plugin uses only one view widget (and updates its contents based on the file that is currently active), but it might perfectly use one per file.
 Finally, our plugin needs to handle the case where a view widget is to be removed (see <code class="docutils literal notranslate"><span class="pre">removeViewWidget()</span></code>; lines 314-321), which happens whenever a file gets closed.</p>
-</div>
-<div class="section" id="plugin-specific">
+</section>
+<section id="plugin-specific">
 <span id="develop-plugins-sampleview-pluginspecific"></span><h2>Plugin specific<a class="headerlink" href="#plugin-specific" title="Permalink to this headline">¶</a></h2>
 <p>Some extra work is needed to get our plugin to do what we want, and this is done via the <code class="docutils literal notranslate"><span class="pre">SampleViewWidget</span></code> class in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleView/src/sampleviewwidget.h"><code class="docutils literal notranslate"><span class="pre">sampleviewwidget.h</span></code></a>:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;viewwidget.h&quot;</span><span class="cp"></span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="k">namespace</span> <span class="n">Ui</span> <span class="p">{</span>
-    <span class="k">class</span> <span class="nc">SampleViewWidget</span><span class="p">;</span>
-<span class="p">}</span> <span class="c1">// namespace Ui</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="k">namespace</span> <span class="n">OpenCOR</span> <span class="p">{</span>
-<span class="k">namespace</span> <span class="n">SampleView</span> <span class="p">{</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="k">class</span> <span class="nc">SampleViewWidget</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Core</span><span class="o">::</span><span class="n">ViewWidget</span>
-<span class="p">{</span>
-    <span class="n">Q_OBJECT</span>
-
-<span class="k">public</span><span class="o">:</span>
-    <span class="k">explicit</span> <span class="n">SampleViewWidget</span><span class="p">(</span><span class="n">QWidget</span> <span class="o">*</span><span class="n">pParent</span><span class="p">);</span>
-    <span class="o">~</span><span class="n">SampleViewWidget</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
-
-    <span class="kt">void</span> <span class="nf">retranslateUi</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
-
-    <span class="n">QWidget</span> <span class="o">*</span> <span class="nf">widget</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
-
-    <span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">);</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">Ui</span><span class="o">::</span><span class="n">SampleViewWidget</span> <span class="o">*</span><span class="n">mGui</span><span class="p">;</span>
-
-    <span class="n">QString</span> <span class="n">mFileName</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="p">}</span> <span class="c1">// namespace SampleView</span>
-<span class="p">}</span> <span class="c1">// namespace OpenCOR</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">28</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;viewwidget.h&quot;</span><span class="cp"></span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="c1">//==============================================================================</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span><span class="k">namespace</span><span class="w"> </span><span class="nn">Ui</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">33</span><span class="w">    </span><span class="k">class</span> <span class="nc">SampleViewWidget</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">34</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace Ui</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="c1">//==============================================================================</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">39</span><span class="k">namespace</span><span class="w"> </span><span class="nn">SampleView</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">40</span>
+<span class="linenos">41</span><span class="c1">//==============================================================================</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="k">class</span> <span class="nc">SampleViewWidget</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Core</span><span class="o">::</span><span class="n">ViewWidget</span><span class="w"></span>
+<span class="linenos">44</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">45</span><span class="w">    </span><span class="n">Q_OBJECT</span><span class="w"></span>
+<span class="linenos">46</span>
+<span class="linenos">47</span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">48</span><span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">SampleViewWidget</span><span class="p">(</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="n">pParent</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">49</span><span class="w">    </span><span class="o">~</span><span class="n">SampleViewWidget</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">50</span>
+<span class="linenos">51</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">retranslateUi</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="w">    </span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">widget</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">54</span>
+<span class="linenos">55</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">56</span>
+<span class="linenos">57</span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">58</span><span class="w">    </span><span class="n">Ui</span><span class="o">::</span><span class="n">SampleViewWidget</span><span class="w"> </span><span class="o">*</span><span class="n">mGui</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">59</span>
+<span class="linenos">60</span><span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">mFileName</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">61</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">62</span>
+<span class="linenos">63</span><span class="c1">//==============================================================================</span>
+<span class="linenos">64</span>
+<span class="linenos">65</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace SampleView</span>
+<span class="linenos">66</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace OpenCOR</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">SampleViewWidget</span></code> inherits from <code class="docutils literal notranslate"><span class="pre">Core::ViewWidget</span></code>, which is defined in the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/">Core</a> plugin and is an extended version of <a class="reference external" href="https://qt.io/">Qt</a>’s <code class="docutils literal notranslate"><span class="pre">QWidget</span></code> class (line 43).
 It requires implementing the <code class="docutils literal notranslate"><span class="pre">widget()</span></code> method, which purpose is to return the widget that is to be shown in the view (line 53).
 In the present case, it is <code class="docutils literal notranslate"><span class="pre">SampleViewWidget</span></code> itself.
 Otherwise, <code class="docutils literal notranslate"><span class="pre">SampleViewWidget</span></code> also comes with a GUI file, which describes the layout of our plugin window (<a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleView/src/sampleviewwidget.ui"><code class="docutils literal notranslate"><span class="pre">sampleviewwidget.ui</span></code></a>).
 The <code class="docutils literal notranslate"><span class="pre">update()</span></code> method is used by our plugin to update the contents of our view using information about the given file (line 55).</p>
 <p>The implementation of <code class="docutils literal notranslate"><span class="pre">SampleViewWidget</span></code> can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleView/src/sampleviewwidget.cpp"><code class="docutils literal notranslate"><span class="pre">sampleviewwidget.cpp</span></code></a>:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 24
- 25
- 26
- 27
- 28
- 29
- 30
- 31
- 32
- 33
- 34
- 35
- 36
- 37
- 38
- 39
- 40
- 41
- 42
- 43
- 44
- 45
- 46
- 47
- 48
- 49
- 50
- 51
- 52
- 53
- 54
- 55
- 56
- 57
- 58
- 59
- 60
- 61
- 62
- 63
- 64
- 65
- 66
- 67
- 68
- 69
- 70
- 71
- 72
- 73
- 74
- 75
- 76
- 77
- 78
- 79
- 80
- 81
- 82
- 83
- 84
- 85
- 86
- 87
- 88
- 89
- 90
- 91
- 92
- 93
- 94
- 95
- 96
- 97
- 98
- 99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;corecliutils.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;filemanager.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;sampleviewwidget.h&quot;</span><span class="cp"></span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="cp">#include</span> <span class="cpf">&quot;ui_sampleviewwidget.h&quot;</span><span class="cp"></span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="cp">#include</span> <span class="cpf">&lt;QFile&gt;</span><span class="cp"></span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="k">namespace</span> <span class="n">OpenCOR</span> <span class="p">{</span>
-<span class="k">namespace</span> <span class="n">SampleView</span> <span class="p">{</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="n">SampleViewWidget</span><span class="o">::</span><span class="n">SampleViewWidget</span><span class="p">(</span><span class="n">QWidget</span> <span class="o">*</span><span class="n">pParent</span><span class="p">)</span> <span class="o">:</span>
-    <span class="n">ViewWidget</span><span class="p">(</span><span class="n">pParent</span><span class="p">),</span>
-    <span class="n">mGui</span><span class="p">(</span><span class="k">new</span> <span class="n">Ui</span><span class="o">::</span><span class="n">SampleViewWidget</span><span class="p">),</span>
-    <span class="n">mFileName</span><span class="p">(</span><span class="n">QString</span><span class="p">())</span>
-<span class="p">{</span>
-    <span class="c1">// Delete the layout that comes with ViewWidget</span>
-
-    <span class="k">delete</span> <span class="n">layout</span><span class="p">();</span>
-
-    <span class="c1">// Set up the GUI</span>
-
-    <span class="n">mGui</span><span class="o">-&gt;</span><span class="n">setupUi</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="n">SampleViewWidget</span><span class="o">::~</span><span class="n">SampleViewWidget</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// Delete the GUI</span>
-
-    <span class="k">delete</span> <span class="n">mGui</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewWidget</span><span class="o">::</span><span class="n">retranslateUi</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// Retranslate our GUI</span>
-
-    <span class="n">mGui</span><span class="o">-&gt;</span><span class="n">retranslateUi</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-
-    <span class="c1">// Update ourself too since some widgets will have been reset following the</span>
-    <span class="c1">// retranslation (e.g. mGui-&gt;fileNameValue)</span>
-
-    <span class="n">update</span><span class="p">(</span><span class="n">mFileName</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="n">QWidget</span> <span class="o">*</span> <span class="n">SampleViewWidget</span><span class="o">::</span><span class="n">widget</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span>
-
-    <span class="c1">// Return the requested (self) widget</span>
-
-    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="kt">void</span> <span class="n">SampleViewWidget</span><span class="o">::</span><span class="n">update</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Keep track of the given file name</span>
-
-    <span class="n">mFileName</span> <span class="o">=</span> <span class="n">pFileName</span><span class="p">;</span>
-
-    <span class="c1">// Initialise our GUI with some information about the given file</span>
-
-    <span class="n">mGui</span><span class="o">-&gt;</span><span class="n">fileNameValue</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">pFileName</span><span class="p">);</span>
-
-    <span class="n">Core</span><span class="o">::</span><span class="n">FileManager</span> <span class="o">*</span><span class="n">fileManagerInstance</span> <span class="o">=</span> <span class="n">Core</span><span class="o">::</span><span class="n">FileManager</span><span class="o">::</span><span class="n">instance</span><span class="p">();</span>
-
-    <span class="n">mGui</span><span class="o">-&gt;</span><span class="n">lockedValue</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">fileManagerInstance</span><span class="o">-&gt;</span><span class="n">isLocked</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="o">?</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Yes&quot;</span><span class="p">)</span><span class="o">:</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;No&quot;</span><span class="p">));</span>
-
-    <span class="n">QString</span> <span class="n">sha1Value</span> <span class="o">=</span> <span class="n">fileManagerInstance</span><span class="o">-&gt;</span><span class="n">sha1</span><span class="p">(</span><span class="n">pFileName</span><span class="p">);</span>
-
-    <span class="n">mGui</span><span class="o">-&gt;</span><span class="n">sha1Value</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">sha1Value</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">()</span><span class="o">?</span><span class="s">&quot;???&quot;</span><span class="o">:</span><span class="n">sha1Value</span><span class="p">);</span>
-    <span class="n">mGui</span><span class="o">-&gt;</span><span class="n">sizeValue</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">sizeAsString</span><span class="p">(</span><span class="n">quint64</span><span class="p">(</span><span class="n">QFile</span><span class="p">(</span><span class="n">pFileName</span><span class="p">).</span><span class="n">size</span><span class="p">())));</span>
-<span class="p">}</span>
-
-<span class="c1">//==============================================================================</span>
-
-<span class="p">}</span> <span class="c1">// namespace SampleView</span>
-<span class="p">}</span> <span class="c1">// namespace OpenCOR</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 24</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;corecliutils.h&quot;</span><span class="cp"></span>
+<span class="linenos"> 25</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;filemanager.h&quot;</span><span class="cp"></span>
+<span class="linenos"> 26</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sampleviewwidget.h&quot;</span><span class="cp"></span>
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 29</span>
+<span class="linenos"> 30</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ui_sampleviewwidget.h&quot;</span><span class="cp"></span>
+<span class="linenos"> 31</span>
+<span class="linenos"> 32</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 33</span>
+<span class="linenos"> 34</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QFile&gt;</span><span class="cp"></span>
+<span class="linenos"> 35</span>
+<span class="linenos"> 36</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 37</span>
+<span class="linenos"> 38</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 39</span><span class="k">namespace</span><span class="w"> </span><span class="nn">SampleView</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 40</span>
+<span class="linenos"> 41</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 42</span>
+<span class="linenos"> 43</span><span class="n">SampleViewWidget</span><span class="o">::</span><span class="n">SampleViewWidget</span><span class="p">(</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="n">pParent</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<span class="linenos"> 44</span><span class="w">    </span><span class="n">ViewWidget</span><span class="p">(</span><span class="n">pParent</span><span class="p">),</span><span class="w"></span>
+<span class="linenos"> 45</span><span class="w">    </span><span class="n">mGui</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Ui</span><span class="o">::</span><span class="n">SampleViewWidget</span><span class="p">),</span><span class="w"></span>
+<span class="linenos"> 46</span><span class="w">    </span><span class="n">mFileName</span><span class="p">(</span><span class="n">QString</span><span class="p">())</span><span class="w"></span>
+<span class="linenos"> 47</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 48</span><span class="w">    </span><span class="c1">// Delete the layout that comes with ViewWidget</span>
+<span class="linenos"> 49</span>
+<span class="linenos"> 50</span><span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">layout</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 51</span>
+<span class="linenos"> 52</span><span class="w">    </span><span class="c1">// Set up the GUI</span>
+<span class="linenos"> 53</span>
+<span class="linenos"> 54</span><span class="w">    </span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">setupUi</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 55</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 56</span>
+<span class="linenos"> 57</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 58</span>
+<span class="linenos"> 59</span><span class="n">SampleViewWidget</span><span class="o">::~</span><span class="n">SampleViewWidget</span><span class="p">()</span><span class="w"></span>
+<span class="linenos"> 60</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 61</span><span class="w">    </span><span class="c1">// Delete the GUI</span>
+<span class="linenos"> 62</span>
+<span class="linenos"> 63</span><span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">mGui</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 64</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 65</span>
+<span class="linenos"> 66</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 67</span>
+<span class="linenos"> 68</span><span class="kt">void</span><span class="w"> </span><span class="n">SampleViewWidget</span><span class="o">::</span><span class="n">retranslateUi</span><span class="p">()</span><span class="w"></span>
+<span class="linenos"> 69</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 70</span><span class="w">    </span><span class="c1">// Retranslate our GUI</span>
+<span class="linenos"> 71</span>
+<span class="linenos"> 72</span><span class="w">    </span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">retranslateUi</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 73</span>
+<span class="linenos"> 74</span><span class="w">    </span><span class="c1">// Update ourself too since some widgets will have been reset following the</span>
+<span class="linenos"> 75</span><span class="w">    </span><span class="c1">// retranslation (e.g. mGui-&gt;fileNameValue)</span>
+<span class="linenos"> 76</span>
+<span class="linenos"> 77</span><span class="w">    </span><span class="n">update</span><span class="p">(</span><span class="n">mFileName</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 78</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 79</span>
+<span class="linenos"> 80</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 81</span>
+<span class="linenos"> 82</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">SampleViewWidget</span><span class="o">::</span><span class="n">widget</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 83</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 84</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 85</span>
+<span class="linenos"> 86</span><span class="w">    </span><span class="c1">// Return the requested (self) widget</span>
+<span class="linenos"> 87</span>
+<span class="linenos"> 88</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 89</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 90</span>
+<span class="linenos"> 91</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 92</span>
+<span class="linenos"> 93</span><span class="kt">void</span><span class="w"> </span><span class="n">SampleViewWidget</span><span class="o">::</span><span class="n">update</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 94</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 95</span><span class="w">    </span><span class="c1">// Keep track of the given file name</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span><span class="w">    </span><span class="n">mFileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pFileName</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span><span class="w">    </span><span class="c1">// Initialise our GUI with some information about the given file</span>
+<span class="linenos">100</span>
+<span class="linenos">101</span><span class="w">    </span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">fileNameValue</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">pFileName</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">102</span>
+<span class="linenos">103</span><span class="w">    </span><span class="n">Core</span><span class="o">::</span><span class="n">FileManager</span><span class="w"> </span><span class="o">*</span><span class="n">fileManagerInstance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Core</span><span class="o">::</span><span class="n">FileManager</span><span class="o">::</span><span class="n">instance</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">104</span>
+<span class="linenos">105</span><span class="w">    </span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">lockedValue</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">fileManagerInstance</span><span class="o">-&gt;</span><span class="n">isLocked</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="o">?</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Yes&quot;</span><span class="p">)</span><span class="o">:</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;No&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="linenos">106</span>
+<span class="linenos">107</span><span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">sha1Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fileManagerInstance</span><span class="o">-&gt;</span><span class="n">sha1</span><span class="p">(</span><span class="n">pFileName</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">108</span>
+<span class="linenos">109</span><span class="w">    </span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">sha1Value</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">sha1Value</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">()</span><span class="o">?</span><span class="s">&quot;???&quot;</span><span class="o">:</span><span class="n">sha1Value</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">110</span><span class="w">    </span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">sizeValue</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">sizeAsString</span><span class="p">(</span><span class="n">quint64</span><span class="p">(</span><span class="n">QFile</span><span class="p">(</span><span class="n">pFileName</span><span class="p">).</span><span class="n">size</span><span class="p">())));</span><span class="w"></span>
+<span class="linenos">111</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">112</span>
+<span class="linenos">113</span><span class="c1">//==============================================================================</span>
+<span class="linenos">114</span>
+<span class="linenos">115</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace SampleView</span>
+<span class="linenos">116</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace OpenCOR</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">retranslateUi()</span></code> (lines 68-78) retranslates our view while <code class="docutils literal notranslate"><span class="pre">widget()</span></code> returns it (lines 82-89) and <code class="docutils literal notranslate"><span class="pre">update()</span></code> updates its contents (lines 93-111).</p>
-</div>
-</div>
+</section>
+</section>
 
 
 

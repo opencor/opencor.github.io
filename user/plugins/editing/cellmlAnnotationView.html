@@ -20,7 +20,7 @@
     </head>
     <body ondragstart="return false;" ondrop="return false;">
         
-  <div class="section" id="cellmlannotationview-plugin">
+  <section id="cellmlannotationview-plugin">
 <span id="plugins-editing-cellmlannotationview"></span><h1>CellMLAnnotationView plugin<a class="headerlink" href="#cellmlannotationview-plugin" title="Permalink to this headline">¶</a></h1>
 <p>The CellMLAnnotationView plugin can be used to annotate <a class="reference external" href="https://cellml.org/">CellML</a> files by associating one or several ontological terms to a given <a class="reference external" href="https://cellml.org/">CellML</a> element.
 To open a <a class="reference external" href="https://cellml.org/">CellML</a> file that does not contain any annotations gives:</p>
@@ -28,7 +28,7 @@ To open a <a class="reference external" href="https://cellml.org/">CellML</a> fi
 <p>All the <a class="reference external" href="https://cellml.org/">CellML</a> elements that can be annotated are listed on the left of the view.
 Right click on any of them to get a popup menu, which you can use to expand/collapse all the child nodes, as well as remove the metadata associated with the current <a class="reference external" href="https://cellml.org/">CellML</a> element or any <a class="reference external" href="https://cellml.org/">CellML</a> element in the <a class="reference external" href="https://cellml.org/">CellML</a> file:</p>
 <a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot02.png"><img alt="../../_images/CellMLAnnotationViewScreenshot02.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot02.png" style="width: 407.0px; height: 230.5px;" /></a>
-<div class="section" id="annotate-a-cellml-element">
+<section id="annotate-a-cellml-element">
 <h2>Annotate a CellML element<a class="headerlink" href="#annotate-a-cellml-element" title="Permalink to this headline">¶</a></h2>
 <p>To annotate, say, the <code class="docutils literal notranslate"><span class="pre">sodium_channel</span></code> component, you first need to select it:</p>
 <a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot03.png"><img alt="../../_images/CellMLAnnotationViewScreenshot03.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot03.png" style="width: 407.0px; height: 230.5px;" /></a>
@@ -53,8 +53,8 @@ If you want to know more about the <a class="reference external" href="http://ge
 You can do so by clicking on its corresponding <a class="inlineicon reference internal" href="../../_images/list-add.png"><img alt="oxygenActionsListAdd" class="inlineicon" src="../../_images/list-add.png" style="width: 16px;" /></a> button, but also by entering its resource-id duple, e.g. <code class="docutils literal notranslate"><span class="pre">go/GO:0005248</span></code> (i.e. <code class="docutils literal notranslate"><span class="pre">&lt;resource&gt;/&lt;id&gt;</span></code>) in the term field.
 OpenCOR will recognise this “term” as being a resource-id duple and will offer you to add its corresponding ontological term directly:</p>
 <a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot10.png"><img alt="../../_images/CellMLAnnotationViewScreenshot10.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot10.png" style="width: 407.0px; height: 230.5px;" /></a>
-</div>
-<div class="section" id="unrecognised-annotations">
+</section>
+<section id="unrecognised-annotations">
 <h2>Unrecognised annotations<a class="headerlink" href="#unrecognised-annotations" title="Permalink to this headline">¶</a></h2>
 <p>Annotations consist of <a class="reference external" href="https://w3.org/TR/rdf-concepts/#section-triples">RDF triples</a>, which are made of a subject, a predicate and an object.
 OpenCOR recognises <a class="reference external" href="https://w3.org/TR/rdf-concepts/#section-triples">RDF triples</a>, which subject identifies a <a class="reference external" href="https://cellml.org/">CellML</a> element while it expects the predicate to be a <a class="reference external" href="https://co.mbine.org/standards/qualifiers">BioModels.net qualifier</a> and the object an ontological term.</p>
@@ -64,8 +64,8 @@ OpenCOR recognises both, but it will only serialise annotations using <a class="
 In this case, OpenCOR will display the annotations as a simple list of <a class="reference external" href="https://w3.org/TR/rdf-concepts/#section-triples">RDF triples</a>:</p>
 <a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot11.png"><img alt="../../_images/CellMLAnnotationViewScreenshot11.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot11.png" style="width: 407.0px; height: 230.5px;" /></a>
 <p>If you ever come across such a type of annotations and think that OpenCOR ought to recognise it, then please do <a class="reference external" href="https://opencor.ws/contactUs.html">get in touch</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
 
