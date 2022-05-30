@@ -7,10 +7,19 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 
+        <link href="../_static/copybutton.css" rel="stylesheet" type="text/css" />
         <link href="../_static/pygments.css" rel="stylesheet" type="text/css" />
+        <link href="../_static/tabs.css" rel="stylesheet" type="text/css" />
         <link href="../_static/theme.css" rel="stylesheet" type="text/css" />
+                <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+                <script src="../_static/jquery.js"></script>
+                <script src="../_static/underscore.js"></script>
+                <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+                <script src="../_static/doctools.js"></script>
+                <script src="../_static/clipboard.min.js"></script>
+                <script src="../_static/copybutton.js"></script>
+                <script src="../_static/tabs.js"></script>
 
-        <script src="../_static/jquery.js" type="text/javascript"></script>
         <script src="../_static/theme.js" type="text/javascript"></script>
 
         <link href="../_static/katex/katex.min.css" rel="stylesheet" type="text/css"/>
@@ -21,11 +30,11 @@
     <body ondragstart="return false;" ondrop="return false;">
         
   <section id="coding-style">
-<span id="develop-codingstyle"></span><h1>Coding style<a class="headerlink" href="#coding-style" title="Permalink to this headline">¶</a></h1>
+<span id="develop-codingstyle"></span><h1>Coding style<a class="headerlink" href="#coding-style" title="Permalink to this heading">¶</a></h1>
 <p>This page contains various rules, which anyone working on OpenCOR should respect.
 These rules were taken (paraphrased, if not simply copied/pasted) from the <a class="reference external" href="https://wiki.qt.io/Coding_Conventions">Qt Coding Conventions</a> document.</p>
 <section id="general">
-<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<h2>General<a class="headerlink" href="#general" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>The most important rule of all: the <a class="reference external" href="https://en.wikipedia.org/wiki/KISS_principle">KISS principle</a>, i.e. <em>Keep it simple, stupid</em>.
 Always use a simple implementation in favour of a more complicated one.
@@ -36,7 +45,7 @@ This eases maintenance a lot!</p></li>
 </ul>
 </section>
 <section id="code-constructs">
-<h2>Code constructs<a class="headerlink" href="#code-constructs" title="Permalink to this headline">¶</a></h2>
+<h2>Code constructs<a class="headerlink" href="#code-constructs" title="Permalink to this heading">¶</a></h2>
 <p>The following guidelines exist to make the code faster, clearer, and/or to take advantage of the strong type checking in C++.</p>
 <ul>
 <li><p>Declaration of variables should wait as long as possible.
@@ -46,115 +55,115 @@ In C++, there are a lot of user defined types, and these can very often be expen
 <li><p>Prefer pre-increment to post-increment whenever possible.
 Pre-increment has potential of being faster than post-increment.
 This rule applies to decrement too.</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="o">++</span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="o">--</span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="o">++</span><span class="n">i</span><span class="p">;</span>
+<span class="o">--</span><span class="n">j</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
-<span class="n">j</span><span class="o">--</span><span class="p">;</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="n">j</span><span class="o">--</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Try to minimise evaluation of the same code over and over.
 This is aimed especially at loops:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Container</span><span class="o">::</span><span class="n">iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">large</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">large</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">end</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">iter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">Container</span><span class="o">::</span><span class="n">iterator</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">large</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">end</span> <span class="o">=</span> <span class="n">large</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">iter</span> <span class="o">!=</span> <span class="n">end</span><span class="p">;</span> <span class="o">++</span><span class="n">iter</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Container</span><span class="o">::</span><span class="n">iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">large</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">large</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">iter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">Container</span><span class="o">::</span><span class="n">iterator</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">large</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">iter</span> <span class="o">!=</span> <span class="n">large</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">iter</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
 <li><p>You should use the range-based for <code class="docutils literal notranslate"><span class="pre">loop</span></code> rather than the Qt <code class="docutils literal notranslate"><span class="pre">foreach</span></code> loop or even a classical <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="nl">widget</span> <span class="p">:</span><span class="w"> </span><span class="n">container</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">doSomething</span><span class="p">(</span><span class="n">widget</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">widget</span> <span class="p">:</span> <span class="n">container</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">doSomething</span><span class="p">(</span><span class="n">widget</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="n">widget</span><span class="p">,</span><span class="w"> </span><span class="n">container</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">doSomething</span><span class="p">(</span><span class="n">widget</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">foreach</span> <span class="p">(</span><span class="n">QWidget</span> <span class="o">*</span><span class="n">widget</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">doSomething</span><span class="p">(</span><span class="n">widget</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Container</span><span class="o">::</span><span class="n">iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">end</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">iter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">doSomething</span><span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">Container</span><span class="o">::</span><span class="n">iterator</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">container</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">end</span> <span class="o">=</span> <span class="n">container</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">iter</span> <span class="o">!=</span> <span class="n">end</span><span class="p">;</span> <span class="o">++</span><span class="n">iter</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">doSomething</span><span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Make the loop variable <code class="docutils literal notranslate"><span class="pre">const</span></code>, if possible.
 This might prevent unnecessary detaching of shared data.</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="nl">name</span> <span class="p">:</span><span class="w"> </span><span class="n">someListOfNames</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">doSomething</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span><span class="nl">name</span> <span class="p">:</span> <span class="n">someListOfNames</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">doSomething</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="nl">name</span> <span class="p">:</span><span class="w"> </span><span class="n">someListOfNames</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">doSomething</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">name</span> <span class="p">:</span> <span class="n">someListOfNames</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">doSomething</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
 </ul>
 </section>
 <section id="formatting">
-<h2>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline">¶</a></h2>
+<h2>Formatting<a class="headerlink" href="#formatting" title="Permalink to this heading">¶</a></h2>
 <ul>
 <li><p>Indentation: 4 spaces, no tabulations.</p></li>
 <li><p><strong>Naming rules:</strong></p>
 <ul>
 <li><p>Use descriptive, simple and short names.</p></li>
 <li><p>Single character variable names are only okay for counters and temporaries where the purpose of the variable is obvious.</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span><span class="w"></span>
-<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">nameOfThis</span><span class="p">;</span><span class="w"></span>
-<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">nameOfThat</span><span class="p">;</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">width</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">height</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">nameOfThis</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">nameOfThat</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="o">*</span><span class="n">d</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Class names and enums start with an upper-case letter while variables and functions start with a lower-case letter.
 Each consecutive word in a name starts with an upper-case letter.</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MainWindow</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QMainWindow</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mVariable</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">function</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MainWindow</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QMainWindow</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+    <span class="kt">int</span> <span class="n">mVariable</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="kt">void</span> <span class="n">function</span><span class="p">();</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">mainWindow</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QMainWindow</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Variable</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">Function</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">mainWindow</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QMainWindow</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+    <span class="kt">int</span> <span class="n">Variable</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="kt">void</span> <span class="n">Function</span><span class="p">();</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Note:</strong> class variables start with a lower-case <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
 </li>
 <li><p>Parameters passed to a function start with a lower-case <code class="docutils literal notranslate"><span class="pre">p</span></code>, but not local variables.</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pArgC</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">pArgV</span><span class="p">[])</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">someVariable</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">pArgC</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pArgV</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">someVariable</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">pSomeVariable</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">pSomeVariable</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
@@ -169,19 +178,19 @@ The <code class="docutils literal notranslate"><span class="pre">private</span><
 If the same variable is used for all objects, use a <code class="docutils literal notranslate"><span class="pre">static</span></code> member.</p></li>
 <li><p>Avoid declaring global or static variables.</p></li>
 <li><p>Use only one declaration per line:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">width</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">height</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">;</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>This is especially important when initialisation is done at the same time:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">QString</span><span class="w"> </span><span class="n">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Joe&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="n">QString</span><span class="w"> </span><span class="n">lastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Foo&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">QString</span> <span class="n">firstName</span> <span class="o">=</span> <span class="s">&quot;Joe&quot;</span><span class="p">;</span>
+<span class="n">QString</span> <span class="n">lastName</span> <span class="o">=</span> <span class="s">&quot;Foo&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">QString</span><span class="w"> </span><span class="n">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Joe&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Foo&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">QString</span> <span class="n">firstName</span> <span class="o">=</span> <span class="s">&quot;Joe&quot;</span><span class="p">,</span> <span class="n">lastName</span> <span class="o">=</span> <span class="s">&quot;Foo&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">QString</span> <span class="pre">firstName</span> <span class="pre">=</span> <span class="pre">&quot;Joe&quot;;</span></code> is formally calling a copy constructor on a temporary string constructed from a string literal and therefore has the potential of being more expensive than direct construction by <code class="docutils literal notranslate"><span class="pre">QString</span> <span class="pre">firstName(&quot;joe&quot;)</span></code>.
@@ -191,29 +200,29 @@ Given these equal costs, OpenCOR code favours the <code class="docutils literal 
 </ul>
 </li>
 <li><p>Pointers and references:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flop&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="kt">char</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">;</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="s">&quot;flop&quot;</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">&amp;</span><span class="n">c</span> <span class="o">=</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flop&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="kt">char</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="s">&quot;flop&quot;</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">&amp;</span> <span class="n">c</span> <span class="o">=</span> <span class="o">*</span> <span class="n">ptr</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Also, we will have:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">;</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="k">const</span> <span class="o">*</span> <span class="n">ptr</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Use <code class="docutils literal notranslate"><span class="pre">nullptr</span></code> for null pointer constants:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42-7</span><span class="o">*</span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+<span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="mi">42</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="mi">6</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
@@ -223,38 +232,38 @@ Given these equal costs, OpenCOR code favours the <code class="docutils literal 
 <li><p>Always use only one blank line.</p></li>
 <li><p>Operator names and parentheses: do not use spaces between operator names and function names.
 The <code class="docutils literal notranslate"><span class="pre">==</span></code> is part of the function name, and therefore, spaces make the declaration look like an expression:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">type</span><span class="p">)</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">type</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">operator</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">type</span><span class="p">)</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">operator</span> <span class="o">==</span> <span class="p">(</span><span class="n">type</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 <li><p>Function names and parentheses: do not use spaces between function names and parentheses:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">mangle</span><span class="p">()</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">mangle</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">mangle</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">mangle</span> <span class="p">()</span>
 </pre></div>
 </div>
 </li>
 <li><p>Always use a single space after a keyword, and before a curly brace:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">foo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">foo</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">foo</span><span class="p">){</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">foo</span><span class="p">){</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
 <li><p>For pointers or references, always use a single space before <code class="docutils literal notranslate"><span class="pre">*</span></code> or <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, but never after.</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">var1</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">var2</span><span class="p">;</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="o">*</span><span class="n">var1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">var2</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">var1</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">var2</span><span class="p">;</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span> <span class="n">var1</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">var2</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
@@ -263,76 +272,76 @@ The <code class="docutils literal notranslate"><span class="pre">==</span></code
 <li><p><strong>Braces:</strong></p>
 <ul>
 <li><p>As a base rule, place the left curly brace on the same line as the start of the statement:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">codec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">codec</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">codec</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">codec</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Exception:</strong> function implementations and class declarations always have the left curly brace in the beginning of a line:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Moo</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Moo</span>
+<span class="p">{</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Moo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Moo</span> <span class="p">{</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">Moo::foo</span><span class="p">()</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">Moo</span><span class="o">::</span><span class="n">foo</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">Moo::foo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">Moo</span><span class="o">::</span><span class="n">foo</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
 <li><p>Use curly braces at all times:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">qDebug</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">qDebug</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">qDebug</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">qDebug</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
 <li><p>Use curly braces when the body of a conditional statement is empty:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cond</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">cond</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cond</span><span class="p">);</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">cond</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
 </ul>
 </li>
 <li><p>Parentheses: use parentheses to group expressions:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">cond1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cond2</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">cond3</span><span class="p">)</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">((</span><span class="n">cond1</span> <span class="o">&amp;&amp;</span> <span class="n">cond2</span><span class="p">)</span> <span class="o">||</span> <span class="n">cond3</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cond1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cond2</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">cond3</span><span class="p">)</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">cond1</span> <span class="o">&amp;&amp;</span> <span class="n">cond2</span> <span class="o">||</span> <span class="n">cond3</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">var1</span><span class="o">+</span><span class="n">var2</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">var3</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">var1</span><span class="o">+</span><span class="n">var2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">var3</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">var1</span><span class="o">+</span><span class="n">var2</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">var3</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">var1</span><span class="o">+</span><span class="n">var2</span> <span class="o">&amp;</span> <span class="n">var3</span>
 </pre></div>
 </div>
 </li>
@@ -346,16 +355,16 @@ Configuration options can be found under the <code class="docutils literal notra
 <li><p>Insert line breaks if necessary.</p></li>
 <li><p>Commas go at the end of a broken line.</p></li>
 <li><p>Operators start at the beginning of a new line.</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w">   </span><span class="n">longExpression</span><span class="w"></span>
-<span class="w">    </span><span class="o">||</span><span class="w"> </span><span class="n">otherLongExpression</span><span class="w"></span>
-<span class="w">    </span><span class="o">||</span><span class="w"> </span><span class="n">otherOtherLongExpression</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span>   <span class="n">longExpression</span>
+    <span class="o">||</span> <span class="n">otherLongExpression</span>
+    <span class="o">||</span> <span class="n">otherOtherLongExpression</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">longExpression</span><span class="w"> </span><span class="o">||</span><span class="w"></span>
-<span class="w">    </span><span class="n">otherLongExpression</span><span class="w"> </span><span class="o">||</span><span class="w"></span>
-<span class="w">    </span><span class="n">otherOtherLongExpression</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">longExpression</span> <span class="o">||</span>
+    <span class="n">otherLongExpression</span> <span class="o">||</span>
+    <span class="n">otherOtherLongExpression</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
@@ -364,7 +373,7 @@ Configuration options can be found under the <code class="docutils literal notra
 </ul>
 </section>
 <section id="patterns-and-practices">
-<h2>Patterns and practices<a class="headerlink" href="#patterns-and-practices" title="Permalink to this headline">¶</a></h2>
+<h2>Patterns and practices<a class="headerlink" href="#patterns-and-practices" title="Permalink to this heading">¶</a></h2>
 <ul>
 <li><p>Do not use exceptions, unless you know what you are doing.</p></li>
 <li><p>Do not use RTTI (Run-Time Type Information, i.e. the <code class="docutils literal notranslate"><span class="pre">typeinfo</span> <span class="pre">struct</span></code>, the <code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code> or the <code class="docutils literal notranslate"><span class="pre">typeid</span></code> operators, including throwing exceptions), unless you know what you are doing.</p></li>
@@ -374,38 +383,38 @@ Configuration options can be found under the <code class="docutils literal notra
 <li><p><strong>Including headers:</strong></p>
 <ul>
 <li><p>Arrange headers in alphabetic order within a block:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QCoreApplication&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QMessageBox&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QSettings&gt;</span><span class="cp"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QCoreApplication&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;QMessageBox&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;QSettings&gt;</span><span class="cp"></span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QSettings&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QCoreApplication&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QMessageBox&gt;</span><span class="cp"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QSettings&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;QCoreApplication&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;QMessageBox&gt;</span><span class="cp"></span>
 </pre></div>
 </div>
 </li>
 <li><p>Arrange includes in blocks of headers that are specific to OpenCOR, <a class="reference external" href="https://qt.io/">Qt</a>, third-party libraries and C++.
 For example:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;coreguiutils.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;filemanager.h&quot;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;coreguiutils.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;filemanager.h&quot;</span><span class="cp"></span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QApplication&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QMainWindow&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;QApplication&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;QMainWindow&gt;</span><span class="cp"></span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;qwt_mml_document.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;qwt_wheel.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;qwt_mml_document.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;qwt_wheel.h&quot;</span><span class="cp"></span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 </pre></div>
 </div>
 </li>
 <li><p>Prefer direct includes whenever possible:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QFileInfo&gt;</span><span class="cp"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QFileInfo&gt;</span><span class="cp"></span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QCore/QFileInfo&gt;</span><span class="cp"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QCore/QFileInfo&gt;</span><span class="cp"></span>
 </pre></div>
 </div>
 </li>
@@ -421,9 +430,9 @@ For example:</p>
 <ul>
 <li><p>Be extremely careful when using the question mark operator.
 If the returned types are not identical, some compilers generate code that crashes at runtime (you will not even get a compiler warning):</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">QString</span> <span class="n">str</span><span class="p">;</span>
 
-<span class="k">return</span><span class="w"> </span><span class="n">condition</span><span class="o">?</span><span class="nl">str</span><span class="p">:</span><span class="s">&quot;nothing&quot;</span><span class="p">;</span><span class="w">   </span><span class="c1">// Crash at runtime - QString vs const char *</span>
+<span class="k">return</span> <span class="n">condition</span><span class="o">?</span><span class="nl">str</span><span class="p">:</span><span class="s">&quot;nothing&quot;</span><span class="p">;</span>   <span class="c1">// Crash at runtime - QString vs const char *</span>
 </pre></div>
 </div>
 </li>
@@ -432,11 +441,11 @@ Whenever a pointer is cast such that the required alignment of the target is inc
 For example, if a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*</span></code> is cast to a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">*</span></code>, it will crash on machines where integers have to be aligned at two-byte or four-byte boundaries.
 Use a union to force the compiler to align variables correctly.
 In the example below, you can be sure that all instances of <code class="docutils literal notranslate"><span class="pre">AlignHelper</span></code> are aligned at integer-boundaries:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">union</span> <span class="nc">AlignHelper</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">union</span> <span class="n">AlignHelper</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </li>
@@ -444,52 +453,52 @@ In the example below, you can be sure that all instances of <code class="docutil
 Even if the execution time of the initialiser is defined for shared libraries, you will get into trouble when moving that code in a plugin or if the library is compiled statically:</p>
 <div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// The default constructor needs to be run to initialize x</span>
 
-<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="k">static</span> <span class="k">const</span> <span class="n">QString</span> <span class="n">x</span><span class="p">;</span>
 
 <span class="c1">// The constructor that takes a const char * has to be run</span>
 
-<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">static</span> <span class="k">const</span> <span class="n">QString</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
 
 <span class="c1">// The call time of foo() is undefined and might not be called at all</span>
 
-<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">foo</span><span class="p">();</span><span class="w"></span>
+<span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">foo</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Things you can do:</p>
 <div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// No constructor must be run, x is set at compile time</span>
 
-<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">x</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;someText&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">x</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;someText&quot;</span><span class="p">;</span>
 
 <span class="c1">// y will be set at compile time</span>
 
-<span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"></span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
 
 <span class="c1">// s will be initialised statically, i.e. no code is run</span>
 
-<span class="k">static</span><span class="w"> </span><span class="n">MyStruct</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+<span class="k">static</span> <span class="n">MyStruct</span> <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
 
 <span class="c1">// Pointers to objects are OK, no code needs to be run to initialise ptr</span>
 
-<span class="k">static</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<span class="k">static</span> <span class="n">QString</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 
 <span class="c1">// Use Q_GLOBAL_STATIC to create static global objects instead</span>
 
-<span class="n">Q_STATIC_GLOBAL</span><span class="p">(</span><span class="n">QString</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="n">Q_STATIC_GLOBAL</span><span class="p">(</span><span class="n">QString</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">()</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">s</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;moo&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span> <span class="n">foo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">s</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;moo&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Note #1:</strong> static objects in function scope are not a problem.
 The constructor will be run the first time the function is entered.
 The code is not re-entrant, though.</p>
 <p><strong>Note #2:</strong> using <a class="reference external" href="https://qt.io/">Qt</a> 5 and <a class="reference external" href="https://en.wikipedia.org/wiki/C++11">C++11</a>, it is now possible to (indirectly) have a <code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">const</span> <span class="pre">QString</span></code> (see <a class="reference external" href="https://www.macieira.org/blog/2011/07/qstring-improved/">here</a> for more information on <code class="docutils literal notranslate"><span class="pre">QString</span></code>), thus making it possible for a variable to be both read-only and sharable.</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">QStringLiteral</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="k">const</span> <span class="k">auto</span> <span class="n">s</span> <span class="o">=</span> <span class="n">QStringLiteral</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="k">const</span> <span class="n">QString</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
@@ -497,9 +506,9 @@ The code is not re-entrant, though.</p>
 The following code will break on PowerPC, for example:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// The condition is always true on platforms where the default is unsigned</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
@@ -507,10 +516,10 @@ The following code will break on PowerPC, for example:</p>
 The AAPCS (Procedure Call Standard for the ARM Architecture) embedded ABI hard codes all enum values to a 32-bit integer.</p></li>
 <li><p>Do not mix <code class="docutils literal notranslate"><span class="pre">const</span></code> and non-<code class="docutils literal notranslate"><span class="pre">const</span></code> iterators.
 This will silently crash on broken compilers.</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Container</span><span class="o">::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">constBegin</span><span class="p">(),</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">constEnd</span><span class="p">();</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">end</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">iter</span><span class="p">)</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">Container</span><span class="o">::</span><span class="n">const_iterator</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">c</span><span class="p">.</span><span class="n">constBegin</span><span class="p">(),</span> <span class="n">end</span> <span class="o">=</span> <span class="n">c</span><span class="p">.</span><span class="n">constEnd</span><span class="p">();</span> <span class="n">iter</span> <span class="o">!=</span> <span class="n">end</span><span class="p">;</span> <span class="o">++</span><span class="n">iter</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Container</span><span class="o">::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">Container</span><span class="o">::</span><span class="n">iterator</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">end</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">iter</span><span class="p">)</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">Container</span><span class="o">::</span><span class="n">const_iterator</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">c</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">Container</span><span class="o">::</span><span class="n">iterator</span> <span class="n">end</span> <span class="o">=</span> <span class="n">c</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">iter</span> <span class="o">!=</span> <span class="n">end</span><span class="p">;</span> <span class="o">++</span><span class="n">iter</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -538,67 +547,67 @@ Also, <code class="docutils literal notranslate"><span class="pre">#define</span
 </ul>
 </section>
 <section id="opencor-specific">
-<h2>OpenCOR specific<a class="headerlink" href="#opencor-specific" title="Permalink to this headline">¶</a></h2>
+<h2>OpenCOR specific<a class="headerlink" href="#opencor-specific" title="Permalink to this heading">¶</a></h2>
 <ul>
 <li><p>Do not use <code class="docutils literal notranslate"><span class="pre">inline</span></code> functions.
 It is probably better to rely on the compiler to optimise the code, if necessary, not to mention that, if badly used, <code class="docutils literal notranslate"><span class="pre">inline</span></code> functions can result in slower code.
 A good resource on the topic can be found <a class="reference external" href="https://yosefk.com/c++fqa/inline.html">here</a>.</p></li>
 <li><p>Divisions are costly, so replace them with multiplications wherever possible:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="o">*</span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">b</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="o">/</span><span class="mf">2.0</span><span class="p">;</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="o">/</span><span class="mf">2.0</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Use a reference rather than a pointer to pass a variable to a function, if you want that variable to be changed:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pVar</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">pVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">function</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">pVar</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">pVar</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">pVar</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="o">*</span><span class="n">pVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">function</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">pVar</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">*</span><span class="n">pVar</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">qIsNull()</span></code> to test floating point numbers:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="n">qIsNull</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="w"></span>
-<span class="o">!</span><span class="n">qIsNull</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span> <span class="n">qIsNull</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
+<span class="o">!</span><span class="n">qIsNull</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="w"></span>
-<span class="n">a</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">b</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">!=</span> <span class="n">b</span>
 </pre></div>
 </div>
 </li>
 <li><p>Use a constant reference to pass a variable to a function, if you do not intend to modify that variable:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pVar</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">function</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pVar</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">pVar</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">function</span><span class="p">(</span><span class="n">QString</span> <span class="n">pVar</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>unless it is a built-in type:</p>
-<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pVar</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="good highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">function</span><span class="p">(</span><span class="kt">int</span> <span class="n">pVar</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pVar</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="bad highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">function</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">pVar</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>

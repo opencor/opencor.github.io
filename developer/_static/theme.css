@@ -1,14 +1,22 @@
-html {
+:root {
     --background-color: rgb(255, 255, 255);
-    --color: rgb(49, 133, 155);
+    --color: rgb(54, 96, 146);
 
-    --color-0_05: rgba(49, 133, 155, 0.05);
-    --color-0_13: rgba(49, 133, 155, 0.13);
-    --color-0_39: rgba(49, 133, 155, 0.39);
+    --color-0_05: rgb(245, 247, 249); /* rgba(54, 96, 146, 0.05); */
+    --color-0_13: rgb(228, 234, 242); /* rgba(54, 96, 146, 0.13); */
+    --color-0_39: rgb(174, 193, 215); /* rgba(54, 96, 146, 0.39); */
 
-    --footer-border-top: rgba(161, 161, 161, 0.39);
+    --footer-border-top: rgb(209, 208, 208); /* rgba(136, 133, 133, 0.39); */
     --footer-background-color: rgb(229, 229, 229);
     --footer-color: rgb(161, 161, 161);
+
+    --tabs--label-text: var(--footer-color);
+    --tabs--label-text--active: var(--color);
+    --tabs--label-text--hover: var(--color);
+    --tabs--label-background--active: transparent;
+    --tabs--label-background--hover: var(--color-0_05);
+    --tabs--border: var(--color-0_13);
+    --tabs--border--active: var(--tabs--label-text--active);
 }
 
 body {
@@ -41,6 +49,14 @@ a.image-reference {
     display: table;
 }
 
+button.copybtn {
+    right: 1.3em;
+}
+
+button.copybtn img {
+    padding: 0;
+}
+
 code,
 pre {
     font-family: "Consolas", "Menlo", "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", "Monospace";
@@ -52,6 +68,7 @@ code {
 }
 
 div.copyright {
+    z-index: 999;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -107,13 +124,12 @@ div.highlight {
 }
 
 div.highlight > pre {
-    /* For the latest version of Sphinx */
-    padding: 0;
+    /* For the latest version of Sphinx. */
     line-height: normal;
 }
 
 div.highlight > pre > span.linenos {
-    /* For the latest version of Sphinx */
+    /* For the latest version of Sphinx. */
     margin-right: 3px;
     padding: 0 9px;
     border-right: 1px solid var(--color-0_05);
@@ -121,7 +137,12 @@ div.highlight > pre > span.linenos {
     color: var(--color);
 }
 
+div.line-block {
+    margin: 1em 0;
+}
+
 h1 {
+    z-index: 999;
     padding: 3px;
     margin: 0;
     position: fixed;
@@ -191,18 +212,18 @@ span:empty:not([class]) {
 }
 
 table.highlighttable {
-    /* For the OpenCOR version of Sphinx */
+    /* For the OpenCOR version of Sphinx. */
     border-spacing: 0;
 }
 
 table.highlighttable > tbody > tr > td.code {
-    /* For the OpenCOR version of Sphinx */
+    /* For the OpenCOR version of Sphinx. */
     padding: 0;
     width: 100%;
 }
 
 table.highlighttable > tbody > tr > td.code > div.highlight > pre {
-    /* For the OpenCOR version of Sphinx */
+    /* For the OpenCOR version of Sphinx. */
     margin: 0 13px 0 0;
     border-left: 0;
     border-radius: 0 2px 2px 0;
@@ -211,13 +232,13 @@ table.highlighttable > tbody > tr > td.code > div.highlight > pre {
 }
 
 table.highlighttable > tbody > tr > td.linenos {
-    /* For the OpenCOR version of Sphinx */
+    /* For the OpenCOR version of Sphinx. */
     padding: 0;
     vertical-align: top;
 }
 
 table.highlighttable > tbody > tr > td.linenos > div.linenodiv > pre {
-    /* For the OpenCOR version of Sphinx */
+    /* For the OpenCOR version of Sphinx. */
     margin: 0 0 0 13px;
     border-radius: 2px 0 0 2px;
     padding: 0;
@@ -227,8 +248,12 @@ table.highlighttable > tbody > tr > td.linenos > div.linenodiv > pre {
 }
 
 table.highlighttable > tbody > tr > td.linenos > div.linenodiv > pre > span.normal {
-    /* For the OpenCOR version of Sphinx */
+    /* For the OpenCOR version of Sphinx. */
     padding: 0 9px;
+}
+
+table.mathematics button.copybtn {
+    right: 0.45em;
 }
 
 ul {
@@ -247,7 +272,7 @@ ul.internal.reference > li > a.internal.reference:first-child {
 ul > li > ul {
     margin: 0;
 }
-html {
+:root {
     --bad-border: rgba(149, 55, 52, 0.13);
     --bad-background-color: rgba(149, 55, 52, 0.05);
 
