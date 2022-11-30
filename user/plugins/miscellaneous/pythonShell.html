@@ -16,6 +16,7 @@
                 <script src="../../_static/underscore.js"></script>
                 <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
                 <script src="../../_static/doctools.js"></script>
+                <script src="../../_static/sphinx_highlight.js"></script>
                 <script src="../../_static/clipboard.min.js"></script>
                 <script src="../../_static/copybutton.js"></script>
                 <script src="../../_static/tabs.js"></script>
@@ -51,16 +52,16 @@ Commands supported by the PythonShell plugin:
 <section id="interactive-python-shell">
 <h2>Interactive Python shell<a class="headerlink" href="#interactive-python-shell" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -c PythonShell::python
-Python 3.7.5 (default, Dec  2 2019, 11:02:28)
-[Clang 11.0.0 (clang-1100.0.33.12)] on darwin
+Python 3.7.5 (default, May 27 2022, 16:06:22)
+[Clang 13.1.6 (clang-1316.0.21.2.5)] on darwin
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt;
 </pre></div>
 </div>
 <p>From the <a class="reference internal" href="#plugins-miscellaneous-pythonshellhelp"><span class="std std-ref">help</span></a> section above, we can see that the <code class="docutils literal notranslate"><span class="pre">python</span></code> command is actually optional, which means that an interactive <a class="reference external" href="https://python.org/">Python</a> shell can also be launched using:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -c PythonShell
-Python 3.7.5 (default, Dec  2 2019, 11:02:28)
-[Clang 11.0.0 (clang-1100.0.33.12)] on darwin
+Python 3.7.5 (default, May 27 2022, 16:06:22)
+[Clang 13.1.6 (clang-1316.0.21.2.5)] on darwin
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt;
 </pre></div>
@@ -68,8 +69,8 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 <p>OpenCOR comes with the <code class="docutils literal notranslate"><span class="pre">pythonshell[.bat]</span></code> <a class="reference internal" href="../../userInterfaces/commandLineInterfacePythonRelatedScripts.html#userinterfaces-commandlineinterfacepythonrelatedscriptspythonshell"><span class="std std-ref">script</span></a>, which is an alias to <code class="docutils literal notranslate"><span class="pre">./OpenCOR</span> <span class="pre">-c</span> <span class="pre">PythonShell</span> <span class="pre">$*</span></code>.
 So, a third way to launch an interactive <a class="reference external" href="https://python.org/">Python</a> shell is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./pythonshell
-Python 3.7.5 (default, Dec  2 2019, 11:02:28)
-[Clang 11.0.0 (clang-1100.0.33.12)] on darwin
+Python 3.7.5 (default, May 27 2022, 16:06:22)
+[Clang 13.1.6 (clang-1316.0.21.2.5)] on darwin
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt;
 </pre></div>

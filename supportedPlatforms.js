@@ -3,8 +3,8 @@ var jsonData = { "oses": [
                      "entries": [
                        { "description": "<strong>Up to OpenCOR 0.3:</strong> supported on both the 32-bit and 64-bit versions of <a href=\"https://en.wikipedia.org/wiki/Windows_XP\">Windows XP</a> and later." },
                        { "description": "<strong>OpenCOR 0.4.x:</strong> supported on both the 32-bit and 64-bit versions of <a href=\"https://en.wikipedia.org/wiki/Windows_7\">Windows 7</a> and later." },
-                       { "description": "<strong>OpenCOR 0.5 and later:</strong> supported on the 64-bit version of <a href=\"https://en.wikipedia.org/wiki/Windows_7\">Windows 7</a> and later." },
-                       { "description": "<strong>Snapshots:</strong> supported on the 64-bit version of <a href=\"https://en.wikipedia.org/wiki/Windows_10\">Windows 10</a>." }
+                       { "description": "<strong>OpenCOR 0.5 and 0.6:</strong> supported on the 64-bit version of <a href=\"https://en.wikipedia.org/wiki/Windows_7\">Windows 7</a> and later." },
+                       { "description": "<strong>Snapshots:</strong> supported on the 64-bit version of <a href=\"https://en.wikipedia.org/wiki/Windows_10\">Windows 10</a> and later." }
                      ]
                    },
                    { "name": "Linux",
@@ -22,7 +22,7 @@ var jsonData = { "oses": [
                        { "description": "<strong>OpenCOR 0.2 to 0.4.x:</strong> supported on <a href=\"https://en.wikipedia.org/wiki/Mac_OS_X_Lion\">Mac OS X 10.7 (Lion)</a> and later." },
                        { "description": "<strong>OpenCOR 0.5:</strong> supported on <a href=\"https://en.wikipedia.org/wiki/OS_X_Mountain_Lion\">OS X 10.8 (Mountain Lion)</a> and later." },
                        { "description": "<strong>OpenCOR 0.6:</strong> supported on <a href=\"https://en.wikipedia.org/wiki/OS_X_Yosemite\">OS X 10.10 (Yosemite)</a> and later." },
-                       { "description": "<strong>Snapshots:</strong> supported on <a href=\"https://en.wikipedia.org/wiki/MacOS_Mojave\">macOS 10.14 (Mojave)</a> and later." }
+                       { "description": "<strong>Snapshots:</strong> supported on <a href=\"https://en.wikipedia.org/wiki/MacOS_Big_Sur\">macOS 11 (Big Sur)</a> and later." }
                      ]
                    }
                  ]

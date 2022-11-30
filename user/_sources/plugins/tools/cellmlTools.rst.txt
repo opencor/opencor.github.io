@@ -57,9 +57,9 @@ while to export ``https://mydomain.com/myfile.cellml`` to Python, you would use:
 | **Note #1:** the CellML 1.0 export is adapted from `Jonathan Cooper's CellML 1.1 to 1.0 converter <https://cellml.org/tools/jonathan-cooper-s-cellml-1-1-to-1-0-converter/versionconverter-tar.bz2/view>`__ and therefore has the same limitations.
 | **Note #2:** the export to different languages is done using the `CellML API <https://github.com/cellmlapi/cellml-api/>`__.
   It should be fine in most cases, but be aware that there may be issues.
-  For instance, in a MATLAB export, if a model defines an `ODE <https://en.wikipedia.org/wiki/Ordinary_differential_equation>`__ as a constant, say ``dX/dt = 0``, then the exporter will export ``0`` as a constant of value ``0``.
+  For instance, in a MATLAB export, if a model defines an `ODE <https://en.wikipedia.org/wiki/Ordinary_differential_equation>`__ as a constant, say :math:`dX/dt = 0`, then the exporter will export :math:`0` as a constant of value ``0``.
   Then, due to 0- *vs.* 1-based indexing, that constant gets computed twice if there are other constants in the model.
-  The end result is that ``dX/dt`` is not equal to ``0`` but to the value of the other constant.
+  The end result is that :math:`dX/dt` is not equal to ``0`` but to the value of the other constant.
 
 Validate CellML file
 --------------------

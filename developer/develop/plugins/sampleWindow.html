@@ -16,6 +16,7 @@
                 <script src="../../_static/underscore.js"></script>
                 <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
                 <script src="../../_static/doctools.js"></script>
+                <script src="../../_static/sphinx_highlight.js"></script>
                 <script src="../../_static/clipboard.min.js"></script>
                 <script src="../../_static/copybutton.js"></script>
                 <script src="../../_static/tabs.js"></script>
@@ -51,7 +52,7 @@ CMakeLists.txt
 </section>
 <section id="category">
 <h2>Category<a class="headerlink" href="#category" title="Permalink to this heading">¶</a></h2>
-<p>Our plugin is part of the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/sample/">Sample</a> category, which means that its code can be found under <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleWindow/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/sample/SampleWindow/</span></code></a>.</p>
+<p>Our plugin is part of the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/sample/">Sample</a> category, which means that its code can be found under <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/sample/SampleWindow/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/sample/SampleWindow/</span></code></a>.</p>
 </section>
 <section id="interfaces">
 <h2>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this heading">¶</a></h2>
@@ -63,25 +64,25 @@ While we are at it, we might also internationalise our plugin, which means also 
 <section id="cmake-project">
 <h2>CMake project<a class="headerlink" href="#cmake-project" title="Permalink to this heading">¶</a></h2>
 <p>As for the <a class="reference internal" href="sample.html#develop-plugins-sample"><span class="std std-ref">Sample</span></a> plugin, our plugin has a <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleWindow/CMakeLists.txt"><code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code></a> file, which contents is:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="nb">project</span><span class="p">(</span><span class="s">SampleWindowPlugin</span><span class="p">)</span>
-<span class="lineno"> 2 </span>
-<span class="lineno"> 3 </span><span class="c"># Add the plugin</span>
-<span class="lineno"> 4 </span>
-<span class="lineno"> 5 </span><span class="nb">add_plugin</span><span class="p">(</span><span class="s">SampleWindow</span>
-<span class="lineno"> 6 </span>    <span class="s">SOURCES</span>
-<span class="lineno"> 7 </span>        <span class="s">../../i18ninterface.cpp</span>
-<span class="lineno"> 8 </span>        <span class="s">../../plugininfo.cpp</span>
-<span class="lineno"> 9 </span>        <span class="s">../../plugininterface.cpp</span>
-<span class="lineno">10 </span>        <span class="s">../../windowinterface.cpp</span>
-<span class="lineno">11 </span>
-<span class="lineno">12 </span>        <span class="s">src/samplewindowplugin.cpp</span>
-<span class="lineno">13 </span>        <span class="s">src/samplewindowwindow.cpp</span>
-<span class="lineno">14 </span>    <span class="s">UIS</span>
-<span class="lineno">15 </span>        <span class="s">src/samplewindowwindow.ui</span>
-<span class="lineno">16 </span>    <span class="s">PLUGINS</span>
-<span class="lineno">17 </span>        <span class="s">Core</span>
-<span class="lineno">18 </span>        <span class="s">Sample</span>
-<span class="lineno">19 </span><span class="p">)</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nb">project</span><span class="p">(</span><span class="s">SampleWindowPlugin</span><span class="p">)</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c"># Add the plugin</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="nb">add_plugin</span><span class="p">(</span><span class="s">SampleWindow</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="s">SOURCES</span>
+<span class="linenos"> 7</span><span class="w">        </span><span class="s">../../i18ninterface.cpp</span>
+<span class="linenos"> 8</span><span class="w">        </span><span class="s">../../plugininfo.cpp</span>
+<span class="linenos"> 9</span><span class="w">        </span><span class="s">../../plugininterface.cpp</span>
+<span class="linenos">10</span><span class="w">        </span><span class="s">../../windowinterface.cpp</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="w">        </span><span class="s">src/samplewindowplugin.cpp</span>
+<span class="linenos">13</span><span class="w">        </span><span class="s">src/samplewindowwindow.cpp</span>
+<span class="linenos">14</span><span class="w">    </span><span class="s">UIS</span>
+<span class="linenos">15</span><span class="w">        </span><span class="s">src/samplewindowwindow.ui</span>
+<span class="linenos">16</span><span class="w">    </span><span class="s">PLUGINS</span>
+<span class="linenos">17</span><span class="w">        </span><span class="s">Core</span>
+<span class="linenos">18</span><span class="w">        </span><span class="s">Sample</span>
+<span class="linenos">19</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The interfaces our plugin implements come with a <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file, so we reference them (lines 7, 9 and 10).
@@ -92,52 +93,52 @@ One of those files is a <code class="docutils literal notranslate"><span class="
 <section id="plugin-information">
 <h2>Plugin information<a class="headerlink" href="#plugin-information" title="Permalink to this heading">¶</a></h2>
 <p>Our <a class="reference internal" href="index.html#develop-plugins-index-plugininformation"><span class="std std-ref">plugin information</span></a> can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleWindow/src/samplewindowplugin.cpp"><code class="docutils literal notranslate"><span class="pre">samplewindowplugin.cpp</span></code></a>, <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleWindow/src/samplewindowplugin.h"><code class="docutils literal notranslate"><span class="pre">samplewindowplugin.h</span></code></a> and <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleWindow/src/samplewindowplugin.json"><code class="docutils literal notranslate"><span class="pre">samplewindowplugin.json</span></code></a>. Starting with <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleWindow/src/samplewindowplugin.h"><code class="docutils literal notranslate"><span class="pre">samplewindowplugin.h</span></code></a>, its contents is:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="lineno">28 </span><span class="cp">#include</span> <span class="cpf">&quot;i18ninterface.h&quot;</span><span class="cp"></span>
-<span class="lineno">29 </span><span class="cp">#include</span> <span class="cpf">&quot;plugininfo.h&quot;</span><span class="cp"></span>
-<span class="lineno">30 </span><span class="cp">#include</span> <span class="cpf">&quot;plugininterface.h&quot;</span><span class="cp"></span>
-<span class="lineno">31 </span><span class="cp">#include</span> <span class="cpf">&quot;windowinterface.h&quot;</span><span class="cp"></span>
-<span class="lineno">32 </span>
-<span class="lineno">33 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">34 </span>
-<span class="lineno">35 </span><span class="k">namespace</span> <span class="n">OpenCOR</span> <span class="p">{</span>
-<span class="lineno">36 </span><span class="k">namespace</span> <span class="n">SampleWindow</span> <span class="p">{</span>
-<span class="lineno">37 </span>
-<span class="lineno">38 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">39 </span>
-<span class="lineno">40 </span><span class="n">PLUGININFO_FUNC</span> <span class="n">SampleWindowPluginInfo</span><span class="p">();</span>
-<span class="lineno">41 </span>
-<span class="lineno">42 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">43 </span>
-<span class="lineno">44 </span><span class="k">class</span> <span class="nc">SampleWindowWindow</span><span class="p">;</span>
-<span class="lineno">45 </span>
-<span class="lineno">46 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">47 </span>
-<span class="lineno">48 </span><span class="k">class</span> <span class="nc">SampleWindowPlugin</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QObject</span><span class="p">,</span> <span class="k">public</span> <span class="n">I18nInterface</span><span class="p">,</span>
-<span class="lineno">49 </span>                           <span class="k">public</span> <span class="n">PluginInterface</span><span class="p">,</span> <span class="k">public</span> <span class="n">WindowInterface</span>
-<span class="lineno">50 </span><span class="p">{</span>
-<span class="lineno">51 </span>    <span class="n">Q_OBJECT</span>
-<span class="lineno">52 </span>
-<span class="lineno">53 </span>    <span class="n">Q_PLUGIN_METADATA</span><span class="p">(</span><span class="n">IID</span> <span class="s">&quot;OpenCOR.SampleWindowPlugin&quot;</span> <span class="kt">FILE</span> <span class="s">&quot;samplewindowplugin.json&quot;</span><span class="p">)</span>
-<span class="lineno">54 </span>
-<span class="lineno">55 </span>    <span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">I18nInterface</span><span class="p">)</span>
-<span class="lineno">56 </span>    <span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">PluginInterface</span><span class="p">)</span>
-<span class="lineno">57 </span>    <span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">WindowInterface</span><span class="p">)</span>
-<span class="lineno">58 </span>
-<span class="lineno">59 </span><span class="k">public</span><span class="o">:</span>
-<span class="lineno">60 </span><span class="cp">#include</span> <span class="cpf">&quot;i18ninterface.inl&quot;</span><span class="cp"></span>
-<span class="lineno">61 </span><span class="cp">#include</span> <span class="cpf">&quot;plugininterface.inl&quot;</span><span class="cp"></span>
-<span class="lineno">62 </span><span class="cp">#include</span> <span class="cpf">&quot;windowinterface.inl&quot;</span><span class="cp"></span>
-<span class="lineno">63 </span>
-<span class="lineno">64 </span><span class="k">private</span><span class="o">:</span>
-<span class="lineno">65 </span>    <span class="n">QAction</span> <span class="o">*</span><span class="n">mSampleWindowAction</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
-<span class="lineno">66 </span>
-<span class="lineno">67 </span>    <span class="n">SampleWindowWindow</span> <span class="o">*</span><span class="n">mSampleWindowWindow</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
-<span class="lineno">68 </span><span class="p">};</span>
-<span class="lineno">69 </span>
-<span class="lineno">70 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">71 </span>
-<span class="lineno">72 </span><span class="p">}</span> <span class="c1">// namespace SampleWindow</span>
-<span class="lineno">73 </span><span class="p">}</span> <span class="c1">// namespace OpenCOR</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">28</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;i18ninterface.h&quot;</span><span class="cp"></span>
+<span class="linenos">29</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininfo.h&quot;</span><span class="cp"></span>
+<span class="linenos">30</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininterface.h&quot;</span><span class="cp"></span>
+<span class="linenos">31</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;windowinterface.h&quot;</span><span class="cp"></span>
+<span class="linenos">32</span>
+<span class="linenos">33</span><span class="c1">//==============================================================================</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">36</span><span class="k">namespace</span><span class="w"> </span><span class="nn">SampleWindow</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="c1">//==============================================================================</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="n">PLUGININFO_FUNC</span><span class="w"> </span><span class="nf">SampleWindowPluginInfo</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">41</span>
+<span class="linenos">42</span><span class="c1">//==============================================================================</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="k">class</span><span class="w"> </span><span class="nc">SampleWindowWindow</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="c1">//==============================================================================</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span><span class="k">class</span><span class="w"> </span><span class="nc">SampleWindowPlugin</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QObject</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">I18nInterface</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">49</span><span class="w">                           </span><span class="k">public</span><span class="w"> </span><span class="n">PluginInterface</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">WindowInterface</span><span class="w"></span>
+<span class="linenos">50</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">51</span><span class="w">    </span><span class="n">Q_OBJECT</span><span class="w"></span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="w">    </span><span class="n">Q_PLUGIN_METADATA</span><span class="p">(</span><span class="n">IID</span><span class="w"> </span><span class="s">&quot;OpenCOR.SampleWindowPlugin&quot;</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="s">&quot;samplewindowplugin.json&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">54</span>
+<span class="linenos">55</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">I18nInterface</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">56</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">PluginInterface</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">57</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">WindowInterface</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">58</span>
+<span class="linenos">59</span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">60</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;i18ninterface.inl&quot;</span><span class="cp"></span>
+<span class="linenos">61</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininterface.inl&quot;</span><span class="cp"></span>
+<span class="linenos">62</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;windowinterface.inl&quot;</span><span class="cp"></span>
+<span class="linenos">63</span>
+<span class="linenos">64</span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">65</span><span class="w">    </span><span class="n">QAction</span><span class="w"> </span><span class="o">*</span><span class="n">mSampleWindowAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">66</span>
+<span class="linenos">67</span><span class="w">    </span><span class="n">SampleWindowWindow</span><span class="w"> </span><span class="o">*</span><span class="n">mSampleWindowWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">68</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">69</span>
+<span class="linenos">70</span><span class="c1">//==============================================================================</span>
+<span class="linenos">71</span>
+<span class="linenos">72</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace SampleWindow</span>
+<span class="linenos">73</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace OpenCOR</span>
 </pre></div>
 </div>
 <p>As mentioned above, our plugin implements some interfaces, which means that their header file is included (lines 28, 30 and 31).
@@ -145,17 +146,17 @@ It also means that our plugin class inherits from those interfaces (lines 48 and
 Finally, we include the inline files (lines 60-62) that declare various methods that must be implemented by our plugin (see <a class="reference internal" href="#develop-plugins-samplewindow-interfacesimplementation"><span class="std std-ref">below</span></a>).
 (The rest of the class definition is specific to our plugin and is discussed <a class="reference internal" href="#develop-plugins-samplewindow-pluginspecific"><span class="std std-ref">below</span></a>.)</p>
 <p>The C function that is used by OpenCOR to retrieve some <a class="reference internal" href="index.html#develop-plugins-index-basicinformation"><span class="std std-ref">basic information</span></a> about our plugin can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleWindow/src/samplewindowplugin.cpp"><code class="docutils literal notranslate"><span class="pre">samplewindowplugin.cpp</span></code></a>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="lineno">39 </span><span class="n">PLUGININFO_FUNC</span> <span class="nf">SampleWindowPluginInfo</span><span class="p">()</span>
-<span class="lineno">40 </span><span class="p">{</span>
-<span class="lineno">41 </span>    <span class="k">static</span> <span class="k">const</span> <span class="n">Descriptions</span> <span class="n">descriptions</span> <span class="o">=</span> <span class="p">{</span>
-<span class="lineno">42 </span>                                                 <span class="p">{</span> <span class="s">&quot;en&quot;</span><span class="p">,</span> <span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;a plugin that provides an addition window.&quot;</span><span class="p">)</span> <span class="p">},</span>
-<span class="lineno">43 </span>                                                 <span class="p">{</span> <span class="s">&quot;fr&quot;</span><span class="p">,</span> <span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;une extension qui fournit une fenêtre d&#39;addition.&quot;</span><span class="p">)</span> <span class="p">}</span>
-<span class="lineno">44 </span>                                             <span class="p">};</span>
-<span class="lineno">45 </span>
-<span class="lineno">46 </span>    <span class="k">return</span> <span class="k">new</span> <span class="n">PluginInfo</span><span class="p">(</span><span class="n">PluginInfo</span><span class="o">::</span><span class="n">Category</span><span class="o">::</span><span class="n">Sample</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span>
-<span class="lineno">47 </span>                          <span class="p">{</span> <span class="s">&quot;Core&quot;</span><span class="p">,</span> <span class="s">&quot;Sample&quot;</span> <span class="p">},</span>
-<span class="lineno">48 </span>                          <span class="n">descriptions</span><span class="p">);</span>
-<span class="lineno">49 </span><span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">39</span><span class="n">PLUGININFO_FUNC</span><span class="w"> </span><span class="nf">SampleWindowPluginInfo</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">40</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">41</span><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Descriptions</span><span class="w"> </span><span class="n">descriptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">42</span><span class="w">                                                 </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;en&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;a plugin that provides an addition window.&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="linenos">43</span><span class="w">                                                 </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;fr&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;une extension qui fournit une fenêtre d&#39;addition.&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">44</span><span class="w">                                             </span><span class="p">};</span><span class="w"></span>
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PluginInfo</span><span class="p">(</span><span class="n">PluginInfo</span><span class="o">::</span><span class="n">Category</span><span class="o">::</span><span class="n">Sample</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">47</span><span class="w">                          </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Core&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sample&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="linenos">48</span><span class="w">                          </span><span class="n">descriptions</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">49</span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>As can be seen, our plugin is selectable by the user, but it does not offer <a class="reference external" href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a> support (line 46).
@@ -166,140 +167,140 @@ It also has a direct dependency on both the <a class="reference external" href="
 <p>The implementation of the interfaces’ various methods can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleWindow/src/samplewindowplugin.cpp"><code class="docutils literal notranslate"><span class="pre">samplewindowplugin.cpp</span></code></a>.
 The methods are grouped by interface and are ordered alphabetically.</p>
 <p>We start with the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/i18ninterface.inl">Internationalisation</a> interface:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="lineno">51 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">52 </span><span class="c1">// I18n interface</span>
-<span class="lineno">53 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">54 </span>
-<span class="lineno">55 </span><span class="kt">void</span> <span class="n">SampleWindowPlugin</span><span class="o">::</span><span class="n">retranslateUi</span><span class="p">()</span>
-<span class="lineno">56 </span><span class="p">{</span>
-<span class="lineno">57 </span>    <span class="c1">// Retranslate our Sample window action</span>
-<span class="lineno">58 </span>
-<span class="lineno">59 </span>    <span class="n">retranslateAction</span><span class="p">(</span><span class="n">mSampleWindowAction</span><span class="p">,</span>
-<span class="lineno">60 </span>                      <span class="n">tr</span><span class="p">(</span><span class="s">&quot;Sample&quot;</span><span class="p">),</span>
-<span class="lineno">61 </span>                      <span class="n">tr</span><span class="p">(</span><span class="s">&quot;Show/hide the Sample window&quot;</span><span class="p">));</span>
-<span class="lineno">62 </span><span class="p">}</span>
-<span class="lineno">63 </span>
-<span class="lineno">64 </span><span class="c1">//==============================================================================</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">51</span><span class="c1">//==============================================================================</span>
+<span class="linenos">52</span><span class="c1">// I18n interface</span>
+<span class="linenos">53</span><span class="c1">//==============================================================================</span>
+<span class="linenos">54</span>
+<span class="linenos">55</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleWindowPlugin::retranslateUi</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">56</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">57</span><span class="w">    </span><span class="c1">// Retranslate our Sample window action</span>
+<span class="linenos">58</span>
+<span class="linenos">59</span><span class="w">    </span><span class="n">retranslateAction</span><span class="p">(</span><span class="n">mSampleWindowAction</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">60</span><span class="w">                      </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Sample&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="linenos">61</span><span class="w">                      </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Show/hide the Sample window&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="linenos">62</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">63</span>
+<span class="linenos">64</span><span class="c1">//==============================================================================</span>
 </pre></div>
 </div>
-<p>All that we need to do is (re)translate <code class="docutils literal notranslate"><span class="pre">mSampleWindowAction</span></code> with the actual (French) translations in <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/sample/SampleWindow/i18n/SampleWindow_fr.ts"><code class="docutils literal notranslate"><span class="pre">SampleWindow_fr.ts</span></code></a> (together with some other translations needed <a class="reference internal" href="#develop-plugins-samplewindow-pluginspecific"><span class="std std-ref">below</span></a>).</p>
+<p>All that we need to do is (re)translate <code class="docutils literal notranslate"><span class="pre">mSampleWindowAction</span></code> with the actual (French) translations in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleWindow/i18n/SampleWindow_fr.ts"><code class="docutils literal notranslate"><span class="pre">SampleWindow_fr.ts</span></code></a> (together with some other translations needed <a class="reference internal" href="#develop-plugins-samplewindow-pluginspecific"><span class="std std-ref">below</span></a>).</p>
 <p>Next, we have the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/plugininterface.inl">Plugin</a> interface:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="lineno"> 64 </span><span class="c1">//==============================================================================</span>
-<span class="lineno"> 65 </span><span class="c1">// Plugin interface</span>
-<span class="lineno"> 66 </span><span class="c1">//==============================================================================</span>
-<span class="lineno"> 67 </span>
-<span class="lineno"> 68 </span><span class="kt">bool</span> <span class="n">SampleWindowPlugin</span><span class="o">::</span><span class="n">definesPluginInterfaces</span><span class="p">()</span>
-<span class="lineno"> 69 </span><span class="p">{</span>
-<span class="lineno"> 70 </span>    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="lineno"> 71 </span>
-<span class="lineno"> 72 </span>    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="lineno"> 73 </span><span class="p">}</span>
-<span class="lineno"> 74 </span>
-<span class="lineno"> 75 </span><span class="c1">//==============================================================================</span>
-<span class="lineno"> 76 </span>
-<span class="lineno"> 77 </span><span class="kt">bool</span> <span class="n">SampleWindowPlugin</span><span class="o">::</span><span class="n">pluginInterfacesOk</span><span class="p">(</span><span class="k">const</span> <span class="n">QString</span> <span class="o">&amp;</span><span class="n">pFileName</span><span class="p">,</span>
-<span class="lineno"> 78 </span>                                            <span class="n">QObject</span> <span class="o">*</span><span class="n">pInstance</span><span class="p">)</span>
-<span class="lineno"> 79 </span><span class="p">{</span>
-<span class="lineno"> 80 </span>    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span>
-<span class="lineno"> 81 </span>    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pInstance</span><span class="p">)</span>
-<span class="lineno"> 82 </span>
-<span class="lineno"> 83 </span>    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="lineno"> 84 </span>
-<span class="lineno"> 85 </span>    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="lineno"> 86 </span><span class="p">}</span>
-<span class="lineno"> 87 </span>
-<span class="lineno"> 88 </span><span class="c1">//==============================================================================</span>
-<span class="lineno"> 89 </span>
-<span class="lineno"> 90 </span><span class="kt">void</span> <span class="n">SampleWindowPlugin</span><span class="o">::</span><span class="n">initializePlugin</span><span class="p">()</span>
-<span class="lineno"> 91 </span><span class="p">{</span>
-<span class="lineno"> 92 </span>    <span class="c1">// Create an action to show/hide our Sample window</span>
-<span class="lineno"> 93 </span>
-<span class="lineno"> 94 </span>    <span class="n">mSampleWindowAction</span> <span class="o">=</span> <span class="n">Core</span><span class="o">::</span><span class="n">newAction</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">());</span>
-<span class="lineno"> 95 </span>
-<span class="lineno"> 96 </span>    <span class="c1">// Create our Sample window</span>
-<span class="lineno"> 97 </span>
-<span class="lineno"> 98 </span>    <span class="n">mSampleWindowWindow</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SampleWindowWindow</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">());</span>
-<span class="lineno"> 99 </span><span class="p">}</span>
-<span class="lineno">100 </span>
-<span class="lineno">101 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">102 </span>
-<span class="lineno">103 </span><span class="kt">void</span> <span class="n">SampleWindowPlugin</span><span class="o">::</span><span class="n">finalizePlugin</span><span class="p">()</span>
-<span class="lineno">104 </span><span class="p">{</span>
-<span class="lineno">105 </span>    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="lineno">106 </span><span class="p">}</span>
-<span class="lineno">107 </span>
-<span class="lineno">108 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">109 </span>
-<span class="lineno">110 </span><span class="kt">void</span> <span class="n">SampleWindowPlugin</span><span class="o">::</span><span class="n">pluginsInitialized</span><span class="p">(</span><span class="k">const</span> <span class="n">Plugins</span> <span class="o">&amp;</span><span class="n">pLoadedPlugins</span><span class="p">)</span>
-<span class="lineno">111 </span><span class="p">{</span>
-<span class="lineno">112 </span>    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pLoadedPlugins</span><span class="p">)</span>
-<span class="lineno">113 </span>
-<span class="lineno">114 </span>    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="lineno">115 </span><span class="p">}</span>
-<span class="lineno">116 </span>
-<span class="lineno">117 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">118 </span>
-<span class="lineno">119 </span><span class="kt">void</span> <span class="n">SampleWindowPlugin</span><span class="o">::</span><span class="n">loadSettings</span><span class="p">(</span><span class="n">QSettings</span> <span class="o">&amp;</span><span class="n">pSettings</span><span class="p">)</span>
-<span class="lineno">120 </span><span class="p">{</span>
-<span class="lineno">121 </span>    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pSettings</span><span class="p">)</span>
-<span class="lineno">122 </span>
-<span class="lineno">123 </span>    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="lineno">124 </span><span class="p">}</span>
-<span class="lineno">125 </span>
-<span class="lineno">126 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">127 </span>
-<span class="lineno">128 </span><span class="kt">void</span> <span class="n">SampleWindowPlugin</span><span class="o">::</span><span class="n">saveSettings</span><span class="p">(</span><span class="n">QSettings</span> <span class="o">&amp;</span><span class="n">pSettings</span><span class="p">)</span> <span class="k">const</span>
-<span class="lineno">129 </span><span class="p">{</span>
-<span class="lineno">130 </span>    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pSettings</span><span class="p">)</span>
-<span class="lineno">131 </span>
-<span class="lineno">132 </span>    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="lineno">133 </span><span class="p">}</span>
-<span class="lineno">134 </span>
-<span class="lineno">135 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">136 </span>
-<span class="lineno">137 </span><span class="kt">void</span> <span class="n">SampleWindowPlugin</span><span class="o">::</span><span class="n">handleUrl</span><span class="p">(</span><span class="k">const</span> <span class="n">QUrl</span> <span class="o">&amp;</span><span class="n">pUrl</span><span class="p">)</span>
-<span class="lineno">138 </span><span class="p">{</span>
-<span class="lineno">139 </span>    <span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pUrl</span><span class="p">)</span>
-<span class="lineno">140 </span>
-<span class="lineno">141 </span>    <span class="c1">// We don&#39;t handle this interface...</span>
-<span class="lineno">142 </span><span class="p">}</span>
-<span class="lineno">143 </span>
-<span class="lineno">144 </span><span class="c1">//==============================================================================</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 64</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 65</span><span class="c1">// Plugin interface</span>
+<span class="linenos"> 66</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 67</span>
+<span class="linenos"> 68</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleWindowPlugin::definesPluginInterfaces</span><span class="p">()</span><span class="w"></span>
+<span class="linenos"> 69</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 70</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos"> 71</span>
+<span class="linenos"> 72</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 73</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 74</span>
+<span class="linenos"> 75</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 76</span>
+<span class="linenos"> 77</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleWindowPlugin::pluginInterfacesOk</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 78</span><span class="w">                                            </span><span class="n">QObject</span><span class="w"> </span><span class="o">*</span><span class="n">pInstance</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 79</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 80</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 81</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pInstance</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos"> 84</span>
+<span class="linenos"> 85</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 86</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 87</span>
+<span class="linenos"> 88</span><span class="c1">//==============================================================================</span>
+<span class="linenos"> 89</span>
+<span class="linenos"> 90</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleWindowPlugin::initializePlugin</span><span class="p">()</span><span class="w"></span>
+<span class="linenos"> 91</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 92</span><span class="w">    </span><span class="c1">// Create an action to show/hide our Sample window</span>
+<span class="linenos"> 93</span>
+<span class="linenos"> 94</span><span class="w">    </span><span class="n">mSampleWindowAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Core</span><span class="o">::</span><span class="n">newAction</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">());</span><span class="w"></span>
+<span class="linenos"> 95</span>
+<span class="linenos"> 96</span><span class="w">    </span><span class="c1">// Create our Sample window</span>
+<span class="linenos"> 97</span>
+<span class="linenos"> 98</span><span class="w">    </span><span class="n">mSampleWindowWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SampleWindowWindow</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">());</span><span class="w"></span>
+<span class="linenos"> 99</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">100</span>
+<span class="linenos">101</span><span class="c1">//==============================================================================</span>
+<span class="linenos">102</span>
+<span class="linenos">103</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleWindowPlugin::finalizePlugin</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">104</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">105</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">106</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">107</span>
+<span class="linenos">108</span><span class="c1">//==============================================================================</span>
+<span class="linenos">109</span>
+<span class="linenos">110</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleWindowPlugin::pluginsInitialized</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Plugins</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pLoadedPlugins</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">111</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">112</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pLoadedPlugins</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">113</span>
+<span class="linenos">114</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">115</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">116</span>
+<span class="linenos">117</span><span class="c1">//==============================================================================</span>
+<span class="linenos">118</span>
+<span class="linenos">119</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleWindowPlugin::loadSettings</span><span class="p">(</span><span class="n">QSettings</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pSettings</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">120</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">121</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pSettings</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">122</span>
+<span class="linenos">123</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">124</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">125</span>
+<span class="linenos">126</span><span class="c1">//==============================================================================</span>
+<span class="linenos">127</span>
+<span class="linenos">128</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleWindowPlugin::saveSettings</span><span class="p">(</span><span class="n">QSettings</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pSettings</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="linenos">129</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">130</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pSettings</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">131</span>
+<span class="linenos">132</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">133</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">134</span>
+<span class="linenos">135</span><span class="c1">//==============================================================================</span>
+<span class="linenos">136</span>
+<span class="linenos">137</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleWindowPlugin::handleUrl</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QUrl</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pUrl</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">138</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">139</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pUrl</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">140</span>
+<span class="linenos">141</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
+<span class="linenos">142</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">143</span>
+<span class="linenos">144</span><span class="c1">//==============================================================================</span>
 </pre></div>
 </div>
 <p>The only method of interest to our plugin is <code class="docutils literal notranslate"><span class="pre">initializePlugin()</span></code> (lines 90-99), which is where we initialise both <code class="docutils literal notranslate"><span class="pre">mSampleWindowAction</span></code> and <code class="docutils literal notranslate"><span class="pre">mSampleWindowWindow</span></code>.
-All the other methods (<code class="docutils literal notranslate"><span class="pre">definesPluginInterfaces()</span></code>, <code class="docutils literal notranslate"><span class="pre">pluginInterfacesOk()</span></code>, <code class="docutils literal notranslate"><span class="pre">finalizePlugin()</span></code>, <code class="docutils literal notranslate"><span class="pre">pluginsInitialized()</span></code>, <code class="docutils literal notranslate"><span class="pre">loadSettings()</span></code>, <code class="docutils literal notranslate"><span class="pre">saveSettings()</span></code> and <code class="docutils literal notranslate"><span class="pre">handleUrl()</span></code>) are left empty.</p>
+All the other methods (<code class="docutils literal notranslate"><span class="pre">definesPluginInterfaces()</span></code>, <code class="docutils literal notranslate"><span class="pre">pluginInterfacesOk()</span></code>, <code class="docutils literal notranslate"><span class="pre">finalizePlugin()</span></code>, <code class="docutils literal notranslate"><span class="pre">pluginsInitialized()</span></code>, <code class="docutils literal notranslate"><span class="pre">loadSettings()</span></code>, <code class="docutils literal notranslate"><span class="pre">saveSettings()</span></code>, and <code class="docutils literal notranslate"><span class="pre">handleUrl()</span></code>) are left empty.</p>
 <p>Finally, we have the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/windowinterface.inl">Window</a> interface:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="lineno">144 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">145 </span><span class="c1">// Window interface</span>
-<span class="lineno">146 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">147 </span>
-<span class="lineno">148 </span><span class="n">Qt</span><span class="o">::</span><span class="n">DockWidgetArea</span> <span class="n">SampleWindowPlugin</span><span class="o">::</span><span class="n">windowDefaultDockArea</span><span class="p">()</span> <span class="k">const</span>
-<span class="lineno">149 </span><span class="p">{</span>
-<span class="lineno">150 </span>    <span class="c1">// Return our default dock area</span>
-<span class="lineno">151 </span>
-<span class="lineno">152 </span>    <span class="k">return</span> <span class="n">Qt</span><span class="o">::</span><span class="n">TopDockWidgetArea</span><span class="p">;</span>
-<span class="lineno">153 </span><span class="p">}</span>
-<span class="lineno">154 </span>
-<span class="lineno">155 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">156 </span>
-<span class="lineno">157 </span><span class="n">QAction</span> <span class="o">*</span> <span class="n">SampleWindowPlugin</span><span class="o">::</span><span class="n">windowAction</span><span class="p">()</span> <span class="k">const</span>
-<span class="lineno">158 </span><span class="p">{</span>
-<span class="lineno">159 </span>    <span class="c1">// Return our window action</span>
-<span class="lineno">160 </span>
-<span class="lineno">161 </span>    <span class="k">return</span> <span class="n">mSampleWindowAction</span><span class="p">;</span>
-<span class="lineno">162 </span><span class="p">}</span>
-<span class="lineno">163 </span>
-<span class="lineno">164 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">165 </span>
-<span class="lineno">166 </span><span class="n">QDockWidget</span> <span class="o">*</span> <span class="n">SampleWindowPlugin</span><span class="o">::</span><span class="n">windowWidget</span><span class="p">()</span> <span class="k">const</span>
-<span class="lineno">167 </span><span class="p">{</span>
-<span class="lineno">168 </span>    <span class="c1">// Return our window widget</span>
-<span class="lineno">169 </span>
-<span class="lineno">170 </span>    <span class="k">return</span> <span class="n">mSampleWindowWindow</span><span class="p">;</span>
-<span class="lineno">171 </span><span class="p">}</span>
-<span class="lineno">172 </span>
-<span class="lineno">173 </span><span class="c1">//==============================================================================</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">144</span><span class="c1">//==============================================================================</span>
+<span class="linenos">145</span><span class="c1">// Window interface</span>
+<span class="linenos">146</span><span class="c1">//==============================================================================</span>
+<span class="linenos">147</span>
+<span class="linenos">148</span><span class="n">Qt</span><span class="o">::</span><span class="n">DockWidgetArea</span><span class="w"> </span><span class="nf">SampleWindowPlugin::windowDefaultDockArea</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="linenos">149</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">150</span><span class="w">    </span><span class="c1">// Return our default dock area</span>
+<span class="linenos">151</span>
+<span class="linenos">152</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Qt</span><span class="o">::</span><span class="n">TopDockWidgetArea</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">153</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">154</span>
+<span class="linenos">155</span><span class="c1">//==============================================================================</span>
+<span class="linenos">156</span>
+<span class="linenos">157</span><span class="n">QAction</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">SampleWindowPlugin::windowAction</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="linenos">158</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">159</span><span class="w">    </span><span class="c1">// Return our window action</span>
+<span class="linenos">160</span>
+<span class="linenos">161</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mSampleWindowAction</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">162</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">163</span>
+<span class="linenos">164</span><span class="c1">//==============================================================================</span>
+<span class="linenos">165</span>
+<span class="linenos">166</span><span class="n">QDockWidget</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">SampleWindowPlugin::windowWidget</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="linenos">167</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">168</span><span class="w">    </span><span class="c1">// Return our window widget</span>
+<span class="linenos">169</span>
+<span class="linenos">170</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mSampleWindowWindow</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">171</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">172</span>
+<span class="linenos">173</span><span class="c1">//==============================================================================</span>
 </pre></div>
 </div>
 <p>All three methods are implemented since they tell OpenCOR the default dock area for our plugin window (see <code class="docutils literal notranslate"><span class="pre">windowDefaultDockArea()</span></code>; lines 148-153), as well as provide the pointer to our action (see <code class="docutils literal notranslate"><span class="pre">windowAction()</span></code>; lines 157-162) and window (see <code class="docutils literal notranslate"><span class="pre">windowWidget()</span></code>; lines 166-171).</p>
@@ -307,102 +308,102 @@ All the other methods (<code class="docutils literal notranslate"><span class="p
 <section id="plugin-specific">
 <span id="develop-plugins-samplewindow-pluginspecific"></span><h2>Plugin specific<a class="headerlink" href="#plugin-specific" title="Permalink to this heading">¶</a></h2>
 <p>Some extra work is needed to get our plugin to do what we want, and this is done via the <code class="docutils literal notranslate"><span class="pre">SampleWindowWindow</span></code> class in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleWindow/src/samplewindowwindow.h"><code class="docutils literal notranslate"><span class="pre">samplewindowwindow.h</span></code></a>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="lineno">28 </span><span class="cp">#include</span> <span class="cpf">&quot;windowwidget.h&quot;</span><span class="cp"></span>
-<span class="lineno">29 </span>
-<span class="lineno">30 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">31 </span>
-<span class="lineno">32 </span><span class="k">namespace</span> <span class="n">Ui</span> <span class="p">{</span>
-<span class="lineno">33 </span>    <span class="k">class</span> <span class="nc">SampleWindowWindow</span><span class="p">;</span>
-<span class="lineno">34 </span><span class="p">}</span> <span class="c1">// namespace Ui</span>
-<span class="lineno">35 </span>
-<span class="lineno">36 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">37 </span>
-<span class="lineno">38 </span><span class="k">namespace</span> <span class="n">OpenCOR</span> <span class="p">{</span>
-<span class="lineno">39 </span><span class="k">namespace</span> <span class="n">SampleWindow</span> <span class="p">{</span>
-<span class="lineno">40 </span>
-<span class="lineno">41 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">42 </span>
-<span class="lineno">43 </span><span class="k">class</span> <span class="nc">SampleWindowWindow</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Core</span><span class="o">::</span><span class="n">WindowWidget</span>
-<span class="lineno">44 </span><span class="p">{</span>
-<span class="lineno">45 </span>    <span class="n">Q_OBJECT</span>
-<span class="lineno">46 </span>
-<span class="lineno">47 </span><span class="k">public</span><span class="o">:</span>
-<span class="lineno">48 </span>    <span class="k">explicit</span> <span class="n">SampleWindowWindow</span><span class="p">(</span><span class="n">QWidget</span> <span class="o">*</span><span class="n">pParent</span><span class="p">);</span>
-<span class="lineno">49 </span>    <span class="o">~</span><span class="n">SampleWindowWindow</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
-<span class="lineno">50 </span>
-<span class="lineno">51 </span><span class="k">private</span><span class="o">:</span>
-<span class="lineno">52 </span>    <span class="n">Ui</span><span class="o">::</span><span class="n">SampleWindowWindow</span> <span class="o">*</span><span class="n">mGui</span><span class="p">;</span>
-<span class="lineno">53 </span>
-<span class="lineno">54 </span><span class="k">private</span> <span class="nl">slots</span><span class="p">:</span>
-<span class="lineno">55 </span>    <span class="kt">void</span> <span class="n">updateSum</span><span class="p">();</span>
-<span class="lineno">56 </span><span class="p">};</span>
-<span class="lineno">57 </span>
-<span class="lineno">58 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">59 </span>
-<span class="lineno">60 </span><span class="p">}</span> <span class="c1">// namespace SampleWindow</span>
-<span class="lineno">61 </span><span class="p">}</span> <span class="c1">// namespace OpenCOR</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">28</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;windowwidget.h&quot;</span><span class="cp"></span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="c1">//==============================================================================</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span><span class="k">namespace</span><span class="w"> </span><span class="nn">Ui</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">33</span><span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">SampleWindowWindow</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">34</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace Ui</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="c1">//==============================================================================</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">39</span><span class="k">namespace</span><span class="w"> </span><span class="nn">SampleWindow</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">40</span>
+<span class="linenos">41</span><span class="c1">//==============================================================================</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="k">class</span><span class="w"> </span><span class="nc">SampleWindowWindow</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Core</span><span class="o">::</span><span class="n">WindowWidget</span><span class="w"></span>
+<span class="linenos">44</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">45</span><span class="w">    </span><span class="n">Q_OBJECT</span><span class="w"></span>
+<span class="linenos">46</span>
+<span class="linenos">47</span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">48</span><span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">SampleWindowWindow</span><span class="p">(</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="n">pParent</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">49</span><span class="w">    </span><span class="o">~</span><span class="n">SampleWindowWindow</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">50</span>
+<span class="linenos">51</span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">52</span><span class="w">    </span><span class="n">Ui</span><span class="o">::</span><span class="n">SampleWindowWindow</span><span class="w"> </span><span class="o">*</span><span class="n">mGui</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">53</span>
+<span class="linenos">54</span><span class="k">private</span><span class="w"> </span><span class="n">slots</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">55</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">updateSum</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">56</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">57</span>
+<span class="linenos">58</span><span class="c1">//==============================================================================</span>
+<span class="linenos">59</span>
+<span class="linenos">60</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace SampleWindow</span>
+<span class="linenos">61</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace OpenCOR</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">SampleWindowWindow</span></code> inherits from <code class="docutils literal notranslate"><span class="pre">Core::WindowWidget</span></code>, which is defined in the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/">Core</a> plugin and is an extended version of <a class="reference external" href="https://qt.io/">Qt</a>’s <code class="docutils literal notranslate"><span class="pre">QDockWidget</span></code> class (line 43).
 It also comes with a GUI file, which describes the layout of our plugin window (<a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleWindow/src/samplewindowwindow.ui"><code class="docutils literal notranslate"><span class="pre">samplewindowwindow.ui</span></code></a>).</p>
 <p>The implementation of <code class="docutils literal notranslate"><span class="pre">SampleWindowWindow</span></code> can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleWindow/src/samplewindowwindow.cpp"><code class="docutils literal notranslate"><span class="pre">samplewindowwindow.cpp</span></code></a>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="lineno">24 </span><span class="cp">#include</span> <span class="cpf">&quot;sampleutilities.h&quot;</span><span class="cp"></span>
-<span class="lineno">25 </span><span class="cp">#include</span> <span class="cpf">&quot;samplewindowwindow.h&quot;</span><span class="cp"></span>
-<span class="lineno">26 </span>
-<span class="lineno">27 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">28 </span>
-<span class="lineno">29 </span><span class="cp">#include</span> <span class="cpf">&quot;ui_samplewindowwindow.h&quot;</span><span class="cp"></span>
-<span class="lineno">30 </span>
-<span class="lineno">31 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">32 </span>
-<span class="lineno">33 </span><span class="k">namespace</span> <span class="n">OpenCOR</span> <span class="p">{</span>
-<span class="lineno">34 </span><span class="k">namespace</span> <span class="n">SampleWindow</span> <span class="p">{</span>
-<span class="lineno">35 </span>
-<span class="lineno">36 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">37 </span>
-<span class="lineno">38 </span><span class="n">SampleWindowWindow</span><span class="o">::</span><span class="n">SampleWindowWindow</span><span class="p">(</span><span class="n">QWidget</span> <span class="o">*</span><span class="n">pParent</span><span class="p">)</span> <span class="o">:</span>
-<span class="lineno">39 </span>    <span class="n">Core</span><span class="o">::</span><span class="n">WindowWidget</span><span class="p">(</span><span class="n">pParent</span><span class="p">),</span>
-<span class="lineno">40 </span>    <span class="n">mGui</span><span class="p">(</span><span class="k">new</span> <span class="n">Ui</span><span class="o">::</span><span class="n">SampleWindowWindow</span><span class="p">)</span>
-<span class="lineno">41 </span><span class="p">{</span>
-<span class="lineno">42 </span>    <span class="c1">// Set up the GUI</span>
-<span class="lineno">43 </span>
-<span class="lineno">44 </span>    <span class="n">mGui</span><span class="o">-&gt;</span><span class="n">setupUi</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="lineno">45 </span>
-<span class="lineno">46 </span>    <span class="c1">// A couple of connections to update our sum whenever one of the value of</span>
-<span class="lineno">47 </span>    <span class="c1">// one of our numbers is updated</span>
-<span class="lineno">48 </span>
-<span class="lineno">49 </span>    <span class="n">connect</span><span class="p">(</span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">nb1DoubleSpinBox</span><span class="p">,</span> <span class="n">QOverload</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">of</span><span class="p">(</span><span class="o">&amp;</span><span class="n">QDoubleSpinBox</span><span class="o">::</span><span class="n">valueChanged</span><span class="p">),</span>
-<span class="lineno">50 </span>            <span class="k">this</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">SampleWindowWindow</span><span class="o">::</span><span class="n">updateSum</span><span class="p">);</span>
-<span class="lineno">51 </span>    <span class="n">connect</span><span class="p">(</span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">nb2DoubleSpinBox</span><span class="p">,</span> <span class="n">QOverload</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">of</span><span class="p">(</span><span class="o">&amp;</span><span class="n">QDoubleSpinBox</span><span class="o">::</span><span class="n">valueChanged</span><span class="p">),</span>
-<span class="lineno">52 </span>            <span class="k">this</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">SampleWindowWindow</span><span class="o">::</span><span class="n">updateSum</span><span class="p">);</span>
-<span class="lineno">53 </span>
-<span class="lineno">54 </span>    <span class="c1">// Initialise our sum</span>
-<span class="lineno">55 </span>
-<span class="lineno">56 </span>    <span class="n">updateSum</span><span class="p">();</span>
-<span class="lineno">57 </span><span class="p">}</span>
-<span class="lineno">58 </span>
-<span class="lineno">59 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">60 </span>
-<span class="lineno">61 </span><span class="n">SampleWindowWindow</span><span class="o">::~</span><span class="n">SampleWindowWindow</span><span class="p">()</span>
-<span class="lineno">62 </span><span class="p">{</span>
-<span class="lineno">63 </span>    <span class="c1">// Delete the GUI</span>
-<span class="lineno">64 </span>
-<span class="lineno">65 </span>    <span class="k">delete</span> <span class="n">mGui</span><span class="p">;</span>
-<span class="lineno">66 </span><span class="p">}</span>
-<span class="lineno">67 </span>
-<span class="lineno">68 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">69 </span>
-<span class="lineno">70 </span><span class="kt">void</span> <span class="n">SampleWindowWindow</span><span class="o">::</span><span class="n">updateSum</span><span class="p">()</span>
-<span class="lineno">71 </span><span class="p">{</span>
-<span class="lineno">72 </span>    <span class="c1">// Update our sum</span>
-<span class="lineno">73 </span>
-<span class="lineno">74 </span>    <span class="n">mGui</span><span class="o">-&gt;</span><span class="n">sumLabel</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">QString</span><span class="o">::</span><span class="n">number</span><span class="p">(</span><span class="n">Sample</span><span class="o">::</span><span class="n">add</span><span class="p">(</span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">nb1DoubleSpinBox</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">(),</span> <span class="n">mGui</span><span class="o">-&gt;</span><span class="n">nb2DoubleSpinBox</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">())));</span>
-<span class="lineno">75 </span><span class="p">}</span>
-<span class="lineno">76 </span>
-<span class="lineno">77 </span><span class="c1">//==============================================================================</span>
-<span class="lineno">78 </span>
-<span class="lineno">79 </span><span class="p">}</span> <span class="c1">// namespace SampleWindow</span>
-<span class="lineno">80 </span><span class="p">}</span> <span class="c1">// namespace OpenCOR</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">24</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sampleutilities.h&quot;</span><span class="cp"></span>
+<span class="linenos">25</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;samplewindowwindow.h&quot;</span><span class="cp"></span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="c1">//==============================================================================</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ui_samplewindowwindow.h&quot;</span><span class="cp"></span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="c1">//==============================================================================</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">34</span><span class="k">namespace</span><span class="w"> </span><span class="nn">SampleWindow</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="c1">//==============================================================================</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="n">SampleWindowWindow</span><span class="o">::</span><span class="n">SampleWindowWindow</span><span class="p">(</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="n">pParent</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<span class="linenos">39</span><span class="w">    </span><span class="n">Core</span><span class="o">::</span><span class="n">WindowWidget</span><span class="p">(</span><span class="n">pParent</span><span class="p">),</span><span class="w"></span>
+<span class="linenos">40</span><span class="w">    </span><span class="n">mGui</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Ui</span><span class="o">::</span><span class="n">SampleWindowWindow</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">41</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">42</span><span class="w">    </span><span class="c1">// Set up the GUI</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="w">    </span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">setupUi</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="w">    </span><span class="c1">// A couple of connections to update our sum whenever one of the value of</span>
+<span class="linenos">47</span><span class="w">    </span><span class="c1">// one of our numbers is updated</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span><span class="w">    </span><span class="n">connect</span><span class="p">(</span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">nb1DoubleSpinBox</span><span class="p">,</span><span class="w"> </span><span class="n">QOverload</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">of</span><span class="p">(</span><span class="o">&amp;</span><span class="n">QDoubleSpinBox</span><span class="o">::</span><span class="n">valueChanged</span><span class="p">),</span><span class="w"></span>
+<span class="linenos">50</span><span class="w">            </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">SampleWindowWindow</span><span class="o">::</span><span class="n">updateSum</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">51</span><span class="w">    </span><span class="n">connect</span><span class="p">(</span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">nb2DoubleSpinBox</span><span class="p">,</span><span class="w"> </span><span class="n">QOverload</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">of</span><span class="p">(</span><span class="o">&amp;</span><span class="n">QDoubleSpinBox</span><span class="o">::</span><span class="n">valueChanged</span><span class="p">),</span><span class="w"></span>
+<span class="linenos">52</span><span class="w">            </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">SampleWindowWindow</span><span class="o">::</span><span class="n">updateSum</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">53</span>
+<span class="linenos">54</span><span class="w">    </span><span class="c1">// Initialise our sum</span>
+<span class="linenos">55</span>
+<span class="linenos">56</span><span class="w">    </span><span class="n">updateSum</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">57</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">58</span>
+<span class="linenos">59</span><span class="c1">//==============================================================================</span>
+<span class="linenos">60</span>
+<span class="linenos">61</span><span class="n">SampleWindowWindow</span><span class="o">::~</span><span class="n">SampleWindowWindow</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">62</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">63</span><span class="w">    </span><span class="c1">// Delete the GUI</span>
+<span class="linenos">64</span>
+<span class="linenos">65</span><span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">mGui</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">66</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">67</span>
+<span class="linenos">68</span><span class="c1">//==============================================================================</span>
+<span class="linenos">69</span>
+<span class="linenos">70</span><span class="kt">void</span><span class="w"> </span><span class="n">SampleWindowWindow</span><span class="o">::</span><span class="n">updateSum</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">71</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">72</span><span class="w">    </span><span class="c1">// Update our sum</span>
+<span class="linenos">73</span>
+<span class="linenos">74</span><span class="w">    </span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">sumLabel</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">QString</span><span class="o">::</span><span class="n">number</span><span class="p">(</span><span class="n">Sample</span><span class="o">::</span><span class="n">add</span><span class="p">(</span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">nb1DoubleSpinBox</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">(),</span><span class="w"> </span><span class="n">mGui</span><span class="o">-&gt;</span><span class="n">nb2DoubleSpinBox</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">())));</span><span class="w"></span>
+<span class="linenos">75</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">76</span>
+<span class="linenos">77</span><span class="c1">//==============================================================================</span>
+<span class="linenos">78</span>
+<span class="linenos">79</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace SampleWindow</span>
+<span class="linenos">80</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace OpenCOR</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">SampleWindowWindow()</span></code> (lines 38-57) initialises the <code class="docutils literal notranslate"><span class="pre">SampleWindowWindow</span></code> object, as well as creates a couple of connections (lines 49-52) and initialises our sum by calling <code class="docutils literal notranslate"><span class="pre">updateSum()</span></code> (line 56).

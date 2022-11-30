@@ -11,7 +11,7 @@ If you open a `CellML <https://cellml.org/>`__ file, it will look something like
    :align: center
    :scale: 25%
 
-Apart from using a specific format, the view has the same features as the :ref:`Raw CellML <plugins_editing_rawCellMLView>` view with one exception: currently, ``CellML Validation`` only validates against the :ref:`CellML Text format <plugins_editing_cellmlTextView_cellmlTextFormat>`.
+Apart from using a specific format, the view has the same features as the :ref:`Raw CellML <plugins_editing_rawCellMLView>` view with one exception: ``CellML Validation`` only validates against the :ref:`CellML Text format <plugins_editing_cellmlTextView_cellmlTextFormat>`, not `CellML <https://cellml.org/>`__ *per se*.
 
 Compatibility with COR
 ----------------------
@@ -27,8 +27,8 @@ People familiar with `COR <https://opencor.ws/cor>`__ will find that the :ref:`C
 
 However, note that the COR format has some limitations that are also present in the :ref:`CellML Text format <plugins_editing_cellmlTextView_cellmlTextFormat>`:
 
-- The ``reaction`` element is not supported (its use is not only discouraged, but it has also been removed from `CellML 2.0 <https://cellml.org/specifications/cellml_2.0>`__, the next version of `CellML <https://cellml.org/>`__);
-- A ``component`` element may contain a set of ``math`` elements, but its rendering is such that when serialised back, only one ``math`` element will remain, with all the equations in that one and unique ``math`` element.
+- The ``reaction`` element is not supported (its use is not only discouraged, but it has also been removed from `CellML 2.0 <https://cellml.org/specifications/cellml_2.0>`__, which is not yet supported by OpenCOR);
+- A ``component`` element may contain a set of ``math`` elements, but when serialised back, only one ``math`` element will remain, with all the equations in that one and unique ``math`` element.
 
 .. _plugins_editing_cellmlTextView_comments:
 
@@ -36,7 +36,8 @@ Comments
 --------
 
 You can (un)comment a piece of code by pressing ``Ctrl``\ +\ ``/``.
-If no text is selected or if it consists of one or several full lines, then the comment will be rendered as ``// XXX``, e.g.
+If no text is selected or if it consists of one or several full lines then the comment will be rendered as ``// XXX``.
+For instance:
 
 .. code-block:: cellmlText
 
@@ -45,7 +46,8 @@ If no text is selected or if it consists of one or several full lines, then the 
        ...
    enddef;
 
-Alternatively, if one or several lines are partially selected, then the comment will be rendered as ``/* XXX */``, e.g.
+Alternatively, if one or several lines are partially selected then the comment will be rendered as ``/* XXX */``.
+For instance:
 
 .. code-block:: cellmlText
 
@@ -54,16 +56,17 @@ Alternatively, if one or several lines are partially selected, then the comment 
    enddef;
 
 Note that ``/* XXX */`` comments are only for convenience and are not serialised back to `CellML <https://cellml.org/>`__.
-Indeed, such comments can be inserted anywhere, including within an equation, e.g.
+Indeed, such comments can be inserted anywhere, including within an equation.
+For instance:
 
 .. code-block:: cellmlText
 
    ode(V, time) = -(i_Na+i_K+i_Leak/*+i_Stim*/)/Cm;
 
-It is therefore difficult, if not impossible, to determine where such comments should be included when serialised back.
+It is therefore impossible to determine where such comments should be included when serialised back.
 
 ``// XXX`` comments can also be inserted anywhere, but unlike ``/* XXX */`` comments they are serialised back.
-However, the rendering of certain elements using the :ref:`CellML Text format <plugins_editing_cellmlTextView_cellmlTextFormat>` is such that when serialised back, ``// XXX`` comments may be included in the parent element of those elements, and either before or after those elements, depending on the situation.
+However, the rendering of certain elements is such that when serialised back, ``// XXX`` comments may be included in the parent element of those elements, and either before or after those elements, depending on the situation.
 
 .. _plugins_editing_cellmlTextView_cellmlTextFormat:
 
@@ -83,7 +86,7 @@ To define a model of name ``my_model``, we use:
        ...
    enddef;
 
-The model definition sits between ``as`` and ``enddef;``, and can consist of :ref:`imports <plugins_editing_cellmlTextView_imports>`, :ref:`unit definitions <plugins_editing_cellmlTextView_unitDefinitions>`, :ref:`component definitions <plugins_editing_cellmlTextView_componentDefinitions>`, :ref:`group definitions <plugins_editing_cellmlTextView_groupDefinitions>` and :ref:`mapping definitions <plugins_editing_cellmlTextView_mappingDefinitions>`.
+The model definition sits between ``as`` and ``enddef;``, and can consist of :ref:`imports <plugins_editing_cellmlTextView_imports>`, :ref:`unit definitions <plugins_editing_cellmlTextView_unitDefinitions>`, :ref:`component definitions <plugins_editing_cellmlTextView_componentDefinitions>`, :ref:`group definitions <plugins_editing_cellmlTextView_groupDefinitions>`, and :ref:`mapping definitions <plugins_editing_cellmlTextView_mappingDefinitions>`.
 
 .. _plugins_editing_cellmlTextView_imports:
 
@@ -142,8 +145,8 @@ To define a unit of name ``my_unit``, based on some other units, we would use:
        ...
    enddef;
 
-``my_other_unit`` refers to a user-defined unit while ``second`` is an `SI <https://en.wikipedia.org/wiki/International_System_of_Units>`__ base unit, ``litre`` a convenience unit and ``volt`` an `SI <https://en.wikipedia.org/wiki/International_System_of_Units>`__ derived unit .
-The following `SI <https://en.wikipedia.org/wiki/International_System_of_Units>`__ base (in bold) and derived units, as well as convenience units (in italics), can be used:
+``my_other_unit`` refers to a user-defined unit while ``second`` is an `SI <https://en.wikipedia.org/wiki/International_System_of_Units>`__ base unit, ``litre`` a convenience unit and ``volt`` an `SI <https://en.wikipedia.org/wiki/International_System_of_Units>`__-derived unit .
+The following `SI <https://en.wikipedia.org/wiki/International_System_of_Units>`__ base (in bold) and -derived units, as well as convenience units (in italics), can be used:
 
 .. table::
    :class: units
@@ -163,7 +166,7 @@ The following `SI <https://en.wikipedia.org/wiki/International_System_of_Units>`
    +------------+------------+--------------+----------+---------+-----------------+
 
 Additional information can be provided within curly brackets.
-Thus, ``prefix``, ``exponent``, ``multiplier`` and ``offset`` values of :math:`p`, :math:`e`, :math:`m` and :math:`o` can be used on a unit :math:`u` to define a new unit equal to :math:`m \cdot (p \cdot u)^e+o`.
+Thus, ``prefix``, ``exponent``, ``multiplier``, and ``offset`` values of :math:`p`, :math:`e`, :math:`m`, and :math:`o` can be used on a unit :math:`u` to define a new unit equal to :math:`m \cdot (p \cdot u)^e+o`.
 For example, to define ``my_unit`` as being equal to :math:`3 \cdot (milli \cdot my\_other\_unit)^{-1}+7`, we would use:
 
 .. code-block:: cellmlText
@@ -172,7 +175,7 @@ For example, to define ``my_unit`` as being equal to :math:`3 \cdot (milli \cdot
        unit my_other_unit {pref: milli, expo: -1, mult: 3, off: 7};
    enddef;
 
-By default, ``pref``, ``expo``, ``mult`` and ``off`` have a value of :math:`0`, :math:`1.0`, :math:`1.0` and :math:`0.0`, respectively.
+By default, ``pref``, ``expo``, ``mult``, and ``off`` have a value of :math:`0`, :math:`1.0`, :math:`1.0`, and :math:`0.0`, respectively.
 ``pref`` can either be an integer or have any of the following values:
 
 .. table::
@@ -213,7 +216,7 @@ To define a component of name ``my_component``, we would use:
        ...
    enddef;
 
-The component definition sits between ``as`` and ``enddef;``, and can consist of :ref:`unit definitions <plugins_editing_cellmlTextView_unitDefinitions>`, :ref:`variable definitions <plugins_editing_cellmlTextView_variableDefinitions>`, :ref:`mathematical equations <plugins_editing_cellmlTextView_mathematicalEquations>`.
+The component definition sits between ``as`` and ``enddef;``, and can consist of :ref:`unit definitions <plugins_editing_cellmlTextView_unitDefinitions>`, :ref:`variable definitions <plugins_editing_cellmlTextView_variableDefinitions>`, and :ref:`mathematical equations <plugins_editing_cellmlTextView_mathematicalEquations>`.
 
 .. _plugins_editing_cellmlTextView_variableDefinitions:
 
@@ -226,7 +229,7 @@ To define a variable of name ``my_variable`` and of unit ``my_unit``, we would u
 
    var my_variable: my_unit {...};
 
-Additional information can be provided within curly brackets: an initial value, a public interface and/or a private interface.
+Additional information can be provided within curly brackets: an initial value, a public interface, and/or a private interface.
 For example, to initialise ``my_variable`` to :math:`3` and set its public and private interfaces to ``in`` and ``out``, respectively, we would use:
 
 .. code-block:: cellmlText
@@ -235,14 +238,14 @@ For example, to initialise ``my_variable`` to :math:`3` and set its public and p
 
 By default, ``init`` has no value (i.e. the variable is not initialised) while ``pub`` and ``priv`` have a value of ``none`` (i.e. the variable belongs to the current component and is not visible to other components in the model).
 ``init`` can either take a real number as a value or the name of a variable defined in the current component.
-Both ``pub`` and ``priv`` can take any of the following values: ``none``, ``in`` or ``out``.
+Both ``pub`` and ``priv`` can take any of the following values: ``none``, ``in``, or ``out``.
 
 .. _plugins_editing_cellmlTextView_mathematicalEquations:
 
 Mathematical equations
 ~~~~~~~~~~~~~~~~~~~~~~
 
-A mathematical equation must either have an identifier or an `ODE <https://en.wikipedia.org/wiki/Ordinary_differential_equation>`__ on its left hand side, i.e. :math:`x=...` and :math:`\frac{dx}{dt}=...`, respectively.
+A mathematical equation must either have an identifier or an `ODE <https://en.wikipedia.org/wiki/Ordinary_differential_equation>`__ on its left hand side, i.e. :math:`x=...` or :math:`\frac{dx}{dt}=...`, respectively.
 To write such equations, we would use:
 
 .. code-block:: cellmlText
@@ -633,7 +636,7 @@ To define some mappings between two components of name ``my_component1`` and ``m
        ...
    enddef;
 
-To map variables ``my_variable1a`` with ``my_variable2a``, ``my_variable1b`` with ``my_variable2b``, and ``my_variable1c`` with ``my_variable2c`` from components ``my_component1`` and ``my_component2``, respectively, we would use:
+To map variables ``my_variable1a`` with ``my_variable2a``, ``my_variable1b`` with ``my_variable2b``, and ``my_variable1c`` with ``my_variable2c`` for components ``my_component1`` and ``my_component2``, respectively, we would use:
 
 .. code-block:: cellmlText
 
@@ -650,7 +653,7 @@ Metadata
 
 The :ref:`CellML Text format <plugins_editing_cellmlTextView_cellmlTextFormat>` does not support the editing of `CellML <https://cellml.org/>`__ annotations.
 However, ``cmeta:id``'s are used to make the link between `CellML <https://cellml.org/>`__ elements and `CellML <https://cellml.org/>`__ annotations.
-So, we need the :ref:`CellML Text format <plugins_editing_cellmlTextView_cellmlTextFormat>` to support the use of ``cmeta:id``'s and this is done by enclosing a ``cmeta:id`` value (e.g. ``my_cmeta_id``) within curly brackets:
+So, we need the :ref:`CellML Text format <plugins_editing_cellmlTextView_cellmlTextFormat>` to support the use of ``cmeta:id``'s and this is done by enclosing a ``cmeta:id`` value (e.g., ``my_cmeta_id``) within curly brackets:
 
 .. code-block:: cellmlText
 

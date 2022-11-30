@@ -16,6 +16,7 @@
                 <script src="_static/underscore.js"></script>
                 <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
                 <script src="_static/doctools.js"></script>
+                <script src="_static/sphinx_highlight.js"></script>
                 <script src="_static/clipboard.min.js"></script>
                 <script src="_static/copybutton.js"></script>
                 <script src="_static/tabs.js"></script>
@@ -37,10 +38,10 @@
 <ul class="simple">
 <li><p>By default, OpenCOR uses the system’s language for menus, message boxes, etc., as long as it is either English or French (please <a class="reference external" href="https://opencor.ws/contactUs.html">contact us</a> if you would like OpenCOR to support other languages).
 If the system uses another language, OpenCOR will default to English.
-Otherwise, if you specify English or French, then please be aware that system messages, diaogs, etc. will still be displayed using the system’s language (assuming it is not one of the languages supported by OpenCOR).</p></li>
+Otherwise, if you specify English or French then please be aware that system messages, diaogs, etc. will still be displayed using the system’s language.</p></li>
 <li><p>OpenCOR uses the <a class="reference external" href="https://github.com/cellmlapi/cellml-api/">CellML API</a>, which is known to have the following limitations:</p>
 <ul>
-<li><p>It will crash OpenCOR if you try to export a <a class="reference external" href="https://cellml.org/">CellML</a> file to a user-defined format that is described in a file that contains valid, but unknown, <a class="reference external" href="https://w3.org/XML">XML</a>.</p></li>
+<li><p>It leaks memory, although it should not be a “problem” in most cases.</p></li>
 <li><p>It may incorrectly (in)validate certain <a class="reference external" href="https://cellml.org/">CellML</a> files.</p></li>
 </ul>
 </li>
@@ -50,7 +51,7 @@ Otherwise, if you specify English or French, then please be aware that system me
 <section id="windows-and-linux">
 <h2>Windows and Linux<a class="headerlink" href="#windows-and-linux" title="Permalink to this heading">¶</a></h2>
 <ul>
-<li><p>A scaled display will, on <a class="reference external" href="https://en.wikipedia.org/wiki/Linux">Linux</a>, result in some aspects of OpenCOR being rendered at the wrong size (e.g. icons will be smaller and scroll bars bigger).
+<li><p>A scaled display will, on <a class="reference external" href="https://en.wikipedia.org/wiki/Linux">Linux</a>, result in some aspects of OpenCOR being rendered at the wrong size (e.g., icons will be smaller and scroll bars bigger).
 On <a class="reference external" href="https://en.wikipedia.org/wiki/Windows">Windows</a>, OpenCOR should scale itself automatically, although it will look more or less blurry depending on your display scaling and screen resolution.
 In case OpenCOR does not scale itself, turn off <em>Fix scaling for apps</em>:</p>
 <blockquote>
@@ -70,10 +71,18 @@ In case OpenCOR does not scale itself, turn off <em>Fix scaling for apps</em>:</
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>The <a class="reference internal" href="plugins/organisation/fileBrowserWindow.html#plugins-organisation-filebrowserwindow"><span class="std std-ref">File Browser window</span></a> plugin may, on some systems, result in OpenCOR being slow to respond at startup.
-This has nothing to do with OpenCOR, but most likely with a <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Windows">Windows</a> shell add-on.
-<a class="reference external" href="https://brighthub.com/computing/windows-platform/articles/86552.aspx">This page</a> may help address the issue, but if not then you might have to disable the <a class="reference internal" href="plugins/organisation/fileBrowserWindow.html#plugins-organisation-filebrowserwindow"><span class="std std-ref">File Browser window</span></a> plugin.</p></li>
+This has nothing to do with OpenCOR, but most likely with a <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Windows">Windows</a> shell add-on.</p></li>
 <li><p>If OpenCOR was installed in a system folder using the <a class="reference external" href="https://en.wikipedia.org/wiki/ZIP_(file_format)">ZIP</a> file then the first time OpenCOR is run it will have to be run as administrator.
-This is so that OpenCOR can update the <a class="reference external" href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> of its <a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> scripts to point to its copy of Python.</p></li>
+This is so that OpenCOR can update the <a class="reference external" href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> of its <a class="reference external" href="https://python.org/">Python</a> scripts to point to its copy of Python.</p></li>
+</ul>
+</section>
+<section id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>OpenCOR is supported on <a class="reference external" href="https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_20.04_LTS_(Focal_Fossa)">Ubuntu 20.04 LTS (Focal Fossa)</a> and later.
+However, OpenCOR’s <a class="reference external" href="https://python.org/">Python</a> requires a specific version of <a class="reference external" href="https://sourceware.org/libffi/">libffi</a> which may or may not be present on a later version of Ubuntu.
+For this reason, OpenCOR comes with its own copy of <a class="reference external" href="https://sourceware.org/libffi/">libffi</a>, but this means that OpenCOR’s scripts must set <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code>, so that OpenCOR’s <a class="reference external" href="https://python.org/">Python</a> can find <a class="reference external" href="https://sourceware.org/libffi/">libffi</a>.
+This means that, on some later versions of Ubuntu, to run <code class="docutils literal notranslate"><span class="pre">[OpenCOR]/bin/OpenCOR</span></code> directly will result in the <a class="reference internal" href="plugins/miscellaneous/pythonConsoleWindow.html#plugins-miscellaneous-pythonconsolewindow"><span class="std std-ref">Python Console window</span></a> plugin not to work (since <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> is not set, which means that our copy of <a class="reference external" href="https://sourceware.org/libffi/">libffi</a> cannot be found).</p></li>
 </ul>
 </section>
 <section id="macos">

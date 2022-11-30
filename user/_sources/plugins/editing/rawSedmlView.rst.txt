@@ -13,7 +13,7 @@ If you open a `SED-ML <https://sed-ml.github.io/>`__ file, it will look somethin
 
 Apart from using syntax highlighting, the view has the same features as the :ref:`Raw Text <plugins_editing_rawTextView>` view.
 
-The panel below the text editor is used to list any `SED-ML <https://sed-ml.github.io/>`__ issue that results from trying to validate a `SED-ML <https://sed-ml.github.io/>`__ file, which can be done either by pressing ``Ctrl``\ +\ ``Shift``\ +\ ``T`` or through the ``Tools`` | ``SED-ML Validation`` menu or the context menu of the text editor:
+The panel below the text editor is used to list any `SED-ML <https://sed-ml.github.io/>`__ issue that results from trying to validate a `SED-ML <https://sed-ml.github.io/>`__ file, which can be done either by pressing ``Ctrl``\ +\ ``Shift``\ +\ ``V`` or through the ``Tools`` | ``SED-ML Validation`` menu or the context menu of the text editor:
 
 .. image:: pics/RawSEDMLViewScreenshot02.png
    :align: center

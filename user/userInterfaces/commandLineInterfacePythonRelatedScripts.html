@@ -16,6 +16,7 @@
                 <script src="../_static/underscore.js"></script>
                 <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
                 <script src="../_static/doctools.js"></script>
+                <script src="../_static/sphinx_highlight.js"></script>
                 <script src="../_static/clipboard.min.js"></script>
                 <script src="../_static/copybutton.js"></script>
                 <script src="../_static/tabs.js"></script>
@@ -33,7 +34,7 @@
 <span id="userinterfaces-commandlineinterfacepythonrelatedscripts"></span><h1>Python-related scripts<a class="headerlink" href="#python-related-scripts" title="Permalink to this heading">¶</a></h1>
 <p>The following <a class="reference external" href="https://python.org/">Python</a>-related scripts can be used to start:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ipython[.bat]</span></code>: an <a class="reference external" href="https://jupyter.org/">IPython</a> session;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipython[.bat]</span></code>: an <a class="reference external" href="https://ipython.org/">IPython</a> session;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">jupyter[.bat]</span></code>: a <a class="reference external" href="https://jupyter.org/">Jupyter</a> session;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">jupyterconsole[.bat]</span></code>: a <a class="reference external" href="https://jupyter.org/">Jupyter</a> console, i.e. a terminal frontend for <a class="reference external" href="https://jupyter.org/">Jupyter</a> kernels;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">jupyterlab[.bat|.vbs]</span></code>: a <a class="reference external" href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab</a>, i.e. a Web-based interactive development environment for <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/latest/">Jupyter Notebooks</a>, code and data;</p></li>
@@ -44,7 +45,7 @@
 <section id="ipython-bat">
 <h2><code class="docutils literal notranslate"><span class="pre">ipython[.bat]</span></code><a class="headerlink" href="#ipython-bat" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./ipython
-Python 3.7.5 (default, Mar 30 2021, 16:43:44)
+Python 3.7.5 (default, May 27 2022, 16:06:22)
 Type &#39;copyright&#39;, &#39;credits&#39; or &#39;license&#39; for more information
 IPython 7.8.0 -- An enhanced Interactive Python. Type &#39;?&#39; for help.
 
@@ -79,14 +80,14 @@ In [1]:
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./jupyterlab
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../_images/commandLineInterfacePythonRelatedScripts01.png"><img alt="../_images/commandLineInterfacePythonRelatedScripts01.png" class="align-center" src="../_images/commandLineInterfacePythonRelatedScripts01.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/commandLineInterfacePythonRelatedScripts01.png"><img alt="../_images/commandLineInterfacePythonRelatedScripts01.png" class="align-center" src="../_images/commandLineInterfacePythonRelatedScripts01.png" style="width: 240.0px; height: 262.5px;" /></a>
 </section>
-<section id="jupyternotebook-bat">
-<h2><code class="docutils literal notranslate"><span class="pre">jupyternotebook[.bat]</span></code><a class="headerlink" href="#jupyternotebook-bat" title="Permalink to this heading">¶</a></h2>
+<section id="jupyternotebook-bat-vbs">
+<h2><code class="docutils literal notranslate"><span class="pre">jupyternotebook[.bat|.vbs]</span></code><a class="headerlink" href="#jupyternotebook-bat-vbs" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./jupyternotebook
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../_images/commandLineInterfacePythonRelatedScripts02.png"><img alt="../_images/commandLineInterfacePythonRelatedScripts02.png" class="align-center" src="../_images/commandLineInterfacePythonRelatedScripts02.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/commandLineInterfacePythonRelatedScripts02.png"><img alt="../_images/commandLineInterfacePythonRelatedScripts02.png" class="align-center" src="../_images/commandLineInterfacePythonRelatedScripts02.png" style="width: 240.0px; height: 262.5px;" /></a>
 </section>
 <section id="pythonshell-bat">
 <span id="userinterfaces-commandlineinterfacepythonrelatedscriptspythonshell"></span><h2><code class="docutils literal notranslate"><span class="pre">pythonshell[.bat]</span></code><a class="headerlink" href="#pythonshell-bat" title="Permalink to this heading">¶</a></h2>
@@ -96,7 +97,7 @@ Thus,</p>
 </pre></div>
 </div>
 <p>is an alias for:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -c PythonShell $*
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -c PythonShell &quot;$@&quot;
 </pre></div>
 </div>
 </section>

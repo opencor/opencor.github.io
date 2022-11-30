@@ -16,6 +16,7 @@
                 <script src="_static/underscore.js"></script>
                 <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
                 <script src="_static/doctools.js"></script>
+                <script src="_static/sphinx_highlight.js"></script>
                 <script src="_static/clipboard.min.js"></script>
                 <script src="_static/copybutton.js"></script>
                 <script src="_static/tabs.js"></script>
@@ -31,14 +32,14 @@
         
   <section id="python-support">
 <span id="pythonsupport"></span><h1>Python support<a class="headerlink" href="#python-support" title="Permalink to this heading">¶</a></h1>
-<p>OpenCOR comes bundled with <a class="reference external" href="https://python.org/">Python</a>, providing <a class="reference external" href="https://python.org/">Python</a> support to OpenCOR.
+<p>OpenCOR comes bundled with <a class="reference external" href="https://python.org/">Python</a>, providing OpenCOR with <a class="reference external" href="https://python.org/">Python</a> support.
 The following <a class="reference external" href="https://python.org/">Python</a> packages are included:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://matplotlib.org/">Matplotlib</a>: a <a class="reference external" href="https://python.org/">Python</a> 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms;</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/">Matplotlib</a>: a comprehensive library for creating static, animated, and interactive visualizations in <a class="reference external" href="https://python.org/">Python</a>;</p></li>
 <li><p><a class="reference external" href="https://numpy.org/">NumPy</a>: the fundamental package for scientific computing with <a class="reference external" href="https://python.org/">Python</a>; and</p></li>
-<li><p><a class="reference external" href="https://scipy.org/">SciPy</a>: a <a class="reference external" href="https://python.org/">Python</a>-based ecosystem of open-source software for mathematics, science and engineering.</p></li>
+<li><p><a class="reference external" href="https://scipy.org/">SciPy</a>: the fundamental algorithms for scientific computing in <a class="reference external" href="https://python.org/">Python</a>.</p></li>
 </ul>
-<p>Some code illustrating the use of the OpenCOR <a class="reference external" href="https://python.org/">Python</a> module and wrappers can be found <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/support/PythonSupport/tests/data">here</a>.</p>
+<p>Some code illustrating the use of the OpenCOR <a class="reference external" href="https://python.org/">Python</a> module and wrappers can be found <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/support/PythonSupport/tests/data/">here</a>.</p>
 <section id="install-a-python-package">
 <h2>Install a Python package<a class="headerlink" href="#install-a-python-package" title="Permalink to this heading">¶</a></h2>
 <p>Additional <a class="reference external" href="https://python.org/">Python</a> packages can be installed either from the <a class="reference internal" href="userInterfaces/commandLineInterface.html#userinterfaces-commandlineinterface"><span class="std std-ref">CLI</span></a> (using the <code class="docutils literal notranslate"><span class="pre">jupyterconsole[.bat]</span></code> <a class="reference internal" href="userInterfaces/commandLineInterfacePythonRelatedScripts.html#userinterfaces-commandlineinterfacepythonrelatedscriptsjupyterconsole"><span class="std std-ref">script</span></a>) or through the <a class="reference internal" href="userInterfaces/graphicalUserInterface.html#userinterfaces-graphicaluserinterface"><span class="std std-ref">GUI</span></a> (using the <a class="reference internal" href="plugins/miscellaneous/pythonConsoleWindow.html#plugins-miscellaneous-pythonconsolewindow"><span class="std std-ref">Python Console window</span></a> plugin):</p>
@@ -50,16 +51,16 @@ The following <a class="reference external" href="https://python.org/">Python</a
 <h2>Python module<a class="headerlink" href="#python-module" title="Permalink to this heading">¶</a></h2>
 <p>A <a class="reference external" href="https://python.org/">Python</a> module, <code class="docutils literal notranslate"><span class="pre">opencor</span></code>, is available and can be used to handle simulations in OpenCOR:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">open_simulation(file_name_or_url)</span></code>: open and return the simulation for the given local or remote <a class="reference external" href="https://cellml.org/">CellML</a> file, <a class="reference external" href="https://sed-ml.github.io/">SED-ML</a> file or <a class="reference external" href="https://co.mbine.org/documents/archive">COMBINE archive</a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">close_simulation(simulation)</span></code>: close the given simulation.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">simulation()</span></code>: return the current simulation.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">open_simulation(file_name_or_url)</span></code>: open and return a <code class="docutils literal notranslate"><span class="pre">Simulation</span></code> object for the given local or remote <a class="reference external" href="https://cellml.org/">CellML</a> file, <a class="reference external" href="https://sed-ml.github.io/">SED-ML</a> file, or <a class="reference external" href="https://co.mbine.org/documents/archive">COMBINE archive</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">close_simulation(simulation)</span></code>: close the given <code class="docutils literal notranslate"><span class="pre">Simulation</span></code> object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">simulation()</span></code>: return the active <code class="docutils literal notranslate"><span class="pre">Simulation</span></code> object, if any.</p>
 <p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">simulation()</span></code> is only available when using the <a class="reference internal" href="plugins/miscellaneous/pythonConsoleWindow.html#plugins-miscellaneous-pythonconsolewindow"><span class="std std-ref">Python Console window</span></a> plugin.</p>
 </li>
 </ul>
 </section>
 <section id="python-wrappers">
 <h2>Python wrappers<a class="headerlink" href="#python-wrappers" title="Permalink to this heading">¶</a></h2>
-<p>The following OpenCOR classes have some <a class="reference external" href="https://python.org/">Python</a> wrappers that can be used to handle a simulation, simulation data, simulation results, a data store and a data store variable:</p>
+<p>The following OpenCOR classes have <a class="reference external" href="https://python.org/">Python</a> wrappers that can be used to handle a simulation, some simulation data, some simulation results, a data store, and a data store variable:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Simulation</span></code>:</p>
 <ul>
@@ -77,24 +78,24 @@ The following <a class="reference external" href="https://python.org/">Python</a
 <li><p><code class="docutils literal notranslate"><span class="pre">SimulationData</span></code>:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">algebraic()</span></code>: return the algebraic values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreValue</span></code> objects.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">constants()</span></code>: return the constants values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreValue</span></code> objects.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">constants()</span></code>: return the constant values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreValue</span></code> objects.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ending_point()</span></code>: return the ending point.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nla_solver_name()</span></code>: return the name of the NLA solver.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">nla_solver_property(name)</span></code>: return the value of the NLA solver property.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nla_solver_property(name)</span></code>: return the value of the given NLA solver property.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ode_solver_name()</span></code>: return the name of the ODE solver.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ode_solver_property(name)</span></code>: return the value of the ODE solver property.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ode_solver_property(name)</span></code>: return the value of the given ODE solver property.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">point_interval()</span></code>: return the point interval.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rates()</span></code>: return the rates values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreValue</span></code> objects.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">set_ending_point(value)</span></code>: set the ending point.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">set_nla_solver(name)</span></code>: set the NLA solver.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">set_nla_solver_property(name,</span> <span class="pre">value)</span></code>: set the value of the NLA solver property.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">set_ode_solver(name)</span></code>: set the ODE solver using the given ODE solver name.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">set_ode_solver_property(name,</span> <span class="pre">value)</span></code>: set the value of the ODE solver property.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">set_point_interval(value)</span></code>: set the point interval.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">set_starting_point(value)</span></code>: set the starting point.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rates()</span></code>: return the rate values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreValue</span></code> objects.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_ending_point(value)</span></code>: set the ending point to the given value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_nla_solver(name)</span></code>: set the NLA solver to the given NLA solver name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_nla_solver_property(name,</span> <span class="pre">value)</span></code>: set the given NLA solver property to the given value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_ode_solver(name)</span></code>: set the ODE solver to the given ODE solver name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_ode_solver_property(name,</span> <span class="pre">value)</span></code>: set the given ODE solver property to the given value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_point_interval(value)</span></code>: set the point interval to the given value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_starting_point(value)</span></code>: set the starting point to the given value.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">starting_point()</span></code>: return the starting point.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">states()</span></code>: return the states values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreValue</span></code> objects.</p>
-<p><strong>Note:</strong> neither <code class="docutils literal notranslate"><span class="pre">set_ode_solver()</span></code>, <code class="docutils literal notranslate"><span class="pre">set_ode_solver_property()</span></code>, <code class="docutils literal notranslate"><span class="pre">set_nla_solver()</span></code> nor <code class="docutils literal notranslate"><span class="pre">set_nla_solver_property()</span></code> currently updates the <a class="reference internal" href="userInterfaces/graphicalUserInterface.html#userinterfaces-graphicaluserinterface"><span class="std std-ref">GUI</span></a>.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">states()</span></code>: return the state values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreValue</span></code> objects.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">set_ode_solver()</span></code>, <code class="docutils literal notranslate"><span class="pre">set_ode_solver_property()</span></code>, <code class="docutils literal notranslate"><span class="pre">set_nla_solver()</span></code>, and <code class="docutils literal notranslate"><span class="pre">set_nla_solver_property()</span></code> do not currently update the <a class="reference internal" href="userInterfaces/graphicalUserInterface.html#userinterfaces-graphicaluserinterface"><span class="std std-ref">GUI</span></a>.</p>
 </li>
 </ul>
 </li>
@@ -103,10 +104,10 @@ The following <a class="reference external" href="https://python.org/">Python</a
 <li><p><code class="docutils literal notranslate"><span class="pre">SimulationResults</span></code>:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">algebraic()</span></code>: return the algebraic values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreVariable</span></code> objects.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">constants()</span></code>: return the constants values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreVariable</span></code> objects.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">constants()</span></code>: return the constant values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreVariable</span></code> objects.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">data_store()</span></code>: return the associated data store as a <code class="docutils literal notranslate"><span class="pre">DataStore</span></code> object.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rates()</span></code>: return the rates values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreVariable</span></code> objects.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">states()</span></code>: return the states values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreVariable</span></code> objects.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rates()</span></code>: return the rate values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreVariable</span></code> objects.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">states()</span></code>: return the state values as a <a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Python dictionary</a> of <code class="docutils literal notranslate"><span class="pre">DataStoreVariable</span></code> objects.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">voi()</span></code>: return the variable of integration as a <code class="docutils literal notranslate"><span class="pre">DataStoreVariable</span></code> object.</p></li>
 </ul>
 </li>
@@ -138,7 +139,7 @@ The following <a class="reference external" href="https://python.org/">Python</a
 <li><p><code class="docutils literal notranslate"><span class="pre">unit()</span></code>: return the unit.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">uri()</span></code>: return the <a class="reference external" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">value(position,</span> <span class="pre">run</span> <span class="pre">=</span> <span class="pre">-1)</span></code>: return the value at the given position and for the given run (<code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">=</span> <span class="pre">-1</span></code> corresponds to the last run).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">values(run</span> <span class="pre">=</span> <span class="pre">-1)</span></code>: return the values for the given run (<code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">=</span> <span class="pre">-1</span></code> corresponds to the last run) as a <a class="reference external" href="https://numpy.org/doc/1.17/reference/generated/numpy.array.html">NumPy array</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">values(run</span> <span class="pre">=</span> <span class="pre">-1)</span></code>: return the values for the given run (<code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">=</span> <span class="pre">-1</span></code> corresponds to the last run) as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html">NumPy array</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">values_count(run</span> <span class="pre">=</span> <span class="pre">-1)</span></code>: return the number of values for the given run (<code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">=</span> <span class="pre">-1</span></code> corresponds to the last run).</p></li>
 </ul>
 </li>

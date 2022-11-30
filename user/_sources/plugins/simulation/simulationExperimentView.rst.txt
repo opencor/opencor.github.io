@@ -22,14 +22,14 @@ The following topics are covered:
 Open a CellML file
 ------------------
 
-Upon opening a `CellML <https://cellml.org/>`__ file, OpenCOR checks that it can be used for simulation.
+Upon opening a `CellML <https://cellml.org/>`__ file and switching to the Simulation Experiment view, OpenCOR checks that it can be used for simulation.
 If it cannot, a message describing the issue is shown:
 
 .. image:: pics/SimulationExperimentViewScreenshot01.png
    :align: center
    :scale: 25%
 
-On the other hand, if you open a valid `CellML <https://cellml.org/>`__ file (e.g. |noble_model_1962.cellml|_, which is shipped with OpenCOR), the view looks as follows:
+On the other hand, if you open a valid `CellML <https://cellml.org/>`__ file (e.g., |noble_model_1962.cellml|_, which is shipped with OpenCOR), the view looks as follows:
 
 .. |noble_model_1962.cellml| replace:: ``[OpenCOR]/models/noble_model_1962.cellml``
 .. _noble_model_1962.cellml: opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/noble_model_1962.cellml
@@ -40,7 +40,7 @@ On the other hand, if you open a valid `CellML <https://cellml.org/>`__ file (e.
 
 It consists of two main parts, the first of which allows you to customise the simulation, the solver(s) and the model parameters, as well as to specify which graphs to plot.
 The second part is used to plot the requested graphs.
-In the **Parameters** section, all the model parameters have an icon associated with them to highlight their type:
+In the **Parameters** section, all the model parameters have an icon associated with them, to highlight their type:
 
 | |iconVoi|              Variable of integration
 | |iconConstant|         (Editable) constant
@@ -78,10 +78,10 @@ In the **Parameters** section, all the model parameters have an icon associated 
 Simulate an ODE model
 ---------------------
 
-To simulate a model, you need to provide some information about the simulation itself, i.e. its starting point, ending point and point interval.
+To simulate a model, you need to provide some information about the simulation itself: its starting point, ending point, and point interval.
 Then, you need to specify the solver(s) that you want to use.
 The solvers available to you depend on which :ref:`solver plugins <plugins_solver>` you selected, as well as on the type of your model (i.e. `ODE <https://en.wikipedia.org/wiki/Ordinary_differential_equation>`__ or `DAE <https://en.wikipedia.org/wiki/Differential_algebraic_equation>`__).
-If you are dealing with an `ODE <https://en.wikipedia.org/wiki/Ordinary_differential_equation>`__ model and all the solver plugins are selected, then `CVODE <https://computation.llnl.gov/projects/sundials/cvode>`__, forward `Euler <https://en.wikipedia.org/wiki/Euler_method>`__, `Heun <https://en.wikipedia.org/wiki/Heun's_method>`__, and the second-order and fourth-order of `Runge-Kutta <https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods>`__ are available to you:
+If you are dealing with an `ODE <https://en.wikipedia.org/wiki/Ordinary_differential_equation>`__ model and all the solver plugins are selected then `CVODE <https://computing.llnl.gov/projects/sundials/cvode>`__, forward `Euler <https://en.wikipedia.org/wiki/Euler_method>`__, `Heun <https://en.wikipedia.org/wiki/Heun's_method>`__, and the second-order and fourth-order of `Runge-Kutta <https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods>`__ are available to you:
 
 .. image:: pics/SimulationExperimentViewScreenshot03.png
    :align: center
@@ -95,7 +95,7 @@ For example, if you select ``Euler (forward)``, you see that it has only one pro
    :scale: 25%
 
 You can start the simulation by pressing ``F9`` or by clicking on the |oxygenActionsMediaPlaybackStart| button.
-Then, or before, you can add a graph.
+Then, or before, you can add one or several graphs to be plotted.
 All the model parameters are listed to the bottom-left of the view, grouped by components in which they were originally defined.
 To add a graph, right click on a model parameter and select against which other model parameter you want it to be plotted.
 For example, to create a graph for ``V`` (from the ``membrane`` component) against the variable of integration (i.e. time since the simulation properties are expressed in milliseconds), you would do the following:
@@ -115,11 +115,11 @@ From there, you can get the information associated with the graph by double clic
    :scale: 25%
 
 The ``Model`` property is used to associate the graph with a particular file.
-By default, it has a value of ``Current``, which means that the graph is associated with the current file.
-However, you can explicitly associate it with another one.
-The |oxygenStatusTaskAttention| icon is shown next to the check box, if the association cannot be done, and next to the ``X`` and/or ``Y`` properties to highlight which model parameter(s) could not be found in the other file.
-The |oxygenStatusObjectUnlocked| icon indicates that the graph is not locked, i.e. its ``Model`` property has a value of ``Current``, while the |oxygenStatusObjectLocked| icon is used when a graph is associated with a specific file.
-The ``X`` and ``Y`` properties can be modified either by editing their value or by right clicking on them and selecting another model parameter from the context menu, which can also be used to add or remove a graph.
+Its default value of ``Current`` means that the graph is associated with the current file.
+However, you can explicitly associate it with another file.
+A |oxygenStatusTaskAttention| icon is shown next to the check box when an association cannot be done and next to the ``X`` and/or ``Y`` properties to highlight which model parameter(s) could not be found in the other file.
+An |oxygenStatusObjectUnlocked| icon indicates that the graph is not locked, i.e. its ``Model`` property has a value of ``Current``, while a |oxygenStatusObjectLocked| icon is used when a graph is associated with a specific file.
+The ``X`` and ``Y`` properties can be modified either by editing their value or by right clicking on them and selecting another model parameter from the context menu, which can also be used to add or remove a graph, as well as select or unselect the current graph or all the graphs.
 
 .. |oxygenStatusTaskAttention| image:: ../../pics/oxygen/status/task-attention.png
    :class: inlineicon
@@ -135,7 +135,7 @@ The ``X`` and ``Y`` properties can be modified either by editing their value or 
 
 Back to the simulation, you can see that it failed with several model parameters having a value of ``nan`` (i.e. `not a number <https://en.wikipedia.org/wiki/NaN>`__).
 This is because the solver is not properly set up: its ``Step`` property is too big.
-If you set it to ``0.01 milliseconds``, reset all the model parameters (by clicking on the |oxygenActionsViewRefresh| button), clear the simulation data (by clicking on the |oxygenActionsTrashEmpty| button) and restart the simulation, then you get:
+If you set it to ``0.01 milliseconds``, reset all the model parameters (by clicking on the |oxygenActionsViewRefresh| button), clear the simulation data (by clicking on the |oxygenActionsTrashEmpty| button), and restart the simulation then you get:
 
 .. |oxygenActionsViewRefresh| image:: ../../pics/oxygen/actions/view-refresh.png
    :class: inlineicon
@@ -168,7 +168,7 @@ Thus, by using a value of ``100,000`` (or a bigger/smaller value, depending on t
    :scale: 25%
 
 Now, you can modify any of the model parameters identified by either the |state| or |constant| icon (i.e. a state or a constant).
-Thus, if you set ``g_Na_max`` (from the ``sodium_channel`` component) to ``0 milliS_per_cm2``, you get:
+Thus, if you set ``g_Na_max`` (from the ``sodium_channel`` component) to ``0 milliS_per_cm2`` then you get:
 
 .. |state| image:: pics/state.png
    :class: inlineicon
@@ -213,7 +213,7 @@ If you want to create other graphs, but do not want them on the same graph panel
 You might have noticed that the bottom graph panel has a blue vertical line to its left.
 This is to indicate that it is the currently selected graph panel (a graph panel can be selected by clicking on it).
 Something else that you might have noticed is that the **Graphs** section is now empty.
-This is because there are currently no graphs associated with the graph panel.
+This is because there are currently no graphs associated with the seleted graph panel.
 Just for illustration, you can create a graph to plot ``V`` (from the ``membrane`` component) against ``V'`` (also from the ``membrane`` component):
 
 .. image:: pics/SimulationExperimentViewScreenshot14.png
@@ -232,7 +232,7 @@ The current graph panel or all the graph panels (but the first one) can be remov
 Simulate a DAE model
 --------------------
 
-To simulate a `DAE <https://en.wikipedia.org/wiki/Differential_algebraic_equation>`__ model is similar to simulating an `ODE <https://en.wikipedia.org/wiki/Ordinary_differential_equation>`__ model, except that OpenCOR also needs to solve one or several systems of `non-linear algebraic <https://en.wikipedia.org/wiki/Nonlinear_system#Nonlinear_algebraic_equations>`__ equations (e.g. with |simple_dae_model.cellml|_):
+To simulate a `DAE <https://en.wikipedia.org/wiki/Differential_algebraic_equation>`__ model is similar to simulating an `ODE <https://en.wikipedia.org/wiki/Ordinary_differential_equation>`__ model, except that OpenCOR also needs to solve one or several systems of `non-linear algebraic <https://en.wikipedia.org/wiki/Nonlinear_system#Nonlinear_algebraic_equations>`__ equations (e.g., with |simple_dae_model.cellml|_):
 
 .. |simple_dae_model.cellml| replace:: ``[OpenCOR]/models/tests/cellml/simple_dae_model.cellml``
 .. _simple_dae_model.cellml: opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/simple_dae_model.cellml
@@ -246,7 +246,7 @@ To simulate a `DAE <https://en.wikipedia.org/wiki/Differential_algebraic_equatio
 Simulate a CellML 1.1 model
 ---------------------------
 
-So far, we have only simulated `CellML 1.0 <https://cellml.org/specifications/cellml_1.0>`__ models, but you can also simulate `CellML 1.1 <https://cellml.org/specifications/cellml_1.1>`__ models, i.e. models that import units and/or components from other models (e.g. with |periodic-stimulus.xml|_):
+So far, we have only simulated `CellML 1.0 <https://cellml.org/specifications/cellml_1.0>`__ models, but you can also simulate `CellML 1.1 <https://cellml.org/specifications/cellml_1.1>`__ models, i.e. models that import units and/or components from other models (e.g., with |periodic-stimulus.xml|_):
 
 .. |periodic-stimulus.xml| replace:: ``[OpenCOR]/models/tests/cellml/cellml_1_1/experiments/periodic-stimulus.xml``
 .. _periodic-stimulus.xml: opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/cellml/cellml_1_1/experiments/periodic-stimulus.xml
@@ -260,8 +260,8 @@ So far, we have only simulated `CellML 1.0 <https://cellml.org/specifications/ce
 Simulate several models at the same time
 ----------------------------------------
 
-Each simulation is run in its own thread, which means that several simulations can be run at the same time.
-Simulations running in the background display a small progress bar in the top tab bar while the foreground simulation uses the main progress bar at the bottom of the view:
+Each simulation is run in its own thread, which makes it possible to run several simulations at the same time.
+Simulations running in the background display a small progress bar in the top tab bar while the active simulation uses the main progress bar at the bottom of the view:
 
 .. image:: pics/SimulationExperimentViewScreenshot17.png
    :align: center
@@ -274,14 +274,14 @@ SED-ML support
 
 An important aspect of modelling is reproducibility.
 To that end, a simulation can be exported to `SED-ML <https://sed-ml.github.io/>`__ by clicking on the |sedmlLogo| button.
-The export can then be done either to a `SED-ML <https://sed-ml.github.io/>`__ file or a `COMBINE archive <https://co.mbine.org/documents/archive>`__, both of which can then be re-run by OpenCOR and any `SED-ML <https://sed-ml.github.io/>`__ capable software (e.g. `SED-ML Web Tools <http://sysbioapps.spdns.org/SED-ML_Web_Tools>`__).
+The export can then be done either to a `SED-ML <https://sed-ml.github.io/>`__ file or a `COMBINE archive <https://co.mbine.org/documents/archive>`__, both of which can then be re-run by OpenCOR and any `SED-ML <https://sed-ml.github.io/>`__ capable software (e.g., `BioSimulations <https://biosimulations.org/>`__, `SED-ML Web Tools <http://sysbioapps.spdns.org/SED-ML_Web_Tools>`__).
 
 .. |sedmlLogo| image:: ../../pics/sedmlLogo.png
    :class: inlineicon
    :width: 16px
 
 A `SED-ML <https://sed-ml.github.io/>`__ file (or a `COMBINE archive <https://co.mbine.org/documents/archive>`__) contains all the information needed to reproduce a simulation, i.e. a reference to the model (or even the model itself in the case of a `COMBINE archive <https://co.mbine.org/documents/archive>`__; the referenced model can be opened by clicking on the |cellmlLogo| button), the parameters of the simulation, the solver and its properties, the number of graph panels, and the graphs to be plotted in each graph panel.
-Thus, once open, a simulation can be re-run by pressing ``F9`` or by clicking on the |oxygenActionsMediaPlaybackStart| button (e.g. with |noble_1962.omex|_):
+Thus, once open, a simulation can be re-run by pressing ``F9`` or by clicking on the |oxygenActionsMediaPlaybackStart| button (e.g., with |noble_1962.omex|_):
 
 .. |noble_1962.omex| replace:: ``[OpenCOR]/models/tests/combine/noble_1962.omex``
 .. _noble_1962.omex: opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/combine/noble_1962.omex
@@ -307,24 +307,24 @@ By default, the line of a graph is two-pixel wide and blue, as can be seen when 
    :align: center
    :scale: 25%
 
-Subsequent graphs use a different line colour.
+However, subsequent graphs use a different line colour.
 For example, if you plot ``i_K`` and ``i_Leak`` against the variable of integration, you get:
 
 .. image:: pics/SimulationExperimentViewScreenshot20.png
    :align: center
    :scale: 25%
 
-However, the line can be further customised by changing the value of one or several of its properties (``Style``, ``Width`` and ``Colour``) in the **Graphs** section.
-Possible values for ``Style`` are ``None``, ``Solid``, ``Dash``, ``Dot``, ``DashDot`` and ``DashDotDot``:
+The line can be further customised by changing the value of one or several of its properties (``Style``, ``Width``, and ``Colour``) in the **Graphs** section.
+Possible values for ``Style`` are ``None``, ``Solid``, ``Dash``, ``Dot``, ``DashDot``, and ``DashDotDot``:
 
 .. image:: pics/SimulationExperimentViewScreenshot21.png
    :align: center
    :scale: 25%
 
-``Colour`` can be changed manually by providing an `RGB <https://en.wikipedia.org/wiki/RGB_color_model>`__ or `RGBA <https://en.wikipedia.org/wiki/RGBA_color_space>`__ value, i.e. ``#RRGGBB`` or ``#RRGGBBAA`` with ``RR``, ``GG``, ``BB`` and ``AA`` corresponding to the value of the red, green, blue and alpha channel of the colour, respectively.
+``Colour`` can be changed manually by providing an `RGB <https://en.wikipedia.org/wiki/RGB_color_model>`__ or `RGBA <https://en.wikipedia.org/wiki/RGBA_color_space>`__ value, i.e. ``#RRGGBB`` or ``#RRGGBBAA`` with ``RR``, ``GG``, ``BB``, and ``AA`` corresponding to the value of the red, green, blue, and alpha channel of the colour, respectively.
 Each value consists of two hexadecimal digits between ``0`` and ``f``.
 For example, the blue colour used for the first graph has an `RGB <https://en.wikipedia.org/wiki/RGB_color_model>`__ value of ``#0072bd``.
-However, an easier way to change ``Colour`` is by double clicking on the square next to its `RGB <https://en.wikipedia.org/wiki/RGB_color_model>`__ or `RGBA <https://en.wikipedia.org/wiki/RGBA_color_space>`__ value.
+However, an easier way to change ``Colour`` is by double clicking on the square next to its value.
 This brings up a colour dialog, from which you can choose the colour you want to use:
 
 .. image:: pics/SimulationExperimentViewScreenshot22.png
@@ -332,8 +332,8 @@ This brings up a colour dialog, from which you can choose the colour you want to
    :scale: 25%
 
 In addition to a line, a graph can have a symbol rendered at each of its data points.
-As for a line, a symbol can be customised by changing the value of one or several of its properties (``Style``, ``Size``, ``Colour``, ``Filled`` and ``Fill colour``).
-Possible values for ``Style`` are ``None``, ``Circle``, ``Square``, ``Diamond``, ``Triangle``, ``Down Triangle``, ``Cross``, ``X Cross``, ``Horizontal Line``, ``Vertical Line`` ``Star``:
+As for a line, a symbol can be customised by changing the value of one or several of its properties (``Style``, ``Size``, ``Colour``, ``Filled``, and ``Fill colour``).
+Possible values for ``Style`` are ``None``, ``Circle``, ``Square``, ``Diamond``, ``Triangle``, ``Down Triangle``, ``Cross``, ``X Cross``, ``Horizontal Line``, ``Vertical Line``, and ``Star``:
 
 .. image:: pics/SimulationExperimentViewScreenshot23.png
    :align: center
@@ -350,7 +350,7 @@ This brings up a context menu allowing you to switch between the **Graphs** and 
    :align: center
    :scale: 25%
 
-Many aspects of a graph panel can be customised and that includes various types of colours, styles, widths, etc., as well as whether the legend should be shown, a logarithmic scale used for the X and/or Y axes, etc., as illustrated by running |noble_1962_local.sedml|_:
+Many aspects of a graph panel can be customised and this includes various types of colours, styles, widths, etc., as well as whether the legend should be shown, a logarithmic scale used for the X and/or Y axes, etc., as illustrated by running |noble_1962_local.sedml|_:
 
 .. |noble_1962_local.sedml| replace:: ``[OpenCOR]/models/tests/sedml/noble_1962_local.sedml``
 .. _noble_1962_local.sedml: opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_local.sedml
@@ -427,7 +427,8 @@ Tool bar
 | |toolBarOxygenActionsListRemove|           Remove the current graph panel or all the graph panels
 | |toolBarCellmlLogo|                        Open the referenced CellML file
 | |toolBarSedmlLogo|                         Export the simulation to SED-ML
-| |toolBarOxygenActionsDocumentExport|       Export the simulation data
+| |toolBarOxygenActionsDocumentImport|       Import some data
+| |toolBarOxygenActionsDocumentExport|       Export the simulation results
 | |toolBarOxygenCategoriesPreferencesSystem| Preferences for the Simulation Experiment view
 
 .. |toolBarOxygenActionsMediaPlaybackStart| image:: ../../pics/oxygen/actions/media-playback-start.png
@@ -471,6 +472,10 @@ Tool bar
    :width: 24px
 
 .. |toolBarSedmlLogo| image:: ../../pics/sedmlLogo.png
+   :class: toolbar
+   :width: 24px
+
+.. |toolBarOxygenActionsDocumentImport| image:: ../../pics/oxygen/actions/document-import.png
    :class: toolbar
    :width: 24px
 

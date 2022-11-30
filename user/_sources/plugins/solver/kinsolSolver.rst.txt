@@ -4,7 +4,7 @@
  KINSOLSolver plugin
 =====================
 
-The KINSOLSolver plugin uses `KINSOL <https://computation.llnl.gov/projects/sundials/kinsol>`__ to solve systems of `non-linear algebraic <https://en.wikipedia.org/wiki/Nonlinear_system#Nonlinear_algebraic_equations>`__ equations and it can be customised through the following properties:
+The KINSOLSolver plugin uses `KINSOL <https://computing.llnl.gov/projects/sundials/kinsol>`__ to solve systems of `non-linear algebraic <https://en.wikipedia.org/wiki/Nonlinear_system#Nonlinear_algebraic_equations>`__ (NLA) equations and it can be customised through the following properties:
 
 - **Maximum number of iterations:** the maximum number of iterations used by the solver to solve the system (default: :math:`200`).
 
@@ -12,7 +12,7 @@ The KINSOLSolver plugin uses `KINSOL <https://computation.llnl.gov/projects/sund
 
 - **Linear solver:** the linear solver used by the solver (default: ``Dense``).
 
-  **Note #1:** ``Dense``, ``Banded``, ``GMRES``, ``BiCGStab`` or ``TFQMR`` can be used.
+  **Note #1:** ``Dense``, ``Banded``, ``GMRES``, ``BiCGStab``, and ``TFQMR`` can be used.
 
   **Note #2:** ``Banded`` requires specifying both an upper and a lower half-bandwidth value.
 

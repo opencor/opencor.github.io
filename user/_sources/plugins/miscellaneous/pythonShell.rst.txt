@@ -31,8 +31,8 @@ Interactive Python shell
 ::
 
   $ ./OpenCOR -c PythonShell::python
-  Python 3.7.5 (default, Dec  2 2019, 11:02:28)
-  [Clang 11.0.0 (clang-1100.0.33.12)] on darwin
+  Python 3.7.5 (default, May 27 2022, 16:06:22)
+  [Clang 13.1.6 (clang-1316.0.21.2.5)] on darwin
   Type "help", "copyright", "credits" or "license" for more information.
   >>>
 
@@ -41,8 +41,8 @@ From the :ref:`help <plugins_miscellaneous_pythonShellHelp>` section above, we c
 ::
 
   $ ./OpenCOR -c PythonShell
-  Python 3.7.5 (default, Dec  2 2019, 11:02:28)
-  [Clang 11.0.0 (clang-1100.0.33.12)] on darwin
+  Python 3.7.5 (default, May 27 2022, 16:06:22)
+  [Clang 13.1.6 (clang-1316.0.21.2.5)] on darwin
   Type "help", "copyright", "credits" or "license" for more information.
   >>>
 
@@ -52,8 +52,8 @@ So, a third way to launch an interactive `Python <https://python.org/>`__ shell 
 ::
 
   $ ./pythonshell
-  Python 3.7.5 (default, Dec  2 2019, 11:02:28)
-  [Clang 11.0.0 (clang-1100.0.33.12)] on darwin
+  Python 3.7.5 (default, May 27 2022, 16:06:22)
+  [Clang 13.1.6 (clang-1316.0.21.2.5)] on darwin
   Type "help", "copyright", "credits" or "license" for more information.
   >>>
 

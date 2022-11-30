@@ -16,6 +16,7 @@
                 <script src="../../_static/underscore.js"></script>
                 <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
                 <script src="../../_static/doctools.js"></script>
+                <script src="../../_static/sphinx_highlight.js"></script>
                 <script src="../../_static/clipboard.min.js"></script>
                 <script src="../../_static/copybutton.js"></script>
                 <script src="../../_static/tabs.js"></script>
@@ -32,10 +33,10 @@
         
   <section id="cvodesolver-plugin">
 <span id="plugins-solver-cvodesolver"></span><h1>CVODESolver plugin<a class="headerlink" href="#cvodesolver-plugin" title="Permalink to this heading">¶</a></h1>
-<p>The CVODESolver plugin uses <a class="reference external" href="https://computation.llnl.gov/projects/sundials/cvode">CVODE</a> to solve <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">ODEs</a> and it can be customised through the following properties:</p>
+<p>The CVODESolver plugin uses <a class="reference external" href="https://computing.llnl.gov/projects/sundials/cvode">CVODE</a> to solve <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">ODEs</a> and it can be customised through the following properties:</p>
 <ul>
 <li><p><strong>Maximum step:</strong> the maximum step used by the solver (default: <span class="math notranslate nohighlight">\(0\)</span>).</p>
-<p><strong>Note:</strong> the default value of <span class="math notranslate nohighlight">\(0\)</span> means that <a class="reference external" href="https://computation.llnl.gov/projects/sundials/cvode">CVODE</a> will try to use as big a step as possible.</p>
+<p><strong>Note:</strong> the default value of <span class="math notranslate nohighlight">\(0\)</span> means that <a class="reference external" href="https://computing.llnl.gov/projects/sundials/cvode">CVODE</a> will try to use as big a step as possible.</p>
 </li>
 </ul>
 <ul>
@@ -59,13 +60,13 @@ However, some (very) stiff models may require this value to be increased.</p>
 </ul>
 <ul>
 <li><p><strong>Linear solver:</strong> the linear solver used by the solver during a <code class="docutils literal notranslate"><span class="pre">Newton</span></code> iteration (default: <code class="docutils literal notranslate"><span class="pre">Dense</span></code>).</p>
-<p><strong>Note #1:</strong> <code class="docutils literal notranslate"><span class="pre">Dense</span></code>, <code class="docutils literal notranslate"><span class="pre">Banded</span></code>, <code class="docutils literal notranslate"><span class="pre">Diagonal</span></code>, <code class="docutils literal notranslate"><span class="pre">GMRES</span></code>, <code class="docutils literal notranslate"><span class="pre">BiCGStab</span></code> and <code class="docutils literal notranslate"><span class="pre">TFQMR</span></code> can be used.</p>
+<p><strong>Note #1:</strong> <code class="docutils literal notranslate"><span class="pre">Dense</span></code>, <code class="docutils literal notranslate"><span class="pre">Banded</span></code>, <code class="docutils literal notranslate"><span class="pre">Diagonal</span></code>, <code class="docutils literal notranslate"><span class="pre">GMRES</span></code>, <code class="docutils literal notranslate"><span class="pre">BiCGStab</span></code>, and <code class="docutils literal notranslate"><span class="pre">TFQMR</span></code> can be used.</p>
 <p><strong>Note #2:</strong> <code class="docutils literal notranslate"><span class="pre">Banded</span></code> requires specifying both an upper and a lower half-bandwidth value.</p>
-<p><strong>Note #3:</strong> <code class="docutils literal notranslate"><span class="pre">GMRES</span></code>, <code class="docutils literal notranslate"><span class="pre">BiCGStab</span></code> and <code class="docutils literal notranslate"><span class="pre">TFQMR</span></code> require specifying whether to use a preconditioner.</p>
+<p><strong>Note #3:</strong> <code class="docutils literal notranslate"><span class="pre">GMRES</span></code>, <code class="docutils literal notranslate"><span class="pre">BiCGStab</span></code>, and <code class="docutils literal notranslate"><span class="pre">TFQMR</span></code> require specifying whether to use a preconditioner.</p>
 </li>
 </ul>
 <ul>
-<li><p><strong>Preconditioner:</strong> the preconditioner, if any, used by the solver when using a <code class="docutils literal notranslate"><span class="pre">GMRES</span></code>, <code class="docutils literal notranslate"><span class="pre">BiCGStab</span></code> or <code class="docutils literal notranslate"><span class="pre">TFQMR</span></code> linear solver during a <code class="docutils literal notranslate"><span class="pre">Newton</span></code> iteration (default: <code class="docutils literal notranslate"><span class="pre">Banded</span></code>).</p>
+<li><p><strong>Preconditioner:</strong> the preconditioner, if any, used by the solver when using a <code class="docutils literal notranslate"><span class="pre">GMRES</span></code>, <code class="docutils literal notranslate"><span class="pre">BiCGStab</span></code>, or <code class="docutils literal notranslate"><span class="pre">TFQMR</span></code> linear solver during a <code class="docutils literal notranslate"><span class="pre">Newton</span></code> iteration (default: <code class="docutils literal notranslate"><span class="pre">Banded</span></code>).</p>
 <p><strong>Note #1:</strong> <code class="docutils literal notranslate"><span class="pre">Banded</span></code> and <code class="docutils literal notranslate"><span class="pre">None</span></code> can be used.</p>
 <p><strong>Note #2:</strong> <code class="docutils literal notranslate"><span class="pre">Banded</span></code> requires specifying both an upper and a lower half-bandwidth value.</p>
 </li>
@@ -92,7 +93,7 @@ However, some (very) stiff models may require this value to be increased.</p>
 <p>The default settings should work with most models.
 However, some models may require some minor adjustments.
 This is the case with cardiac cellular electrophysiological models that need a stimulus protocol to generate an action potential.
-Such a protocol is likely to be ignored by <a class="reference external" href="https://computation.llnl.gov/projects/sundials/cvode">CVODE</a>, if <strong>Maximum step</strong> and <strong>Interpolate solution</strong> are set to their default values of <span class="math notranslate nohighlight">\(0\)</span> and <code class="docutils literal notranslate"><span class="pre">True</span></code>, respectively.
+Such a protocol is likely to be ignored by <a class="reference external" href="https://computing.llnl.gov/projects/sundials/cvode">CVODE</a>, if <strong>Maximum step</strong> and <strong>Interpolate solution</strong> are set to their default values of <span class="math notranslate nohighlight">\(0\)</span> and <code class="docutils literal notranslate"><span class="pre">True</span></code>, respectively.
 To address this issue, you can either set <strong>Maximum step</strong> to the length of the stimulus protocol or <strong>Interpolate solution</strong> to <code class="docutils literal notranslate"><span class="pre">False</span></code>.
 The former approach will yield (slightly) less accurate results, but they will be obtained (much) faster.</p>
 </section>

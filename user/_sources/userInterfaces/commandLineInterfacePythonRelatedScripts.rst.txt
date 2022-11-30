@@ -6,7 +6,7 @@
 
 The following `Python <https://python.org/>`__-related scripts can be used to start:
 
-- ``ipython[.bat]``: an `IPython <https://jupyter.org/>`__ session;
+- ``ipython[.bat]``: an `IPython <https://ipython.org/>`__ session;
 - ``jupyter[.bat]``: a `Jupyter <https://jupyter.org/>`__ session;
 - ``jupyterconsole[.bat]``: a `Jupyter <https://jupyter.org/>`__ console, i.e. a terminal frontend for `Jupyter <https://jupyter.org/>`__ kernels;
 - ``jupyterlab[.bat|.vbs]``: a `JupyterLab <https://jupyterlab.readthedocs.io/en/latest/>`__, i.e. a Web-based interactive development environment for `Jupyter Notebooks <https://jupyter-notebook.readthedocs.io/en/latest/>`__, code and data;
@@ -16,19 +16,19 @@ The following `Python <https://python.org/>`__-related scripts can be used to st
 This, in OpenCOR's environment.
 
 ``ipython[.bat]``
-------------------------
+-----------------
 
 ::
 
   $ ./ipython
-  Python 3.7.5 (default, Mar 30 2021, 16:43:44)
+  Python 3.7.5 (default, May 27 2022, 16:06:22)
   Type 'copyright', 'credits' or 'license' for more information
   IPython 7.8.0 -- An enhanced Interactive Python. Type '?' for help.
 
   In [1]:
 
 ``jupyter[.bat]``
-------------------------
+-----------------
 
 ::
 
@@ -64,8 +64,8 @@ This, in OpenCOR's environment.
    :align: center
    :scale: 25%
 
-``jupyternotebook[.bat]``
--------------------------
+``jupyternotebook[.bat|.vbs]``
+------------------------------
 
 ::
 
@@ -92,4 +92,4 @@ is an alias for:
 
 ::
 
-  $ ./OpenCOR -c PythonShell $*
+  $ ./OpenCOR -c PythonShell "$@"

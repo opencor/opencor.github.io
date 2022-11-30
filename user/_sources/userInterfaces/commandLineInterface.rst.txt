@@ -31,8 +31,8 @@ About
 
   $ ./OpenCOR -a
   OpenCOR Version 0.7
-  macOS 10.15
-  Copyright 2011-2019
+  macOS 13.0
+  Copyright 2011-2022
 
   OpenCOR is a cross-platform modelling environment, which can be used to organise, edit, simulate and analyse CellML files.
 
@@ -53,10 +53,15 @@ Command
   Commands supported by the CellMLTools plugin:
    * Display the commands supported by the CellMLTools plugin:
         help
-   * Export <file> to a <predefined_format> or a <user_defined_format_file>:
-        export <file> <predefined_format>|<user_defined_format_file>
-     <predefined_format> can take one of the following values:
+   * Export <file> to a given <format> or a given <language>:
+        export <file> <format>|<language>
+     <format> can take one of the following values:
         cellml_1_0: to export a CellML 1.1 file to CellML 1.0
+     <language> can take one of the following values:
+        c: to export a CellML file to C
+        fortran_77: to export a CellML file to FORTRAN 77
+        matlab: to export a CellML file to MATLAB
+        python: to export a CellML file to Python
    * Validate <file>:
         validate <file>
 
@@ -83,10 +88,15 @@ Command
   Commands supported by the CellMLTools plugin:
    * Display the commands supported by the CellMLTools plugin:
         help
-   * Export <file> to a <predefined_format> or a <user_defined_format_file>:
-        export <file> <predefined_format>|<user_defined_format_file>
-     <predefined_format> can take one of the following values:
+   * Export <file> to a given <format> or a given <language>:
+        export <file> <format>|<language>
+     <format> can take one of the following values:
         cellml_1_0: to export a CellML 1.1 file to CellML 1.0
+     <language> can take one of the following values:
+        c: to export a CellML file to C
+        fortran_77: to export a CellML file to FORTRAN 77
+        matlab: to export a CellML file to MATLAB
+        python: to export a CellML file to Python
    * Validate <file>:
         validate <file>
 

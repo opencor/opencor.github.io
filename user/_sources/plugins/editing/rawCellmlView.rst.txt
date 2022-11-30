@@ -36,10 +36,10 @@ The equation viewer can be customised using its context menu:
    :class: subitalic
 
 The font size can thus be optimised, so that an equation can take as much space as possible when rendered.
-Subscripts are also supported (e.g. ``a_b`` will be rendered as *a*\ :subitalic:`b`; note, however, that this feature has an inherent limitation, e.g. ``a__b``, ``_a_b`` and ``a_b_`` will also be rendered as *a*\ :subitalic:`b`), as are Greek symbols (i.e. ``alpha``, ``beta``, etc. are replaced with *α*, *β*, etc.) and digit grouping (e.g. ``1000`` will be rendered as *1,000*).
+Subscripts are also supported (e.g., ``a_b`` will be rendered as *a*\ :subitalic:`b` and so will ``a__b``, ``_a_b``, and ``a_b_``), as are Greek symbols (i.e. ``alpha``, ``beta``, etc. are replaced with *α*, *β*, etc.) and digit grouping (e.g., ``1000`` will be rendered as *1,000*).
 A rendered equation can also be copied to the clipboard for use in another program.
 
-The panel below the text editor is used to list any `CellML <https://cellml.org/>`__ issue that results from trying to validate a `CellML <https://cellml.org/>`__ file, which can be done either by pressing ``Ctrl``\ +\ ``Shift``\ +\ ``T`` or through the ``Tools`` | ``CellML Validation`` menu or the context menu of the text editor:
+The panel below the text editor is used to list any `CellML <https://cellml.org/>`__ issue that results from trying to validate a `CellML <https://cellml.org/>`__ file, which can be done either by pressing ``Ctrl``\ +\ ``Shift``\ +\ ``V`` or through the ``Tools`` | ``CellML Validation`` menu or the context menu of the text editor:
 
 .. image:: pics/RawCellMLViewScreenshot05.png
    :align: center
@@ -49,7 +49,7 @@ The panel below the text editor is used to list any `CellML <https://cellml.org/
    :align: center
    :scale: 25%
 
-If the `CellML <https://cellml.org/>`__ file is valid, then a message box confirming its validity is displayed:
+If the `CellML <https://cellml.org/>`__ file is valid then a message box confirming its validity is displayed:
 
 .. image:: pics/RawCellMLViewScreenshot07.png
    :align: center

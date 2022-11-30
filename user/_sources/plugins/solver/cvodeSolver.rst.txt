@@ -4,11 +4,11 @@
  CVODESolver plugin
 ====================
 
-The CVODESolver plugin uses `CVODE <https://computation.llnl.gov/projects/sundials/cvode>`__ to solve `ODEs <https://en.wikipedia.org/wiki/Ordinary_differential_equation>`__ and it can be customised through the following properties:
+The CVODESolver plugin uses `CVODE <https://computing.llnl.gov/projects/sundials/cvode>`__ to solve `ODEs <https://en.wikipedia.org/wiki/Ordinary_differential_equation>`__ and it can be customised through the following properties:
 
 - **Maximum step:** the maximum step used by the solver (default: :math:`0`).
 
-  **Note:** the default value of :math:`0` means that `CVODE <https://computation.llnl.gov/projects/sundials/cvode>`__ will try to use as big a step as possible.
+  **Note:** the default value of :math:`0` means that `CVODE <https://computing.llnl.gov/projects/sundials/cvode>`__ will try to use as big a step as possible.
 
 ..
 
@@ -39,15 +39,15 @@ The CVODESolver plugin uses `CVODE <https://computation.llnl.gov/projects/sundia
 
 - **Linear solver:** the linear solver used by the solver during a ``Newton`` iteration (default: ``Dense``).
 
-  **Note #1:** ``Dense``, ``Banded``, ``Diagonal``, ``GMRES``, ``BiCGStab`` and ``TFQMR`` can be used.
+  **Note #1:** ``Dense``, ``Banded``, ``Diagonal``, ``GMRES``, ``BiCGStab``, and ``TFQMR`` can be used.
 
   **Note #2:** ``Banded`` requires specifying both an upper and a lower half-bandwidth value.
 
-  **Note #3:** ``GMRES``, ``BiCGStab`` and ``TFQMR`` require specifying whether to use a preconditioner.
+  **Note #3:** ``GMRES``, ``BiCGStab``, and ``TFQMR`` require specifying whether to use a preconditioner.
 
 ..
 
-- **Preconditioner:** the preconditioner, if any, used by the solver when using a ``GMRES``, ``BiCGStab`` or ``TFQMR`` linear solver during a ``Newton`` iteration (default: ``Banded``).
+- **Preconditioner:** the preconditioner, if any, used by the solver when using a ``GMRES``, ``BiCGStab``, or ``TFQMR`` linear solver during a ``Newton`` iteration (default: ``Banded``).
 
   **Note #1:** ``Banded`` and ``None`` can be used.
 
@@ -80,6 +80,6 @@ The CVODESolver plugin uses `CVODE <https://computation.llnl.gov/projects/sundia
 The default settings should work with most models.
 However, some models may require some minor adjustments.
 This is the case with cardiac cellular electrophysiological models that need a stimulus protocol to generate an action potential.
-Such a protocol is likely to be ignored by `CVODE <https://computation.llnl.gov/projects/sundials/cvode>`__, if **Maximum step** and **Interpolate solution** are set to their default values of :math:`0` and ``True``, respectively.
+Such a protocol is likely to be ignored by `CVODE <https://computing.llnl.gov/projects/sundials/cvode>`__, if **Maximum step** and **Interpolate solution** are set to their default values of :math:`0` and ``True``, respectively.
 To address this issue, you can either set **Maximum step** to the length of the stimulus protocol or **Interpolate solution** to ``False``.
 The former approach will yield (slightly) less accurate results, but they will be obtained (much) faster.

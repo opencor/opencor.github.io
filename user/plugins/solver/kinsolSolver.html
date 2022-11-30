@@ -16,6 +16,7 @@
                 <script src="../../_static/underscore.js"></script>
                 <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
                 <script src="../../_static/doctools.js"></script>
+                <script src="../../_static/sphinx_highlight.js"></script>
                 <script src="../../_static/clipboard.min.js"></script>
                 <script src="../../_static/copybutton.js"></script>
                 <script src="../../_static/tabs.js"></script>
@@ -32,13 +33,13 @@
         
   <section id="kinsolsolver-plugin">
 <span id="plugins-solver-kinsolsolver"></span><h1>KINSOLSolver plugin<a class="headerlink" href="#kinsolsolver-plugin" title="Permalink to this heading">¶</a></h1>
-<p>The KINSOLSolver plugin uses <a class="reference external" href="https://computation.llnl.gov/projects/sundials/kinsol">KINSOL</a> to solve systems of <a class="reference external" href="https://en.wikipedia.org/wiki/Nonlinear_system#Nonlinear_algebraic_equations">non-linear algebraic</a> equations and it can be customised through the following properties:</p>
+<p>The KINSOLSolver plugin uses <a class="reference external" href="https://computing.llnl.gov/projects/sundials/kinsol">KINSOL</a> to solve systems of <a class="reference external" href="https://en.wikipedia.org/wiki/Nonlinear_system#Nonlinear_algebraic_equations">non-linear algebraic</a> (NLA) equations and it can be customised through the following properties:</p>
 <ul class="simple">
 <li><p><strong>Maximum number of iterations:</strong> the maximum number of iterations used by the solver to solve the system (default: <span class="math notranslate nohighlight">\(200\)</span>).</p></li>
 </ul>
 <ul>
 <li><p><strong>Linear solver:</strong> the linear solver used by the solver (default: <code class="docutils literal notranslate"><span class="pre">Dense</span></code>).</p>
-<p><strong>Note #1:</strong> <code class="docutils literal notranslate"><span class="pre">Dense</span></code>, <code class="docutils literal notranslate"><span class="pre">Banded</span></code>, <code class="docutils literal notranslate"><span class="pre">GMRES</span></code>, <code class="docutils literal notranslate"><span class="pre">BiCGStab</span></code> or <code class="docutils literal notranslate"><span class="pre">TFQMR</span></code> can be used.</p>
+<p><strong>Note #1:</strong> <code class="docutils literal notranslate"><span class="pre">Dense</span></code>, <code class="docutils literal notranslate"><span class="pre">Banded</span></code>, <code class="docutils literal notranslate"><span class="pre">GMRES</span></code>, <code class="docutils literal notranslate"><span class="pre">BiCGStab</span></code>, and <code class="docutils literal notranslate"><span class="pre">TFQMR</span></code> can be used.</p>
 <p><strong>Note #2:</strong> <code class="docutils literal notranslate"><span class="pre">Banded</span></code> requires specifying both an upper and a lower half-bandwidth value.</p>
 </li>
 </ul>

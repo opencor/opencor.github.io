@@ -16,9 +16,11 @@
                 <script src="../../_static/underscore.js"></script>
                 <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
                 <script src="../../_static/doctools.js"></script>
+                <script src="../../_static/sphinx_highlight.js"></script>
                 <script src="../../_static/clipboard.min.js"></script>
                 <script src="../../_static/copybutton.js"></script>
                 <script src="../../_static/tabs.js"></script>
+                <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
         <script src="../../_static/theme.js" type="text/javascript"></script>
 
@@ -83,9 +85,9 @@
 <div class="line"><strong>Note #1:</strong> the CellML 1.0 export is adapted from <a class="reference external" href="https://cellml.org/tools/jonathan-cooper-s-cellml-1-1-to-1-0-converter/versionconverter-tar.bz2/view">Jonathan Cooper’s CellML 1.1 to 1.0 converter</a> and therefore has the same limitations.</div>
 <div class="line"><strong>Note #2:</strong> the export to different languages is done using the <a class="reference external" href="https://github.com/cellmlapi/cellml-api/">CellML API</a>.
 It should be fine in most cases, but be aware that there may be issues.
-For instance, in a MATLAB export, if a model defines an <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">ODE</a> as a constant, say <code class="docutils literal notranslate"><span class="pre">dX/dt</span> <span class="pre">=</span> <span class="pre">0</span></code>, then the exporter will export <code class="docutils literal notranslate"><span class="pre">0</span></code> as a constant of value <code class="docutils literal notranslate"><span class="pre">0</span></code>.
+For instance, in a MATLAB export, if a model defines an <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">ODE</a> as a constant, say <span class="math notranslate nohighlight">\(dX/dt = 0\)</span>, then the exporter will export <span class="math notranslate nohighlight">\(0\)</span> as a constant of value <code class="docutils literal notranslate"><span class="pre">0</span></code>.
 Then, due to 0- <em>vs.</em> 1-based indexing, that constant gets computed twice if there are other constants in the model.
-The end result is that <code class="docutils literal notranslate"><span class="pre">dX/dt</span></code> is not equal to <code class="docutils literal notranslate"><span class="pre">0</span></code> but to the value of the other constant.</div>
+The end result is that <span class="math notranslate nohighlight">\(dX/dt\)</span> is not equal to <code class="docutils literal notranslate"><span class="pre">0</span></code> but to the value of the other constant.</div>
 </div>
 </section>
 <section id="validate-cellml-file">

@@ -4,7 +4,7 @@
  OpenCOR
 =========
 
-`OpenCOR <https://opencor.ws/>`__ is a cross-platform modelling environment, which is aimed at organising, editing, simulating and analysing `CellML <https://cellml.org/>`__ files on `Windows <https://en.wikipedia.org/wiki/Microsoft_Windows>`__, `Linux <https://en.wikipedia.org/wiki/Linux>`__ and `macOS <https://en.wikipedia.org/wiki/MacOS>`__.
+`OpenCOR <https://opencor.ws/>`__ is a cross-platform modelling environment, which is aimed at organising, editing, simulating, and analysing `CellML <https://cellml.org/>`__ files on `Windows <https://en.wikipedia.org/wiki/Microsoft_Windows>`__, `Linux <https://en.wikipedia.org/wiki/Linux>`__, and `macOS <https://en.wikipedia.org/wiki/MacOS>`__.
 It can be downloaded `here <https://opencor.ws/downloads>`__.
 
 Various information about OpenCOR and its use can be found in the following pages:

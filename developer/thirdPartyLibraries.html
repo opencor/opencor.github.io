@@ -16,6 +16,7 @@
                 <script src="_static/underscore.js"></script>
                 <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
                 <script src="_static/doctools.js"></script>
+                <script src="_static/sphinx_highlight.js"></script>
                 <script src="_static/clipboard.min.js"></script>
                 <script src="_static/copybutton.js"></script>
                 <script src="_static/tabs.js"></script>
@@ -35,13 +36,13 @@
 <ul>
 <li><p><a class="reference external" href="https://github.com/cellmlapi/cellml-api">CellML API</a>: an interface to manipulate and process <a class="reference external" href="https://cellml.org/">CellML</a> documents.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/CellMLAPI"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/CellMLAPI</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/CellMLAPI/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/CellMLAPI/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/MPL-1.1">MPL v1.1</a>, <a class="reference external" href="https://opensource.org/licenses/GPL-2.0">GPL v2.0</a> (or later) and <a class="reference external" href="https://opensource.org/licenses/LGPL-2.1">LGPL v2.1</a> (or later).</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://code.google.com/p/google-diff-match-patch/">diff-match-patch</a>: a set of libraries that offer robust algorithms to perform the operations required for synchronising plain text.</p>
 <ul>
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/3rdparty/diff_match_patch"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/3rdparty/diff_match_patch</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/3rdparty/diff_match_patch/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/3rdparty/diff_match_patch/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/Apache-2.0">Apache v2.0</a>.</p>
 <p><strong>Note:</strong> we use an <a class="reference external" href="https://github.com/leutloff/diff-match-patch-cpp-stl">STL version</a> of that library.</p>
 </li>
@@ -49,193 +50,187 @@
 </li>
 <li><p><a class="reference external" href="https://icu.unicode.org/">ICU</a> 56.1: a library that provides <a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> and Globalization support for software applications.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/distrib/linux/icu"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/distrib/linux/icu</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/3rdparty/linux/icu/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/3rdparty/linux/icu/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://unicode.org/copyright.html#License">Unicode</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://pypi.org/project/ipykernel">ipykernel</a> 5.1.2: the <a class="reference external" href="https://ipython.org/">IPython</a> kernel for <a class="reference external" href="https://jupyter.org/">Jupyter</a>.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://ipython.org/">IPython</a> 7.8.0: a command shell that provides a rich architecture for interactive computing.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://pypi.org/project/ipywidgets">ipywidgets</a> 7.5.1: interactive <a class="reference external" href="https://html.spec.whatwg.org/multipage">HTML</a> widgets for <a class="reference external" href="https://jupyter.org/">Jupyter</a> notebooks and the <a class="reference external" href="https://pypi.org/project/ipykernel">IPython kernel</a>.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://pypi.org/project/jupyter_console">jupyter_console</a> 6.0.0: an <a class="reference external" href="https://ipython.org/">IPython</a>-like terminal frontend for <a class="reference external" href="https://jupyter.org/">Jupyter</a> kernels in any language.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://pypi.org/project/jupyterlab">JupyterLab</a> 1.1.3: an extensible environment for interactive and reproducible computing, based on the <a class="reference external" href="https://jupyter.org/">Jupyter</a> Notebook and Architecture.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="https://katex.org/">KaTeX</a> 0.15.6: the fastest math typesetting library for the Web.</p>
-<ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/sphinx-theme/tree/master/static/katex"><code class="docutils literal notranslate"><span class="pre">[SphinxTheme]/static/katex</span></code></a>.</p></li>
-<li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/MIT">MIT</a>.</p></li>
 </ul>
 </li>
 <li><p>libBioSignalML: a library for reading and writing BioSignalML documents.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/libBioSignalML"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/libBioSignalML</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/libBioSignalML/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/libBioSignalML/</span></code></a>.</p></li>
 <li><p>Licensing: none.</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://libgit2.org/">libgit2</a> 1.4.3: a portable, pure C implementation of the <a class="reference external" href="https://git-scm.com/">Git</a> core methods provided as a re-entrant linkable library with a solid API.</p>
+<li><p><a class="reference external" href="https://libgit2.org/">libgit2</a> 1.5.0: a portable, pure C implementation of the <a class="reference external" href="https://git-scm.com/">Git</a> core methods provided as a re-entrant linkable library with a solid API.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/libgit2"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/libgit2</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/libgit2/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/libgit2/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/GPL-2.0">GPL v2.0</a> with linking exception.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://github.com/NuML/NuML">libNuML</a> 1.1.6: a library for reading and writing <a class="reference external" href="https://github.com/NuML/NuML">NuML</a> models.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/libNuML"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/libNuML</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/libNuML/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/libNuML/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/LGPL-2.1">LGPL v2.1</a> (or later).</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://github.com/sbmlteam/libsbml">libSBML</a> 5.19.0: a programming library to help you read, write, manipulate, translate and validate <a class="reference external" href="https://sbml.org/">SBML</a> files and data streams.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/libSBML"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/libSBML</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/libSBML/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/libSBML/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/LGPL-2.1">LGPL v2.1</a> (or later).</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://github.com/fbergmann/libSEDML">libSEDML</a> 2.0.31: a library for reading and writing <a class="reference external" href="https://sed-ml.github.io/">SED-ML</a> files.</p>
+<li><p><a class="reference external" href="https://github.com/fbergmann/libSEDML">libSEDML</a> 2.0.32: a library for reading and writing <a class="reference external" href="https://sed-ml.github.io/">SED-ML</a> files.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/libSEDML"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/libSEDML</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/libSEDML/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/libSEDML/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="http://xmailserver.org/xdiff-lib.html">LibXDiff</a> 0.23: a library that implements basic and yet complete functionalities to create file differences/patches to both binary and text files.</p>
+<li><p><a class="reference external" href="http://www.xmailserver.org/xdiff-lib.html">LibXDiff</a> 0.23: a library that implements basic and yet complete functionalities to create file differences/patches to both binary and text files.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/LibXDiff"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/LibXDiff</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/LibXDiff/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/LibXDiff/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/LGPL-2.1">LGPL v2.1</a>.</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://llvm.org/">LLVM</a>+<a class="reference external" href="https://clang.llvm.org/">Clang</a> 14.0.3: a collection of modular and reusable compiler and toolchain technologies.</p>
+<li><p><a class="reference external" href="https://llvm.org/">LLVM</a>+<a class="reference external" href="https://clang.llvm.org/">Clang</a> 14.0.6: a collection of modular and reusable compiler and toolchain technologies.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/LLVMClang"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/LLVMClang</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/LLVMClang/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/LLVMClang/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/Apache-2.0">Apache v2.0</a> with LLVM Exceptions.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://lxml.de/">lxml</a> 4.4.1: a Pythonic binding for the C libraries <a class="reference external" href="https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home">libxml2</a> and <a class="reference external" href="https://gitlab.gnome.org/GNOME/libxslt/-/wikis/home">libxslt</a>.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://matplotlib.org/">Matplotlib</a> 3.1.1: a <a class="reference external" href="https://python.org/">Python</a> 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://matplotlib.org/users/license.html">Matplotlib License</a>.</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://mesa3d.org/">Mesa</a> 22.1.0: a system for rendering interactive 3D graphics.</p>
+<li><p><a class="reference external" href="https://mesa3d.org/">Mesa</a> 22.2.2: a system for rendering interactive 3D graphics.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/distrib/linux/mesa"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/distrib/linux/mesa</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/3rdparty/linux/mesa/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/3rdparty/linux/mesa/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/MIT">MIT</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://pypi.org/project/nbconvert">nbconvert</a> 5.6.0: a tool that converts notebooks to various other formats via <a class="reference external" href="https://palletsprojects.com/p/jinja/">Jinja</a> templates.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://pypi.org/project/notebook">notebook</a> 6.0.2: a web application that allows you to create and share documents that contain live code, equations, visualizations, and explanatory text.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://numpy.org/">NumPy</a> 1.17.2: the fundamental package for scientific computing with <a class="reference external" href="https://python.org/">Python</a>.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://github.com/pipacs/o2">OAuth 2.0 for Qt</a> 1.0.2: a library that encapsulates the <a class="reference external" href="https://oauth.net/">OAuth</a> 1.0 and 2.0 client authentication flows, and the sending of authenticated <a class="reference external" href="https://w3.org/Protocols">HTTP</a> requests.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/OAuth"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/OAuth</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/OAuth/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/OAuth/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://openssl.org/">OpenSSL</a> 1.1.1o: a toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS) protocols, as well as a full-strength general purpose cryptography library.</p>
+<li><p><a class="reference external" href="https://openssl.org/">OpenSSL</a> 1.1.1s: a toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS) protocols, as well as a full-strength general purpose cryptography library.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/OpenSSL"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/OpenSSL</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/OpenSSL/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/OpenSSL/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://openssl.org/source/license.html">OpenSSL and SSLeay</a>, which are both <a class="reference external" href="https://opensource.org/licenses/BSD-3-Clause">BSD</a>-style licenses.</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://packages.ubuntu.com/kinetic/oxygen-icon-theme">Oxygen</a> 5.94.0: icons used in various parts of OpenCOR.</p>
+<li><p><a class="reference external" href="https://packages.ubuntu.com/kinetic/oxygen-icon-theme">Oxygen</a> 5.98.0: icons used in various parts of OpenCOR.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/res/oxygen"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/res/oxygen</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/res/oxygen/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/res/oxygen/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/LGPL-3.0">LGPL v3.0</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://printableworldflags.com/flag-icon">Printable world flags</a>: flag icons used in our Language menu.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/res/flags"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/res/flags</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/res/flags/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/res/flags/</span></code></a>.</p></li>
 <li><p>Licensing: none.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://python.org/">Python</a> 3.7.5: a programming language that lets you work quickly and integrate systems more effectively.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/Python"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/Python</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/Python/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/Python/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/Python-2.0">PSF v2.0</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://mevislab.github.io/pythonqt">PythonQt</a> 3.2.2: a dynamic <a class="reference external" href="https://python.org/">Python</a> binding for the <a class="reference external" href="https://qt.io/">Qt</a> framework.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonQt"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonQt</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonQt/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonQt/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/LGPL-2.1">LGPL v2.1</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://pypi.org/project/qimage2ndarray">qimage2ndarray</a> 1.8: a small <a class="reference external" href="https://python.org/">Python</a> extension for quickly converting between <a class="reference external" href="https://doc.qt.io/qt-5/qimage.html">QImage</a> and <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html">numpy.ndarray</a> (in both directions).</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://riverbankcomputing.com/software/qscintilla/intro">QScintilla</a> 2.13.3: a <a class="reference external" href="https://qt.io/">Qt</a> port of the <a class="reference external" href="https://scintilla.org/">Scintilla</a> editing component.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/QScintilla"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/QScintilla</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/QScintilla/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/QScintilla/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/GPL-3.0">GPL v3.0</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://pypi.org/project/qtconsole">qtconsole</a> 4.5.5: a rich <a class="reference external" href="https://qt.io/">Qt</a>-based console for working with <a class="reference external" href="https://jupyter.org/">Jupyter</a> kernels, supporting rich media output, session export, and more.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://code.qt.io/cgit/qt-solutions/qt-solutions.git/tree/qtsingleapplication">QtSingleApplication</a>: a class that ensures that only one instance of the <a class="reference external" href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a> version of OpenCOR can be run at any given time.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/3rdparty/QtSingleApplication"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/3rdparty/QtSingleApplication</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/3rdparty/QtSingleApplication/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/3rdparty/QtSingleApplication/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/LGPL-2.1">LGPL v2.1</a> (or later).</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://github.com/qt/qtwebkit">QtWebKit</a> 5.212.0 Alpha 3: a <a class="reference external" href="https://qt.io/">Qt</a> port of <a class="reference external" href="https://webkit.org/">WebKit</a>, a web browser engine.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/3rdparty/QtWebKit"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/3rdparty/QtWebKit</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/3rdparty/QtWebKit/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/3rdparty/QtWebKit/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/LGPL-2.1">LGPL v2.1</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://qwt.sourceforge.io/">Qwt</a> 6.2.0: a set of widgets and utility classes primarily aimed at programs with a technical background.</p>
 <ul>
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/Qwt"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/Qwt</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/Qwt/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/Qwt/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://qwt.sourceforge.net/qwtlicense.html">Qwt License v1.0</a> (a slightly less restricive version of <a class="reference external" href="https://opensource.org/licenses/LGPL-2.1">LGPL v2.1</a>) and <a class="reference external" href="https://opensource.org/licenses/LGPL-2.1">LGPL v2.1</a> for the <a class="reference external" href="https://w3.org/Math">MathML</a> text engine, which is based on the QtMmlWidget code.</p>
 <p><strong>Note:</strong> we have contributed some code to the <a class="reference external" href="https://w3.org/Math">MathML</a> renderer, but it has yet to be fully incorporated in the <a class="reference external" href="https://qwt.sourceforge.net/">Qwt</a> project.
 So, in the meantime, we use <a class="reference external" href="https://github.com/uwerat/qwt-mml-dev">our version</a> of the <a class="reference external" href="https://w3.org/Math">MathML</a> renderer.</p>
@@ -244,31 +239,31 @@ So, in the meantime, we use <a class="reference external" href="https://github.c
 </li>
 <li><p><a class="reference external" href="https://scipy.org/">SciPy</a> 1.3.1: a <a class="reference external" href="https://python.org/">Python</a>-based ecosystem of open-source software for mathematics, science and engineering.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://pypi.org/project/Sphinx">Sphinx</a> 2.2.0: a tool that makes it easy to create intelligent and beautiful documentation for <a class="reference external" href="https://python.org/">Python</a> projects (or other documents consisting of multiple <a class="reference external" href="https://en.wikipedia.org/wiki/ReStructuredText">reStructuredText</a> sources).</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://computing.llnl.gov/projects/sundials">SUNDIALS</a> 6.2.0: a SUite of Non-linear and DIfferential/ALgebraic equation Solvers.</p>
+<li><p><a class="reference external" href="https://computing.llnl.gov/projects/sundials">SUNDIALS</a> 6.4.1: a SUite of Non-linear and DIfferential/ALgebraic equation Solvers.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/SUNDIALS"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/SUNDIALS</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/SUNDIALS/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/SUNDIALS/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://pypi.org/project/traitlets">traitlets</a> 4.3.2: a configuration system for <a class="reference external" href="https://python.org/">Python</a> applications.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/PythonPackages/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/PythonPackages/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://github.com/davidcarlisle/web-xslt">web-xslt</a>: <a class="reference external" href="https://w3.org/TR/xslt">XSLT</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> code intended mostly for manipulating <a class="reference external" href="https://w3.org/Math">MathML</a> and <a class="reference external" href="https://openmath.github.io/">OpenMath</a>.</p>
 <ul>
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/res/web-xslt"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/miscellaneous/Core/res/web-xslt</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/res/web-xslt/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/miscellaneous/Core/res/web-xslt/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/W3C">W3C</a>, <a class="reference external" href="https://opensource.org/licenses/Apache-2.0">Apache v2.0</a>, <a class="reference external" href="https://opensource.org/licenses/MIT">MIT</a>, <a class="reference external" href="https://opensource.org/licenses/MPL-1.1">MPL v1.1</a> or <a class="reference external" href="https://opensource.org/licenses/MPL-2.0">MPL v2.0</a>.</p>
 <p><strong>Note:</strong> we only use (a slightly improved version of) <a class="reference external" href="https://github.com/davidcarlisle/web-xslt/blob/master/ctop/ctopff.xsl"><code class="docutils literal notranslate"><span class="pre">ctopff.xsl</span></code></a> to convert <a class="reference external" href="https://w3.org/TR/MathML3/chapter4.html">Content MathML</a> to <a class="reference external" href="https://w3.org/TR/MathML2/chapter3.html">Presentation MathML</a>.</p>
 </li>
@@ -276,13 +271,13 @@ So, in the meantime, we use <a class="reference external" href="https://github.c
 </li>
 <li><p><a class="reference external" href="https://github.com/OpenCMISS/zinc">Zinc</a> 3.1.2: a library for creating software to interact with and visualise complex finite element models and image-based fields.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/Zinc"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/Zinc</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/Zinc/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/Zinc/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/MPL-2.0">MPL v2.0</a>.</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://zlib.net/">zlib</a> 1.2.12: a massively spiffy yet delicately unobtrusive compression library.</p>
+<li><p><a class="reference external" href="https://zlib.net/">zlib</a> 1.2.13: a massively spiffy yet delicately unobtrusive compression library.</p>
 <ul class="simple">
-<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/zlib"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/zlib</span></code></a>.</p></li>
+<li><p>Location: <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/thirdParty/zlib/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/thirdParty/zlib/</span></code></a>.</p></li>
 <li><p>Licensing: <a class="reference external" href="https://opensource.org/licenses/Zlib">Zlib</a>.</p></li>
 </ul>
 </li>

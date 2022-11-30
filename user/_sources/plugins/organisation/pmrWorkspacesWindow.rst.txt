@@ -27,15 +27,15 @@ Instances of PMR
 
 There are three instances of `PMR <https://models.physiomeproject.org/>`__:
 
-- `Primary instance <https://models.physiomeproject.org>`__: everything on this instance is permanent and persistent.
+- `Models instance <https://models.physiomeproject.org>`__: everything on this instance is permanent and persistent.
   It is always up and always stable.
 - `Staging instance <https://staging.physiomeproject.org>`__: it is used for public testing/preview of PMR developments.
   Data on this instance is wiped periodically whenever a new public testing/preview of the PMR software suite is released for the required testing exercise.
-- `Teaching instance <https://teaching.physiomeproject.org>`__: the functionality of this instance should match the primary instance, but without the data persistency guarantees.
+- `Teaching instance <https://teaching.physiomeproject.org>`__: the functionality of this instance should match the models instance, but without the data persistency guarantees.
   While data on this instance is also not permanent, any wipes to data stored will be announced on the `cellml-discussion mailing list <https://lists.cellml.org/sympa/info/cellml-discussion>`__.
 
-Both the `primary instance <https://models.physiomeproject.org>`__ and the `teaching instance <https://teaching.physiomeproject.org>`__ require you to create an account before you can start interacting with them.
-On the `staging instance <https://staging.physiomeproject.org>`__, your `primary instance <https://models.physiomeproject.org>`__ account may work, but if not then you need to create an account (on the `staging instance <https://staging.physiomeproject.org>`__).
+Both the `models instance <https://models.physiomeproject.org>`__ and the `teaching instance <https://teaching.physiomeproject.org>`__ require you to create an account before you can start interacting with them.
+On the `staging instance <https://staging.physiomeproject.org>`__, your `models instance <https://models.physiomeproject.org>`__ account may work, but if not then you need to create an account on the `staging instance <https://staging.physiomeproject.org>`__.
 
 .. _plugins_organisation_pmrWorkspacesWindow_specifyInstanceOfPmr:
 
@@ -91,7 +91,7 @@ This closes the window and replaces the |logOn| button with the |logOff| button,
 Make a local copy of a public workspace
 ---------------------------------------
 
-The :ref:`PMR Window <plugins_organisation_pmrWindow>` lists published exposures, which reference a specific state of a public workspace.
+The :ref:`PMR window <plugins_organisation_pmrWindow>` lists published exposures, which reference a specific state of a public workspace.
 Say that you want to experiment with the `Hodgkin–Huxley model <https://ncbi.nlm.nih.gov/pmc/articles/PMC1392413/pdf/jphysiol01442-0106.pdf>`__.
 You can do so by switching to the teaching instance (see :ref:`above <plugins_organisation_pmrWorkspacesWindow_specifyInstanceOfPmr>`), looking for the `Hodgkin–Huxley model <https://ncbi.nlm.nih.gov/pmc/articles/PMC1392413/pdf/jphysiol01442-0106.pdf>`__, right clicking on it and by selecting the ``Make Local Copy...`` menu item:
 
@@ -112,7 +112,7 @@ Create a new workspace
 ----------------------
 
 You can create a workspace by clicking on the |newFolder| button in the tool bar.
-You need to provide both a name and the path to a folder (it *does not* have to be empty).
+You need to provide both a name and the path to a folder (it *does not* have to be an empty folder).
 You may also provide a description:
 
 .. |newFolder| image:: ../../pics/newFolder.png
@@ -124,7 +124,7 @@ You may also provide a description:
    :scale: 25%
 
 Any file already present in the folder will be considered new.
-For example, if you provide a folder containing the `models <https://github.com/opencor/opencor/tree/master/models>`__ shipped with OpenCOR, you will get something like the following upon creation of the workspace:
+For example, if you provide a folder containing the `models <https://github.com/opencor/opencor/tree/master/models/>`__ shipped with OpenCOR, you will get something like the following upon creation of the workspace:
 
 .. image:: pics/PMRWorkspacesWindowScreenshot09.png
    :align: center
@@ -174,7 +174,7 @@ The model files are now preceded by the |file| icon and the workspace folder by 
    :align: center
    :scale: 25%
 
-You can check your workspace in `PMR <https://models.physiomeproject.org/>`__ by right clicking on any of the files/folders in your workspace and by selecting the ``Synchronise Workspace With PMR...`` menu item:
+You can check your workspace in `PMR <https://models.physiomeproject.org/>`__ by right clicking on any of the files/folders in your workspace and by selecting the ``View Workspace In PMR...`` menu item:
 
 .. image:: pics/PMRWorkspacesWindowScreenshot12.png
    :align: center
@@ -357,4 +357,4 @@ Similarly, different icons are used to distinguish the different states of a fil
 
 **Note:** you should always see the *unstaged* version of an icon.
 The only case where you will see the *staged* version is if something went wrong during synchronisation.
-Indeed, synchronisation is done using `Git <https://git-scm.com/>`__ and it may be that something caused it to fail (e.g. loss of Internet connection), in which case you will likely have to fix the problem yourself, using `Git <https://git-scm.com/>`__.
+Indeed, synchronisation is done using `Git <https://git-scm.com/>`__ and it may be that something caused it to fail (e.g., loss of Internet connection), in which case you will likely have to fix the problem yourself, using `Git <https://git-scm.com/>`__.

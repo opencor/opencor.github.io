@@ -44,7 +44,7 @@ The find/replace feature can be activated by, for example, pressing ``Ctrl``\ +\
    :scale: 25%
 
 As soon as you enter some text in the ``Find`` field, the view will jump to the first occurrence of that text, as well as highlight all other instances.
-You can then search for the next or previous occurrence of that text by pressing ``F3`` (or ``Ctrl``\ +\ ``G``, depending on your operating system) and ``Shift``\ +\ ``F3`` (or ``Ctrl``\ +\ ``Shift``\ +\ ``G``), respectively.
+You can then search for the next or previous occurrence of that text by pressing ``F3`` (or ``Ctrl``\ +\ ``G``, depending on your operating system) or ``Shift``\ +\ ``F3`` (or ``Ctrl``\ +\ ``Shift``\ +\ ``G``), respectively.
 You can make the search case sensitive, look for whole words only and/or use a `regular expression <https://en.wikipedia.org/wiki/Regular_expression>`__ by selecting the requested option(s) from the drop-down menu to the left of the ``Find`` field:
 
 .. image:: pics/RawTextViewScreenshot07.png

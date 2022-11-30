@@ -16,6 +16,7 @@
                 <script src="_static/underscore.js"></script>
                 <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
                 <script src="_static/doctools.js"></script>
+                <script src="_static/sphinx_highlight.js"></script>
                 <script src="_static/clipboard.min.js"></script>
                 <script src="_static/copybutton.js"></script>
                 <script src="_static/tabs.js"></script>
@@ -31,21 +32,20 @@
         
   <section id="prerequisites">
 <span id="id1"></span><h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h1>
-<p>The following tools are required to develop, build , test, run and package OpenCOR:</p>
+<p>The following tools are required to develop, build , test, run, and package OpenCOR:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://git-scm.com/">Git</a>: a distributed version control system;</p></li>
 <li><p><a class="reference external" href="https://cmake.org/">CMake</a> 3.14 or later: a cross-platform build system;</p></li>
-<li><p>C++ toolchain: a set of C++ tools.
-The toolchain is different depending on the platform you are using:</p>
+<li><p>C++ toolchain: a set of C++ tools:</p>
 <ul>
 <li><p><strong>Windows:</strong> <a class="reference external" href="https://visualstudio.com/downloads/download-visual-studio-vs">Visual Studio Community 2019</a> ( <code class="docutils literal notranslate"><span class="pre">Desktop</span> <span class="pre">development</span> <span class="pre">with</span> <span class="pre">C++</span></code> with <code class="docutils literal notranslate"><span class="pre">MSVC</span> <span class="pre">v142</span> <span class="pre">-</span> <span class="pre">VS</span> <span class="pre">2019</span> <span class="pre">C++</span> <span class="pre">x64/x86</span> <span class="pre">build</span> <span class="pre">tools</span></code> and <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">10</span> <span class="pre">SDK</span> <span class="pre">(10.0.19041.0)</span></code>);</p></li>
 <li><p><strong>Linux:</strong> G++ and OpenGL (<code class="docutils literal notranslate"><span class="pre">g++</span></code>, <code class="docutils literal notranslate"><span class="pre">libgl1-mesa-dev</span></code> and <code class="docutils literal notranslate"><span class="pre">libtinfo5</span></code> packages, respectively) on Ubuntu 20.04 LTS; and</p></li>
-<li><p><strong>macOS:</strong> <a class="reference external" href="https://developer.apple.com/xcode/">Xcode</a> 13 (including its <a class="reference external" href="https://developer.apple.com/downloads/?q=Command%20Line%20Tools">Command Line Tools</a>).</p></li>
+<li><p><strong>macOS:</strong> <a class="reference external" href="https://developer.apple.com/xcode/">Xcode</a> 14 (including its <a class="reference external" href="https://developer.apple.com/downloads/?q=Command%20Line%20Tools">Command Line Tools</a>).</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://qt.io/">Qt</a> 5.12 LTS: a cross-platform application and UI framework (<a class="reference external" href="https://qt.io/qt-features-libraries-apis-tools-and-ide/#ide">Qt Creator</a> is its supporting IDE):</p>
+<li><p><a class="reference external" href="https://qt.io/">Qt</a> 5.12 LTS: a cross-platform application and UI framework (<a class="reference external" href="https://qt.io/product/development-tools">Qt Creator</a> is its supporting IDE):</p>
 <ul>
-<li><p><a class="reference external" href="https://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe"><strong>Windows</strong></a>;</p></li>
+<li><p><a class="reference external" href="https://download.qt.io/official_releases/online_installers/qt-unified-windows-x64-online.exe"><strong>Windows</strong></a>;</p></li>
 <li><p><a class="reference external" href="https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run"><strong>Linux</strong></a>; and</p></li>
 <li><p><a class="reference external" href="https://download.qt.io/official_releases/online_installers/qt-unified-mac-x64-online.dmg"><strong>macOS</strong></a>.</p></li>
 </ul>
@@ -61,6 +61,7 @@ The toolchain is different depending on the platform you are using:</p>
 <li><p><a class="reference external" href="https://clang.llvm.org/extra/clang-tidy/">Clang-Tidy</a>: a <a class="reference external" href="https://clang.llvm.org/">Clang</a>-based C++ linter tool;</p></li>
 <li><p><a class="reference external" href="https://nsis.sourceforge.io/">NSIS</a> 3.0 or later (Windows only): a program to create Windows installers.</p></li>
 </ul>
+<p><strong>Note:</strong> the <a class="reference external" href="https://opencor.ws/user/plugins/miscellaneous/helpWindow.html">HelpWindow plugin</a> only gets built if <a class="reference external" href="https://www.python.org/">Python</a> 3.x is installed on your system, as well as the <a class="reference external" href="https://pypi.org/project/Sphinx/">Sphinx</a>, <a class="reference external" href="https://pypi.org/project/sphinx-copybutton/">sphinx-copybutton</a> and <a class="reference external" href="https://pypi.org/project/sphinx-inline-tabs/">sphinx-inline-tabs</a> packages.</p>
 </section>
 
 

@@ -16,6 +16,7 @@
                 <script src="../_static/underscore.js"></script>
                 <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
                 <script src="../_static/doctools.js"></script>
+                <script src="../_static/sphinx_highlight.js"></script>
                 <script src="../_static/clipboard.min.js"></script>
                 <script src="../_static/copybutton.js"></script>
                 <script src="../_static/tabs.js"></script>
@@ -53,8 +54,8 @@ Usage: OpenCOR [-a|--about] [-c|--command [&lt;plugin&gt;]::&lt;command&gt; [&lt
 <h2>About<a class="headerlink" href="#about" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -a
 OpenCOR Version 0.7
-macOS 10.15
-Copyright 2011-2019
+macOS 13.0
+Copyright 2011-2022
 
 OpenCOR is a cross-platform modelling environment, which can be used to organise, edit, simulate and analyse CellML files.
 </pre></div>
@@ -74,10 +75,15 @@ Commands supported by the CellMLTextView plugin:
 Commands supported by the CellMLTools plugin:
  * Display the commands supported by the CellMLTools plugin:
       help
- * Export &lt;file&gt; to a &lt;predefined_format&gt; or a &lt;user_defined_format_file&gt;:
-      export &lt;file&gt; &lt;predefined_format&gt;|&lt;user_defined_format_file&gt;
-   &lt;predefined_format&gt; can take one of the following values:
+ * Export &lt;file&gt; to a given &lt;format&gt; or a given &lt;language&gt;:
+      export &lt;file&gt; &lt;format&gt;|&lt;language&gt;
+   &lt;format&gt; can take one of the following values:
       cellml_1_0: to export a CellML 1.1 file to CellML 1.0
+   &lt;language&gt; can take one of the following values:
+      c: to export a CellML file to C
+      fortran_77: to export a CellML file to FORTRAN 77
+      matlab: to export a CellML file to MATLAB
+      python: to export a CellML file to Python
  * Validate &lt;file&gt;:
       validate &lt;file&gt;
 
@@ -103,10 +109,15 @@ Commands supported by the PythonShell plugin:
 Commands supported by the CellMLTools plugin:
  * Display the commands supported by the CellMLTools plugin:
       help
- * Export &lt;file&gt; to a &lt;predefined_format&gt; or a &lt;user_defined_format_file&gt;:
-      export &lt;file&gt; &lt;predefined_format&gt;|&lt;user_defined_format_file&gt;
-   &lt;predefined_format&gt; can take one of the following values:
+ * Export &lt;file&gt; to a given &lt;format&gt; or a given &lt;language&gt;:
+      export &lt;file&gt; &lt;format&gt;|&lt;language&gt;
+   &lt;format&gt; can take one of the following values:
       cellml_1_0: to export a CellML 1.1 file to CellML 1.0
+   &lt;language&gt; can take one of the following values:
+      c: to export a CellML file to C
+      fortran_77: to export a CellML file to FORTRAN 77
+      matlab: to export a CellML file to MATLAB
+      python: to export a CellML file to Python
  * Validate &lt;file&gt;:
       validate &lt;file&gt;
 </pre></div>

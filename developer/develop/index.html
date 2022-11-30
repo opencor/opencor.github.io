@@ -16,6 +16,7 @@
                 <script src="../_static/underscore.js"></script>
                 <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
                 <script src="../_static/doctools.js"></script>
+                <script src="../_static/sphinx_highlight.js"></script>
                 <script src="../_static/clipboard.min.js"></script>
                 <script src="../_static/copybutton.js"></script>
                 <script src="../_static/tabs.js"></script>
@@ -34,7 +35,7 @@
 <p>The best way to familiarise yourself with the internals of OpenCOR is by having a look at its <a class="reference external" href="https://github.com/opencor/opencor">source code</a>.</p>
 <section id="namespace">
 <h2>Namespace<a class="headerlink" href="#namespace" title="Permalink to this heading">¶</a></h2>
-<p>All of the source code is and must be made available under the <code class="docutils literal notranslate"><span class="pre">OpenCOR</span></code> namespace (e.g. <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/mainwindow.cpp"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/mainwindow.cpp</span></code></a> and <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/mainwindow.h"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/mainwindow.h</span></code></a>).
+<p>All of the source code is and must be made available under the <code class="docutils literal notranslate"><span class="pre">OpenCOR</span></code> namespace (e.g., <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/mainwindow.cpp"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/mainwindow.cpp</span></code></a> and <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/mainwindow.h"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/mainwindow.h</span></code></a>).
 There are only two exceptions to this rule: <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/main.cpp"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/main.cpp</span></code></a> and <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/windows/main.cpp"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/windows/main.cpp</span></code></a> (i.e. OpenCOR’s two main <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> files).</p>
 </section>
 <section id="issues">
@@ -44,18 +45,17 @@ There are only two exceptions to this rule: <a class="reference external" href="
 <li><p>Request a <img alt="feature" class="label" src="../_images/feature.svg" /> for or an <img alt="improvement" class="label" src="../_images/improvement.svg" /> to a future version of OpenCOR.</p></li>
 <li><p>Report a <img alt="bug" class="label" src="../_images/bug.svg" /> or a <img alt="regression" class="label" src="../_images/regression.svg" /> issue with the current official version of OpenCOR.</p></li>
 <li><p>Specify a <img alt="task" class="label" src="../_images/task.svg" /> that needs to be carried out for the next official version of OpenCOR.</p></li>
-<li><p>Specify the binding (<img alt="python" class="label" src="../_images/python.svg" />) associated with a <img alt="bug" class="label" src="../_images/bug.svg" />, <img alt="task" class="label" src="../_images/task.svg" /> or <img alt="regression" class="label" src="../_images/regression.svg" /> issue.</p></li>
-<li><p>Specify the platform(s) (<img alt="windows" class="label" src="../_images/windows.svg" />, <img alt="linux" class="label" src="../_images/linux.svg" /> and/or <img alt="macos" class="label" src="../_images/macos.svg" />) associated with a <img alt="bug" class="label" src="../_images/bug.svg" />, <img alt="task" class="label" src="../_images/task.svg" /> or <img alt="regression" class="label" src="../_images/regression.svg" /> issue.</p></li>
+<li><p>Specify the binding (<img alt="python" class="label" src="../_images/python.svg" />) associated with a <img alt="bug" class="label" src="../_images/bug.svg" />, <img alt="task" class="label" src="../_images/task.svg" />, or <img alt="regression" class="label" src="../_images/regression.svg" /> issue.</p></li>
+<li><p>Specify the platform(s) (<img alt="windows" class="label" src="../_images/windows.svg" />, <img alt="linux" class="label" src="../_images/linux.svg" />, and/or <img alt="macos" class="label" src="../_images/macos.svg" />) associated with a <img alt="bug" class="label" src="../_images/bug.svg" />, <img alt="task" class="label" src="../_images/task.svg" />, or <img alt="regression" class="label" src="../_images/regression.svg" /> issue.</p></li>
 </ul>
 </section>
 <section id="continuous-integration">
 <h2>Continuous integration<a class="headerlink" href="#continuous-integration" title="Permalink to this heading">¶</a></h2>
-<p>Whenever something is pushed to the <a class="reference external" href="https://github.com/opencor/opencor">Git repository</a>, OpenCOR gets automatically built and tested on <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Windows">Windows</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Linux">Linux</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/MacOS">macOS</a>, through <a class="reference external" href="https://autotest.bioeng.auckland.ac.nz/jenkins/view/OpenCOR">Jenkins</a> at the <a class="reference external" href="https://auckland.ac.nz/en/abi.html">Auckland Bioengineering Institute</a>.</p>
-<p>Although it can technically be done, no work should be carried out on the <a class="reference external" href="https://github.com/opencor/opencor/tree/master">master branch</a>.
-Instead, anyone wanting to contribute to OpenCOR should first fork the <a class="reference external" href="https://github.com/opencor/opencor">Git repository</a>.
+<p>Whenever something is pushed to the <a class="reference external" href="https://github.com/opencor/opencor">Git repository</a>, OpenCOR gets automatically <a class="reference external" href="https://github.com/opencor/opencor/actions">built and tested</a> on <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Windows">Windows</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Linux">Linux</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/MacOS">macOS</a>, through <a class="reference external" href="https://github.com/features/actions">GitHub Actions</a>.</p>
+<p>Anyone wanting to contribute to OpenCOR should first fork the <a class="reference external" href="https://github.com/opencor/opencor">Git repository</a>.
 Work for issue <code class="docutils literal notranslate"><span class="pre">#XXX</span></code> should then be done in a branch called <code class="docutils literal notranslate"><span class="pre">issueXXX</span></code>.
 The work done, a pull request should be created.
-This will trigger OpenCOR to be built and tested on <a class="reference external" href="https://autotest.bioeng.auckland.ac.nz/jenkins/view/OpenCOR">Jenkins</a>.
+This will trigger OpenCOR to be <a class="reference external" href="https://github.com/opencor/opencor/actions">built and tested</a>.
 Assuming everything goes well, the <a class="reference external" href="https://opencor.ws/team.html">project manager</a> will decide whether to merge the pull request.</p>
 </section>
 <section id="additional-information">
