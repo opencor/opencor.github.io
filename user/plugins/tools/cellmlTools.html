@@ -11,15 +11,12 @@
         <link href="../../_static/pygments.css" rel="stylesheet" type="text/css" />
         <link href="../../_static/tabs.css" rel="stylesheet" type="text/css" />
         <link href="../../_static/theme.css" rel="stylesheet" type="text/css" />
-                <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-                <script src="../../_static/jquery.js"></script>
-                <script src="../../_static/underscore.js"></script>
-                <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-                <script src="../../_static/doctools.js"></script>
-                <script src="../../_static/sphinx_highlight.js"></script>
-                <script src="../../_static/clipboard.min.js"></script>
-                <script src="../../_static/copybutton.js"></script>
-                <script src="../../_static/tabs.js"></script>
+                <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+                <script src="../../_static/doctools.js?v=888ff710"></script>
+                <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+                <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+                <script src="../../_static/copybutton.js?v=f281be69"></script>
+                <script src="../../_static/tabs.js?v=3ee01567"></script>
                 <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
         <script src="../../_static/theme.js" type="text/javascript"></script>
@@ -32,10 +29,10 @@
     <body ondragstart="return false;" ondrop="return false;">
         
   <section id="cellmltools-plugin">
-<span id="plugins-tools-cellmltools"></span><h1>CellMLTools plugin<a class="headerlink" href="#cellmltools-plugin" title="Permalink to this heading">¶</a></h1>
+<span id="plugins-tools-cellmltools"></span><h1>CellMLTools plugin<a class="headerlink" href="#cellmltools-plugin" title="Link to this heading">¶</a></h1>
 <p>The CellMLTools plugin consists of various <a class="reference external" href="https://cellml.org/">CellML</a>-related tools, which can be accessed both through the <a class="reference internal" href="../../userInterfaces/commandLineInterface.html#userinterfaces-commandlineinterface"><span class="std std-ref">CLI</span></a> and the <a class="reference internal" href="../../userInterfaces/graphicalUserInterface.html#userinterfaces-graphicaluserinterface"><span class="std std-ref">GUI</span></a>.</p>
 <section id="cellml-file-export">
-<h2>CellML file export<a class="headerlink" href="#cellml-file-export" title="Permalink to this heading">¶</a></h2>
+<h2>CellML file export<a class="headerlink" href="#cellml-file-export" title="Link to this heading">¶</a></h2>
 <p>A CellML file can be exported to different:</p>
 <ul class="simple">
 <li><p>formats:</p>
@@ -53,7 +50,7 @@
 </li>
 </ul>
 <p>An export can be initiated by selecting the <code class="docutils literal notranslate"><span class="pre">Tools</span></code> | <code class="docutils literal notranslate"><span class="pre">CellML</span> <span class="pre">File</span> <span class="pre">Export</span> <span class="pre">To</span></code> menu or by entering the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -c CellMLTools::export &lt;file&gt; &lt;format&gt;<span class="p">|</span>&lt;language&gt;
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./OpenCOR<span class="w"> </span>-c<span class="w"> </span>CellMLTools::export<span class="w"> </span>&lt;file&gt;<span class="w"> </span>&lt;format&gt;<span class="p">|</span>&lt;language&gt;
 </pre></div>
 </div>
 <p>with <code class="docutils literal notranslate"><span class="pre">&lt;file&gt;</span></code> either a local or a remote file and <code class="docutils literal notranslate"><span class="pre">&lt;format&gt;</span></code>/<code class="docutils literal notranslate"><span class="pre">&lt;language&gt;</span></code> taking one of the following values:</p>
@@ -73,11 +70,11 @@
 </li>
 </ul>
 <p>Thus, to export <code class="docutils literal notranslate"><span class="pre">myfile.cellml</span></code> to CellML 1.0, you would use:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -c CellMLTools::export myfile.cellml cellml_1_0
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./OpenCOR<span class="w"> </span>-c<span class="w"> </span>CellMLTools::export<span class="w"> </span>myfile.cellml<span class="w"> </span>cellml_1_0
 </pre></div>
 </div>
 <p>while to export <code class="docutils literal notranslate"><span class="pre">https://mydomain.com/myfile.cellml</span></code> to Python, you would use:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -c CellMLTools::export https://mydomain.com/myfile.cellml python
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./OpenCOR<span class="w"> </span>-c<span class="w"> </span>CellMLTools::export<span class="w"> </span>https://mydomain.com/myfile.cellml<span class="w"> </span>python
 </pre></div>
 </div>
 <div class="line-block">
@@ -91,9 +88,9 @@ The end result is that <span class="math notranslate nohighlight">\(dX/dt\)</spa
 </div>
 </section>
 <section id="validate-cellml-file">
-<h2>Validate CellML file<a class="headerlink" href="#validate-cellml-file" title="Permalink to this heading">¶</a></h2>
+<h2>Validate CellML file<a class="headerlink" href="#validate-cellml-file" title="Link to this heading">¶</a></h2>
 <p>The validation of a <a class="reference external" href="https://cellml.org/">CellML</a> file can be done by entering the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./OpenCOR -c CellMLTools::validate myfile.cellml
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./OpenCOR<span class="w"> </span>-c<span class="w"> </span>CellMLTools::validate<span class="w"> </span>myfile.cellml
 </pre></div>
 </div>
 <p>Both errors and warnings, if any, get listed and an exit code value of <code class="docutils literal notranslate"><span class="pre">0</span></code> means that the <a class="reference external" href="https://cellml.org/">CellML</a> file is valid (i.e. no errors were found).</p>

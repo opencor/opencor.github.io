@@ -11,15 +11,12 @@
         <link href="../../_static/pygments.css" rel="stylesheet" type="text/css" />
         <link href="../../_static/tabs.css" rel="stylesheet" type="text/css" />
         <link href="../../_static/theme.css" rel="stylesheet" type="text/css" />
-                <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-                <script src="../../_static/jquery.js"></script>
-                <script src="../../_static/underscore.js"></script>
-                <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-                <script src="../../_static/doctools.js"></script>
-                <script src="../../_static/sphinx_highlight.js"></script>
-                <script src="../../_static/clipboard.min.js"></script>
-                <script src="../../_static/copybutton.js"></script>
-                <script src="../../_static/tabs.js"></script>
+                <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+                <script src="../../_static/doctools.js?v=888ff710"></script>
+                <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+                <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+                <script src="../../_static/copybutton.js?v=f281be69"></script>
+                <script src="../../_static/tabs.js?v=3ee01567"></script>
 
         <script src="../../_static/theme.js" type="text/javascript"></script>
 
@@ -31,17 +28,17 @@
     <body ondragstart="return false;" ondrop="return false;">
         
   <section id="sample">
-<span id="develop-plugins-sample"></span><h1>Sample<a class="headerlink" href="#sample" title="Permalink to this heading">¶</a></h1>
+<span id="develop-plugins-sample"></span><h1>Sample<a class="headerlink" href="#sample" title="Link to this heading">¶</a></h1>
 <p>The purpose of this plugin is to give other plugins access to a simple <code class="docutils literal notranslate"><span class="pre">add()</span></code> function, which can be used as follows:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">...</span><span class="w"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sampleutilities.h&quot;</span><span class="cp"></span>
-<span class="p">...</span><span class="w"></span>
-<span class="kt">double</span><span class="w"> </span><span class="n">addResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sample</span><span class="o">::</span><span class="n">add</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">);</span><span class="w"></span>
-<span class="p">...</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sampleutilities.h&quot;</span>
+<span class="p">...</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">addResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sample</span><span class="o">::</span><span class="n">add</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">);</span>
+<span class="p">...</span>
 </pre></div>
 </div>
 <section id="file-structure">
-<h2>File structure<a class="headerlink" href="#file-structure" title="Permalink to this heading">¶</a></h2>
+<h2>File structure<a class="headerlink" href="#file-structure" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>src
  ├─ sampleglobal.h
  ├─ sampleplugin.cpp
@@ -54,18 +51,18 @@ CMakeLists.txt
 </div>
 </section>
 <section id="category">
-<h2>Category<a class="headerlink" href="#category" title="Permalink to this heading">¶</a></h2>
+<h2>Category<a class="headerlink" href="#category" title="Link to this heading">¶</a></h2>
 <p>The first thing we need to do is to decide on the <a class="reference internal" href="index.html#develop-plugins-index-categories"><span class="std std-ref">category</span></a> of our plugin.
 Our plugin is aimed at helping people who want to learn how to write plugins for OpenCOR.
 So, it should be in the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/sample/">Sample</a> category.
 This means that its code can be found under <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/sample/Sample/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/sample/Sample/</span></code></a>.</p>
 </section>
 <section id="interfaces">
-<h2>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this heading">¶</a></h2>
+<h2>Interfaces<a class="headerlink" href="#interfaces" title="Link to this heading">¶</a></h2>
 <p>All our plugin does is make its <code class="docutils literal notranslate"><span class="pre">add()</span></code> function available to other plugins, so there is no need for our plugin to interact with OpenCOR and, therefore, no need to implement any interface.</p>
 </section>
 <section id="cmake-project">
-<h2>CMake project<a class="headerlink" href="#cmake-project" title="Permalink to this heading">¶</a></h2>
+<h2>CMake project<a class="headerlink" href="#cmake-project" title="Link to this heading">¶</a></h2>
 <p>To build our plugin, we need a <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/Sample/CMakeLists.txt"><code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code></a> file (some information on <a class="reference external" href="https://cmake.org/">CMake</a> and plugins in OpenCOR can be found <a class="reference internal" href="index.html#develop-plugins-index-cmakeproject"><span class="std std-ref">here</span></a>), which contents is:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nb">project</span><span class="p">(</span><span class="s">SamplePlugin</span><span class="p">)</span>
 <span class="linenos"> 2</span>
@@ -92,29 +89,29 @@ This convention is used throughout OpenCOR’s code to ensure that there are no 
 Finally, OpenCOR uses the <a class="reference external" href="https://qt.io/">Qt</a> framework, so even though our <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/sample/Sample/">Sample</a> plugin is very minimal, we must still reference the <code class="docutils literal notranslate"><span class="pre">Core</span></code> module (line 12).</p>
 </section>
 <section id="plugin-information">
-<h2>Plugin information<a class="headerlink" href="#plugin-information" title="Permalink to this heading">¶</a></h2>
+<h2>Plugin information<a class="headerlink" href="#plugin-information" title="Link to this heading">¶</a></h2>
 <p>We want our plugin to be recognisable by OpenCOR, which means that it must provide some <a class="reference internal" href="index.html#develop-plugins-index-plugininformation"><span class="std std-ref">plugin information</span></a>.
 <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/Sample/src/sampleplugin.cpp"><code class="docutils literal notranslate"><span class="pre">sampleplugin.cpp</span></code></a> therefore contains a C function that is called by OpenCOR to retrieve some <a class="reference internal" href="index.html#develop-plugins-index-basicinformation"><span class="std std-ref">basic information</span></a> about our plugin.
 That function is declared in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/Sample/src/sampleplugin.h"><code class="docutils literal notranslate"><span class="pre">sampleplugin.h</span></code></a>, which is also where our <a class="reference internal" href="index.html#develop-plugins-index-pluginclass"><span class="std std-ref">plugin class</span></a> is defined:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">28</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininfo.h&quot;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">28</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininfo.h&quot;</span>
 <span class="linenos">29</span>
 <span class="linenos">30</span><span class="c1">//==============================================================================</span>
 <span class="linenos">31</span>
-<span class="linenos">32</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">33</span><span class="k">namespace</span><span class="w"> </span><span class="nn">Sample</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">32</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">33</span><span class="k">namespace</span><span class="w"> </span><span class="nn">Sample</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">34</span>
 <span class="linenos">35</span><span class="c1">//==============================================================================</span>
 <span class="linenos">36</span>
-<span class="linenos">37</span><span class="n">PLUGININFO_FUNC</span><span class="w"> </span><span class="nf">SamplePluginInfo</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">37</span><span class="n">PLUGININFO_FUNC</span><span class="w"> </span><span class="nf">SamplePluginInfo</span><span class="p">();</span>
 <span class="linenos">38</span>
 <span class="linenos">39</span><span class="c1">//==============================================================================</span>
 <span class="linenos">40</span>
-<span class="linenos">41</span><span class="k">class</span><span class="w"> </span><span class="nc">SamplePlugin</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QObject</span><span class="w"></span>
-<span class="linenos">42</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">43</span><span class="w">    </span><span class="n">Q_OBJECT</span><span class="w"></span>
+<span class="linenos">41</span><span class="k">class</span><span class="w"> </span><span class="nc">SamplePlugin</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QObject</span>
+<span class="linenos">42</span><span class="p">{</span>
+<span class="linenos">43</span><span class="w">    </span><span class="n">Q_OBJECT</span>
 <span class="linenos">44</span>
-<span class="linenos">45</span><span class="w">    </span><span class="n">Q_PLUGIN_METADATA</span><span class="p">(</span><span class="n">IID</span><span class="w"> </span><span class="s">&quot;OpenCOR.SamplePlugin&quot;</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="s">&quot;sampleplugin.json&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">46</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">45</span><span class="w">    </span><span class="n">Q_PLUGIN_METADATA</span><span class="p">(</span><span class="n">IID</span><span class="w"> </span><span class="s">&quot;OpenCOR.SamplePlugin&quot;</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="s">&quot;sampleplugin.json&quot;</span><span class="p">)</span>
+<span class="linenos">46</span><span class="p">};</span>
 <span class="linenos">47</span>
 <span class="linenos">48</span><span class="c1">//==============================================================================</span>
 <span class="linenos">49</span>
@@ -127,32 +124,32 @@ Then, we must declare our C function (line 37).
 Finally, we have the definition of our <a class="reference internal" href="index.html#develop-plugins-index-pluginclass"><span class="std std-ref">plugin class</span></a> (lines 41-46).
 The call to the <code class="docutils literal notranslate"><span class="pre">Q_PLUGIN_METADATA()</span></code> macro (line 45) requires to pass both an IID (<code class="docutils literal notranslate"><span class="pre">OpenCOR.SamplePlugin</span></code>) and the name of a <a class="reference external" href="https://json.org/json-en.html">JSON</a> file (<a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/Sample/src/sampleplugin.json"><code class="docutils literal notranslate"><span class="pre">sampleplugin.json</span></code></a>).
 As mentioned <a class="reference internal" href="index.html#develop-plugins-index-jsonfile"><span class="std std-ref">here</span></a>, the JSON file simply references the name of our plugin class (<code class="docutils literal notranslate"><span class="pre">SamplePlugin</span></code>):</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">2</span><span class="w">    </span><span class="nt">&quot;Keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;SamplePlugin&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="linenos">3</span><span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">    </span><span class="nt">&quot;Keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;SamplePlugin&quot;</span><span class="w"> </span><span class="p">]</span>
+<span class="linenos">3</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Next, we have our <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/Sample/src/sampleplugin.cpp"><code class="docutils literal notranslate"><span class="pre">sampleplugin.cpp</span></code></a> file, which contents is:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">24</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sampleplugin.h&quot;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">24</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sampleplugin.h&quot;</span>
 <span class="linenos">25</span>
 <span class="linenos">26</span><span class="c1">//==============================================================================</span>
 <span class="linenos">27</span>
-<span class="linenos">28</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">29</span><span class="k">namespace</span><span class="w"> </span><span class="nn">Sample</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">28</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">29</span><span class="k">namespace</span><span class="w"> </span><span class="nn">Sample</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">30</span>
 <span class="linenos">31</span><span class="c1">//==============================================================================</span>
 <span class="linenos">32</span>
-<span class="linenos">33</span><span class="n">PLUGININFO_FUNC</span><span class="w"> </span><span class="nf">SamplePluginInfo</span><span class="p">()</span><span class="w"></span>
-<span class="linenos">34</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">35</span><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Descriptions</span><span class="w"> </span><span class="n">descriptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">36</span><span class="w">                                                 </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;en&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;a plugin that provides an addition function.&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="linenos">37</span><span class="w">                                                 </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;fr&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;une extension qui fournit une fonction d&#39;addition.&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">38</span><span class="w">                                             </span><span class="p">};</span><span class="w"></span>
+<span class="linenos">33</span><span class="n">PLUGININFO_FUNC</span><span class="w"> </span><span class="nf">SamplePluginInfo</span><span class="p">()</span>
+<span class="linenos">34</span><span class="p">{</span>
+<span class="linenos">35</span><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Descriptions</span><span class="w"> </span><span class="n">descriptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">36</span><span class="w">                                                 </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;en&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;a plugin that provides an addition function.&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">},</span>
+<span class="linenos">37</span><span class="w">                                                 </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;fr&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;une extension qui fournit une fonction d&#39;addition.&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos">38</span><span class="w">                                             </span><span class="p">};</span>
 <span class="linenos">39</span>
-<span class="linenos">40</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PluginInfo</span><span class="p">(</span><span class="n">PluginInfo</span><span class="o">::</span><span class="n">Category</span><span class="o">::</span><span class="n">Sample</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">41</span><span class="w">                          </span><span class="p">{},</span><span class="w"></span>
-<span class="linenos">42</span><span class="w">                          </span><span class="n">descriptions</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">43</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">40</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PluginInfo</span><span class="p">(</span><span class="n">PluginInfo</span><span class="o">::</span><span class="n">Category</span><span class="o">::</span><span class="n">Sample</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span>
+<span class="linenos">41</span><span class="w">                          </span><span class="p">{},</span>
+<span class="linenos">42</span><span class="w">                          </span><span class="n">descriptions</span><span class="p">);</span>
+<span class="linenos">43</span><span class="p">}</span>
 <span class="linenos">44</span>
 <span class="linenos">45</span><span class="c1">//==============================================================================</span>
 <span class="linenos">46</span>
@@ -170,23 +167,23 @@ This includes our plugin’s category (<code class="docutils literal notranslate
 So, no need to worry about it.</p>
 </section>
 <section id="plugin-specific">
-<h2>Plugin specific<a class="headerlink" href="#plugin-specific" title="Permalink to this heading">¶</a></h2>
+<h2>Plugin specific<a class="headerlink" href="#plugin-specific" title="Link to this heading">¶</a></h2>
 <p>Finally, we need to deal with our plugin’s <code class="docutils literal notranslate"><span class="pre">add()</span></code> function.
 It is declared in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/Sample/src/sampleutilities.h"><code class="docutils literal notranslate"><span class="pre">sampleutilities.h</span></code></a>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">28</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QtGlobal&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">28</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QtGlobal&gt;</span>
 <span class="linenos">29</span>
 <span class="linenos">30</span><span class="c1">//==============================================================================</span>
 <span class="linenos">31</span>
-<span class="linenos">32</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sampleglobal.h&quot;</span><span class="cp"></span>
+<span class="linenos">32</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sampleglobal.h&quot;</span>
 <span class="linenos">33</span>
 <span class="linenos">34</span><span class="c1">//==============================================================================</span>
 <span class="linenos">35</span>
-<span class="linenos">36</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">37</span><span class="k">namespace</span><span class="w"> </span><span class="nn">Sample</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">36</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">37</span><span class="k">namespace</span><span class="w"> </span><span class="nn">Sample</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">38</span>
 <span class="linenos">39</span><span class="c1">//==============================================================================</span>
 <span class="linenos">40</span>
-<span class="linenos">41</span><span class="kt">double</span><span class="w"> </span><span class="n">SAMPLE_EXPORT</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">pNb1</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pNb2</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">41</span><span class="kt">double</span><span class="w"> </span><span class="n">SAMPLE_EXPORT</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">pNb1</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pNb2</span><span class="p">);</span>
 <span class="linenos">42</span>
 <span class="linenos">43</span><span class="c1">//==============================================================================</span>
 <span class="linenos">44</span>
@@ -197,21 +194,21 @@ It is declared in <a class="reference external" href="https://github.com/opencor
 <p>We start by including <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/Sample/src/sampleglobal.h"><code class="docutils literal notranslate"><span class="pre">sampleglobal.h</span></code></a> (line 32).
 This header file defines the <code class="docutils literal notranslate"><span class="pre">SAMPLE_EXPORT</span></code> macro (click <a class="reference internal" href="index.html#develop-plugins-index-globalheaderinformation"><span class="std std-ref">here</span></a> for some information on plugins’ global header file in OpenCOR), which we use to declare our plugin’s <code class="docutils literal notranslate"><span class="pre">add()</span></code> function (line 41).</p>
 <p>The implementation of our plugin’s <code class="docutils literal notranslate"><span class="pre">add()</span></code> function can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/Sample/src/sampleutilities.cpp"><code class="docutils literal notranslate"><span class="pre">sampleutilities.cpp</span></code></a>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">24</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sampleutilities.h&quot;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">24</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sampleutilities.h&quot;</span>
 <span class="linenos">25</span>
 <span class="linenos">26</span><span class="c1">//==============================================================================</span>
 <span class="linenos">27</span>
-<span class="linenos">28</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">29</span><span class="k">namespace</span><span class="w"> </span><span class="nn">Sample</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">28</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">29</span><span class="k">namespace</span><span class="w"> </span><span class="nn">Sample</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">30</span>
 <span class="linenos">31</span><span class="c1">//==============================================================================</span>
 <span class="linenos">32</span>
-<span class="linenos">33</span><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">pNb1</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pNb2</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">34</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">33</span><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">pNb1</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pNb2</span><span class="p">)</span>
+<span class="linenos">34</span><span class="p">{</span>
 <span class="linenos">35</span><span class="w">    </span><span class="c1">// Return the sum of the two given numbers</span>
 <span class="linenos">36</span>
-<span class="linenos">37</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pNb1</span><span class="o">+</span><span class="n">pNb2</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">38</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">37</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pNb1</span><span class="o">+</span><span class="n">pNb2</span><span class="p">;</span>
+<span class="linenos">38</span><span class="p">}</span>
 <span class="linenos">39</span>
 <span class="linenos">40</span><span class="c1">//==============================================================================</span>
 <span class="linenos">41</span>

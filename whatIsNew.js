@@ -1,5 +1,51 @@
 var jsonData = { "versions": [
-                   { "anchor": "latest", "description": "Latest snapshot", "day": 30, "month": 11, "year": 2022,
+                   { "anchor": "latest", "description": "Latest snapshot", "day": 10, "month": 4, "year": 2024,
+                     "categories": [
+                       { "name": "Editing",
+                         "entries": [
+                           { "type": "subCategory", "name": "CellML Text view",
+                             "entries": [
+                               { "type": "improved", "description": "Align equations against the equal sign." }
+                             ]
+                           }
+                         ]
+                       },
+                       { "name": "Support",
+                         "entries": [
+                           { "type": "subCategory", "name": "<a href=\"https://www.python.org/\">Python</a> support",
+                             "entries": [
+                               { "type": "improved", "description": "Upgraded to Python 3.12.2." }
+                             ]
+                           },
+                           { "type": "subCategory", "name": "<a href=\"https://sed-ml.github.io/\">SED-ML</a> support",
+                             "entries": [
+                               { "type": "fixed", "description": "Some issues with a remote CellML file used by a remote SED-ML file." }
+                             ]
+                           }
+                         ]
+                       },
+                       { "name": "Simulation",
+                         "entries": [
+                           { "type": "subCategory", "name": "Simulation Experiment view",
+                             "entries": [
+                               { "type": "improved", "description": "Rendering of the GUI." },
+                               { "type": "fixed", "description": "Issue with enabling/disabling some properties in a graph panel plot." }
+                             ]
+                           }
+                         ]
+                       }
+                     ]
+                   },
+                   { "anchor": "0.7.1", "description": "Version 0.7.1", "day": 7, "month": 2, "year": 2023,
+                     "categories": [
+                       { "name": "General",
+                         "entries": [
+                           { "type": "fixed", "description": "High CPU usage when idle." }
+                         ]
+                       }
+                     ]
+                   },
+                   { "anchor": "0.7", "description": "Version 0.7", "day": 15, "month": 12, "year": 2022,
                      "categories": [
                        { "name": "General",
                          "entries": [

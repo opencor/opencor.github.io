@@ -11,15 +11,12 @@
         <link href="_static/pygments.css" rel="stylesheet" type="text/css" />
         <link href="_static/tabs.css" rel="stylesheet" type="text/css" />
         <link href="_static/theme.css" rel="stylesheet" type="text/css" />
-                <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-                <script src="_static/jquery.js"></script>
-                <script src="_static/underscore.js"></script>
-                <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-                <script src="_static/doctools.js"></script>
-                <script src="_static/sphinx_highlight.js"></script>
-                <script src="_static/clipboard.min.js"></script>
-                <script src="_static/copybutton.js"></script>
-                <script src="_static/tabs.js"></script>
+                <script src="_static/documentation_options.js?v=5929fcd5"></script>
+                <script src="_static/doctools.js?v=888ff710"></script>
+                <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+                <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+                <script src="_static/copybutton.js?v=f281be69"></script>
+                <script src="_static/tabs.js?v=3ee01567"></script>
 
         <script src="_static/theme.js" type="text/javascript"></script>
 
@@ -31,15 +28,15 @@
     <body ondragstart="return false;" ondrop="return false;">
         
   <section id="prerequisites">
-<span id="id1"></span><h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h1>
+<span id="id1"></span><h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">¶</a></h1>
 <p>The following tools are required to develop, build , test, run, and package OpenCOR:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://git-scm.com/">Git</a>: a distributed version control system;</p></li>
 <li><p><a class="reference external" href="https://cmake.org/">CMake</a> 3.14 or later: a cross-platform build system;</p></li>
 <li><p>C++ toolchain: a set of C++ tools:</p>
 <ul>
-<li><p><strong>Windows:</strong> <a class="reference external" href="https://visualstudio.com/downloads/download-visual-studio-vs">Visual Studio Community 2019</a> ( <code class="docutils literal notranslate"><span class="pre">Desktop</span> <span class="pre">development</span> <span class="pre">with</span> <span class="pre">C++</span></code> with <code class="docutils literal notranslate"><span class="pre">MSVC</span> <span class="pre">v142</span> <span class="pre">-</span> <span class="pre">VS</span> <span class="pre">2019</span> <span class="pre">C++</span> <span class="pre">x64/x86</span> <span class="pre">build</span> <span class="pre">tools</span></code> and <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">10</span> <span class="pre">SDK</span> <span class="pre">(10.0.19041.0)</span></code>);</p></li>
-<li><p><strong>Linux:</strong> G++ and OpenGL (<code class="docutils literal notranslate"><span class="pre">g++</span></code>, <code class="docutils literal notranslate"><span class="pre">libgl1-mesa-dev</span></code> and <code class="docutils literal notranslate"><span class="pre">libtinfo5</span></code> packages, respectively) on Ubuntu 20.04 LTS; and</p></li>
+<li><p><strong>Windows:</strong> <a class="reference external" href="https://apps.microsoft.com/store/detail/visual-studio-community-2019/XP8CDJNZKFM06W">Visual Studio Community 2019</a> ( <code class="docutils literal notranslate"><span class="pre">Desktop</span> <span class="pre">development</span> <span class="pre">with</span> <span class="pre">C++</span></code> with <code class="docutils literal notranslate"><span class="pre">MSVC</span> <span class="pre">v142</span> <span class="pre">-</span> <span class="pre">VS</span> <span class="pre">2019</span> <span class="pre">C++</span> <span class="pre">x64/x86</span> <span class="pre">build</span> <span class="pre">tools</span></code> and <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">10</span> <span class="pre">SDK</span> <span class="pre">(10.0.19041.0)</span></code>);</p></li>
+<li><p><strong>Linux:</strong> G++ and OpenGL (<code class="docutils literal notranslate"><span class="pre">g++</span></code>, <code class="docutils literal notranslate"><span class="pre">libffi7</span></code>, <code class="docutils literal notranslate"><span class="pre">libgl1-mesa-dev</span></code>, and <code class="docutils literal notranslate"><span class="pre">libtinfo5</span></code> packages, respectively) on Ubuntu 22.04 LTS; and</p></li>
 <li><p><strong>macOS:</strong> <a class="reference external" href="https://developer.apple.com/xcode/">Xcode</a> 14 (including its <a class="reference external" href="https://developer.apple.com/downloads/?q=Command%20Line%20Tools">Command Line Tools</a>).</p></li>
 </ul>
 </li>
@@ -61,7 +58,7 @@
 <li><p><a class="reference external" href="https://clang.llvm.org/extra/clang-tidy/">Clang-Tidy</a>: a <a class="reference external" href="https://clang.llvm.org/">Clang</a>-based C++ linter tool;</p></li>
 <li><p><a class="reference external" href="https://nsis.sourceforge.io/">NSIS</a> 3.0 or later (Windows only): a program to create Windows installers.</p></li>
 </ul>
-<p><strong>Note:</strong> the <a class="reference external" href="https://opencor.ws/user/plugins/miscellaneous/helpWindow.html">HelpWindow plugin</a> only gets built if <a class="reference external" href="https://www.python.org/">Python</a> 3.x is installed on your system, as well as the <a class="reference external" href="https://pypi.org/project/Sphinx/">Sphinx</a>, <a class="reference external" href="https://pypi.org/project/sphinx-copybutton/">sphinx-copybutton</a> and <a class="reference external" href="https://pypi.org/project/sphinx-inline-tabs/">sphinx-inline-tabs</a> packages.</p>
+<p><strong>Note:</strong> the <a class="reference external" href="https://opencor.ws/user/plugins/miscellaneous/helpWindow.html">HelpWindow plugin</a> only gets built if <a class="reference external" href="https://www.python.org/">Python</a> 3.x is installed on your system, as well as the <a class="reference external" href="https://pypi.org/project/Sphinx/">Sphinx</a>, <a class="reference external" href="https://pypi.org/project/sphinx-copybutton/">sphinx-copybutton</a>, and <a class="reference external" href="https://pypi.org/project/sphinx-inline-tabs/">sphinx-inline-tabs</a> packages.</p>
 </section>
 
 

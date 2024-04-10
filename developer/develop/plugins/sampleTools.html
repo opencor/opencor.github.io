@@ -11,15 +11,12 @@
         <link href="../../_static/pygments.css" rel="stylesheet" type="text/css" />
         <link href="../../_static/tabs.css" rel="stylesheet" type="text/css" />
         <link href="../../_static/theme.css" rel="stylesheet" type="text/css" />
-                <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-                <script src="../../_static/jquery.js"></script>
-                <script src="../../_static/underscore.js"></script>
-                <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-                <script src="../../_static/doctools.js"></script>
-                <script src="../../_static/sphinx_highlight.js"></script>
-                <script src="../../_static/clipboard.min.js"></script>
-                <script src="../../_static/copybutton.js"></script>
-                <script src="../../_static/tabs.js"></script>
+                <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+                <script src="../../_static/doctools.js?v=888ff710"></script>
+                <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+                <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+                <script src="../../_static/copybutton.js?v=f281be69"></script>
+                <script src="../../_static/tabs.js?v=3ee01567"></script>
 
         <script src="../../_static/theme.js" type="text/javascript"></script>
 
@@ -31,10 +28,10 @@
     <body ondragstart="return false;" ondrop="return false;">
         
   <section id="sample-tools">
-<span id="develop-plugins-sampletools"></span><h1>Sample tools<a class="headerlink" href="#sample-tools" title="Permalink to this heading">¶</a></h1>
+<span id="develop-plugins-sampletools"></span><h1>Sample tools<a class="headerlink" href="#sample-tools" title="Link to this heading">¶</a></h1>
 <p>The purpose of this plugin is to extend our <a class="reference internal" href="sample.html#develop-plugins-sample"><span class="std std-ref">Sample</span></a> plugin by making it possible for the user to add two numbers, be it from the command line or through OpenCOR’s <code class="docutils literal notranslate"><span class="pre">Tools</span></code> menu.</p>
 <section id="file-structure">
-<h2>File structure<a class="headerlink" href="#file-structure" title="Permalink to this heading">¶</a></h2>
+<h2>File structure<a class="headerlink" href="#file-structure" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>i18n
  └─ SampleTools_fr.ts
 res
@@ -48,11 +45,11 @@ CMakeLists.txt
 </div>
 </section>
 <section id="category">
-<h2>Category<a class="headerlink" href="#category" title="Permalink to this heading">¶</a></h2>
+<h2>Category<a class="headerlink" href="#category" title="Link to this heading">¶</a></h2>
 <p>Our plugin is part of the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/sample/">Sample</a> category, which means that its code can be found under <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/sample/SampleTools/"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/src/plugins/sample/SampleTools/</span></code></a>.</p>
 </section>
 <section id="interfaces">
-<h2>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this heading">¶</a></h2>
+<h2>Interfaces<a class="headerlink" href="#interfaces" title="Link to this heading">¶</a></h2>
 <p>Unlike for the <a class="reference internal" href="sample.html#develop-plugins-sample"><span class="std std-ref">Sample</span></a> plugin, we want our plugin to interact with OpenCOR.
 This means that it needs to implement some <a class="reference internal" href="index.html#develop-plugins-index-interfaces"><span class="std std-ref">interfaces</span></a>.</p>
 <p>More specifically, we want our plugin to work from the command line, so we need to implement the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/cliinterface.inl">CLI</a> interface.
@@ -61,7 +58,7 @@ To do these, we need to implement both the <a class="reference external" href="h
 While we are at it, we might also internationalise our plugin, which means also implementing the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/i18ninterface.inl">Internationalisation</a> interface.</p>
 </section>
 <section id="cmake-project">
-<h2>CMake project<a class="headerlink" href="#cmake-project" title="Permalink to this heading">¶</a></h2>
+<h2>CMake project<a class="headerlink" href="#cmake-project" title="Link to this heading">¶</a></h2>
 <p>As for the <a class="reference internal" href="sample.html#develop-plugins-sample"><span class="std std-ref">Sample</span></a> plugin, our plugin has a <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleTools/CMakeLists.txt"><code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code></a> file, which contents is:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nb">project</span><span class="p">(</span><span class="s">SampleToolsPlugin</span><span class="p">)</span>
 <span class="linenos"> 2</span>
@@ -86,53 +83,53 @@ While we are at it, we might also internationalise our plugin, which means also 
 Then, our plugin needs the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/">Core</a> and <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/sample/Sample/">Sample</a> plugins (the latter, to be able to use its <code class="docutils literal notranslate"><span class="pre">add()</span></code> function), so they are referenced (lines 15 and 16) using the <code class="docutils literal notranslate"><span class="pre">PLUGINS</span></code> keyword (line 14).</p>
 </section>
 <section id="plugin-information">
-<h2>Plugin information<a class="headerlink" href="#plugin-information" title="Permalink to this heading">¶</a></h2>
+<h2>Plugin information<a class="headerlink" href="#plugin-information" title="Link to this heading">¶</a></h2>
 <p>Our <a class="reference internal" href="index.html#develop-plugins-index-plugininformation"><span class="std std-ref">plugin information</span></a> can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleTools/src/sampletoolsplugin.cpp"><code class="docutils literal notranslate"><span class="pre">sampletoolsplugin.cpp</span></code></a>, <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleTools/src/sampletoolsplugin.h"><code class="docutils literal notranslate"><span class="pre">sampletoolsplugin.h</span></code></a>, and <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleTools/src/sampletoolsplugin.json"><code class="docutils literal notranslate"><span class="pre">sampletoolsplugin.json</span></code></a>. Starting with <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleTools/src/sampletoolsplugin.h"><code class="docutils literal notranslate"><span class="pre">sampletoolsplugin.h</span></code></a>, its contents is:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">28</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cliinterface.h&quot;</span><span class="cp"></span>
-<span class="linenos">29</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;guiinterface.h&quot;</span><span class="cp"></span>
-<span class="linenos">30</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;i18ninterface.h&quot;</span><span class="cp"></span>
-<span class="linenos">31</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininfo.h&quot;</span><span class="cp"></span>
-<span class="linenos">32</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininterface.h&quot;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">28</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cliinterface.h&quot;</span>
+<span class="linenos">29</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;guiinterface.h&quot;</span>
+<span class="linenos">30</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;i18ninterface.h&quot;</span>
+<span class="linenos">31</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininfo.h&quot;</span>
+<span class="linenos">32</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininterface.h&quot;</span>
 <span class="linenos">33</span>
 <span class="linenos">34</span><span class="c1">//==============================================================================</span>
 <span class="linenos">35</span>
-<span class="linenos">36</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">37</span><span class="k">namespace</span><span class="w"> </span><span class="nn">SampleTools</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">36</span><span class="k">namespace</span><span class="w"> </span><span class="nn">OpenCOR</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">37</span><span class="k">namespace</span><span class="w"> </span><span class="nn">SampleTools</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">38</span>
 <span class="linenos">39</span><span class="c1">//==============================================================================</span>
 <span class="linenos">40</span>
-<span class="linenos">41</span><span class="n">PLUGININFO_FUNC</span><span class="w"> </span><span class="nf">SampleToolsPluginInfo</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">41</span><span class="n">PLUGININFO_FUNC</span><span class="w"> </span><span class="nf">SampleToolsPluginInfo</span><span class="p">();</span>
 <span class="linenos">42</span>
 <span class="linenos">43</span><span class="c1">//==============================================================================</span>
 <span class="linenos">44</span>
-<span class="linenos">45</span><span class="k">class</span><span class="w"> </span><span class="nc">SampleToolsPlugin</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QObject</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">CliInterface</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">46</span><span class="w">                          </span><span class="k">public</span><span class="w"> </span><span class="n">GuiInterface</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">I18nInterface</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">47</span><span class="w">                          </span><span class="k">public</span><span class="w"> </span><span class="n">PluginInterface</span><span class="w"></span>
-<span class="linenos">48</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">49</span><span class="w">    </span><span class="n">Q_OBJECT</span><span class="w"></span>
+<span class="linenos">45</span><span class="k">class</span><span class="w"> </span><span class="nc">SampleToolsPlugin</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QObject</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">CliInterface</span><span class="p">,</span>
+<span class="linenos">46</span><span class="w">                          </span><span class="k">public</span><span class="w"> </span><span class="n">GuiInterface</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">I18nInterface</span><span class="p">,</span>
+<span class="linenos">47</span><span class="w">                          </span><span class="k">public</span><span class="w"> </span><span class="n">PluginInterface</span>
+<span class="linenos">48</span><span class="p">{</span>
+<span class="linenos">49</span><span class="w">    </span><span class="n">Q_OBJECT</span>
 <span class="linenos">50</span>
-<span class="linenos">51</span><span class="w">    </span><span class="n">Q_PLUGIN_METADATA</span><span class="p">(</span><span class="n">IID</span><span class="w"> </span><span class="s">&quot;OpenCOR.SampleToolsPlugin&quot;</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="s">&quot;sampletoolsplugin.json&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">51</span><span class="w">    </span><span class="n">Q_PLUGIN_METADATA</span><span class="p">(</span><span class="n">IID</span><span class="w"> </span><span class="s">&quot;OpenCOR.SampleToolsPlugin&quot;</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="s">&quot;sampletoolsplugin.json&quot;</span><span class="p">)</span>
 <span class="linenos">52</span>
-<span class="linenos">53</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">CliInterface</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">54</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">GuiInterface</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">55</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">I18nInterface</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">56</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">PluginInterface</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">53</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">CliInterface</span><span class="p">)</span>
+<span class="linenos">54</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">GuiInterface</span><span class="p">)</span>
+<span class="linenos">55</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">I18nInterface</span><span class="p">)</span>
+<span class="linenos">56</span><span class="w">    </span><span class="n">Q_INTERFACES</span><span class="p">(</span><span class="n">OpenCOR</span><span class="o">::</span><span class="n">PluginInterface</span><span class="p">)</span>
 <span class="linenos">57</span>
-<span class="linenos">58</span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="linenos">59</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cliinterface.inl&quot;</span><span class="cp"></span>
-<span class="linenos">60</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;guiinterface.inl&quot;</span><span class="cp"></span>
-<span class="linenos">61</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;i18ninterface.inl&quot;</span><span class="cp"></span>
-<span class="linenos">62</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininterface.inl&quot;</span><span class="cp"></span>
+<span class="linenos">58</span><span class="k">public</span><span class="o">:</span>
+<span class="linenos">59</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cliinterface.inl&quot;</span>
+<span class="linenos">60</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;guiinterface.inl&quot;</span>
+<span class="linenos">61</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;i18ninterface.inl&quot;</span>
+<span class="linenos">62</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;plugininterface.inl&quot;</span>
 <span class="linenos">63</span>
-<span class="linenos">64</span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="linenos">65</span><span class="w">    </span><span class="n">QAction</span><span class="w"> </span><span class="o">*</span><span class="n">mAddTwoNumbersAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">64</span><span class="k">private</span><span class="o">:</span>
+<span class="linenos">65</span><span class="w">    </span><span class="n">QAction</span><span class="w"> </span><span class="o">*</span><span class="n">mAddTwoNumbersAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
 <span class="linenos">66</span>
-<span class="linenos">67</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">runHelpCommand</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">68</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">runAddCommand</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QStringList</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pArguments</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">67</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">runHelpCommand</span><span class="p">();</span>
+<span class="linenos">68</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">runAddCommand</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QStringList</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pArguments</span><span class="p">);</span>
 <span class="linenos">69</span>
-<span class="linenos">70</span><span class="k">private</span><span class="w"> </span><span class="n">slots</span><span class="o">:</span><span class="w"></span>
-<span class="linenos">71</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">addTwoNumbers</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">72</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">70</span><span class="k">private</span><span class="w"> </span><span class="n">slots</span><span class="o">:</span>
+<span class="linenos">71</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">addTwoNumbers</span><span class="p">();</span>
+<span class="linenos">72</span><span class="p">};</span>
 <span class="linenos">73</span>
 <span class="linenos">74</span><span class="c1">//==============================================================================</span>
 <span class="linenos">75</span>
@@ -145,24 +142,24 @@ It also means that our plugin class inherits from those interfaces (lines 45-47)
 Finally, we include the inline files (lines 59-62) that declare various methods that must be implemented by our plugin (see <a class="reference internal" href="#develop-plugins-sampletools-interfacesimplementation"><span class="std std-ref">below</span></a>).
 (The rest of the class definition is specific to our plugin and is discussed <a class="reference internal" href="#develop-plugins-sampletools-pluginspecific"><span class="std std-ref">below</span></a>.)</p>
 <p>The C function that is used by OpenCOR to retrieve some <a class="reference internal" href="index.html#develop-plugins-index-basicinformation"><span class="std std-ref">basic information</span></a> about our plugin can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleTools/src/sampletoolsplugin.cpp"><code class="docutils literal notranslate"><span class="pre">sampletoolsplugin.cpp</span></code></a>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">45</span><span class="n">PLUGININFO_FUNC</span><span class="w"> </span><span class="nf">SampleToolsPluginInfo</span><span class="p">()</span><span class="w"></span>
-<span class="linenos">46</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">47</span><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Descriptions</span><span class="w"> </span><span class="n">descriptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">48</span><span class="w">                                                 </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;en&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;a plugin that provides an addition tool.&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="linenos">49</span><span class="w">                                                 </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;fr&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;une extension qui fournit un outil d&#39;addition.&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">50</span><span class="w">                                             </span><span class="p">};</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">45</span><span class="n">PLUGININFO_FUNC</span><span class="w"> </span><span class="nf">SampleToolsPluginInfo</span><span class="p">()</span>
+<span class="linenos">46</span><span class="p">{</span>
+<span class="linenos">47</span><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Descriptions</span><span class="w"> </span><span class="n">descriptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">48</span><span class="w">                                                 </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;en&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;a plugin that provides an addition tool.&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">},</span>
+<span class="linenos">49</span><span class="w">                                                 </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;fr&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;une extension qui fournit un outil d&#39;addition.&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos">50</span><span class="w">                                             </span><span class="p">};</span>
 <span class="linenos">51</span>
-<span class="linenos">52</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PluginInfo</span><span class="p">(</span><span class="n">PluginInfo</span><span class="o">::</span><span class="n">Category</span><span class="o">::</span><span class="n">Sample</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">53</span><span class="w">                          </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Core&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sample&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="linenos">54</span><span class="w">                          </span><span class="n">descriptions</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">55</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">52</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PluginInfo</span><span class="p">(</span><span class="n">PluginInfo</span><span class="o">::</span><span class="n">Category</span><span class="o">::</span><span class="n">Sample</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span>
+<span class="linenos">53</span><span class="w">                          </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Core&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sample&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="linenos">54</span><span class="w">                          </span><span class="n">descriptions</span><span class="p">);</span>
+<span class="linenos">55</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>As can be seen, our plugin is selectable by the user and it offers direct <a class="reference external" href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a> support (line 52).
 It also has a direct dependency on the <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/miscellaneous/Core/">Core</a> and <a class="reference external" href="https://github.com/opencor/opencor/tree/master/src/plugins/sample/Sample/">Sample</a> plugins (line 53).</p>
 </section>
 <section id="interfaces-implementation">
-<span id="develop-plugins-sampletools-interfacesimplementation"></span><h2>Interfaces implementation<a class="headerlink" href="#interfaces-implementation" title="Permalink to this heading">¶</a></h2>
+<span id="develop-plugins-sampletools-interfacesimplementation"></span><h2>Interfaces implementation<a class="headerlink" href="#interfaces-implementation" title="Link to this heading">¶</a></h2>
 <p>The implementation of the interfaces’ various methods can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleTools/src/sampletoolsplugin.cpp"><code class="docutils literal notranslate"><span class="pre">sampletoolsplugin.cpp</span></code></a>.
 The methods are grouped by interface and are ordered alphabetically.</p>
 <p>We start with the <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/cliinterface.inl">CLI</a> interface:</p>
@@ -170,36 +167,36 @@ The methods are grouped by interface and are ordered alphabetically.</p>
 <span class="linenos">58</span><span class="c1">// CLI interface</span>
 <span class="linenos">59</span><span class="c1">//==============================================================================</span>
 <span class="linenos">60</span>
-<span class="linenos">61</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleToolsPlugin::executeCommand</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pCommand</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">62</span><span class="w">                                       </span><span class="k">const</span><span class="w"> </span><span class="n">QStringList</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pArguments</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pRes</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">63</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">64</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pRes</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">61</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleToolsPlugin::executeCommand</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pCommand</span><span class="p">,</span>
+<span class="linenos">62</span><span class="w">                                       </span><span class="k">const</span><span class="w"> </span><span class="n">QStringList</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pArguments</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pRes</span><span class="p">)</span>
+<span class="linenos">63</span><span class="p">{</span>
+<span class="linenos">64</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pRes</span><span class="p">)</span>
 <span class="linenos">65</span>
 <span class="linenos">66</span><span class="w">    </span><span class="c1">// Run the given CLI command</span>
 <span class="linenos">67</span>
-<span class="linenos">68</span><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="n">Help</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;help&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">69</span><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="n">Add</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;add&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">68</span><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="n">Help</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;help&quot;</span><span class="p">;</span>
+<span class="linenos">69</span><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="n">Add</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;add&quot;</span><span class="p">;</span>
 <span class="linenos">70</span>
-<span class="linenos">71</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pCommand</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Help</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">71</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pCommand</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Help</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">72</span><span class="w">        </span><span class="c1">// Display the commands that we support</span>
 <span class="linenos">73</span>
-<span class="linenos">74</span><span class="w">        </span><span class="n">runHelpCommand</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">74</span><span class="w">        </span><span class="n">runHelpCommand</span><span class="p">();</span>
 <span class="linenos">75</span>
-<span class="linenos">76</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">77</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">76</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="linenos">77</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">78</span>
-<span class="linenos">79</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pCommand</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Add</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">79</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pCommand</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Add</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">80</span><span class="w">        </span><span class="c1">// Add some numbers</span>
 <span class="linenos">81</span>
-<span class="linenos">82</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">runAddCommand</span><span class="p">(</span><span class="n">pArguments</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">83</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">82</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">runAddCommand</span><span class="p">(</span><span class="n">pArguments</span><span class="p">);</span>
+<span class="linenos">83</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">84</span>
 <span class="linenos">85</span><span class="w">    </span><span class="c1">// Not a CLI command that we support, so show our help and leave</span>
 <span class="linenos">86</span>
-<span class="linenos">87</span><span class="w">    </span><span class="n">runHelpCommand</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">87</span><span class="w">    </span><span class="n">runHelpCommand</span><span class="p">();</span>
 <span class="linenos">88</span>
-<span class="linenos">89</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">90</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">89</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="linenos">90</span><span class="p">}</span>
 <span class="linenos">91</span>
 <span class="linenos">92</span><span class="c1">//==============================================================================</span>
 </pre></div>
@@ -210,32 +207,32 @@ The methods are grouped by interface and are ordered alphabetically.</p>
 <span class="linenos"> 93</span><span class="c1">// GUI interface</span>
 <span class="linenos"> 94</span><span class="c1">//==============================================================================</span>
 <span class="linenos"> 95</span>
-<span class="linenos"> 96</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::updateGui</span><span class="p">(</span><span class="n">Plugin</span><span class="w"> </span><span class="o">*</span><span class="n">pViewPlugin</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
-<span class="linenos"> 97</span><span class="p">{</span><span class="w"></span>
-<span class="linenos"> 98</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pViewPlugin</span><span class="p">)</span><span class="w"></span>
-<span class="linenos"> 99</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 96</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::updateGui</span><span class="p">(</span><span class="n">Plugin</span><span class="w"> </span><span class="o">*</span><span class="n">pViewPlugin</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">)</span>
+<span class="linenos"> 97</span><span class="p">{</span>
+<span class="linenos"> 98</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pViewPlugin</span><span class="p">)</span>
+<span class="linenos"> 99</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span>
 <span class="linenos">100</span>
 <span class="linenos">101</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
-<span class="linenos">102</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">102</span><span class="p">}</span>
 <span class="linenos">103</span>
 <span class="linenos">104</span><span class="c1">//==============================================================================</span>
 <span class="linenos">105</span>
-<span class="linenos">106</span><span class="n">Gui</span><span class="o">::</span><span class="n">Menus</span><span class="w"> </span><span class="nf">SampleToolsPlugin::guiMenus</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
-<span class="linenos">107</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">106</span><span class="n">Gui</span><span class="o">::</span><span class="n">Menus</span><span class="w"> </span><span class="nf">SampleToolsPlugin::guiMenus</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="linenos">107</span><span class="p">{</span>
 <span class="linenos">108</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
 <span class="linenos">109</span>
-<span class="linenos">110</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
-<span class="linenos">111</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">110</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span>
+<span class="linenos">111</span><span class="p">}</span>
 <span class="linenos">112</span>
 <span class="linenos">113</span><span class="c1">//==============================================================================</span>
 <span class="linenos">114</span>
-<span class="linenos">115</span><span class="n">Gui</span><span class="o">::</span><span class="n">MenuActions</span><span class="w"> </span><span class="nf">SampleToolsPlugin::guiMenuActions</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
-<span class="linenos">116</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">115</span><span class="n">Gui</span><span class="o">::</span><span class="n">MenuActions</span><span class="w"> </span><span class="nf">SampleToolsPlugin::guiMenuActions</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="linenos">116</span><span class="p">{</span>
 <span class="linenos">117</span><span class="w">    </span><span class="c1">// Return our menu actions</span>
 <span class="linenos">118</span>
-<span class="linenos">119</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Gui</span><span class="o">::</span><span class="n">MenuActions</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Gui</span><span class="o">::</span><span class="n">MenuAction</span><span class="p">(</span><span class="n">Gui</span><span class="o">::</span><span class="n">MenuAction</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">Tools</span><span class="p">,</span><span class="w"> </span><span class="n">mAddTwoNumbersAction</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">120</span><span class="w">                              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Gui</span><span class="o">::</span><span class="n">MenuAction</span><span class="p">(</span><span class="n">Gui</span><span class="o">::</span><span class="n">MenuAction</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">Tools</span><span class="p">,</span><span class="w"> </span><span class="n">Core</span><span class="o">::</span><span class="n">newSeparator</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">()));</span><span class="w"></span>
-<span class="linenos">121</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">119</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Gui</span><span class="o">::</span><span class="n">MenuActions</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Gui</span><span class="o">::</span><span class="n">MenuAction</span><span class="p">(</span><span class="n">Gui</span><span class="o">::</span><span class="n">MenuAction</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">Tools</span><span class="p">,</span><span class="w"> </span><span class="n">mAddTwoNumbersAction</span><span class="p">)</span>
+<span class="linenos">120</span><span class="w">                              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Gui</span><span class="o">::</span><span class="n">MenuAction</span><span class="p">(</span><span class="n">Gui</span><span class="o">::</span><span class="n">MenuAction</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">Tools</span><span class="p">,</span><span class="w"> </span><span class="n">Core</span><span class="o">::</span><span class="n">newSeparator</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">()));</span>
+<span class="linenos">121</span><span class="p">}</span>
 <span class="linenos">122</span>
 <span class="linenos">123</span><span class="c1">//==============================================================================</span>
 </pre></div>
@@ -249,12 +246,12 @@ Note that <code class="docutils literal notranslate"><span class="pre">mAddTwoNu
 <span class="linenos">124</span><span class="c1">// I18n interface</span>
 <span class="linenos">125</span><span class="c1">//==============================================================================</span>
 <span class="linenos">126</span>
-<span class="linenos">127</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::retranslateUi</span><span class="p">()</span><span class="w"></span>
-<span class="linenos">128</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">127</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::retranslateUi</span><span class="p">()</span>
+<span class="linenos">128</span><span class="p">{</span>
 <span class="linenos">129</span><span class="w">    </span><span class="c1">// Retranslate our different Tools actions</span>
 <span class="linenos">130</span>
-<span class="linenos">131</span><span class="w">    </span><span class="n">retranslateAction</span><span class="p">(</span><span class="n">mAddTwoNumbersAction</span><span class="p">,</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Add Two Numbers...&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Add two numbers together&quot;</span><span class="p">));</span><span class="w"></span>
-<span class="linenos">132</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">131</span><span class="w">    </span><span class="n">retranslateAction</span><span class="p">(</span><span class="n">mAddTwoNumbersAction</span><span class="p">,</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Add Two Numbers...&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Add two numbers together&quot;</span><span class="p">));</span>
+<span class="linenos">132</span><span class="p">}</span>
 <span class="linenos">133</span>
 <span class="linenos">134</span><span class="c1">//==============================================================================</span>
 </pre></div>
@@ -265,82 +262,82 @@ Note that <code class="docutils literal notranslate"><span class="pre">mAddTwoNu
 <span class="linenos">135</span><span class="c1">// Plugin interface</span>
 <span class="linenos">136</span><span class="c1">//==============================================================================</span>
 <span class="linenos">137</span>
-<span class="linenos">138</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleToolsPlugin::definesPluginInterfaces</span><span class="p">()</span><span class="w"></span>
-<span class="linenos">139</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">138</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleToolsPlugin::definesPluginInterfaces</span><span class="p">()</span>
+<span class="linenos">139</span><span class="p">{</span>
 <span class="linenos">140</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
 <span class="linenos">141</span>
-<span class="linenos">142</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">143</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">142</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="linenos">143</span><span class="p">}</span>
 <span class="linenos">144</span>
 <span class="linenos">145</span><span class="c1">//==============================================================================</span>
 <span class="linenos">146</span>
-<span class="linenos">147</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleToolsPlugin::pluginInterfacesOk</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">148</span><span class="w">                                           </span><span class="n">QObject</span><span class="w"> </span><span class="o">*</span><span class="n">pInstance</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">149</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">150</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">151</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pInstance</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">147</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleToolsPlugin::pluginInterfacesOk</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pFileName</span><span class="p">,</span>
+<span class="linenos">148</span><span class="w">                                           </span><span class="n">QObject</span><span class="w"> </span><span class="o">*</span><span class="n">pInstance</span><span class="p">)</span>
+<span class="linenos">149</span><span class="p">{</span>
+<span class="linenos">150</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pFileName</span><span class="p">)</span>
+<span class="linenos">151</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pInstance</span><span class="p">)</span>
 <span class="linenos">152</span>
 <span class="linenos">153</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
 <span class="linenos">154</span>
-<span class="linenos">155</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">156</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">155</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="linenos">156</span><span class="p">}</span>
 <span class="linenos">157</span>
 <span class="linenos">158</span><span class="c1">//==============================================================================</span>
 <span class="linenos">159</span>
-<span class="linenos">160</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::initializePlugin</span><span class="p">()</span><span class="w"></span>
-<span class="linenos">161</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">160</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::initializePlugin</span><span class="p">()</span>
+<span class="linenos">161</span><span class="p">{</span>
 <span class="linenos">162</span><span class="w">    </span><span class="c1">// Create our Add Two Numbers action</span>
 <span class="linenos">163</span>
-<span class="linenos">164</span><span class="w">    </span><span class="n">mAddTwoNumbersAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">QAction</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">164</span><span class="w">    </span><span class="n">mAddTwoNumbersAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">QAction</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">());</span>
 <span class="linenos">165</span>
 <span class="linenos">166</span><span class="w">    </span><span class="c1">// A connection to handle our Add Two Numbers action</span>
 <span class="linenos">167</span>
-<span class="linenos">168</span><span class="w">    </span><span class="n">connect</span><span class="p">(</span><span class="n">mAddTwoNumbersAction</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">QAction</span><span class="o">::</span><span class="n">triggered</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">169</span><span class="w">            </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">SampleToolsPlugin</span><span class="o">::</span><span class="n">addTwoNumbers</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">170</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">168</span><span class="w">    </span><span class="n">connect</span><span class="p">(</span><span class="n">mAddTwoNumbersAction</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">QAction</span><span class="o">::</span><span class="n">triggered</span><span class="p">,</span>
+<span class="linenos">169</span><span class="w">            </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">SampleToolsPlugin</span><span class="o">::</span><span class="n">addTwoNumbers</span><span class="p">);</span>
+<span class="linenos">170</span><span class="p">}</span>
 <span class="linenos">171</span>
 <span class="linenos">172</span><span class="c1">//==============================================================================</span>
 <span class="linenos">173</span>
-<span class="linenos">174</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::finalizePlugin</span><span class="p">()</span><span class="w"></span>
-<span class="linenos">175</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">174</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::finalizePlugin</span><span class="p">()</span>
+<span class="linenos">175</span><span class="p">{</span>
 <span class="linenos">176</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
-<span class="linenos">177</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">177</span><span class="p">}</span>
 <span class="linenos">178</span>
 <span class="linenos">179</span><span class="c1">//==============================================================================</span>
 <span class="linenos">180</span>
-<span class="linenos">181</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::pluginsInitialized</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Plugins</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pLoadedPlugins</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">182</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">183</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pLoadedPlugins</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">181</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::pluginsInitialized</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Plugins</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pLoadedPlugins</span><span class="p">)</span>
+<span class="linenos">182</span><span class="p">{</span>
+<span class="linenos">183</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pLoadedPlugins</span><span class="p">)</span>
 <span class="linenos">184</span>
 <span class="linenos">185</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
-<span class="linenos">186</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">186</span><span class="p">}</span>
 <span class="linenos">187</span>
 <span class="linenos">188</span><span class="c1">//==============================================================================</span>
 <span class="linenos">189</span>
-<span class="linenos">190</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::loadSettings</span><span class="p">(</span><span class="n">QSettings</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pSettings</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">191</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">192</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pSettings</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">190</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::loadSettings</span><span class="p">(</span><span class="n">QSettings</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pSettings</span><span class="p">)</span>
+<span class="linenos">191</span><span class="p">{</span>
+<span class="linenos">192</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pSettings</span><span class="p">)</span>
 <span class="linenos">193</span>
 <span class="linenos">194</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
-<span class="linenos">195</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">195</span><span class="p">}</span>
 <span class="linenos">196</span>
 <span class="linenos">197</span><span class="c1">//==============================================================================</span>
 <span class="linenos">198</span>
-<span class="linenos">199</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::saveSettings</span><span class="p">(</span><span class="n">QSettings</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pSettings</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
-<span class="linenos">200</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">201</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pSettings</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">199</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::saveSettings</span><span class="p">(</span><span class="n">QSettings</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pSettings</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="linenos">200</span><span class="p">{</span>
+<span class="linenos">201</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pSettings</span><span class="p">)</span>
 <span class="linenos">202</span>
 <span class="linenos">203</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
-<span class="linenos">204</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">204</span><span class="p">}</span>
 <span class="linenos">205</span>
 <span class="linenos">206</span><span class="c1">//==============================================================================</span>
 <span class="linenos">207</span>
-<span class="linenos">208</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::handleUrl</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QUrl</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pUrl</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">209</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">210</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pUrl</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">208</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::handleUrl</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QUrl</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pUrl</span><span class="p">)</span>
+<span class="linenos">209</span><span class="p">{</span>
+<span class="linenos">210</span><span class="w">    </span><span class="n">Q_UNUSED</span><span class="p">(</span><span class="n">pUrl</span><span class="p">)</span>
 <span class="linenos">211</span>
 <span class="linenos">212</span><span class="w">    </span><span class="c1">// We don&#39;t handle this interface...</span>
-<span class="linenos">213</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">213</span><span class="p">}</span>
 <span class="linenos">214</span>
 <span class="linenos">215</span><span class="c1">//==============================================================================</span>
 </pre></div>
@@ -349,17 +346,17 @@ Note that <code class="docutils literal notranslate"><span class="pre">mAddTwoNu
 All the other methods (<code class="docutils literal notranslate"><span class="pre">definesPluginInterfaces()</span></code>, <code class="docutils literal notranslate"><span class="pre">pluginInterfacesOk()</span></code>, <code class="docutils literal notranslate"><span class="pre">finalizePlugin()</span></code>, <code class="docutils literal notranslate"><span class="pre">pluginsInitialized()</span></code>, <code class="docutils literal notranslate"><span class="pre">loadSettings()</span></code>, <code class="docutils literal notranslate"><span class="pre">saveSettings()</span></code>, and <code class="docutils literal notranslate"><span class="pre">handleUrl()</span></code>) are left empty.</p>
 </section>
 <section id="plugin-specific">
-<span id="develop-plugins-sampletools-pluginspecific"></span><h2>Plugin specific<a class="headerlink" href="#plugin-specific" title="Permalink to this heading">¶</a></h2>
+<span id="develop-plugins-sampletools-pluginspecific"></span><h2>Plugin specific<a class="headerlink" href="#plugin-specific" title="Link to this heading">¶</a></h2>
 <p>Some extra methods are needed to get our plugin to do what it is supposed to be doing.
 They are declared in the <code class="docutils literal notranslate"><span class="pre">SampleToolsPlugin</span></code> class in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleTools/src/sampletoolsplugin.h"><code class="docutils literal notranslate"><span class="pre">sampletoolsplugin.h</span></code></a>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">64</span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="linenos">65</span><span class="w">    </span><span class="n">QAction</span><span class="w"> </span><span class="o">*</span><span class="n">mAddTwoNumbersAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">64</span><span class="k">private</span><span class="o">:</span>
+<span class="linenos">65</span><span class="w">    </span><span class="n">QAction</span><span class="w"> </span><span class="o">*</span><span class="n">mAddTwoNumbersAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
 <span class="linenos">66</span>
-<span class="linenos">67</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">runHelpCommand</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">68</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">runAddCommand</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QStringList</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pArguments</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">67</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">runHelpCommand</span><span class="p">();</span>
+<span class="linenos">68</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">runAddCommand</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QStringList</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pArguments</span><span class="p">);</span>
 <span class="linenos">69</span>
-<span class="linenos">70</span><span class="k">private</span><span class="w"> </span><span class="n">slots</span><span class="o">:</span><span class="w"></span>
-<span class="linenos">71</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">addTwoNumbers</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">70</span><span class="k">private</span><span class="w"> </span><span class="n">slots</span><span class="o">:</span>
+<span class="linenos">71</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">addTwoNumbers</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Their implementation can be found in <a class="reference external" href="https://github.com/opencor/opencor/blob/master/src/plugins/sample/SampleTools/src/sampletoolsplugin.cpp"><code class="docutils literal notranslate"><span class="pre">sampletoolsplugin.cpp</span></code></a>:</p>
@@ -367,75 +364,75 @@ They are declared in the <code class="docutils literal notranslate"><span class=
 <span class="linenos">216</span><span class="c1">// Plugin specific</span>
 <span class="linenos">217</span><span class="c1">//==============================================================================</span>
 <span class="linenos">218</span>
-<span class="linenos">219</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::runHelpCommand</span><span class="p">()</span><span class="w"></span>
-<span class="linenos">220</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">219</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::runHelpCommand</span><span class="p">()</span>
+<span class="linenos">220</span><span class="p">{</span>
 <span class="linenos">221</span><span class="w">    </span><span class="c1">// Output the commands we support</span>
 <span class="linenos">222</span>
-<span class="linenos">223</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Commands supported by the SampleTools plugin:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">224</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; * Display the commands supported by the SampleTools plugin:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">225</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;      help&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">226</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; * Add two numbers:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">227</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;      add &lt;nb1&gt; &lt;nb2&gt;&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">228</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">223</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Commands supported by the SampleTools plugin:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">224</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; * Display the commands supported by the SampleTools plugin:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">225</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;      help&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">226</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; * Add two numbers:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">227</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;      add &lt;nb1&gt; &lt;nb2&gt;&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">228</span><span class="p">}</span>
 <span class="linenos">229</span>
 <span class="linenos">230</span><span class="c1">//==============================================================================</span>
 <span class="linenos">231</span>
-<span class="linenos">232</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleToolsPlugin::runAddCommand</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QStringList</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pArguments</span><span class="p">)</span><span class="w"></span>
-<span class="linenos">233</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">232</span><span class="kt">bool</span><span class="w"> </span><span class="nf">SampleToolsPlugin::runAddCommand</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QStringList</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pArguments</span><span class="p">)</span>
+<span class="linenos">233</span><span class="p">{</span>
 <span class="linenos">234</span><span class="w">    </span><span class="c1">// Make sure that we have the correct number of arguments</span>
 <span class="linenos">235</span>
-<span class="linenos">236</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pArguments</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">237</span><span class="w">        </span><span class="n">runHelpCommand</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">236</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pArguments</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">237</span><span class="w">        </span><span class="n">runHelpCommand</span><span class="p">();</span>
 <span class="linenos">238</span>
-<span class="linenos">239</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">240</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">239</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="linenos">240</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">241</span>
 <span class="linenos">242</span><span class="w">    </span><span class="c1">// Make sure that the two arguments are valid numbers</span>
 <span class="linenos">243</span>
-<span class="linenos">244</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">ok</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">244</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">ok</span><span class="p">;</span>
 <span class="linenos">245</span>
-<span class="linenos">246</span><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">nb1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pArguments</span><span class="p">.</span><span class="n">first</span><span class="p">().</span><span class="n">toDouble</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ok</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">246</span><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">nb1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pArguments</span><span class="p">.</span><span class="n">first</span><span class="p">().</span><span class="n">toDouble</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ok</span><span class="p">);</span>
 <span class="linenos">247</span>
-<span class="linenos">248</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">249</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Sorry, but &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">qPrintable</span><span class="p">(</span><span class="n">pArguments</span><span class="p">.</span><span class="n">first</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is not a valid number.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">248</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">249</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Sorry, but &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">qPrintable</span><span class="p">(</span><span class="n">pArguments</span><span class="p">.</span><span class="n">first</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is not a valid number.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="linenos">250</span>
-<span class="linenos">251</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">252</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">251</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="linenos">252</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">253</span>
-<span class="linenos">254</span><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">nb2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pArguments</span><span class="p">.</span><span class="n">last</span><span class="p">().</span><span class="n">toDouble</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ok</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">254</span><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">nb2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pArguments</span><span class="p">.</span><span class="n">last</span><span class="p">().</span><span class="n">toDouble</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ok</span><span class="p">);</span>
 <span class="linenos">255</span>
-<span class="linenos">256</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">257</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Sorry, but &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">qPrintable</span><span class="p">(</span><span class="n">pArguments</span><span class="p">.</span><span class="n">last</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is not a valid number.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">256</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">257</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Sorry, but &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">qPrintable</span><span class="p">(</span><span class="n">pArguments</span><span class="p">.</span><span class="n">last</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is not a valid number.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="linenos">258</span>
-<span class="linenos">259</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">260</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">259</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="linenos">260</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">261</span>
 <span class="linenos">262</span><span class="w">    </span><span class="c1">// Add the two numbers and output the result</span>
 <span class="linenos">263</span>
-<span class="linenos">264</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">qPrintable</span><span class="p">(</span><span class="n">pArguments</span><span class="p">.</span><span class="n">first</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; + &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">qPrintable</span><span class="p">(</span><span class="n">pArguments</span><span class="p">.</span><span class="n">last</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Sample</span><span class="o">::</span><span class="n">add</span><span class="p">(</span><span class="n">nb1</span><span class="p">,</span><span class="w"> </span><span class="n">nb2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">264</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">qPrintable</span><span class="p">(</span><span class="n">pArguments</span><span class="p">.</span><span class="n">first</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; + &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">qPrintable</span><span class="p">(</span><span class="n">pArguments</span><span class="p">.</span><span class="n">last</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Sample</span><span class="o">::</span><span class="n">add</span><span class="p">(</span><span class="n">nb1</span><span class="p">,</span><span class="w"> </span><span class="n">nb2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="linenos">265</span>
-<span class="linenos">266</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">267</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">266</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="linenos">267</span><span class="p">}</span>
 <span class="linenos">268</span>
 <span class="linenos">269</span><span class="c1">//==============================================================================</span>
 <span class="linenos">270</span>
-<span class="linenos">271</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::addTwoNumbers</span><span class="p">()</span><span class="w"></span>
-<span class="linenos">272</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">273</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">ok</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">274</span><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">nb1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">QInputDialog</span><span class="o">::</span><span class="n">getDouble</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">(),</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Add Two Numbers&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;First number:&quot;</span><span class="p">),</span><span class="w"></span>
-<span class="linenos">275</span><span class="w">                                         </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-2147483647</span><span class="p">,</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ok</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">276</span><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">nb2</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">271</span><span class="kt">void</span><span class="w"> </span><span class="nf">SampleToolsPlugin::addTwoNumbers</span><span class="p">()</span>
+<span class="linenos">272</span><span class="p">{</span>
+<span class="linenos">273</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">ok</span><span class="p">;</span>
+<span class="linenos">274</span><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">nb1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">QInputDialog</span><span class="o">::</span><span class="n">getDouble</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">(),</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Add Two Numbers&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;First number:&quot;</span><span class="p">),</span>
+<span class="linenos">275</span><span class="w">                                         </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-2147483647</span><span class="p">,</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ok</span><span class="p">);</span>
+<span class="linenos">276</span><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">nb2</span><span class="p">;</span>
 <span class="linenos">277</span>
-<span class="linenos">278</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">279</span><span class="w">        </span><span class="n">nb2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">QInputDialog</span><span class="o">::</span><span class="n">getDouble</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">(),</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Add Two Numbers&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Second number:&quot;</span><span class="p">),</span><span class="w"></span>
-<span class="linenos">280</span><span class="w">                                      </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-2147483647</span><span class="p">,</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ok</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">278</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">279</span><span class="w">        </span><span class="n">nb2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">QInputDialog</span><span class="o">::</span><span class="n">getDouble</span><span class="p">(</span><span class="n">Core</span><span class="o">::</span><span class="n">mainWindow</span><span class="p">(),</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Add Two Numbers&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Second number:&quot;</span><span class="p">),</span>
+<span class="linenos">280</span><span class="w">                                      </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-2147483647</span><span class="p">,</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ok</span><span class="p">);</span>
 <span class="linenos">281</span>
-<span class="linenos">282</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">283</span><span class="w">            </span><span class="n">Core</span><span class="o">::</span><span class="n">informationMessageBox</span><span class="p">(</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Add Two Numbers&quot;</span><span class="p">),</span><span class="w"></span>
-<span class="linenos">284</span><span class="w">                                        </span><span class="n">QString</span><span class="o">::</span><span class="n">number</span><span class="p">(</span><span class="n">nb1</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; + &quot;</span><span class="o">+</span><span class="n">QString</span><span class="o">::</span><span class="n">number</span><span class="p">(</span><span class="n">nb2</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; = &quot;</span><span class="o">+</span><span class="n">QString</span><span class="o">::</span><span class="n">number</span><span class="p">(</span><span class="n">Sample</span><span class="o">::</span><span class="n">add</span><span class="p">(</span><span class="n">nb1</span><span class="p">,</span><span class="w"> </span><span class="n">nb2</span><span class="p">)));</span><span class="w"></span>
-<span class="linenos">285</span><span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">286</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">287</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">282</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">283</span><span class="w">            </span><span class="n">Core</span><span class="o">::</span><span class="n">informationMessageBox</span><span class="p">(</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Add Two Numbers&quot;</span><span class="p">),</span>
+<span class="linenos">284</span><span class="w">                                        </span><span class="n">QString</span><span class="o">::</span><span class="n">number</span><span class="p">(</span><span class="n">nb1</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; + &quot;</span><span class="o">+</span><span class="n">QString</span><span class="o">::</span><span class="n">number</span><span class="p">(</span><span class="n">nb2</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; = &quot;</span><span class="o">+</span><span class="n">QString</span><span class="o">::</span><span class="n">number</span><span class="p">(</span><span class="n">Sample</span><span class="o">::</span><span class="n">add</span><span class="p">(</span><span class="n">nb1</span><span class="p">,</span><span class="w"> </span><span class="n">nb2</span><span class="p">)));</span>
+<span class="linenos">285</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">286</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">287</span><span class="p">}</span>
 <span class="linenos">288</span>
 <span class="linenos">289</span><span class="c1">//==============================================================================</span>
 </pre></div>

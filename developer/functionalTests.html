@@ -11,15 +11,12 @@
         <link href="_static/pygments.css" rel="stylesheet" type="text/css" />
         <link href="_static/tabs.css" rel="stylesheet" type="text/css" />
         <link href="_static/theme.css" rel="stylesheet" type="text/css" />
-                <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-                <script src="_static/jquery.js"></script>
-                <script src="_static/underscore.js"></script>
-                <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-                <script src="_static/doctools.js"></script>
-                <script src="_static/sphinx_highlight.js"></script>
-                <script src="_static/clipboard.min.js"></script>
-                <script src="_static/copybutton.js"></script>
-                <script src="_static/tabs.js"></script>
+                <script src="_static/documentation_options.js?v=5929fcd5"></script>
+                <script src="_static/doctools.js?v=888ff710"></script>
+                <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+                <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+                <script src="_static/copybutton.js?v=f281be69"></script>
+                <script src="_static/tabs.js?v=3ee01567"></script>
 
         <script src="_static/theme.js" type="text/javascript"></script>
 
@@ -31,21 +28,21 @@
     <body ondragstart="return false;" ondrop="return false;">
         
   <section id="functional-tests">
-<span id="functionaltests"></span><h1>Functional tests<a class="headerlink" href="#functional-tests" title="Permalink to this heading">¶</a></h1>
+<span id="functionaltests"></span><h1>Functional tests<a class="headerlink" href="#functional-tests" title="Link to this heading">¶</a></h1>
 <p>The following functional tests should pass before a new official version of OpenCOR can be released, and this on all supported platforms.</p>
 <section id="command-line">
-<h2>Command line<a class="headerlink" href="#command-line" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./OpenCOR -c CellMLTextView::import models/noble_model_1962.cellml
-./OpenCOR -c CellMLTools::export https://models.physiomeproject.org/w/andre/HH/rawfile/957c2190e1eed47d7634613250bc274dc836b826/experiments/periodic-stimulus.xml cellml_1_0
-./OpenCOR -c CellMLTools::export models/van_der_pol_model_1928.cellml c
-./OpenCOR -c CellMLTools::export models/van_der_pol_model_1928.cellml fortran_77
-./OpenCOR -c CellMLTools::export models/van_der_pol_model_1928.cellml matlab
-./OpenCOR -c CellMLTools::export models/van_der_pol_model_1928.cellml python
+<h2>Command line<a class="headerlink" href="#command-line" title="Link to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./OpenCOR<span class="w"> </span>-c<span class="w"> </span>CellMLTextView::import<span class="w"> </span>models/noble_model_1962.cellml
+./OpenCOR<span class="w"> </span>-c<span class="w"> </span>CellMLTools::export<span class="w"> </span>https://models.physiomeproject.org/w/andre/HH/rawfile/957c2190e1eed47d7634613250bc274dc836b826/experiments/periodic-stimulus.xml<span class="w"> </span>cellml_1_0
+./OpenCOR<span class="w"> </span>-c<span class="w"> </span>CellMLTools::export<span class="w"> </span>models/van_der_pol_model_1928.cellml<span class="w"> </span>c
+./OpenCOR<span class="w"> </span>-c<span class="w"> </span>CellMLTools::export<span class="w"> </span>models/van_der_pol_model_1928.cellml<span class="w"> </span>fortran_77
+./OpenCOR<span class="w"> </span>-c<span class="w"> </span>CellMLTools::export<span class="w"> </span>models/van_der_pol_model_1928.cellml<span class="w"> </span>matlab
+./OpenCOR<span class="w"> </span>-c<span class="w"> </span>CellMLTools::export<span class="w"> </span>models/van_der_pol_model_1928.cellml<span class="w"> </span>python
 </pre></div>
 </div>
 </section>
 <section id="save-reload-a-file">
-<h2>Save/reload a file<a class="headerlink" href="#save-reload-a-file" title="Permalink to this heading">¶</a></h2>
+<h2>Save/reload a file<a class="headerlink" href="#save-reload-a-file" title="Link to this heading">¶</a></h2>
 <p>Check that a given view looks right for a given file when:</p>
 <ul class="simple">
 <li><p>The view <strong>is</strong> the active one in OpenCOR and:</p>
@@ -63,7 +60,7 @@
 </ul>
 </section>
 <section id="edit-save-a-sed-ml-file-combine-archive">
-<h2>Edit/save a SED-ML file / COMBINE archive<a class="headerlink" href="#edit-save-a-sed-ml-file-combine-archive" title="Permalink to this heading">¶</a></h2>
+<h2>Edit/save a SED-ML file / COMBINE archive<a class="headerlink" href="#edit-save-a-sed-ml-file-combine-archive" title="Link to this heading">¶</a></h2>
 <p>Using the <a class="reference external" href="https://opencor.ws/user/plugins/simulation/simulationExperimentView.html">Simulation Experiment</a> view, check that we can:</p>
 <ul class="simple">
 <li><p>SED-ML file:</p>
@@ -83,7 +80,7 @@
 <p>All of this for both a CellML 1.0 file and a set of CellML 1.1 files.</p>
 </section>
 <section id="cellml-files">
-<h2>CellML files<a class="headerlink" href="#cellml-files" title="Permalink to this heading">¶</a></h2>
+<h2>CellML files<a class="headerlink" href="#cellml-files" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Problematic CellML models:</p>
 <ul>
@@ -114,7 +111,7 @@
 </ul>
 </section>
 <section id="sed-ml-files">
-<h2>SED-ML files<a class="headerlink" href="#sed-ml-files" title="Permalink to this heading">¶</a></h2>
+<h2>SED-ML files<a class="headerlink" href="#sed-ml-files" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_local.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_local.sedml</span></code></a></p></li>
 <li><p><a class="reference external" href="opencor://openFile/https://raw.githubusercontent.com/opencor/opencor/master/models/tests/sedml/noble_1962_remote.sedml"><code class="docutils literal notranslate"><span class="pre">[OpenCOR]/models/tests/sedml/noble_1962_remote.sedml</span></code></a></p></li>
@@ -132,7 +129,7 @@
 </ul>
 </section>
 <section id="combine-archives">
-<h2>COMBINE archives<a class="headerlink" href="#combine-archives" title="Permalink to this heading">¶</a></h2>
+<h2>COMBINE archives<a class="headerlink" href="#combine-archives" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Problematic COMBINE archives:</p>
 <ul>
