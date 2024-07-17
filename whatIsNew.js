@@ -1,6 +1,15 @@
 var jsonData = { "versions": [
-                   { "anchor": "latest", "description": "Latest snapshot", "day": 10, "month": 4, "year": 2024,
+                   { "anchor": "latest", "description": "Latest snapshot", "day": 17, "month": 7, "year": 2024,
                      "categories": [
+                       { "name": "Data store",
+                         "entries": [
+                           { "type": "subCategory", "name": "<a href=\"https://en.wikipedia.org/wiki/Comma-separated_values\">CSV</a> data store",
+                             "entries": [
+                               { "type": "improved", "description": "Export of data." }
+                             ]
+                           }
+                         ]
+                       },
                        { "name": "Editing",
                          "entries": [
                            { "type": "subCategory", "name": "CellML Text view",
@@ -30,6 +39,15 @@ var jsonData = { "versions": [
                              "entries": [
                                { "type": "improved", "description": "Rendering of the GUI." },
                                { "type": "fixed", "description": "Issue with enabling/disabling some properties in a graph panel plot." }
+                             ]
+                           }
+                         ]
+                       },
+                       { "name": "Solver",
+                         "entries": [
+                           { "type": "subCategory", "name": "<a href=\"https://computation.llnl.gov/projects/sundials/cvode\">CVODE</a> solver",
+                             "entries": [
+                               { "type": "improved", "description": "Computation of rates." }
                              ]
                            }
                          ]

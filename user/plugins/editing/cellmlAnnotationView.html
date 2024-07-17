@@ -12,7 +12,7 @@
         <link href="../../_static/tabs.css" rel="stylesheet" type="text/css" />
         <link href="../../_static/theme.css" rel="stylesheet" type="text/css" />
                 <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
-                <script src="../../_static/doctools.js?v=888ff710"></script>
+                <script src="../../_static/doctools.js?v=9a2dae69"></script>
                 <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
                 <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
                 <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -31,35 +31,45 @@
 <span id="plugins-editing-cellmlannotationview"></span><h1>CellMLAnnotationView plugin<a class="headerlink" href="#cellmlannotationview-plugin" title="Link to this heading">¶</a></h1>
 <p>The CellMLAnnotationView plugin can be used to annotate <a class="reference external" href="https://cellml.org/">CellML</a> files by associating one or several ontological terms to a given <a class="reference external" href="https://cellml.org/">CellML</a> element.
 To open a <a class="reference external" href="https://cellml.org/">CellML</a> file that does not contain any annotations gives:</p>
-<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot01.png"><img alt="../../_images/CellMLAnnotationViewScreenshot01.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot01.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot01.png"><img alt="../../_images/CellMLAnnotationViewScreenshot01.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot01.png" style="width: 407.0px; height: 230.5px;" />
+</a>
 <p>All the <a class="reference external" href="https://cellml.org/">CellML</a> elements that can be annotated are listed on the left of the view.
 Right click on any of them to get a popup menu, which you can use to expand/collapse all the child nodes, as well as remove the metadata associated with the current <a class="reference external" href="https://cellml.org/">CellML</a> element or any <a class="reference external" href="https://cellml.org/">CellML</a> element in the <a class="reference external" href="https://cellml.org/">CellML</a> file:</p>
-<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot02.png"><img alt="../../_images/CellMLAnnotationViewScreenshot02.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot02.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot02.png"><img alt="../../_images/CellMLAnnotationViewScreenshot02.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot02.png" style="width: 407.0px; height: 230.5px;" />
+</a>
 <section id="annotate-a-cellml-element">
 <h2>Annotate a CellML element<a class="headerlink" href="#annotate-a-cellml-element" title="Link to this heading">¶</a></h2>
 <p>To annotate, say, the <code class="docutils literal notranslate"><span class="pre">sodium_channel</span></code> component, you first need to select it:</p>
-<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot03.png"><img alt="../../_images/CellMLAnnotationViewScreenshot03.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot03.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot03.png"><img alt="../../_images/CellMLAnnotationViewScreenshot03.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot03.png" style="width: 407.0px; height: 230.5px;" />
+</a>
 <p>Next, you need to specify a <a class="reference external" href="https://co.mbine.org/standards/qualifiers">BioModels.net qualifier</a>.
 If you do not know which one to use, click on the <a class="inlineicon reference internal" href="../../_images/applications-internet.png"><img alt="oxygenCategoriesApplicationInternet" class="inlineicon" src="../../_images/applications-internet.png" style="width: 16px;" /></a> button to get some information about the current <a class="reference external" href="https://co.mbine.org/standards/qualifiers">BioModels.net qualifier</a>:</p>
-<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot04.png"><img alt="../../_images/CellMLAnnotationViewScreenshot04.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot04.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot04.png"><img alt="../../_images/CellMLAnnotationViewScreenshot04.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot04.png" style="width: 407.0px; height: 230.5px;" />
+</a>
 <p>From there, go through the list of <a class="reference external" href="https://co.mbine.org/standards/qualifiers">BioModels.net qualifiers</a> until you find the one that suits your needs best (e.g., <code class="docutils literal notranslate"><span class="pre">bio:isVersionOf</span></code>):</p>
-<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot05.png"><img alt="../../_images/CellMLAnnotationViewScreenshot05.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot05.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot05.png"><img alt="../../_images/CellMLAnnotationViewScreenshot05.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot05.png" style="width: 407.0px; height: 230.5px;" />
+</a>
 <p>Now, you need to retrieve some possible ontological terms to describe the <code class="docutils literal notranslate"><span class="pre">sodium_channel</span></code> component.
 For this, you need to enter a search term (e.g., <code class="docutils literal notranslate"><span class="pre">sodium</span> <span class="pre">channel</span></code>; note: <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> are supported).
 As can be seen, OpenCOR returns 12 possible ontological terms:</p>
-<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot06.png"><img alt="../../_images/CellMLAnnotationViewScreenshot06.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot06.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot06.png"><img alt="../../_images/CellMLAnnotationViewScreenshot06.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot06.png" style="width: 407.0px; height: 230.5px;" />
+</a>
 <p>A quick look through the list tells us that you might want to use the one for <code class="docutils literal notranslate"><span class="pre">voltage-gated</span> <span class="pre">sodium</span> <span class="pre">channel</span> <span class="pre">complex</span></code>.
 If you want to know more about the <a class="reference external" href="http://geneontology.org/">GO</a> resource, you can click on the corresponding link:</p>
-<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot07.png"><img alt="../../_images/CellMLAnnotationViewScreenshot07.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot07.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot07.png"><img alt="../../_images/CellMLAnnotationViewScreenshot07.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot07.png" style="width: 407.0px; height: 230.5px;" />
+</a>
 <p>Similarly, if you want to know more about the <a class="reference external" href="http://geneontology.org/">GO</a> identifier:</p>
-<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot08.png"><img alt="../../_images/CellMLAnnotationViewScreenshot08.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot08.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot08.png"><img alt="../../_images/CellMLAnnotationViewScreenshot08.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot08.png" style="width: 407.0px; height: 230.5px;" />
+</a>
 <p>Now, assuming that you are happy with your choice, you can associate the ontological term with the <code class="docutils literal notranslate"><span class="pre">sodium_channel</span></code> component by clicking on the corresponding <a class="inlineicon reference internal" href="../../_images/list-add.png"><img alt="oxygenActionsListAdd" class="inlineicon" src="../../_images/list-add.png" style="width: 16px;" /></a> button:</p>
-<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot09.png"><img alt="../../_images/CellMLAnnotationViewScreenshot09.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot09.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot09.png"><img alt="../../_images/CellMLAnnotationViewScreenshot09.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot09.png" style="width: 407.0px; height: 230.5px;" />
+</a>
 <p>The ontological term you have added cannot be added anymore, but it can be removed by clicking on the corresponding <a class="inlineicon reference internal" href="../../_images/list-remove.png"><img alt="oxygenActionsListRemove" class="inlineicon" src="../../_images/list-remove.png" style="width: 16px;" /></a> button.</p>
 <p>Now, say that you also want to add another ontological term.
 You can do so by clicking on the corresponding <a class="inlineicon reference internal" href="../../_images/list-add.png"><img alt="oxygenActionsListAdd" class="inlineicon" src="../../_images/list-add.png" style="width: 16px;" /></a> button, but also by entering its resource-id duple (e.g., <code class="docutils literal notranslate"><span class="pre">go/GO:0005248</span></code>; i.e. <code class="docutils literal notranslate"><span class="pre">&lt;resource&gt;/&lt;id&gt;</span></code>) in the term field.
 OpenCOR will recognise this “term” as being a resource-id duple and will offer you to add the corresponding ontological term directly:</p>
-<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot10.png"><img alt="../../_images/CellMLAnnotationViewScreenshot10.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot10.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot10.png"><img alt="../../_images/CellMLAnnotationViewScreenshot10.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot10.png" style="width: 407.0px; height: 230.5px;" />
+</a>
 </section>
 <section id="unrecognised-annotations">
 <h2>Unrecognised annotations<a class="headerlink" href="#unrecognised-annotations" title="Link to this heading">¶</a></h2>
@@ -69,7 +79,8 @@ OpenCOR recognises <a class="reference external" href="https://w3.org/TR/rdf-con
 OpenCOR recognises both, but it will only serialise annotations using <a class="reference external" href="https://identifiers.org/">identifiers.org</a> <a class="reference external" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URIs</a>.</p>
 <p>Now, it may happen that a file contains annotations that are not recognised by OpenCOR.
 In this case, OpenCOR will display the annotations as a simple list of <a class="reference external" href="https://w3.org/TR/rdf-concepts/#section-triples">RDF triples</a>:</p>
-<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot11.png"><img alt="../../_images/CellMLAnnotationViewScreenshot11.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot11.png" style="width: 407.0px; height: 230.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/CellMLAnnotationViewScreenshot11.png"><img alt="../../_images/CellMLAnnotationViewScreenshot11.png" class="align-center" src="../../_images/CellMLAnnotationViewScreenshot11.png" style="width: 407.0px; height: 230.5px;" />
+</a>
 <p>If you ever come across such a type of annotations and think that OpenCOR ought to recognise it then please do <a class="reference external" href="https://opencor.ws/contactUs.html">get in touch</a>.</p>
 </section>
 </section>
