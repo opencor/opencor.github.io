@@ -112,3 +112,4 @@ The following OpenCOR classes have `Python <https://python.org/>`__ wrappers tha
   - ``value(position, run = -1)``: return the value at the given position and for the given run (``run = -1`` corresponds to the last run).
   - ``values(run = -1)``: return the values for the given run (``run = -1`` corresponds to the last run) as a `NumPy array <https://numpy.org/doc/stable/reference/generated/numpy.array.html>`__.
   - ``values_count(run = -1)``: return the number of values for the given run (``run = -1`` corresponds to the last run).
+  - ``release_values(values)``: release the values retrieved as a `NumPy array <https://numpy.org/doc/stable/reference/generated/numpy.array.html>`__.
