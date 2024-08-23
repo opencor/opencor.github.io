@@ -1,5 +1,5 @@
 var jsonData = { "versions": [
-                   { "anchor": "latest", "description": "Latest snapshot", "day": 1, "month": 8, "year": 2024,
+                   { "anchor": "latest", "description": "Latest snapshot", "day": 23, "month": 8, "year": 2024,
                      "categories": [
                        { "name": "Data store",
                          "entries": [
@@ -23,8 +23,9 @@ var jsonData = { "versions": [
                          "entries": [
                            { "type": "subCategory", "name": "<a href=\"https://www.python.org/\">Python</a> support",
                              "entries": [
-                               { "type": "improved", "description": "Upgraded to Python 3.12.2." },
-                               { "type": "added", "description": "A way to release values (retrieved as a <a href=\"https://numpy.org/doc/stable/reference/generated/numpy.array.html\">NumPy array</a>) that are not needed anymore." }
+                               { "type": "improved", "description": "Upgraded to <a href=\"https://python.org/\">Python</a> 3.12.2." },
+                               { "type": "added", "description": "A couple of scripts to start a <a href=\"https://python.org/\">Python</a> session and to run the <a href=\"https://pip.pypa.io/en/stable/cli/\">pip</a> command." },
+                               { "type": "added", "description": "Some ways to release values (retrieved as a <a href=\"https://numpy.org/doc/stable/reference/generated/numpy.array.html\">NumPy array</a>) that are not needed anymore." }
                              ]
                            },
                            { "type": "subCategory", "name": "<a href=\"https://sed-ml.github.io/\">SED-ML</a> support",

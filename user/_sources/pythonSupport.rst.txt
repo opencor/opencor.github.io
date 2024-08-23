@@ -43,6 +43,8 @@ The following OpenCOR classes have `Python <https://python.org/>`__ wrappers tha
   - ``clear_results()``: clear the simulation results.
   - ``data()``: return the simulation data as a ``SimulationData`` object.
   - ``issues()``: return a list of issues with the simulation.
+  - ``release_all_values()``: release all the values retrieved as a `NumPy array <https://numpy.org/doc/stable/reference/generated/numpy.array.html>`__ (see ``DataStoreVariable.values()``).
+  - ``release_values(values)``: release the values retrieved as a `NumPy array <https://numpy.org/doc/stable/reference/generated/numpy.array.html>`__ (see ``DataStoreVariable.values()``).
   - ``reset(all = True)``: reset all the model parameters (``all = True``) or only the state model parameters (``all = False``).
   - ``results()``: return the results as a ``SimulationResults`` object.
   - ``run()``: run the simulation.
@@ -112,4 +114,3 @@ The following OpenCOR classes have `Python <https://python.org/>`__ wrappers tha
   - ``value(position, run = -1)``: return the value at the given position and for the given run (``run = -1`` corresponds to the last run).
   - ``values(run = -1)``: return the values for the given run (``run = -1`` corresponds to the last run) as a `NumPy array <https://numpy.org/doc/stable/reference/generated/numpy.array.html>`__.
   - ``values_count(run = -1)``: return the number of values for the given run (``run = -1`` corresponds to the last run).
-  - ``release_values(values)``: release the values retrieved as a `NumPy array <https://numpy.org/doc/stable/reference/generated/numpy.array.html>`__.

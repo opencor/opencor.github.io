@@ -29,22 +29,24 @@
         
   <section id="python-related-scripts">
 <span id="userinterfaces-commandlineinterfacepythonrelatedscripts"></span><h1>Python-related scripts<a class="headerlink" href="#python-related-scripts" title="Link to this heading">¶</a></h1>
-<p>The following <a class="reference external" href="https://python.org/">Python</a>-related scripts can be used to start:</p>
+<p>The following <a class="reference external" href="https://python.org/">Python</a>-related scripts can be used to:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ipython[.bat]</span></code>: an <a class="reference external" href="https://ipython.org/">IPython</a> session;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">jupyter[.bat]</span></code>: a <a class="reference external" href="https://jupyter.org/">Jupyter</a> session;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">jupyterconsole[.bat]</span></code>: a <a class="reference external" href="https://jupyter.org/">Jupyter</a> console, i.e. a terminal frontend for <a class="reference external" href="https://jupyter.org/">Jupyter</a> kernels;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">jupyterlab[.bat|.vbs]</span></code>: a <a class="reference external" href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab</a>, i.e. a Web-based interactive development environment for <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/latest/">Jupyter Notebooks</a>, code and data;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">jupyternotebook[.bat|.vbs]</span></code>: a <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/latest/">Jupyter Notebook</a>, i.e. a Web application to create and share documents that contain live code, equations, visualizations and narrative text; and</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pythonshell[.bat]</span></code>: a <a class="reference external" href="https://python.org/">Python</a> shell.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipython[.bat]</span></code>: start an <a class="reference external" href="https://ipython.org/">IPython</a> session;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jupyter[.bat]</span></code>: start a <a class="reference external" href="https://jupyter.org/">Jupyter</a> session;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jupyterconsole[.bat]</span></code>: start a <a class="reference external" href="https://jupyter.org/">Jupyter</a> console, i.e. a terminal frontend for <a class="reference external" href="https://jupyter.org/">Jupyter</a> kernels;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jupyterlab[.bat|.vbs]</span></code>: start a <a class="reference external" href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab</a>, i.e. a Web-based interactive development environment for <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/latest/">Jupyter Notebooks</a>, code and data;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jupyternotebook[.bat|.vbs]</span></code>: start a <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/latest/">Jupyter Notebook</a>, i.e. a Web application to create and share documents that contain live code, equations, visualizations and narrative text;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip[.bat]</span></code>: run the <a class="reference external" href="https://pip.pypa.io/en/stable/cli/">pip</a> command;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python[.bat]</span></code>: start a <a class="reference external" href="https://python.org/">Python</a> session; and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pythonshell[.bat]</span></code>: start a <a class="reference external" href="https://python.org/">Python</a> shell.</p></li>
 </ul>
 <p>This, in OpenCOR’s environment.</p>
 <section id="ipython-bat">
 <h2><code class="docutils literal notranslate"><span class="pre">ipython[.bat]</span></code><a class="headerlink" href="#ipython-bat" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./ipython
-Python 3.7.5 (default, May 27 2022, 16:06:22)
+Python 3.12.2 (main, Apr  4 2024, 21:14:06) [Clang 15.0.0 (clang-1500.3.9.4)]
 Type &#39;copyright&#39;, &#39;credits&#39; or &#39;license&#39; for more information
-IPython 7.8.0 -- An enhanced Interactive Python. Type &#39;?&#39; for help.
+IPython 8.21.0 -- An enhanced Interactive Python. Type &#39;?&#39; for help.
 
 In [1]:
 </pre></div>
@@ -53,21 +55,36 @@ In [1]:
 <section id="jupyter-bat">
 <h2><code class="docutils literal notranslate"><span class="pre">jupyter[.bat]</span></code><a class="headerlink" href="#jupyter-bat" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./jupyter
-usage: jupyter [-h] [--version] [--config-dir] [--data-dir] [--runtime-dir]
-               [--paths] [--json] [--debug]
-               [subcommand]
-jupyter: error: one of the arguments --version subcommand --config-dir --data-dir --runtime-dir --paths is required
+usage: jupyter [-h] [--version] [--config-dir] [--data-dir] [--runtime-dir] [--paths] [--json] [--debug] [subcommand]
+
+Jupyter: Interactive Computing
+
+positional arguments:
+  subcommand     the subcommand to launch
+
+options:
+  -h, --help     show this help message and exit
+  --version      show the versions of core jupyter packages and exit
+  --config-dir   show Jupyter config dir
+  --data-dir     show Jupyter data dir
+  --runtime-dir  show Jupyter runtime dir
+  --paths        show all Jupyter paths. Add --json for machine-readable format.
+  --json         output paths as machine-readable json
+  --debug        output debug information about paths
+
+Available subcommands: console dejavu events execute kernel kernelspec lab labextension labhub migrate nbconvert
+notebook qtconsole run server troubleshoot trust
+
+Please specify a subcommand or one of the optional arguments.
 </pre></div>
 </div>
 </section>
 <section id="jupyterconsole-bat">
 <span id="userinterfaces-commandlineinterfacepythonrelatedscriptsjupyterconsole"></span><h2><code class="docutils literal notranslate"><span class="pre">jupyterconsole[.bat]</span></code><a class="headerlink" href="#jupyterconsole-bat" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./jupyterconsole
-Jupyter console 6.0.0
+Jupyter console 6.6.3
 
 Jupyter kernel for OpenCOR
-
-
 In [1]:
 </pre></div>
 </div>
@@ -88,8 +105,82 @@ In [1]:
 <a class="reference internal image-reference" href="../_images/commandLineInterfacePythonRelatedScripts02.png"><img alt="../_images/commandLineInterfacePythonRelatedScripts02.png" class="align-center" src="../_images/commandLineInterfacePythonRelatedScripts02.png" style="width: 240.0px; height: 262.5px;" />
 </a>
 </section>
+<section id="pip-bat">
+<span id="userinterfaces-commandlineinterfacepythonrelatedscriptspythonshell"></span><h2><code class="docutils literal notranslate"><span class="pre">pip[.bat]</span></code><a class="headerlink" href="#pip-bat" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./pip
+Usage:
+  [OpenCOR]/Python/bin/python -m pip &lt;command&gt; [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  inspect                     Inspect the python environment.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  config                      Manage local and global configuration.
+  search                      Search PyPI for packages.
+  cache                       Inspect and manage pip&#39;s wheel cache.
+  index                       Inspect information available from package indexes.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  debug                       Show information useful for debugging.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --debug                     Let unhandled exceptions propagate outside the main subroutine, instead of logging them
+                              to stderr.
+  --isolated                  Run pip in an isolated mode, ignoring environment variables and user configuration.
+  --require-virtualenv        Allow pip to only run in a virtual environment; exit with an error otherwise.
+  --python &lt;python&gt;           Run pip with the specified Python interpreter.
+  -v, --verbose               Give more output. Option is additive, and can be used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be used up to 3 times (corresponding to
+                              WARNING, ERROR, and CRITICAL logging levels).
+  --log &lt;path&gt;                Path to a verbose appending log.
+  --no-input                  Disable prompting for input.
+  --keyring-provider &lt;keyring_provider&gt;
+                              Enable the credential lookup via the keyring library if user input is allowed. Specify
+                              which mechanism to use [disabled, import, subprocess]. (default: disabled)
+  --proxy &lt;proxy&gt;             Specify a proxy in the form scheme://[user:passwd@]proxy.server:port.
+  --retries &lt;retries&gt;         Maximum number of retries each connection should attempt (default 5 times).
+  --timeout &lt;sec&gt;             Set the socket timeout (default 15 seconds).
+  --exists-action &lt;action&gt;    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe, (b)ackup,
+                              (a)bort.
+  --trusted-host &lt;hostname&gt;   Mark this host or host:port pair as trusted, even though it does not have valid or any
+                              HTTPS.
+  --cert &lt;path&gt;               Path to PEM-encoded CA certificate bundle. If provided, overrides the default. See &#39;SSL
+                              Certificate Verification&#39; in pip documentation for more information.
+  --client-cert &lt;path&gt;        Path to SSL client certificate, a single file containing the private key and the
+                              certificate in PEM format.
+  --cache-dir &lt;dir&gt;           Store the cache data in &lt;dir&gt;.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don&#39;t periodically check PyPI to determine whether a new version of pip is available for
+                              download. Implied with --no-index.
+  --no-color                  Suppress colored output.
+  --no-python-version-warning
+                              Silence deprecation warnings for upcoming unsupported Pythons.
+  --use-feature &lt;feature&gt;     Enable new functionality, that may be backward incompatible.
+  --use-deprecated &lt;feature&gt;  Enable deprecated functionality, that will be removed in the future.
+</pre></div>
+</div>
+</section>
+<section id="python-bat">
+<h2><code class="docutils literal notranslate"><span class="pre">python[.bat]</span></code><a class="headerlink" href="#python-bat" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./python
+Python 3.12.2 (main, Apr  4 2024, 21:14:06) [Clang 15.0.0 (clang-1500.3.9.4)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</pre></div>
+</div>
+</section>
 <section id="pythonshell-bat">
-<span id="userinterfaces-commandlineinterfacepythonrelatedscriptspythonshell"></span><h2><code class="docutils literal notranslate"><span class="pre">pythonshell[.bat]</span></code><a class="headerlink" href="#pythonshell-bat" title="Link to this heading">¶</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">pythonshell[.bat]</span></code><a class="headerlink" href="#pythonshell-bat" title="Link to this heading">¶</a></h2>
 <p>This script is a shortcut to using the <a class="reference internal" href="../plugins/miscellaneous/pythonShell.html#plugins-miscellaneous-pythonshell"><span class="std std-ref">Python shell</span></a> plugin.
 Thus,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./pythonshell
